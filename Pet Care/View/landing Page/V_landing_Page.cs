@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Pet_Care.View.Main_Menu
+namespace Pet_Care.View.landing_Page
 {
-    public partial class Main_Menu : UserControl
+    public partial class V_landing_Page : UserControl
     {
-        public Main_Menu()
+        public V_landing_Page()
         {
             InitializeComponent();
         }

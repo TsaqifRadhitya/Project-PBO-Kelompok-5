@@ -1,6 +1,6 @@
-﻿namespace Pet_Care.View.Main_Menu
+﻿namespace Pet_Care.View.Pelanggan
 {
-    partial class Main_Menu
+    partial class V_Ubah_Pelanggan
     {
         /// <summary> 
         /// Required designer variable.
