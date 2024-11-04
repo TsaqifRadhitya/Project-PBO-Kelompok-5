@@ -24,8 +24,4 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="View\Splash Screen\" />
-  </ItemGroup>
-
 </Project>

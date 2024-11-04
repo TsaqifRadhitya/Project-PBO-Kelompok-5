@@ -12,7 +12,7 @@ namespace Pet_Care.View
 {
     public partial class V_Main_Menu : UserControl
     {
-        public Main_Menu()
+        public V_Main_Menu()
         {
             InitializeComponent();
         }

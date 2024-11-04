@@ -45,10 +45,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1264, 681);
-            ControlBox = false;
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.None;
-            MaximizeBox = false;
+            FormBorderStyle = FormBorderStyle.Fixed3D;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
