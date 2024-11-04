@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pet_Care.Model
 {
-    internal class M_Layanan
+    public class M_Layanan : M_Connection,IM_Connection
     {
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pet_Care.Model
 {
-    internal class M_Akun
+    public class M_Akun : M_Connection, IM_Connection
     {
     }
 }

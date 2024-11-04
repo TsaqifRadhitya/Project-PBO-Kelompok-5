@@ -1,4 +1,4 @@
-﻿namespace Pet_Care.View.Transaksi
+﻿namespace Pet_Care.View
 {
     partial class V_Riwayat_Transaksi
     {

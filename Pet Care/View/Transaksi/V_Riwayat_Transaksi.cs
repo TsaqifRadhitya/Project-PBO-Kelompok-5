@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Pet_Care.View.Transaksi
+namespace Pet_Care.View
 {
     public partial class V_Riwayat_Transaksi : UserControl
     {

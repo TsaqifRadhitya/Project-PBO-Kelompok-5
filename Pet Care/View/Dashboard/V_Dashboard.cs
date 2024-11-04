@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Pet_Care.View.Dashboard
+namespace Pet_Care.View
 {
     public partial class V_Dashboard : UserControl
     {

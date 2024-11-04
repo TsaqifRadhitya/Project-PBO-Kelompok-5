@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Pet_Care.View.Pelayanan
+namespace Pet_Care.View
 {
     public partial class V_Tambah_Layanan : UserControl
     {

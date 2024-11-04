@@ -1,4 +1,4 @@
-﻿namespace Pet_Care.View.Main_Menu
+﻿namespace Pet_Care.View
 {
     partial class V_Main_Menu
     {

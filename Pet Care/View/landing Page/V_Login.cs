@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Pet_Care.View.landing_Page
+namespace Pet_Care.View
 {
     public partial class V_Login : UserControl
     {

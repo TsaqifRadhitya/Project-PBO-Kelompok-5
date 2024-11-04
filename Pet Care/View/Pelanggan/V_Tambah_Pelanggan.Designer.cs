@@ -1,4 +1,4 @@
-﻿namespace Pet_Care.View.Pelanggan
+﻿namespace Pet_Care.View
 {
     partial class V_Tambah_Pelanggan
     {

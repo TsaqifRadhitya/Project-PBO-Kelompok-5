@@ -1,4 +1,4 @@
-﻿namespace Pet_Care.View.Dashboard
+﻿namespace Pet_Care.View
 {
     partial class V_Dashboard
     {

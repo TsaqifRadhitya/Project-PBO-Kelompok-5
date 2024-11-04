@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Pet_Care.View.Main_Menu
+namespace Pet_Care.View
 {
     public partial class V_Main_Menu : UserControl
     {

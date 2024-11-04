@@ -1,4 +1,4 @@
-﻿namespace Pet_Care.View.landing_Page
+﻿namespace Pet_Care.View
 {
     partial class V_landing_Page
     {

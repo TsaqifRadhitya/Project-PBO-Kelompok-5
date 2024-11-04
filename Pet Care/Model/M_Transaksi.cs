@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Pet_Care.Model
 {
-    internal class M_Transaksi
+    public class M_Transaksi : M_Connection, IM_Connection
     {
+
     }
 }
