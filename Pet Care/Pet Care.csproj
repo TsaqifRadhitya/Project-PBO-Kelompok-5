@@ -24,9 +24,4 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="View\Transaksi\" />
-    <Folder Include="View\Pelayanan\" />
-  </ItemGroup>
-
 </Project>
