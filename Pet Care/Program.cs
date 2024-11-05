@@ -1,3 +1,5 @@
+using Pet_Care.View.Splash_Screen;
+
 namespace Pet_Care
 {
     internal static class Program

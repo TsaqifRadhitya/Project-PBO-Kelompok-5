@@ -28,10 +28,112 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            LoginButton = new Button();
+            Username_Email = new TextBox();
+            Password = new TextBox();
+            label1 = new Label();
+            Register = new Label();
+            SuspendLayout();
+            // 
+            // LoginButton
+            // 
+            LoginButton.BackColor = Color.Transparent;
+            LoginButton.BackgroundImage = Properties.Resources.Login_Button;
+            LoginButton.BackgroundImageLayout = ImageLayout.Stretch;
+            LoginButton.CausesValidation = false;
+            LoginButton.FlatAppearance.BorderSize = 0;
+            LoginButton.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            LoginButton.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            LoginButton.FlatStyle = FlatStyle.Flat;
+            LoginButton.Location = new Point(123, 306);
+            LoginButton.Name = "LoginButton";
+            LoginButton.Size = new Size(212, 58);
+            LoginButton.TabIndex = 0;
+            LoginButton.UseVisualStyleBackColor = false;
+            LoginButton.Click += button1_Click;
+            LoginButton.MouseEnter += LoginButton_MouseEnter;
+            LoginButton.MouseLeave += LoginButton_MouseLeave;
+            LoginButton.MouseHover += LoginButton_MouseHover;
+            // 
+            // Username_Email
+            // 
+            Username_Email.BackColor = Color.FromArgb(240, 193, 174);
+            Username_Email.BorderStyle = BorderStyle.None;
+            Username_Email.Font = new Font("Montserrat SemiBold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Username_Email.ForeColor = Color.FromArgb(176, 142, 128);
+            Username_Email.Location = new Point(71, 173);
+            Username_Email.Name = "Username_Email";
+            Username_Email.Size = new Size(323, 30);
+            Username_Email.TabIndex = 1;
+            Username_Email.Text = "Username/Email";
+            Username_Email.Enter += Username_Email_Enter;
+            Username_Email.Leave += Username_Email_Leave;
+            // 
+            // Password
+            // 
+            Password.BackColor = Color.FromArgb(240, 193, 174);
+            Password.BorderStyle = BorderStyle.None;
+            Password.Font = new Font("Montserrat SemiBold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Password.ForeColor = Color.FromArgb(176, 142, 128);
+            Password.Location = new Point(71, 243);
+            Password.Name = "Password";
+            Password.Size = new Size(319, 30);
+            Password.TabIndex = 2;
+            Password.Text = "Password";
+            Password.Enter += Password_Enter;
+            Password.Leave += Password_Leave;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Montserrat SemiBold", 14F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(251, 213, 197);
+            label1.Location = new Point(75, 372);
+            label1.Name = "label1";
+            label1.Size = new Size(211, 26);
+            label1.TabIndex = 3;
+            label1.Text = "Belum Punya Akun?";
+            // 
+            // Register
+            // 
+            Register.AutoSize = true;
+            Register.Font = new Font("Montserrat SemiBold", 14F, FontStyle.Bold);
+            Register.ForeColor = Color.FromArgb(131, 94, 146);
+            Register.Location = new Point(279, 372);
+            Register.Name = "Register";
+            Register.Size = new Size(94, 26);
+            Register.TabIndex = 4;
+            Register.Text = "Register";
+            Register.Click += Register_Click;
+            Register.MouseHover += Register_MouseHover;
+            // 
+            // V_Login
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Transparent;
+            BackgroundImage = Properties.Resources.Login1;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            Controls.Add(Register);
+            Controls.Add(label1);
+            Controls.Add(Password);
+            Controls.Add(Username_Email);
+            Controls.Add(LoginButton);
+            DoubleBuffered = true;
+            Margin = new Padding(0);
+            Name = "V_Login";
+            Size = new Size(454, 430);
+            Load += V_Login_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Button LoginButton;
+        private TextBox Username_Email;
+        private TextBox Password;
+        private Label label1;
+        private Label Register;
     }
 }

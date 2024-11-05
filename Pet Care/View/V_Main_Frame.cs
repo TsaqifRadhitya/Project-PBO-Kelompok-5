@@ -7,20 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Pet_Care.Contoller;
 
 namespace Pet_Care.View
 {
-    public partial class Login : UserControl
+    public partial class V_Main_Frame : Form
     {
-        Form1 Form1;
-        public Login(Form1 form)
+        C_MainFrame mainFrame;
+        public V_Main_Frame()
         {
             InitializeComponent();
-            this.Form1 = form;
+            mainFrame = new C_MainFrame(this);
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1.pindah_user_control(new Register(Form1));
+            Application.Exit();
+        }
+
+        private void button2_Click(object sender, EventArgs e) 
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

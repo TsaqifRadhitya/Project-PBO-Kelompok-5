@@ -28,10 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            panel1 = new Panel();
+            PanelInput = new Panel();
+            panel1.SuspendLayout();
+            SuspendLayout();
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Transparent;
+            panel1.BackgroundImage = Properties.Resources.Landing_Page;
+            panel1.Controls.Add(PanelInput);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1280, 720);
+            panel1.TabIndex = 0;
+            // 
+            // PanelInput
+            // 
+            PanelInput.Location = new Point(730, 39);
+            PanelInput.Name = "PanelInput";
+            PanelInput.Size = new Size(454, 634);
+            PanelInput.TabIndex = 0;
+            // 
+            // V_landing_Page
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(panel1);
+            Name = "V_landing_Page";
+            Size = new Size(1280, 720);
+            panel1.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Panel panel1;
+        public Panel PanelInput;
     }
 }
