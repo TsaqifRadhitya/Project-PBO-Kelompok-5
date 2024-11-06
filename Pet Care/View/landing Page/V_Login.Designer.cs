@@ -59,13 +59,14 @@
             // 
             Username_Email.BackColor = Color.FromArgb(240, 193, 174);
             Username_Email.BorderStyle = BorderStyle.None;
-            Username_Email.Font = new Font("Montserrat SemiBold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Username_Email.Font = new Font("Montserrat SemiBold", 16F, FontStyle.Bold);
             Username_Email.ForeColor = Color.FromArgb(176, 142, 128);
-            Username_Email.Location = new Point(71, 173);
+            Username_Email.Location = new Point(71, 176);
             Username_Email.Name = "Username_Email";
-            Username_Email.Size = new Size(323, 30);
+            Username_Email.Size = new Size(323, 27);
             Username_Email.TabIndex = 1;
             Username_Email.Text = "Username/Email";
+            Username_Email.TextChanged += Username_Email_TextChanged;
             Username_Email.Enter += Username_Email_Enter;
             Username_Email.Leave += Username_Email_Leave;
             // 
@@ -73,11 +74,11 @@
             // 
             Password.BackColor = Color.FromArgb(240, 193, 174);
             Password.BorderStyle = BorderStyle.None;
-            Password.Font = new Font("Montserrat SemiBold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Password.Font = new Font("Montserrat SemiBold", 16F, FontStyle.Bold);
             Password.ForeColor = Color.FromArgb(176, 142, 128);
-            Password.Location = new Point(71, 243);
+            Password.Location = new Point(71, 245);
             Password.Name = "Password";
-            Password.Size = new Size(319, 30);
+            Password.Size = new Size(319, 27);
             Password.TabIndex = 2;
             Password.Text = "Password";
             Password.Enter += Password_Enter;
@@ -86,22 +87,22 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Montserrat SemiBold", 14F, FontStyle.Bold);
+            label1.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(251, 213, 197);
-            label1.Location = new Point(75, 372);
+            label1.Location = new Point(100, 372);
             label1.Name = "label1";
-            label1.Size = new Size(211, 26);
+            label1.Size = new Size(178, 22);
             label1.TabIndex = 3;
             label1.Text = "Belum Punya Akun?";
             // 
             // Register
             // 
             Register.AutoSize = true;
-            Register.Font = new Font("Montserrat SemiBold", 14F, FontStyle.Bold);
+            Register.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
             Register.ForeColor = Color.FromArgb(131, 94, 146);
-            Register.Location = new Point(279, 372);
+            Register.Location = new Point(272, 372);
             Register.Name = "Register";
-            Register.Size = new Size(94, 26);
+            Register.Size = new Size(80, 22);
             Register.TabIndex = 4;
             Register.Text = "Register";
             Register.Click += Register_Click;

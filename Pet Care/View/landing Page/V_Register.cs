@@ -49,5 +49,113 @@ namespace Pet_Care.View
         {
 
         }
+
+        private void Username_Enter(object sender, EventArgs e)
+        {
+            if (Username.Text == "Username")
+            {
+                Username.Text = "";
+                Username.ForeColor = Color.White;
+            }
+        }
+
+        private void Username_Leave(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(Username.Text))
+            {
+                Username.Text = "Username";
+                Username.ForeColor = Color.FromArgb(176, 142, 128);
+            }
+        }
+
+        private void Nama_Lengkap_Leave(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(Nama_Lengkap.Text))
+            {
+                Nama_Lengkap.Text = "Nama Lengkap";
+                Nama_Lengkap.ForeColor = Color.FromArgb(176, 142, 128);
+            }
+        }
+
+        private void Nama_Lengkap_Enter(object sender, EventArgs e)
+        {
+            if (Nama_Lengkap.Text == "Nama Lengkap")
+            {
+                Nama_Lengkap.Text = "";
+                Nama_Lengkap.ForeColor = Color.White;
+            }
+        }
+
+        private void Nomor_HP_Leave(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(Nomor_HP.Text))
+            {
+                Nomor_HP.Text = "Nomor Hp";
+                Nomor_HP.ForeColor = Color.FromArgb(176, 142, 128);
+            }
+        }
+
+        private void Nomor_HP_Enter(object sender, EventArgs e)
+        {
+            if (Nomor_HP.Text == "Nomor Hp")
+            {
+                Nomor_HP.Text = "";
+                Nomor_HP.ForeColor = Color.White;
+            }
+        }
+
+        private void Email_Leave(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(Email.Text))
+            {
+                Email.Text = "Email";
+                Email.ForeColor = Color.FromArgb(176, 142, 128);
+            }
+        }
+
+        private void Email_Enter(object sender, EventArgs e)
+        {
+            if (Email.Text == "Email")
+            {
+                Email.Text = "";
+                Email.ForeColor = Color.White;
+            }
+        }
+
+        private void Password_Enter(object sender, EventArgs e)
+        {
+            if (Password.Text == "Password")
+            {
+                Password.Text = "";
+                Password.ForeColor = Color.White;
+            }
+        }
+
+        private void Password_Leave(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(Password.Text))
+            {
+                Password.Text = "Password";
+                Password.ForeColor = Color.FromArgb(176, 142, 128);
+            }
+        }
+
+        private void Konfirmasi_Password_Leave(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(Konfirmasi_Password.Text))
+            {
+                Konfirmasi_Password.Text = "Konfirmasi Password";
+                Konfirmasi_Password.ForeColor = Color.FromArgb(176, 142, 128);
+            }
+        }
+
+        private void Konfirmasi_Password_Enter(object sender, EventArgs e)
+        {
+            if (Konfirmasi_Password.Text == "Konfirmasi Password")
+            {
+                Konfirmasi_Password.Text = "";
+                Konfirmasi_Password.ForeColor = Color.White;
+            }
+        }
     }
 }

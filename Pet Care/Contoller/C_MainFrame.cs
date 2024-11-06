@@ -25,5 +25,11 @@ namespace Pet_Care.Contoller
             main_Frame.panel1.Controls.Clear();
             main_Frame.panel1.Controls.Add(view);
         }
+
+        public void show_message_box(string message)
+        {
+            V_Custom_Message_Box message_Box = new V_Custom_Message_Box(this, message);
+            message_Box.Show();
+        }
     }
 }

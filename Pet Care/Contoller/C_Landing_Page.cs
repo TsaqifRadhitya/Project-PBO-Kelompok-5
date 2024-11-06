@@ -9,7 +9,7 @@ namespace Pet_Care.Contoller
 {
     public class C_Landing_Page
     {
-        C_MainFrame controller_main_frame;
+        public C_MainFrame controller_main_frame;
         V_landing_Page v_Landing_Page;
         public V_Login v_Login;
         public V_Register V_Register;
