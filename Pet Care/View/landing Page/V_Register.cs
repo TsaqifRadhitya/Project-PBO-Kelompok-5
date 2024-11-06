@@ -47,7 +47,7 @@ namespace Pet_Care.View
 
         private void Button_Register_Click(object sender, EventArgs e)
         {
-
+            controller.register_validation();
         }
 
         private void Username_Enter(object sender, EventArgs e)

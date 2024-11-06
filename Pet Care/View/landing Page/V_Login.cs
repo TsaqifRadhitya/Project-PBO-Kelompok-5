@@ -22,10 +22,7 @@ namespace Pet_Care.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(Username_Email.Text == "Username/Email" || Password.Text == "Password")
-            {
-                Controller.controller_main_frame.show_message_box("Invalid Login");
-            }
+            Controller.login_validation();
         }
 
         private void LoginButton_MouseHover(object sender, EventArgs e)

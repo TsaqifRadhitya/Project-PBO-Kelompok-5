@@ -8,12 +8,12 @@ namespace Pet_Care.Model
 {
     public interface IM_Connection
     {
-        public List<object> Get();
+        public void Get();
 
-        public void Insert(object obj);
+        public bool Insert(object obj);
 
         public void Delete (int id);
 
-        public void Update(object obj,int id);
+        public bool Update(object obj,int id);
     }
 }

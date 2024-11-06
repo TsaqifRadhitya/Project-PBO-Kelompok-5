@@ -10,5 +10,6 @@ namespace Pet_Care.Model
     {
         public static int id_session {  get; set; }
         public static string session_name { get; set; }
+        public static bool session_status {  get; set; }
     }
 }

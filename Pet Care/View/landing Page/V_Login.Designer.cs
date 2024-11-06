@@ -132,9 +132,9 @@
         #endregion
 
         private Button LoginButton;
-        private TextBox Username_Email;
-        private TextBox Password;
         private Label label1;
         private Label Register;
+        public TextBox Username_Email;
+        public TextBox Password;
     }
 }

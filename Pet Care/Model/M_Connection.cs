@@ -40,6 +40,8 @@ namespace Pet_Care.Model
                 "Foto_hewan Bytea NOT NULL," +
                 "Nominal_transaksi INTEGER NOT NULL," +
                 "Status_penitipan BOOL NOT NULL," +
+                "Status Pembayaran BOOL NOT NULL,"+
+                "Foto_Bukti_Pembayaran Bytea," +
                 "Pelanggan_id integer NOT NULL,Akun_id integer NOT NULL," +
                 "CONSTRAINT Akun_fk FOREIGN KEY ( Akun_id ) REFERENCES Akun ( Akun_id )," +
                 "CONSTRAINT Pelanggan_fk FOREIGN KEY ( Pelanggan_id ) REFERENCES pelanggan ( Pelanggan_id ))");

@@ -193,11 +193,11 @@
         private Button Button_Register;
         private Label Login;
         private Label label1;
-        private TextBox Username;
-        private TextBox Nama_Lengkap;
-        private TextBox Nomor_HP;
-        private TextBox Email;
-        private TextBox Password;
-        private TextBox Konfirmasi_Password;
+        public TextBox Username;
+        public TextBox Nama_Lengkap;
+        public TextBox Nomor_HP;
+        public TextBox Email;
+        public TextBox Password;
+        public TextBox Konfirmasi_Password;
     }
 }
