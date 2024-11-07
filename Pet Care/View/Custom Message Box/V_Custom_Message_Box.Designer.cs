@@ -35,15 +35,14 @@
             // 
             // Message
             // 
-            Message.AutoSize = true;
             Message.BackColor = Color.Transparent;
             Message.Font = new Font("Montserrat SemiBold", 18F, FontStyle.Bold);
-            Message.Location = new Point(189, 95);
+            Message.Location = new Point(12, 88);
             Message.Name = "Message";
-            Message.Size = new Size(120, 36);
+            Message.Size = new Size(476, 66);
             Message.TabIndex = 4;
             Message.Text = "Message";
-            Message.TextAlign = ContentAlignment.MiddleCenter;
+            Message.TextAlign = ContentAlignment.TopCenter;
             Message.UseCompatibleTextRendering = true;
             // 
             // Okey
@@ -81,7 +80,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MeowInn";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion

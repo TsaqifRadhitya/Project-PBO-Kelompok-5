@@ -10,7 +10,7 @@ namespace Pet_Care.Model
     {
         public void Get();
 
-        public bool Insert(object obj);
+        public bool Insert(object? obj);
 
         public void Delete (int id);
 

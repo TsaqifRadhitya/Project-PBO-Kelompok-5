@@ -10,10 +10,8 @@ namespace Pet_Care.Contoller
     public class C_MainFrame
     {
         V_Main_Frame main_Frame;
-        V_landing_Page landing_page;
-        V_Main_Menu main_menu;
-        C_Landing_Page controller_landing_page;
-        C_MainMenu controller_main_menu;
+        public C_Landing_Page controller_landing_page;
+        public C_MainMenu controller_main_menu;
         public C_MainFrame(V_Main_Frame main_frame)
         {
             this.main_Frame = main_frame;
@@ -29,7 +27,7 @@ namespace Pet_Care.Contoller
         public void show_message_box(string message)
         {
             V_Custom_Message_Box message_Box = new V_Custom_Message_Box(this, message);
-            message_Box.Show();
+            message_Box.ShowDialog();
         }
     }
 }

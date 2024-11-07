@@ -42,7 +42,7 @@ namespace Pet_Care.Contoller
             m_Akun.Get(v_Login.Username_Email.Text, v_Login.Password.Text);
             if (M_Session.session_status)
             {
-
+                controller_main_frame.controller_main_menu = new C_MainMenu(controller_main_frame);
             }
             else
             {
@@ -52,7 +52,8 @@ namespace Pet_Care.Contoller
 
         public void register_validation()
         {
-            if (V_Register.Username.Text == "Username" || V_Register.Password.Text == "Password" || V_Register.Nama_Lengkap.Text == "Nama Lengkap" || V_Register.Nomor_HP.Text == "Nomor Hp"|| V_Register.Email.Text == "Email"|| V_Register.Konfirmasi_Password.Text != V_Register.Password.Text)
+            int nomor_hp;
+            if (V_Register.Username.Text == "Username" || V_Register.Password.Text == "Password" || V_Register.Nama_Lengkap.Text == "Nama Lengkap"|| V_Register.Nomor_HP.Text == "Nomor Hp"|| V_Register.Email.Text == "Email"|| V_Register.Konfirmasi_Password.Text != V_Register.Password.Text)
             {
                 controller_main_frame.show_message_box("Invalid Register");
                 return;
@@ -67,11 +68,11 @@ namespace Pet_Care.Contoller
             };
             if (m_Akun.Insert(data_akun))
             {
-
+                switch_view(v_Login);
             }
             else
             {
-                controller_main_frame.show_message_box("Invalid Register");
+                controller_main_frame.show_message_box("Akun Sudah Tersedia");
             }
         }
     }

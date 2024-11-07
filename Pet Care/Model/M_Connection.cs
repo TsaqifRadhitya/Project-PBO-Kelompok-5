@@ -9,12 +9,13 @@ namespace Pet_Care.Model
 {
     public class M_Connection
     {
-        string addres = "Host=localhost;Username=postgres;Password=;Database=";
+        string addres = "Host=localhost;Username=postgres;Password=;Database=MeowInn";
         protected NpgsqlConnection conn;
         public void Setup()
         {
             Execute_No_Return("CREATE TABLE IF NOT EXISTS akun (" +
                 "Akun_id  serial NOT NULL UNIQUE PRIMARY KEY," +
+                "Nama_Lengkap Varchar(50) NOT NULL,"+
                 "Username VARCHAR(10) NOT NULL UNIQUE," +
                 "Password VARCHAR(20) NOT NULL ," +
                 "Email    VARCHAR(50) NOT NULL UNIQUE," +
@@ -40,9 +41,10 @@ namespace Pet_Care.Model
                 "Foto_hewan Bytea NOT NULL," +
                 "Nominal_transaksi INTEGER NOT NULL," +
                 "Status_penitipan BOOL NOT NULL," +
-                "Status Pembayaran BOOL NOT NULL,"+
+                "Status_Pembayaran BOOL NOT NULL,"+
                 "Foto_Bukti_Pembayaran Bytea," +
-                "Pelanggan_id integer NOT NULL,Akun_id integer NOT NULL," +
+                "Pelanggan_id integer NOT NULL," +
+                "Akun_id integer NOT NULL," +
                 "CONSTRAINT Akun_fk FOREIGN KEY ( Akun_id ) REFERENCES Akun ( Akun_id )," +
                 "CONSTRAINT Pelanggan_fk FOREIGN KEY ( Pelanggan_id ) REFERENCES pelanggan ( Pelanggan_id ))");
 

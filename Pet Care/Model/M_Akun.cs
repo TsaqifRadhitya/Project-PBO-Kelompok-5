@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using Npgsql;
 
 namespace Pet_Care.Model
 {
@@ -21,12 +22,20 @@ namespace Pet_Care.Model
 
         public void Get(string username, string password)
         {
-
+            NpgsqlDataReader data = Execute_With_Return($"SELECT akun_id,nama_lengkap from akun where username = '{username}' and password = '{password}'");
+            while (data.Read())
+            {
+                M_Session.session_name = data.GetString(1);
+                M_Session.id_session = data.GetInt32(0);
+                M_Session.session_status = true;
+            }
+            conn.Close();
         }
 
         public bool Insert(object item)
         {
-            return false;
+            Akun akun = item as Akun;
+            return Execute_No_Return($"INSERT INTO Akun(nama_lengkap,username,password,email,nomor_hp) Values ('{akun.Name}','{akun.Username}','{akun.Password}','{akun.Email}','{akun.Nomor_Hp}')");
         }
 
         public void Delete(int ID) 

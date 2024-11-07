@@ -28,10 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            button1 = new Button();
+            SuspendLayout();
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Transparent;
+            button1.BackgroundImage = Properties.Resources.Log_Out;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Location = new Point(38, 589);
+            button1.Name = "button1";
+            button1.Size = new Size(208, 50);
+            button1.TabIndex = 0;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            button1.MouseEnter += button1_MouseEnter;
+            button1.MouseLeave += button1_MouseLeave;
+            button1.MouseHover += button1_MouseHover;
+            // 
+            // V_Main_Menu
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.Dash_Board;
+            Controls.Add(button1);
+            Name = "V_Main_Menu";
+            Size = new Size(1280, 720);
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button button1;
     }
 }
