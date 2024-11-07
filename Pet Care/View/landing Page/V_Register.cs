@@ -27,6 +27,8 @@ namespace Pet_Care.View
 
         private void Login_Click(object sender, EventArgs e)
         {
+            controller.v_Login = new V_Login(controller);
+            controller.v_Login.Location = new Point(0, 102);
             controller.switch_view(controller.v_Login);
         }
 

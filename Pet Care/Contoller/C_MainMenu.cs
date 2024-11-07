@@ -17,6 +17,13 @@ namespace Pet_Care.Contoller
             controller_main_frame = mainFrame;
             main_Menu = new V_Main_Menu(this);
             controller_main_frame.move_view(main_Menu);
+            move_view(new V_Dashboard(this));
+        }
+
+        public void move_view(UserControl view)
+        {
+            main_Menu.panel1.Controls.Clear();
+            main_Menu.panel1.Controls.Add(view);
         }
 
         public void logout()
@@ -25,6 +32,14 @@ namespace Pet_Care.Contoller
             M_Session.session_name = "";
             M_Session.session_status = false;
             controller_main_frame.controller_landing_page = new C_Landing_Page(controller_main_frame);
+        }
+
+        public void reset_button_focus()
+        {
+            main_Menu.Dashboard.BackgroundImage = Properties.Resources.Dashboard;
+            main_Menu.Transaksi.BackgroundImage = Properties.Resources.Transaksi;
+            main_Menu.Pelanggan.BackgroundImage = Properties.Resources.Pelanggan;
+            main_Menu.Layanan.BackgroundImage = Properties.Resources.Layanan;
         }
     }
 }

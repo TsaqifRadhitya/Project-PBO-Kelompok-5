@@ -42,6 +42,7 @@ namespace Pet_Care.View
 
         private void Register_Click(object sender, EventArgs e)
         {
+            Controller.V_Register = new V_Register(Controller);
             Controller.switch_view(Controller.V_Register);
         }
 

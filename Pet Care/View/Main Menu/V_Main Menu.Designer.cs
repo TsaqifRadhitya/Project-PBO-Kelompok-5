@@ -28,33 +28,114 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            Logout = new Button();
+            panel1 = new Panel();
+            Dashboard = new Button();
+            Transaksi = new Button();
+            Pelanggan = new Button();
+            Layanan = new Button();
             SuspendLayout();
             // 
-            // button1
+            // Logout
             // 
-            button1.BackColor = Color.Transparent;
-            button1.BackgroundImage = Properties.Resources.Log_Out;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(38, 589);
-            button1.Name = "button1";
-            button1.Size = new Size(208, 50);
-            button1.TabIndex = 0;
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            button1.MouseEnter += button1_MouseEnter;
-            button1.MouseLeave += button1_MouseLeave;
-            button1.MouseHover += button1_MouseHover;
+            Logout.BackColor = Color.Transparent;
+            Logout.BackgroundImage = Properties.Resources.Log_Out;
+            Logout.FlatAppearance.BorderSize = 0;
+            Logout.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            Logout.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            Logout.FlatStyle = FlatStyle.Flat;
+            Logout.Location = new Point(38, 601);
+            Logout.Name = "Logout";
+            Logout.Size = new Size(208, 50);
+            Logout.TabIndex = 0;
+            Logout.UseVisualStyleBackColor = false;
+            Logout.Click += button1_Click;
+            Logout.MouseEnter += button1_MouseEnter;
+            Logout.MouseLeave += button1_MouseLeave;
+            Logout.MouseHover += button1_MouseHover;
+            // 
+            // panel1
+            // 
+            panel1.Location = new Point(280, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1000, 720);
+            panel1.TabIndex = 1;
+            // 
+            // Dashboard
+            // 
+            Dashboard.BackColor = Color.Transparent;
+            Dashboard.BackgroundImage = Properties.Resources.Dasboard_Focus;
+            Dashboard.FlatAppearance.BorderSize = 0;
+            Dashboard.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            Dashboard.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            Dashboard.FlatStyle = FlatStyle.Flat;
+            Dashboard.Location = new Point(24, 220);
+            Dashboard.Name = "Dashboard";
+            Dashboard.Size = new Size(256, 51);
+            Dashboard.TabIndex = 2;
+            Dashboard.UseVisualStyleBackColor = false;
+            Dashboard.Click += Dashboard_Click;
+            Dashboard.MouseHover += Dashboard_MouseHover;
+            // 
+            // Transaksi
+            // 
+            Transaksi.BackColor = Color.Transparent;
+            Transaksi.BackgroundImage = Properties.Resources.Transaksi;
+            Transaksi.FlatAppearance.BorderSize = 0;
+            Transaksi.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            Transaksi.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            Transaksi.FlatStyle = FlatStyle.Flat;
+            Transaksi.Location = new Point(24, 309);
+            Transaksi.Name = "Transaksi";
+            Transaksi.Size = new Size(256, 51);
+            Transaksi.TabIndex = 3;
+            Transaksi.UseVisualStyleBackColor = false;
+            Transaksi.Click += Transaksi_Click;
+            Transaksi.MouseHover += Transaksi_MouseHover;
+            // 
+            // Pelanggan
+            // 
+            Pelanggan.BackColor = Color.Transparent;
+            Pelanggan.BackgroundImage = Properties.Resources.Pelanggan;
+            Pelanggan.FlatAppearance.BorderSize = 0;
+            Pelanggan.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            Pelanggan.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            Pelanggan.FlatStyle = FlatStyle.Flat;
+            Pelanggan.Location = new Point(24, 398);
+            Pelanggan.Name = "Pelanggan";
+            Pelanggan.Size = new Size(256, 51);
+            Pelanggan.TabIndex = 4;
+            Pelanggan.UseVisualStyleBackColor = false;
+            Pelanggan.Click += Pelanggan_Click;
+            Pelanggan.MouseHover += Pelanggan_MouseHover;
+            // 
+            // Layanan
+            // 
+            Layanan.BackColor = Color.Transparent;
+            Layanan.BackgroundImage = Properties.Resources.Layanan;
+            Layanan.FlatAppearance.BorderSize = 0;
+            Layanan.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            Layanan.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            Layanan.FlatStyle = FlatStyle.Flat;
+            Layanan.Location = new Point(24, 487);
+            Layanan.Name = "Layanan";
+            Layanan.Size = new Size(256, 51);
+            Layanan.TabIndex = 5;
+            Layanan.UseVisualStyleBackColor = false;
+            Layanan.Click += Layanan_Click;
+            Layanan.MouseHover += Layanan_MouseHover;
             // 
             // V_Main_Menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Dash_Board;
-            Controls.Add(button1);
+            Controls.Add(Layanan);
+            Controls.Add(Pelanggan);
+            Controls.Add(Transaksi);
+            Controls.Add(Dashboard);
+            Controls.Add(panel1);
+            Controls.Add(Logout);
             Name = "V_Main_Menu";
             Size = new Size(1280, 720);
             ResumeLayout(false);
@@ -62,6 +143,11 @@
 
         #endregion
 
-        private Button button1;
+        private Button Logout;
+        public Panel panel1;
+        public Button Dashboard;
+        public Button Transaksi;
+        public Button Pelanggan;
+        public Button Layanan;
     }
 }
