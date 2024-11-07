@@ -12,6 +12,7 @@ namespace Pet_Care.Contoller
     {
         C_MainFrame controller_main_frame;
         V_Main_Menu main_Menu;
+        public string menu_focus = typeof(V_Dashboard).Name;
         public C_MainMenu(C_MainFrame mainFrame)
         { 
             controller_main_frame = mainFrame;

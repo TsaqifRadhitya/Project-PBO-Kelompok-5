@@ -133,11 +133,17 @@
   <data name="Layanan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Layanan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Layanan Focus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Layanan Focus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Landing Page" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Landing Page.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Frame 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Frame 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Transaksi Focus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Transaksi Focus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Register Button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Register Button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,25 +175,31 @@
   <data name="Pelanggan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pelanggan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Login1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Login1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Pelanggan Focus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pelanggan Focus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Log Out" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Log Out.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Button Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Button Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Layanan Focus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Layanan Focus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Button Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Pelanggan Focus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pelanggan Focus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Login1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Transaksi Focus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Transaksi Focus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Dasboard Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dasboard Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Layanan Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Layanan Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pelanggan Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pelanggan Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Transaksi Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Transaksi Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

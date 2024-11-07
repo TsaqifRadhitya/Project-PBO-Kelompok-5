@@ -75,6 +75,8 @@
             Dashboard.TabIndex = 2;
             Dashboard.UseVisualStyleBackColor = false;
             Dashboard.Click += Dashboard_Click;
+            Dashboard.MouseEnter += Dashboard_MouseEnter;
+            Dashboard.MouseLeave += Dashboard_MouseLeave;
             Dashboard.MouseHover += Dashboard_MouseHover;
             // 
             // Transaksi
@@ -91,6 +93,8 @@
             Transaksi.TabIndex = 3;
             Transaksi.UseVisualStyleBackColor = false;
             Transaksi.Click += Transaksi_Click;
+            Transaksi.MouseEnter += Transaksi_MouseEnter;
+            Transaksi.MouseLeave += Transaksi_MouseLeave;
             Transaksi.MouseHover += Transaksi_MouseHover;
             // 
             // Pelanggan
@@ -107,6 +111,8 @@
             Pelanggan.TabIndex = 4;
             Pelanggan.UseVisualStyleBackColor = false;
             Pelanggan.Click += Pelanggan_Click;
+            Pelanggan.MouseEnter += Pelanggan_MouseEnter;
+            Pelanggan.MouseLeave += Pelanggan_MouseLeave;
             Pelanggan.MouseHover += Pelanggan_MouseHover;
             // 
             // Layanan
@@ -123,6 +129,8 @@
             Layanan.TabIndex = 5;
             Layanan.UseVisualStyleBackColor = false;
             Layanan.Click += Layanan_Click;
+            Layanan.MouseEnter += Layanan_MouseEnter;
+            Layanan.MouseLeave += Layanan_MouseLeave;
             Layanan.MouseHover += Layanan_MouseHover;
             // 
             // V_Main_Menu

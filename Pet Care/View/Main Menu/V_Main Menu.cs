@@ -42,6 +42,7 @@ namespace Pet_Care.View
 
         private void Dashboard_Click(object sender, EventArgs e)
         {
+            controller.menu_focus = typeof(V_Dashboard).Name;
             controller.reset_button_focus();
             Dashboard.BackgroundImage = Properties.Resources.Dasboard_Focus;
             controller.move_view(new V_Dashboard(controller));
@@ -49,6 +50,7 @@ namespace Pet_Care.View
 
         private void Transaksi_Click(object sender, EventArgs e)
         {
+            controller.menu_focus = typeof(V_Transaksi).Name;
             controller.reset_button_focus();
             Transaksi.BackgroundImage = Properties.Resources.Transaksi_Focus;
             controller.move_view(new V_Transaksi(controller));
@@ -56,6 +58,7 @@ namespace Pet_Care.View
 
         private void Pelanggan_Click(object sender, EventArgs e)
         {
+            controller.menu_focus = typeof(V_Pelanggan).Name;
             controller.reset_button_focus();
             Pelanggan.BackgroundImage = Properties.Resources.Pelanggan_Focus;
             controller.move_view(new V_Pelanggan(controller));
@@ -63,6 +66,7 @@ namespace Pet_Care.View
 
         private void Layanan_Click(object sender, EventArgs e)
         {
+            controller.menu_focus = typeof(V_Layanan).Name;
             controller.reset_button_focus();
             Layanan.BackgroundImage = Properties.Resources.Layanan_Focus;
             controller.move_view(new V_Layanan(controller));
@@ -86,6 +90,70 @@ namespace Pet_Care.View
         private void Layanan_MouseHover(object sender, EventArgs e)
         {
             Layanan.Cursor = Cursors.Hand;
+        }
+
+        private void Dashboard_MouseEnter(object sender, EventArgs e)
+        {
+            if (controller.menu_focus != typeof(V_Dashboard).Name)
+            {
+                Dashboard.BackgroundImage = Properties.Resources.Dasboard_Hover;
+            };
+        }
+
+        private void Dashboard_MouseLeave(object sender, EventArgs e)
+        {
+            if (controller.menu_focus != typeof(V_Dashboard).Name)
+            {
+                Dashboard.BackgroundImage = Properties.Resources.Dashboard;
+            };
+        }
+
+        private void Transaksi_MouseEnter(object sender, EventArgs e)
+        {
+            if (controller.menu_focus != typeof(V_Transaksi).Name)
+            {
+                Transaksi.BackgroundImage = Properties.Resources.Transaksi_Hover;
+            };
+        }
+
+        private void Transaksi_MouseLeave(object sender, EventArgs e)
+        {
+            if (controller.menu_focus != typeof(V_Transaksi).Name)
+            {
+                Transaksi.BackgroundImage = Properties.Resources.Transaksi;
+            };
+        }
+
+        private void Pelanggan_MouseEnter(object sender, EventArgs e)
+        {
+            if (controller.menu_focus != typeof(V_Pelanggan).Name)
+            {
+                Pelanggan.BackgroundImage = Properties.Resources.Pelanggan_Hover;
+            };
+        }
+
+        private void Pelanggan_MouseLeave(object sender, EventArgs e)
+        {
+            if (controller.menu_focus != typeof(V_Pelanggan).Name)
+            {
+                Pelanggan.BackgroundImage = Properties.Resources.Pelanggan;
+            };
+        }
+
+        private void Layanan_MouseEnter(object sender, EventArgs e)
+        {
+            if (controller.menu_focus != typeof(V_Layanan).Name)
+            {
+                Layanan.BackgroundImage = Properties.Resources.Layanan_Hover;
+            };
+        }
+
+        private void Layanan_MouseLeave(object sender, EventArgs e)
+        {
+            if (controller.menu_focus != typeof(V_Layanan).Name)
+            {
+                Layanan.BackgroundImage = Properties.Resources.Layanan;
+            };
         }
     }
 }

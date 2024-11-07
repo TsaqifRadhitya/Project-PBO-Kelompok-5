@@ -103,6 +103,16 @@ namespace Pet_Care.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Dasboard_Hover {
+            get {
+                object obj = ResourceManager.GetObject("Dasboard Hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Dash_Board {
             get {
                 object obj = ResourceManager.GetObject("Dash Board", resourceCulture);
@@ -183,6 +193,16 @@ namespace Pet_Care.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Layanan_Hover {
+            get {
+                object obj = ResourceManager.GetObject("Layanan Hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Log_Out {
             get {
                 object obj = ResourceManager.GetObject("Log Out", resourceCulture);
@@ -253,6 +273,16 @@ namespace Pet_Care.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Pelanggan_Hover {
+            get {
+                object obj = ResourceManager.GetObject("Pelanggan Hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Register {
             get {
                 object obj = ResourceManager.GetObject("Register", resourceCulture);
@@ -296,6 +326,16 @@ namespace Pet_Care.Properties {
         internal static System.Drawing.Bitmap Transaksi_Focus {
             get {
                 object obj = ResourceManager.GetObject("Transaksi Focus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Transaksi_Hover {
+            get {
+                object obj = ResourceManager.GetObject("Transaksi Hover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
