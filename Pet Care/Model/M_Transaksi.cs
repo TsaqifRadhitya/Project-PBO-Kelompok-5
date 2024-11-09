@@ -11,20 +11,6 @@ namespace Pet_Care.Model
         public List<object> Get()
         {
             List<object> list = new List<object>();
-            Data_Transaksi data_Transaksi = new Data_Transaksi 
-            { 
-                Tanggal = "09 - 11- 2024",
-                Jam = "23.59",
-                Nama_Kucing = "Dori",
-                Nama_Pelanggan = "Tsaqif",
-                durasi_penitipan = "5 hari"
-            };
-            list.Add(data_Transaksi);
-            list.Add(data_Transaksi);
-            for(int i = 0; i <20; i++)
-            {
-                list.Add(data_Transaksi);
-            }
             return list;
         }
 
@@ -41,6 +27,11 @@ namespace Pet_Care.Model
         public bool Update(object obj, int id)
         {
             return true;
+        }
+
+        public double Get_Pendapatan()
+        {
+            return 0;
         }
     }
 

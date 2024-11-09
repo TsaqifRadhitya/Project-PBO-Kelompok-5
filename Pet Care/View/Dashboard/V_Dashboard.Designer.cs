@@ -30,10 +30,11 @@ namespace Pet_Care.View
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             nama = new Label();
             kucing = new Label();
             Layanan = new Label();
-            label1 = new Label();
+            Pendapatan = new Label();
             TabelTransaksi = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)TabelTransaksi).BeginInit();
             SuspendLayout();
@@ -52,43 +53,40 @@ namespace Pet_Care.View
             // 
             // kucing
             // 
-            kucing.AutoSize = true;
             kucing.BackColor = Color.Transparent;
             kucing.Font = new Font("Montserrat", 16F);
             kucing.ForeColor = Color.FromArgb(255, 255, 255);
             kucing.Location = new Point(78, 306);
             kucing.Name = "kucing";
-            kucing.Size = new Size(95, 30);
+            kucing.Size = new Size(190, 30);
             kucing.TabIndex = 1;
-            kucing.Text = "30 ekor";
             // 
             // Layanan
             // 
-            Layanan.AutoSize = true;
             Layanan.BackColor = Color.Transparent;
             Layanan.Font = new Font("Montserrat", 16F);
             Layanan.ForeColor = Color.FromArgb(255, 255, 255);
             Layanan.Location = new Point(387, 306);
             Layanan.Name = "Layanan";
-            Layanan.Size = new Size(139, 30);
+            Layanan.Size = new Size(219, 30);
             Layanan.TabIndex = 2;
-            Layanan.Text = "67 Layanan";
             // 
-            // label1
+            // Pendapatan
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Montserrat", 16F);
-            label1.ForeColor = Color.FromArgb(255, 255, 255);
-            label1.Location = new Point(698, 306);
-            label1.Name = "label1";
-            label1.Size = new Size(142, 30);
-            label1.TabIndex = 3;
-            label1.Text = "Rp3500000";
+            Pendapatan.BackColor = Color.Transparent;
+            Pendapatan.Font = new Font("Montserrat", 16F);
+            Pendapatan.ForeColor = Color.FromArgb(255, 255, 255);
+            Pendapatan.Location = new Point(698, 306);
+            Pendapatan.Name = "Pendapatan";
+            Pendapatan.Size = new Size(242, 30);
+            Pendapatan.TabIndex = 3;
             // 
             // TabelTransaksi
             // 
+            TabelTransaksi.AllowUserToAddRows = false;
             TabelTransaksi.AllowUserToDeleteRows = false;
+            TabelTransaksi.AllowUserToResizeColumns = false;
+            TabelTransaksi.AllowUserToResizeRows = false;
             TabelTransaksi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             TabelTransaksi.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
             TabelTransaksi.BackgroundColor = Color.FromArgb(253, 233, 218);
@@ -97,6 +95,15 @@ namespace Pet_Care.View
             TabelTransaksi.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             TabelTransaksi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             TabelTransaksi.ColumnHeadersVisible = false;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(253, 233, 218);
+            dataGridViewCellStyle2.Font = new Font("Montserrat", 12F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new Padding(3);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            TabelTransaksi.DefaultCellStyle = dataGridViewCellStyle2;
             TabelTransaksi.GridColor = Color.FromArgb(253, 233, 218);
             TabelTransaksi.Location = new Point(69, 472);
             TabelTransaksi.MultiSelect = false;
@@ -106,9 +113,6 @@ namespace Pet_Care.View
             TabelTransaksi.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             TabelTransaksi.Size = new Size(871, 174);
             TabelTransaksi.TabIndex = 4;
-            TabelTransaksi.DefaultCellStyle.BackColor = Color.FromArgb(253, 233, 218);
-            TabelTransaksi.DefaultCellStyle.Font = new Font("Montserrat", 12F);
-            TabelTransaksi.DefaultCellStyle.Padding = new Padding(3);
             TabelTransaksi.CellContentClick += TabelTransaksi_CellContentClick;
             // 
             // V_Dashboard
@@ -117,7 +121,7 @@ namespace Pet_Care.View
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Dashboard1;
             Controls.Add(TabelTransaksi);
-            Controls.Add(label1);
+            Controls.Add(Pendapatan);
             Controls.Add(Layanan);
             Controls.Add(kucing);
             Controls.Add(nama);
@@ -126,15 +130,14 @@ namespace Pet_Care.View
             Load += V_Dashboard_Load;
             ((System.ComponentModel.ISupportInitialize)TabelTransaksi).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         public Label nama;
-        private Label kucing;
-        private Label Layanan;
-        private Label label1;
         public DataGridView TabelTransaksi;
+        public Label kucing;
+        public Label Layanan;
+        public Label Pendapatan;
     }
 }
