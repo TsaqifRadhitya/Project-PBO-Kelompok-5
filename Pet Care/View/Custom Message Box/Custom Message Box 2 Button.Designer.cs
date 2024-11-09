@@ -1,6 +1,6 @@
-﻿namespace Pet_Care.View
+﻿namespace Pet_Care.View.Custom_Message_Box
 {
-    partial class V_Custom_Message_Box
+    partial class Custom_Message_Box_2_Button
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_Custom_Message_Box));
             Message = new Label();
-            Okey = new Button();
+            button1 = new Button();
+            button2 = new Button();
             SuspendLayout();
             // 
             // Message
@@ -40,51 +40,51 @@
             Message.Location = new Point(12, 88);
             Message.Name = "Message";
             Message.Size = new Size(476, 66);
-            Message.TabIndex = 4;
+            Message.TabIndex = 5;
             Message.Text = "Message";
             Message.TextAlign = ContentAlignment.TopCenter;
             Message.UseCompatibleTextRendering = true;
             // 
-            // Okey
+            // button1
             // 
-            Okey.BackColor = Color.Transparent;
-            Okey.BackgroundImage = Properties.Resources.Button;
-            Okey.BackgroundImageLayout = ImageLayout.Stretch;
-            Okey.FlatAppearance.BorderSize = 0;
-            Okey.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            Okey.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            Okey.FlatStyle = FlatStyle.Flat;
-            Okey.Location = new Point(175, 173);
-            Okey.Name = "Okey";
-            Okey.Size = new Size(150, 51);
-            Okey.TabIndex = 3;
-            Okey.UseVisualStyleBackColor = false;
-            Okey.Click += Okey_Click;
-            Okey.MouseEnter += Okey_MouseEnter;
-            Okey.MouseLeave += Okey_MouseLeave;
-            Okey.MouseHover += Okey_MouseHover;
+            button1.Location = new Point(100, 173);
+            button1.Name = "button1";
+            button1.Size = new Size(150, 51);
+            button1.TabIndex = 6;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
             // 
-            // V_Custom_Message_Box
+            // button2
+            // 
+            button2.Location = new Point(256, 173);
+            button2.Name = "button2";
+            button2.Size = new Size(150, 51);
+            button2.TabIndex = 7;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // Custom_Message_Box_2_Button
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Frame;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(500, 250);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(Message);
-            Controls.Add(Okey);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
-            Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "V_Custom_Message_Box";
+            Name = "Custom_Message_Box_2_Button";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "MeowInn";
+            Text = "Custom_Message_Box_2_Button";
             ResumeLayout(false);
         }
 
         #endregion
 
         private Label Message;
-        private Button Okey;
+        private Button button1;
+        private Button button2;
     }
 }

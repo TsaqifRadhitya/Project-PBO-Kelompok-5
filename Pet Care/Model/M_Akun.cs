@@ -15,9 +15,9 @@ namespace Pet_Care.Model
             Setup();
            
         }
-        public void Get()
+        public List<object> Get()
         {
-
+            return new List<object>();
         }
 
         public void Get(string username, string password)
@@ -49,7 +49,6 @@ namespace Pet_Care.Model
         }
 
     }
-
 
     public class Akun
     {

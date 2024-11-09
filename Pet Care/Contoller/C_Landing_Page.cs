@@ -68,6 +68,8 @@ namespace Pet_Care.Contoller
             };
             if (m_Akun.Insert(data_akun))
             {
+                v_Login = new V_Login(this);
+                v_Login.Location = new Point(0, 102);
                 switch_view(v_Login);
             }
             else
