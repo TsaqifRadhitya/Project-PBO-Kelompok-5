@@ -26,5 +26,10 @@ namespace Pet_Care.View
             nama.Text = M_Session.session_name;
             C_Dashboard = new C_Dashboard(this);
         }
+
+        private void TabelTransaksi_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

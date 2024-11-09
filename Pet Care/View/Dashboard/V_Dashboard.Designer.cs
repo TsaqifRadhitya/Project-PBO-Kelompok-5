@@ -1,4 +1,6 @@
-﻿namespace Pet_Care.View
+﻿using Pet_Care.Contoller;
+
+namespace Pet_Care.View
 {
     partial class V_Dashboard
     {
@@ -93,13 +95,21 @@
             TabelTransaksi.BorderStyle = BorderStyle.None;
             TabelTransaksi.CellBorderStyle = DataGridViewCellBorderStyle.None;
             TabelTransaksi.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            TabelTransaksi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            TabelTransaksi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            TabelTransaksi.ColumnHeadersVisible = false;
             TabelTransaksi.GridColor = Color.FromArgb(253, 233, 218);
             TabelTransaksi.Location = new Point(69, 472);
+            TabelTransaksi.MultiSelect = false;
             TabelTransaksi.Name = "TabelTransaksi";
             TabelTransaksi.ReadOnly = true;
+            TabelTransaksi.RowHeadersVisible = false;
+            TabelTransaksi.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             TabelTransaksi.Size = new Size(871, 174);
             TabelTransaksi.TabIndex = 4;
+            TabelTransaksi.DefaultCellStyle.BackColor = Color.FromArgb(253, 233, 218);
+            TabelTransaksi.DefaultCellStyle.Font = new Font("Montserrat", 12F);
+            TabelTransaksi.DefaultCellStyle.Padding = new Padding(3);
+            TabelTransaksi.CellContentClick += TabelTransaksi_CellContentClick;
             // 
             // V_Dashboard
             // 

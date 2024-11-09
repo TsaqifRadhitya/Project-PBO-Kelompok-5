@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Pet_Care.View;
 using Pet_Care.Model;
 using System.Windows.Forms;
+using static Npgsql.Replication.PgOutput.Messages.RelationMessage;
 namespace Pet_Care.Contoller
 {
     public class C_Dashboard
@@ -21,6 +22,7 @@ namespace Pet_Care.Contoller
         {
             List<Data_Transaksi> transaksiList = M_Transaksi.Get().OfType<Data_Transaksi>().ToList();
             Dashboard.TabelTransaksi.DataSource = transaksiList;
+            Dashboard.TabelTransaksi.DefaultCellStyle.BackColor = Color.FromArgb(253, 233, 218);
         }
     }
 }
