@@ -7,15 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Pet_Care.Contoller;
 
-namespace Pet_Care.View.Custom_Message_Box
+namespace Pet_Care.View
 {
     public partial class Custom_Message_Box_2_Button : Form
     {
-        public bool confirm;
-        public Custom_Message_Box_2_Button()
+        C_MainFrame controller;
+        string message;
+        public Custom_Message_Box_2_Button(C_MainFrame controller,string message)
         {
             InitializeComponent();
+            this.controller = controller;
+            this.message = message;
         }
 
         private void Cancel_Click(object sender, EventArgs e)
@@ -25,7 +29,8 @@ namespace Pet_Care.View.Custom_Message_Box
 
         private void Confirm_Click(object sender, EventArgs e)
         {
-            confirm = true;
+            controller.confirmed = true;
+            this.Close();
         }
 
         private void Cancel_MouseEnter(object sender, EventArgs e)
@@ -56,6 +61,11 @@ namespace Pet_Care.View.Custom_Message_Box
         private void Confirm_MouseLeave(object sender, EventArgs e)
         {
             Confirm.BackgroundImage = Properties.Resources.Confirm;
+        }
+
+        private void Custom_Message_Box_2_Button_Load(object sender, EventArgs e)
+        {
+            Message.Text = message;
         }
     }
 }

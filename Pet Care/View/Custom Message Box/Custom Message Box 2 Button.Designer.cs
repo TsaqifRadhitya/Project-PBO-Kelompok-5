@@ -1,4 +1,4 @@
-﻿namespace Pet_Care.View.Custom_Message_Box
+﻿namespace Pet_Care.View
 {
     partial class Custom_Message_Box_2_Button
     {
@@ -96,6 +96,7 @@
             Name = "Custom_Message_Box_2_Button";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Custom_Message_Box_2_Button";
+            Load += Custom_Message_Box_2_Button_Load;
             ResumeLayout(false);
         }
 

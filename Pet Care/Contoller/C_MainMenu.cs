@@ -29,10 +29,13 @@ namespace Pet_Care.Contoller
 
         public void logout()
         {
-            M_Session.id_session = 0;
-            M_Session.session_name = "";
-            M_Session.session_status = false;
-            controller_main_frame.controller_landing_page = new C_Landing_Page(controller_main_frame);
+            if(controller_main_frame.show_confirm_message_box("Apakah Anda Yakin  ?"))
+            {
+                M_Session.id_session = 0;
+                M_Session.session_name = "";
+                M_Session.session_status = false;
+                controller_main_frame.controller_landing_page = new C_Landing_Page(controller_main_frame);
+            }
         }
 
         public void reset_button_focus()

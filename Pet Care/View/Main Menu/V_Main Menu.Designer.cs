@@ -146,6 +146,7 @@
             Secret.Size = new Size(49, 40);
             Secret.TabIndex = 6;
             Secret.UseVisualStyleBackColor = false;
+            Secret.Click += Secret_Click;
             Secret.MouseHover += Secret_MouseHover;
             // 
             // V_Main_Menu

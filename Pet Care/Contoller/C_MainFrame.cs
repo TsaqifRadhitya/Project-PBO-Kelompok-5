@@ -12,6 +12,7 @@ namespace Pet_Care.Contoller
         V_Main_Frame main_Frame;
         public C_Landing_Page controller_landing_page;
         public C_MainMenu controller_main_menu;
+        public bool confirmed;
         public C_MainFrame(V_Main_Frame main_frame)
         {
             this.main_Frame = main_frame;
@@ -28,6 +29,21 @@ namespace Pet_Care.Contoller
         {
             V_Custom_Message_Box message_Box = new V_Custom_Message_Box(this, message);
             message_Box.ShowDialog();
+        }
+
+        public bool show_confirm_message_box(string message)
+        {
+            Custom_Message_Box_2_Button messagebox = new Custom_Message_Box_2_Button(this, message);
+            messagebox.ShowDialog();
+            if (confirmed) 
+            {
+                confirmed = false;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Pet_Care.Model
 {
     public class M_Connection
     {
-        string addres = "Host=localhost;Username=postgres;Password=;Database=MeowInn";
+        protected string addres = "Host=localhost;Username=postgres;Password=;Database=MeowInn";
         protected NpgsqlConnection conn;
         public void Setup()
         {
@@ -31,12 +31,13 @@ namespace Pet_Care.Model
                 "Pelayanan_id serial NOT NULL UNIQUE PRIMARY KEY," +
                 "Nama_Pelayanan VARCHAR(20) NOT NULL," +
                 "Harga_Pelayanan INTEGER NOT NULL," +
-                "Deskripsi_Pelayanan TEXT)");
+                "Deskripsi_Pelayanan TEXT," +
+                "Foto Bytea)");
 
             Execute_No_Return("CREATE TABLE IF NOT EXISTS Transaksi (" +
                 "Transaksi_id serial NOT NULL UNIQUE PRIMARY KEY," +
-                "Tanggal_transaksi DATE NOT NULL," +
-                "Waktu_transaksi DATE NOT NULL," +
+                "Tanggal_transaksi DATE NOT NULL DEFAULT CURRENT_DATE," +
+                "Waktu_transaksi TIME NOT NULL DEFAULT CURRENT_TIME," +
                 "Nama_hewan VARCHAR(20) NOT NULL," +
                 "Foto_hewan Bytea NOT NULL," +
                 "Nominal_transaksi INTEGER NOT NULL," +
@@ -74,6 +75,25 @@ namespace Pet_Care.Model
                 return false;
             } 
         }
+
+        public bool Execute_No_Return(NpgsqlCommand command)
+        {
+            conn = new NpgsqlConnection(addres);
+            conn.Open();
+            command.Connection = conn;
+            try
+            {
+                command.ExecuteNonQuery();
+                conn.Close();
+                return true;
+            }
+            catch
+            {
+                conn.Close();
+                return false;
+            }
+        }
+
         public NpgsqlDataReader Execute_With_Return(string Querry) {
             conn = new NpgsqlConnection(addres);
             conn.Open();

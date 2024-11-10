@@ -160,5 +160,12 @@ namespace Pet_Care.View
         {
             Secret.Cursor = Cursors.Hand;
         }
+
+        private void Secret_Click(object sender, EventArgs e)
+        {
+            controller.menu_focus = typeof(V_Gallery_Kucing).Name;
+            controller.reset_button_focus();
+            controller.move_view(new V_Gallery_Kucing());
+        }
     }
 }
