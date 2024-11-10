@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             Message = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            Cancel = new Button();
+            Confirm = new Button();
             SuspendLayout();
             // 
             // Message
@@ -45,23 +45,41 @@
             Message.TextAlign = ContentAlignment.TopCenter;
             Message.UseCompatibleTextRendering = true;
             // 
-            // button1
+            // Cancel
             // 
-            button1.Location = new Point(100, 173);
-            button1.Name = "button1";
-            button1.Size = new Size(150, 51);
-            button1.TabIndex = 6;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            Cancel.BackColor = Color.White;
+            Cancel.BackgroundImage = Properties.Resources.Cancel;
+            Cancel.FlatAppearance.BorderSize = 0;
+            Cancel.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            Cancel.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            Cancel.FlatStyle = FlatStyle.Flat;
+            Cancel.Location = new Point(100, 173);
+            Cancel.Name = "Cancel";
+            Cancel.Size = new Size(150, 51);
+            Cancel.TabIndex = 6;
+            Cancel.UseVisualStyleBackColor = false;
+            Cancel.Click += Cancel_Click;
+            Cancel.MouseEnter += Cancel_MouseEnter;
+            Cancel.MouseLeave += Cancel_MouseLeave;
+            Cancel.MouseHover += Cancel_MouseHover;
             // 
-            // button2
+            // Confirm
             // 
-            button2.Location = new Point(256, 173);
-            button2.Name = "button2";
-            button2.Size = new Size(150, 51);
-            button2.TabIndex = 7;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            Confirm.BackColor = Color.White;
+            Confirm.BackgroundImage = Properties.Resources.Confirm;
+            Confirm.FlatAppearance.BorderSize = 0;
+            Confirm.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            Confirm.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            Confirm.FlatStyle = FlatStyle.Flat;
+            Confirm.Location = new Point(250, 173);
+            Confirm.Name = "Confirm";
+            Confirm.Size = new Size(150, 51);
+            Confirm.TabIndex = 7;
+            Confirm.UseVisualStyleBackColor = false;
+            Confirm.Click += Confirm_Click;
+            Confirm.MouseEnter += Confirm_MouseEnter;
+            Confirm.MouseLeave += Confirm_MouseLeave;
+            Confirm.MouseHover += Confirm_MouseHover;
             // 
             // Custom_Message_Box_2_Button
             // 
@@ -70,8 +88,8 @@
             BackgroundImage = Properties.Resources.Frame;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(500, 250);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(Confirm);
+            Controls.Add(Cancel);
             Controls.Add(Message);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
@@ -84,7 +102,7 @@
         #endregion
 
         private Label Message;
-        private Button button1;
-        private Button button2;
+        private Button Cancel;
+        private Button Confirm;
     }
 }

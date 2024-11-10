@@ -155,5 +155,10 @@ namespace Pet_Care.View
                 Layanan.BackgroundImage = Properties.Resources.Layanan;
             };
         }
+
+        private void Secret_MouseHover(object sender, EventArgs e)
+        {
+            Secret.Cursor = Cursors.Hand;
+        }
     }
 }

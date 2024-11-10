@@ -34,6 +34,7 @@
             Transaksi = new Button();
             Pelanggan = new Button();
             Layanan = new Button();
+            Secret = new Button();
             SuspendLayout();
             // 
             // Logout
@@ -133,11 +134,26 @@
             Layanan.MouseLeave += Layanan_MouseLeave;
             Layanan.MouseHover += Layanan_MouseHover;
             // 
+            // Secret
+            // 
+            Secret.BackColor = Color.Transparent;
+            Secret.FlatAppearance.BorderSize = 0;
+            Secret.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            Secret.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            Secret.FlatStyle = FlatStyle.Flat;
+            Secret.Location = new Point(35, 55);
+            Secret.Name = "Secret";
+            Secret.Size = new Size(49, 40);
+            Secret.TabIndex = 6;
+            Secret.UseVisualStyleBackColor = false;
+            Secret.MouseHover += Secret_MouseHover;
+            // 
             // V_Main_Menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Dash_Board;
+            Controls.Add(Secret);
             Controls.Add(Layanan);
             Controls.Add(Pelanggan);
             Controls.Add(Transaksi);
@@ -157,5 +173,6 @@
         public Button Transaksi;
         public Button Pelanggan;
         public Button Layanan;
+        private Button Secret;
     }
 }
