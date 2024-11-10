@@ -8,7 +8,7 @@ using Npgsql;
 
 namespace Pet_Care.Model
 {
-    public class M_Akun : M_Connection, IM_Connection
+    public class M_Akun : M_Connection, IModel
     {
         public M_Akun()
         {
