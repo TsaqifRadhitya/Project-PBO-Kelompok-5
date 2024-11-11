@@ -63,6 +63,16 @@ namespace Pet_Care.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Background_Card_Gallery {
+            get {
+                object obj = ResourceManager.GetObject("Background Card Gallery", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Button {
             get {
                 object obj = ResourceManager.GetObject("Button", resourceCulture);
@@ -366,6 +376,16 @@ namespace Pet_Care.Properties {
         internal static System.Drawing.Bitmap Register_Button_Hover {
             get {
                 object obj = ResourceManager.GetObject("Register Button Hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Test_Picture {
+            get {
+                object obj = ResourceManager.GetObject("Test Picture", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

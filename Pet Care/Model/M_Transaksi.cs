@@ -77,6 +77,7 @@ namespace Pet_Care.Model
                 data_transaksi.Alamat = data["alamat"].ToString();
                 data_transaksi.Layanan.Add(data["nama_pelayanan"].ToString());
             }
+            conn.Close();
             return data_transaksi;
         }
 

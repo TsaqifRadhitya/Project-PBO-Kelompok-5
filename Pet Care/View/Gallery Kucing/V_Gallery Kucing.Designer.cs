@@ -33,6 +33,7 @@
             // 
             // flowLayoutPanel1
             // 
+            flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.BackColor = Color.White;
             flowLayoutPanel1.Location = new Point(69, 123);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -52,7 +53,6 @@
         }
 
         #endregion
-
-        private FlowLayoutPanel flowLayoutPanel1;
+        public FlowLayoutPanel flowLayoutPanel1;
     }
 }
