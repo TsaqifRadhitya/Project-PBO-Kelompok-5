@@ -21,7 +21,7 @@ namespace Pet_Care.Model
                 "Email    VARCHAR(50) NOT NULL UNIQUE," +
                 "Nomor_Hp VARCHAR(13) NOT NULL UNIQUE)");
 
-            Execute_With_Return("CREATE TABLE IF NOT EXISTS Pelanggan (" +
+            Execute_No_Return("CREATE TABLE IF NOT EXISTS Pelanggan (" +
                 "Pelanggan_id serial NOT NULL UNIQUE PRIMARY KEY," +
                 "Nama VARCHAR(20) NOT NULL," +
                 "Nomor_hp VARCHAR(13) NOT NULL," +
@@ -36,14 +36,11 @@ namespace Pet_Care.Model
 
             Execute_No_Return("CREATE TABLE IF NOT EXISTS Transaksi (" +
                 "Transaksi_id serial NOT NULL UNIQUE PRIMARY KEY," +
-                "Tanggal_transaksi DATE NOT NULL DEFAULT CURRENT_DATE," +
-                "Waktu_transaksi TIME NOT NULL DEFAULT CURRENT_TIME," +
+                "Tanggal_transaksi TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP," +
                 "Nama_hewan VARCHAR(20) NOT NULL," +
                 "Foto_hewan Bytea NOT NULL," +
+                "Durasi_Penitipan Integer Not Null," +
                 "Nominal_transaksi INTEGER NOT NULL," +
-                "Status_penitipan BOOL NOT NULL," +
-                "Status_Pembayaran BOOL NOT NULL,"+
-                "Foto_Bukti_Pembayaran Bytea," +
                 "Pelanggan_id integer NOT NULL," +
                 "Akun_id integer NOT NULL," +
                 "CONSTRAINT Akun_fk FOREIGN KEY ( Akun_id ) REFERENCES Akun ( Akun_id )," +

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Npgsql;
 
 namespace Pet_Care.Model
 {
@@ -10,27 +11,46 @@ namespace Pet_Care.Model
     {
         public List<object> Get()
         {
-            return new List<object>();
+            NpgsqlDataReader data = Execute_With_Return("Select * from Pelanggan");
+            List<object> daftar_mahasiswa = new List<object>();
+            while (data.Read()) 
+            {
+                Data_Pelanngan dara = new Data_Pelanngan
+                {
+                    ID = (int)data["pelanggan_id"],
+                    Name = data["nama"].ToString(),
+                    Nomor_HP = data["nomor_hp"].ToString(),
+                    Alamat = data["alamat"].ToString()
+                };
+                daftar_mahasiswa.Add(dara);
+            }
+            conn.Close();
+            return daftar_mahasiswa;
         }
 
         public bool Insert(object obj)
         {
-            return false;
+            Data_Pelanngan data = obj as Data_Pelanngan;
+            return Execute_No_Return($"Insert Into Pelanggan(nama,nomor_hp,alamat) Values ('{data.Name}','{data.Nomor_HP}','{data.Alamat}')");
         }
 
         public void Delete(int id)
         {
-
+            Execute_No_Return($"DELETE FROM Pelanggan where pelanggan_id = {id}");
         }
 
         public bool Update(object obj,int id)
         {
-            return true;
+            Data_Pelanngan data = obj as Data_Pelanngan ;
+            return Execute_No_Return($"UPDATE Pelanggan set nama = '{data.Name}',nomor_hp = '{data.Nomor_HP}',alamat = '{data.Alamat}' where pelanggan_id = {id}");
         }
     }
 
     public class Data_Pelanngan
     {
-
+        public int ID {  get; set; }
+        public string Name { get; set; }
+        public string Nomor_HP { get; set; }
+        public string Alamat {  get; set; }
     }
 }

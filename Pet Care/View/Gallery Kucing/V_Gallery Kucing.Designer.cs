@@ -28,31 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             SuspendLayout();
             // 
-            // label1
+            // flowLayoutPanel1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(460, 329);
-            label1.Name = "label1";
-            label1.Size = new Size(83, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Gallery Kucing";
+            flowLayoutPanel1.BackColor = Color.White;
+            flowLayoutPanel1.Location = new Point(69, 123);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(862, 597);
+            flowLayoutPanel1.TabIndex = 0;
             // 
             // V_Gallery_Kucing
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(label1);
+            BackgroundImage = Properties.Resources.Gallery_Kucing;
+            Controls.Add(flowLayoutPanel1);
             Name = "V_Gallery_Kucing";
             Size = new Size(1000, 720);
+            Load += V_Gallery_Kucing_Load;
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }

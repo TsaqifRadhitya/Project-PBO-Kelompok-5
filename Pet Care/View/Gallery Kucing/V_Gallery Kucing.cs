@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Pet_Care.Contoller;
 
 namespace Pet_Care.View
 {
@@ -15,6 +16,11 @@ namespace Pet_Care.View
         public V_Gallery_Kucing()
         {
             InitializeComponent();
+        }
+
+        private void V_Gallery_Kucing_Load(object sender, EventArgs e)
+        {
+            C_Galerry_Kucing controller = new C_Galerry_Kucing(this);
         }
     }
 }

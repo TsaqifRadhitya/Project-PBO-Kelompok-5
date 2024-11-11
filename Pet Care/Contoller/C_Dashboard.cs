@@ -22,11 +22,13 @@ namespace Pet_Care.Contoller
         }
         public void load()
         {
-            List<Data_Transaksi> transaksiList = M_Transaksi.Get().OfType<Data_Transaksi>().ToList();
+            List<Data_Transaksi> transaksiList = M_Transaksi.Get("Now").OfType<Data_Transaksi>().ToList();
             Dashboard.TabelTransaksi.DataSource = transaksiList;
-            Dashboard.TabelTransaksi.Columns["Jam"].Visible = false;
+            Dashboard.TabelTransaksi.Columns["Waktu"].Visible = false;
+            Dashboard.TabelTransaksi.Columns["id"].Visible = false;
+            Dashboard.TabelTransaksi.Columns["Foto_Kucing"].Visible = false ;
             Dashboard.TabelTransaksi.DefaultCellStyle.BackColor = Color.FromArgb(253, 233, 218);
-            Dashboard.kucing.Text = $"{M_Transaksi.Get().Count} Kucing";
+            Dashboard.kucing.Text = $"{M_Transaksi.Get("Now").Count} Kucing";
             Dashboard.Layanan.Text = $"{M_Layanan.Get().Count} Layanan";
             Dashboard.Pendapatan.Text = $"Rp{M_Transaksi.Get_Pendapatan().ToString("n", CultureInfo.GetCultureInfo("id-ID"))}";
         }

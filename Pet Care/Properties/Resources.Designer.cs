@@ -213,6 +213,16 @@ namespace Pet_Care.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Gallery_Kucing {
+            get {
+                object obj = ResourceManager.GetObject("Gallery Kucing", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Landing_Page {
             get {
                 object obj = ResourceManager.GetObject("Landing Page", resourceCulture);
