@@ -273,6 +273,16 @@ namespace Pet_Care.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LightPurple_Card {
+            get {
+                object obj = ResourceManager.GetObject("LightPurple_Card", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Log_Out {
             get {
                 object obj = ResourceManager.GetObject("Log Out", resourceCulture);
@@ -323,6 +333,16 @@ namespace Pet_Care.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Orange_Card {
+            get {
+                object obj = ResourceManager.GetObject("Orange_Card", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Pelanggan {
             get {
                 object obj = ResourceManager.GetObject("Pelanggan", resourceCulture);
@@ -346,6 +366,36 @@ namespace Pet_Care.Properties {
         internal static System.Drawing.Bitmap Pelanggan_Hover {
             get {
                 object obj = ResourceManager.GetObject("Pelanggan Hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pelanggan1 {
+            get {
+                object obj = ResourceManager.GetObject("Pelanggan1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Purple_Card {
+            get {
+                object obj = ResourceManager.GetObject("Purple_Card", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Red_card {
+            get {
+                object obj = ResourceManager.GetObject("Red_card", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

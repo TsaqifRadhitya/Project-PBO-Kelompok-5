@@ -30,7 +30,7 @@ namespace Pet_Care.View
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             nama = new Label();
             kucing = new Label();
             Layanan = new Label();
@@ -95,15 +95,15 @@ namespace Pet_Care.View
             TabelTransaksi.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             TabelTransaksi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             TabelTransaksi.ColumnHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(253, 233, 218);
-            dataGridViewCellStyle2.Font = new Font("Montserrat", 12F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new Padding(3);
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            TabelTransaksi.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(253, 233, 218);
+            dataGridViewCellStyle1.Font = new Font("Montserrat", 12F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.Padding = new Padding(3);
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            TabelTransaksi.DefaultCellStyle = dataGridViewCellStyle1;
             TabelTransaksi.GridColor = Color.FromArgb(253, 233, 218);
             TabelTransaksi.Location = new Point(69, 472);
             TabelTransaksi.MultiSelect = false;

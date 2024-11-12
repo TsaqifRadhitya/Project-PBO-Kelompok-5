@@ -99,18 +99,11 @@ namespace Pet_Care.Model
 
         public double Get_Pendapatan()
         {
-            NpgsqlDataReader reader = Execute_With_Return("select sum(nominal_transaksi) as total_transaksi from transaksi ");
+            dynamic[] data = Execute_Single_Return("select sum(nominal_transaksi) as total_transaksi from transaksi ");
             double nominal = 0;
-            while (reader.Read())
+            if (data[0] && data[1] != DBNull.Value)
             {
-                if (reader.IsDBNull(0))
-                {
-                    nominal = 0;
-                }
-                else
-                {
-                    nominal = (double)reader["total_transaksi"];
-                } 
+                nominal = (double)data[1];
             }
             conn.Close();
             return nominal;

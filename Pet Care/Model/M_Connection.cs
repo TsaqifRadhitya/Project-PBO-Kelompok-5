@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Pet_Care.Model
 {
@@ -24,8 +25,9 @@ namespace Pet_Care.Model
             Execute_No_Return("CREATE TABLE IF NOT EXISTS Pelanggan (" +
                 "Pelanggan_id serial NOT NULL UNIQUE PRIMARY KEY," +
                 "Nama VARCHAR(20) NOT NULL," +
-                "Nomor_hp VARCHAR(13) NOT NULL," +
-                "Alamat VARCHAR(30) NOT NULL)");
+                "Nomor_hp VARCHAR(13) NOT NULL UNIQUE," +
+                "Alamat VARCHAR(30) NOT NULL," +
+                "Status_Pelanggan Bool Not Null Default true)");
 
             Execute_No_Return("CREATE TABLE IF NOT EXISTS Pelayanan (" +
                 "Pelayanan_id serial NOT NULL UNIQUE PRIMARY KEY," +
@@ -99,6 +101,26 @@ namespace Pet_Care.Model
             cmd.CommandText = Querry;
             NpgsqlDataReader Data = cmd.ExecuteReader();
             return Data;
+        }
+
+        public dynamic[] Execute_Single_Return(string querry)
+        {
+            conn = new NpgsqlConnection(addres);
+            conn.Open();
+            NpgsqlCommand cmd = new NpgsqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = querry;
+            try
+            {
+                object Data = cmd.ExecuteScalar();
+                conn.Close();
+                return [true, Data];
+            }
+            catch
+            {
+                conn.Close();
+                return [false, null];
+            } 
         }
     }
 }

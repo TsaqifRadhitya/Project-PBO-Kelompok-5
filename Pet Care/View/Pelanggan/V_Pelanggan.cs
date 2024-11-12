@@ -14,10 +14,46 @@ namespace Pet_Care.View
     public partial class V_Pelanggan : UserControl
     {
         C_MainMenu Controller;
+        C_Pelanggan C_Pelanggan;
         public V_Pelanggan(C_MainMenu controller)
         {
             InitializeComponent();
             Controller = controller;
+        }
+
+        private void SearchBar_Enter(object sender, EventArgs e)
+        {
+            if (SearchBar.Text == "Search")
+            {
+                SearchBar.Text = "";
+                SearchBar.ForeColor = Color.Black;
+            }
+        }
+
+        private void SearchBar_Leave(object sender, EventArgs e)
+        {
+            if (SearchBar.Text == "" || SearchBar.Text == "Search")
+            {
+                SearchBar.ForeColor = Color.FromArgb(210, 218, 221);
+                SearchBar.Text = "Search";
+            }
+        }
+
+        private void SearchBar_TextChanged(object sender, EventArgs e)
+        {
+            if (SearchBar.Text != "" || SearchBar.Text == "Search")
+            {
+
+            }
+            else
+            {
+
+            }
+        }
+
+        private void V_Pelanggan_Load(object sender, EventArgs e)
+        {
+            C_Pelanggan = new C_Pelanggan(this);
         }
     }
 }

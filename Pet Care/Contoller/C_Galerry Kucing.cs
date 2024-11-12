@@ -22,9 +22,9 @@ namespace Pet_Care.Contoller
         public void load_photo()
         {
             List<Data_Transaksi> data_Transaksis = m_transaksi.Get().OfType<Data_Transaksi>().ToList();
-            foreach(Data_Transaksi data in data_Transaksis)
+            foreach (Data_Transaksi data in data_Transaksis)
             {
-                create_card(data.Alamat,data.Foto_Kucing);
+                create_card(data.Nama_Kucing, data.Foto_Kucing);
             }
         }
         public void create_card(string name, byte[] foto)
@@ -52,10 +52,10 @@ namespace Pet_Care.Contoller
                 BackColor = Color.Transparent,
                 Font = new Font("Montserrat", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0),
                 Location = new Point(4, 144),
-                Name = name,
+                Name = "Kucing",
                 Size = new Size(251, 45),
                 TabIndex = 1,
-                Text = "Kucing",
+                Text = name,
                 TextAlign = ContentAlignment.MiddleCenter
             };
             panel.Controls.Add(header);
