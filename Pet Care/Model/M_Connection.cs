@@ -8,7 +8,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Pet_Care.Model
 {
-    public class M_Connection
+    public abstract class M_Connection
     {
         protected string addres = "Host=localhost;Username=postgres;Password=;Database=MeowInn";
         protected NpgsqlConnection conn;
@@ -43,6 +43,7 @@ namespace Pet_Care.Model
                 "Foto_hewan Bytea NOT NULL," +
                 "Durasi_Penitipan Integer Not Null," +
                 "Nominal_transaksi INTEGER NOT NULL," +
+                "Status_Penitiapan Bool Not NUll," +
                 "Pelanggan_id integer NOT NULL," +
                 "Akun_id integer NOT NULL," +
                 "CONSTRAINT Akun_fk FOREIGN KEY ( Akun_id ) REFERENCES Akun ( Akun_id )," +

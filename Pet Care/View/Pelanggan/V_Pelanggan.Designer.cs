@@ -31,9 +31,12 @@
             SearchBar = new TextBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel1 = new Panel();
+            id = new Label();
             label1 = new Label();
             Nomor_Hp = new Label();
             Nama = new Label();
+            button1 = new Button();
+            button2 = new Button();
             flowLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -66,6 +69,9 @@
             // panel1
             // 
             panel1.BackgroundImage = Properties.Resources.Red_card;
+            panel1.Controls.Add(button2);
+            panel1.Controls.Add(id);
+            panel1.Controls.Add(button1);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(Nomor_Hp);
             panel1.Controls.Add(Nama);
@@ -74,6 +80,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(188, 260);
             panel1.TabIndex = 0;
+            // 
+            // id
+            // 
+            id.Font = new Font("Montserrat", 11F);
+            id.Location = new Point(14, 161);
+            id.Margin = new Padding(0);
+            id.Name = "id";
+            id.Size = new Size(158, 22);
+            id.TabIndex = 3;
+            id.Text = "#1";
+            id.TextAlign = ContentAlignment.TopCenter;
             // 
             // label1
             // 
@@ -88,7 +105,7 @@
             // Nomor_Hp
             // 
             Nomor_Hp.Font = new Font("Montserrat", 11F);
-            Nomor_Hp.Location = new Point(14, 183);
+            Nomor_Hp.Location = new Point(14, 186);
             Nomor_Hp.Margin = new Padding(0);
             Nomor_Hp.Name = "Nomor_Hp";
             Nomor_Hp.Size = new Size(158, 22);
@@ -98,12 +115,37 @@
             // Nama
             // 
             Nama.Font = new Font("Montserrat SemiBold", 18F, FontStyle.Bold);
-            Nama.Location = new Point(14, 141);
+            Nama.Location = new Point(0, 128);
             Nama.Margin = new Padding(0);
             Nama.Name = "Nama";
-            Nama.Size = new Size(100, 38);
+            Nama.Size = new Size(188, 38);
             Nama.TabIndex = 0;
             Nama.Text = "Tsaqif";
+            Nama.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // button1
+            // 
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Location = new Point(15, 15);
+            button1.Name = "button1";
+            button1.Size = new Size(14, 18);
+            button1.TabIndex = 1;
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button2.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Location = new Point(153, 15);
+            button2.Name = "button2";
+            button2.Size = new Size(20, 20);
+            button2.TabIndex = 4;
+            button2.UseVisualStyleBackColor = true;
             // 
             // V_Pelanggan
             // 
@@ -129,5 +171,8 @@
         private Label Nama;
         private Label label1;
         public FlowLayoutPanel flowLayoutPanel1;
+        private Label id;
+        private Button button1;
+        private Button button2;
     }
 }

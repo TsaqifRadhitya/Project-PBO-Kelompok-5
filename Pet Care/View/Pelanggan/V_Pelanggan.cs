@@ -13,12 +13,11 @@ namespace Pet_Care.View
 {
     public partial class V_Pelanggan : UserControl
     {
-        C_MainMenu Controller;
         C_Pelanggan C_Pelanggan;
-        public V_Pelanggan(C_MainMenu controller)
+        public V_Pelanggan(C_Pelanggan controller)
         {
             InitializeComponent();
-            Controller = controller;
+            C_Pelanggan = controller;
         }
 
         private void SearchBar_Enter(object sender, EventArgs e)
@@ -53,7 +52,7 @@ namespace Pet_Care.View
 
         private void V_Pelanggan_Load(object sender, EventArgs e)
         {
-            C_Pelanggan = new C_Pelanggan(this);
+            C_Pelanggan.load_data();
         }
     }
 }

@@ -12,13 +12,15 @@ namespace Pet_Care.Contoller
 {
     public class C_Dashboard
     {
+        C_MainMenu mainMenu;
         V_Dashboard Dashboard;
         M_Transaksi M_Transaksi = new M_Transaksi();
         M_Layanan M_Layanan = new M_Layanan();
-        public C_Dashboard(V_Dashboard v_Dashboard)
+        public C_Dashboard(C_MainMenu C_MainMenu)
         {
-            Dashboard = v_Dashboard;
-            load();
+            mainMenu = C_MainMenu;
+            Dashboard = new V_Dashboard(this);
+            mainMenu.move_view(Dashboard);
         }
         public void load()
         {

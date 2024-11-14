@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Pet_Care.View
 {
-    public partial class V_Ubah_Pelanggan : UserControl
+    public partial class V_Tambah_Ubah_Pelanggan : UserControl
     {
-        public V_Ubah_Pelanggan()
+        public V_Tambah_Ubah_Pelanggan()
         {
             InitializeComponent();
         }

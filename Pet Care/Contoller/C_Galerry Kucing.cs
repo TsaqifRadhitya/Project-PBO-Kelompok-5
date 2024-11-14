@@ -11,12 +11,14 @@ namespace Pet_Care.Contoller
 {
     public class C_Galerry_Kucing
     {
+        C_MainMenu c_MainMenu;
         V_Gallery_Kucing view;
         M_Transaksi m_transaksi = new M_Transaksi();
-        public C_Galerry_Kucing(V_Gallery_Kucing view) 
+        public C_Galerry_Kucing(C_MainMenu controller) 
         {
-            this.view = view;
-            load_photo();
+            c_MainMenu = controller;
+            view = new V_Gallery_Kucing(this);
+            c_MainMenu.move_view(view);
         }
 
         public void load_photo()

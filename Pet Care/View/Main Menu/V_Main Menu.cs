@@ -45,7 +45,7 @@ namespace Pet_Care.View
             controller.menu_focus = typeof(V_Dashboard).Name;
             controller.reset_button_focus();
             Dashboard.BackgroundImage = Properties.Resources.Dasboard_Focus;
-            controller.move_view(new V_Dashboard(controller));
+            C_Dashboard controller_dashboard = new C_Dashboard(controller);
         }
 
         private void Transaksi_Click(object sender, EventArgs e)
@@ -53,7 +53,7 @@ namespace Pet_Care.View
             controller.menu_focus = typeof(V_Transaksi).Name;
             controller.reset_button_focus();
             Transaksi.BackgroundImage = Properties.Resources.Transaksi_Focus;
-            controller.move_view(new V_Transaksi(controller));
+            C_Transaksi c_Transaksi = new C_Transaksi(controller);
         }
 
         private void Pelanggan_Click(object sender, EventArgs e)
@@ -61,7 +61,7 @@ namespace Pet_Care.View
             controller.menu_focus = typeof(V_Pelanggan).Name;
             controller.reset_button_focus();
             Pelanggan.BackgroundImage = Properties.Resources.Pelanggan_Focus;
-            controller.move_view(new V_Pelanggan(controller));
+            C_Pelanggan controller_Pelanggan = new C_Pelanggan(controller);
         }
 
         private void Layanan_Click(object sender, EventArgs e)
@@ -69,7 +69,7 @@ namespace Pet_Care.View
             controller.menu_focus = typeof(V_Layanan).Name;
             controller.reset_button_focus();
             Layanan.BackgroundImage = Properties.Resources.Layanan_Focus;
-            controller.move_view(new V_Layanan(controller));
+            C_Layanan c_Layanan = new C_Layanan(controller);
         }
 
         private void Dashboard_MouseHover(object sender, EventArgs e)
@@ -165,7 +165,7 @@ namespace Pet_Care.View
         {
             controller.menu_focus = typeof(V_Gallery_Kucing).Name;
             controller.reset_button_focus();
-            controller.move_view(new V_Gallery_Kucing());
+            C_Galerry_Kucing controller_gallery_kucing = new C_Galerry_Kucing(controller);
         }
     }
 }

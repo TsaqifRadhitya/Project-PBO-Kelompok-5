@@ -11,7 +11,7 @@ namespace Pet_Care.Model
     {
         public List<object> Get()
         {
-            NpgsqlDataReader data = Execute_With_Return("Select * from Pelanggan");
+            NpgsqlDataReader data = Execute_With_Return("Select * from Pelanggan where Status_Pelanggan = true");
             List<object> daftar_mahasiswa = new List<object>();
             while (data.Read()) 
             {
@@ -36,7 +36,7 @@ namespace Pet_Care.Model
 
         public void Delete(int id)
         {
-            Execute_No_Return($"DELETE FROM Pelanggan where pelanggan_id = {id}");
+            Execute_No_Return($"UPDATE FROM Pelanggan where pelanggan_id = {id} Set Status_Pelanggan = false");
         }
 
         public bool Update(object obj,int id)

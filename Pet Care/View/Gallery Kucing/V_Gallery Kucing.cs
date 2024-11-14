@@ -13,14 +13,16 @@ namespace Pet_Care.View
 {
     public partial class V_Gallery_Kucing : UserControl
     {
-        public V_Gallery_Kucing()
+        C_Galerry_Kucing controller;
+        public V_Gallery_Kucing(C_Galerry_Kucing controller)
         {
             InitializeComponent();
+            this.controller = controller;
         }
 
         private void V_Gallery_Kucing_Load(object sender, EventArgs e)
         {
-            C_Galerry_Kucing controller = new C_Galerry_Kucing(this);
+            controller.load_photo();
         }
     }
 }

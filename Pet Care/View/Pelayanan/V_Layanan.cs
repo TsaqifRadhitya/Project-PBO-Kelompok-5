@@ -13,11 +13,12 @@ namespace Pet_Care.View
 {
     public partial class V_Layanan : UserControl
     {
+        C_Layanan C_Layanan;
         C_MainMenu Controller;
-        public V_Layanan(C_MainMenu controller)
+        public V_Layanan(C_Layanan controller)
         {
             InitializeComponent();
-            Controller = controller;
+            C_Layanan = controller;
         }
     }
 }

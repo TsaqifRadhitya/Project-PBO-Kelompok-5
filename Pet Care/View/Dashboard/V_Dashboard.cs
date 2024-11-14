@@ -13,9 +13,8 @@ namespace Pet_Care.View
 {
     public partial class V_Dashboard : UserControl
     {
-        C_MainMenu Controller;
-        C_Dashboard C_Dashboard;
-        public V_Dashboard(C_MainMenu controller)
+        C_Dashboard Controller;
+        public V_Dashboard(C_Dashboard controller)
         {
             InitializeComponent();
             Controller = controller;
@@ -24,7 +23,7 @@ namespace Pet_Care.View
         private void V_Dashboard_Load(object sender, EventArgs e)
         {
             nama.Text = M_Session.session_name;
-            C_Dashboard = new C_Dashboard(this);
+            Controller.load();
         }
 
         private void TabelTransaksi_CellContentClick(object sender, DataGridViewCellEventArgs e)

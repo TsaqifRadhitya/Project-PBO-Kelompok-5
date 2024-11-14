@@ -10,7 +10,7 @@ namespace Pet_Care.Contoller
 {
     public class C_MainMenu
     {
-        C_MainFrame controller_main_frame;
+        public C_MainFrame controller_main_frame;
         V_Main_Menu main_Menu;
         public string menu_focus = typeof(V_Dashboard).Name;
         public C_MainMenu(C_MainFrame mainFrame)
@@ -18,7 +18,7 @@ namespace Pet_Care.Contoller
             controller_main_frame = mainFrame;
             main_Menu = new V_Main_Menu(this);
             controller_main_frame.move_view(main_Menu);
-            move_view(new V_Dashboard(this));
+            C_Dashboard c_Dashboard = new C_Dashboard(this);
         }
 
         public void move_view(UserControl view)

@@ -13,11 +13,12 @@ namespace Pet_Care.View
 {
     public partial class V_Transaksi : UserControl
     {
+        C_Transaksi C_Transaksi;
         C_MainMenu Controller;
-        public V_Transaksi(C_MainMenu controller)
+        public V_Transaksi(C_Transaksi controller)
         {
             InitializeComponent();
-            Controller = controller;
+            C_Transaksi = controller;
         }
     }
 }
