@@ -9,7 +9,7 @@ using NpgsqlTypes;
 
 namespace Pet_Care.Contoller
 {
-    public class C_Pelanggan
+    public class C_Pelanggan : C_Message_Box
     {
         C_MainMenu C_MainMenu;
         V_Pelanggan view_pelanggan;
@@ -22,7 +22,10 @@ namespace Pet_Care.Contoller
         }
         public void tambah_pelanggan()
         {
-
+            V_Ubah_Tambah_Pelanggan v_Ubah_Tambah_Pelanggan = new V_Ubah_Tambah_Pelanggan();
+            v_Ubah_Tambah_Pelanggan.StartPosition = FormStartPosition.Manual;
+            v_Ubah_Tambah_Pelanggan.Location = new Point(800, 245);
+            v_Ubah_Tambah_Pelanggan.ShowDialog(view_pelanggan);
         }
 
         public void load_data()
@@ -37,7 +40,7 @@ namespace Pet_Care.Contoller
 
         public void delete_pelanggan(int id)
         {
-            if (C_MainMenu.controller_main_frame.show_confirm_message_box("Apakah Yakin Mau Menghapus Pelanggan ?"))
+            if (show_confirm_message_box("Apakah Yakin Mau Menghapus Pelanggan ?"))
             {
                 M_Pelanggan.Delete(id);
             }
@@ -45,7 +48,7 @@ namespace Pet_Care.Contoller
 
         public void ubah_data(Data_Pelanngan data)
         {
-
+            
         }
 
         public void create_card(Data_Pelanngan data)

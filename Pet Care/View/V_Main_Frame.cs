@@ -22,7 +22,10 @@ namespace Pet_Care.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (mainFrame.exit())
+            {
+                Application.Exit();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e) 

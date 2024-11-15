@@ -8,7 +8,7 @@ using Pet_Care.Model;
 
 namespace Pet_Care.Contoller
 {
-    public class C_Landing_Page
+    public class C_Landing_Page : C_Message_Box
     {
         public C_MainFrame controller_main_frame;
         V_landing_Page v_Landing_Page;
@@ -36,7 +36,7 @@ namespace Pet_Care.Contoller
         {
             if (v_Login.Username_Email.Text == "Username/Email" || v_Login.Password.Text == "Password")
             {
-                controller_main_frame.show_message_box("Invalid Login");
+                show_message_box("Invalid Login");
                 return;
             }
             m_Akun.Get(v_Login.Username_Email.Text, v_Login.Password.Text);
@@ -46,7 +46,7 @@ namespace Pet_Care.Contoller
             }
             else
             {
-                controller_main_frame.show_message_box("Invalid Login");
+                show_message_box("Invalid Login");
             }
         }
 
@@ -55,7 +55,7 @@ namespace Pet_Care.Contoller
             int nomor_hp;
             if (V_Register.Username.Text == "Username" || V_Register.Password.Text == "Password" || V_Register.Nama_Lengkap.Text == "Nama Lengkap"|| V_Register.Nomor_HP.Text == "Nomor Hp"|| V_Register.Email.Text == "Email"|| V_Register.Konfirmasi_Password.Text != V_Register.Password.Text)
             {
-                controller_main_frame.show_message_box("Invalid Register");
+                show_message_box("Invalid Register");
                 return;
             }
             Akun data_akun = new Akun
@@ -74,7 +74,7 @@ namespace Pet_Care.Contoller
             }
             else
             {
-                controller_main_frame.show_message_box("Akun Sudah Tersedia");
+                show_message_box("Akun Sudah Tersedia");
             }
         }
     }

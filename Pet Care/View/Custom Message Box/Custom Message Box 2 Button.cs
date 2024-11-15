@@ -13,9 +13,9 @@ namespace Pet_Care.View
 {
     public partial class Custom_Message_Box_2_Button : Form
     {
-        C_MainFrame controller;
+        C_Message_Box controller;
         string message;
-        public Custom_Message_Box_2_Button(C_MainFrame controller,string message)
+        public Custom_Message_Box_2_Button(C_Message_Box controller,string message)
         {
             InitializeComponent();
             this.controller = controller;

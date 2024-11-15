@@ -13,12 +13,10 @@ namespace Pet_Care.View
 {
     public partial class V_Custom_Message_Box : Form
     {
-        C_MainFrame controller;
-        public V_Custom_Message_Box(C_MainFrame controller, string message)
+        public V_Custom_Message_Box(string message)
         {
             InitializeComponent();
             Message.Text = message;
-            this.controller = controller;
         }
 
         private void Okey_Click(object sender, EventArgs e)

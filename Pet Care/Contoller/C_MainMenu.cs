@@ -8,7 +8,7 @@ using Pet_Care.View;
 
 namespace Pet_Care.Contoller
 {
-    public class C_MainMenu
+    public class C_MainMenu : C_Message_Box
     {
         public C_MainFrame controller_main_frame;
         V_Main_Menu main_Menu;
@@ -29,7 +29,7 @@ namespace Pet_Care.Contoller
 
         public void logout()
         {
-            if(controller_main_frame.show_confirm_message_box("Apakah Anda Yakin  ?"))
+            if(show_confirm_message_box("Apakah Anda Yakin  ?"))
             {
                 M_Session.id_session = 0;
                 M_Session.session_name = "";

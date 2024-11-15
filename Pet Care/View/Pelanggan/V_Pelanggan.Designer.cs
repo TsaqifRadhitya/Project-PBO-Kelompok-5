@@ -31,12 +31,14 @@
             SearchBar = new TextBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel1 = new Panel();
+            button2 = new Button();
             id = new Label();
+            button1 = new Button();
             label1 = new Label();
             Nomor_Hp = new Label();
             Nama = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            Tambah_Pelanggan = new Button();
+            Search = new Button();
             flowLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -47,9 +49,9 @@
             SearchBar.BorderStyle = BorderStyle.None;
             SearchBar.Font = new Font("Montserrat SemiBold", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
             SearchBar.ForeColor = Color.FromArgb(210, 218, 221);
-            SearchBar.Location = new Point(570, 112);
+            SearchBar.Location = new Point(549, 58);
             SearchBar.Name = "SearchBar";
-            SearchBar.Size = new Size(357, 25);
+            SearchBar.Size = new Size(321, 25);
             SearchBar.TabIndex = 0;
             SearchBar.Text = "Search";
             SearchBar.TextChanged += SearchBar_TextChanged;
@@ -81,6 +83,18 @@
             panel1.Size = new Size(188, 260);
             panel1.TabIndex = 0;
             // 
+            // button2
+            // 
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button2.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Location = new Point(153, 15);
+            button2.Name = "button2";
+            button2.Size = new Size(20, 20);
+            button2.TabIndex = 4;
+            button2.UseVisualStyleBackColor = true;
+            // 
             // id
             // 
             id.Font = new Font("Montserrat", 11F);
@@ -91,6 +105,18 @@
             id.TabIndex = 3;
             id.Text = "#1";
             id.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // button1
+            // 
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Location = new Point(15, 15);
+            button1.Name = "button1";
+            button1.Size = new Size(14, 18);
+            button1.TabIndex = 1;
+            button1.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -123,35 +149,46 @@
             Nama.Text = "Tsaqif";
             Nama.TextAlign = ContentAlignment.TopCenter;
             // 
-            // button1
+            // Tambah_Pelanggan
             // 
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(15, 15);
-            button1.Name = "button1";
-            button1.Size = new Size(14, 18);
-            button1.TabIndex = 1;
-            button1.UseVisualStyleBackColor = true;
+            Tambah_Pelanggan.BackColor = Color.Transparent;
+            Tambah_Pelanggan.BackgroundImage = Properties.Resources.Tambah_Pelanggan;
+            Tambah_Pelanggan.FlatAppearance.BorderSize = 0;
+            Tambah_Pelanggan.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            Tambah_Pelanggan.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            Tambah_Pelanggan.FlatStyle = FlatStyle.Flat;
+            Tambah_Pelanggan.Location = new Point(40, 129);
+            Tambah_Pelanggan.Name = "Tambah_Pelanggan";
+            Tambah_Pelanggan.Size = new Size(166, 35);
+            Tambah_Pelanggan.TabIndex = 2;
+            Tambah_Pelanggan.UseVisualStyleBackColor = false;
+            Tambah_Pelanggan.Click += Tambah_Pelanggan_Click;
+            Tambah_Pelanggan.MouseEnter += Tambah_Pelanggan_MouseEnter;
+            Tambah_Pelanggan.MouseLeave += Tambah_Pelanggan_MouseLeave;
+            Tambah_Pelanggan.MouseHover += Tambah_Pelanggan_MouseHover;
             // 
-            // button2
+            // Search
             // 
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button2.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(153, 15);
-            button2.Name = "button2";
-            button2.Size = new Size(20, 20);
-            button2.TabIndex = 4;
-            button2.UseVisualStyleBackColor = true;
+            Search.BackColor = Color.Transparent;
+            Search.FlatAppearance.BorderSize = 0;
+            Search.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            Search.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            Search.FlatStyle = FlatStyle.Flat;
+            Search.Location = new Point(894, 58);
+            Search.Name = "Search";
+            Search.Size = new Size(30, 30);
+            Search.TabIndex = 3;
+            Search.UseVisualStyleBackColor = false;
+            Search.Click += Search_Click;
+            Search.MouseHover += Search_MouseHover;
             // 
             // V_Pelanggan
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.Pelanggan1;
+            BackgroundImage = Properties.Resources.Pelanggan2;
+            Controls.Add(Search);
+            Controls.Add(Tambah_Pelanggan);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(SearchBar);
             Name = "V_Pelanggan";
@@ -174,5 +211,7 @@
         private Label id;
         private Button button1;
         private Button button2;
+        private Button Tambah_Pelanggan;
+        private Button Search;
     }
 }
