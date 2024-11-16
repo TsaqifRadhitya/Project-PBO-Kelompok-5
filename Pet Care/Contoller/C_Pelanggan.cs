@@ -73,7 +73,13 @@ namespace Pet_Care.Contoller
             v_Ubah.Location = new Point(800, 245);
             v_Ubah.ShowDialog();
         }
-
+        public bool Search(string key_word)
+        {
+            List<Data_Pelanngan> hasil_pencarian = M_Pelanggan.Get(key_word).OfType<Data_Pelanngan>().ToList();
+            view_pelanggan.flowLayoutPanel1.Controls.Clear();
+            hasil_pencarian.ForEach(data => {create_card(data);});
+            return (hasil_pencarian.Count == 0) ? false : true;
+        }
         public void create_card(Data_Pelanngan data)
         {
             Bitmap[] background = [Properties.Resources.Red_card,Properties.Resources.Orange_Card,Properties.Resources.LightPurple_Card,Properties.Resources.Purple_Card];

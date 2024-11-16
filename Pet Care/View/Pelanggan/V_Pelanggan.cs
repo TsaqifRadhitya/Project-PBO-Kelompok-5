@@ -82,7 +82,10 @@ namespace Pet_Care.View
 
         private void Search_Click(object sender, EventArgs e)
         {
-
+            if(SearchBar.Text != "" && SearchBar.Text != "Search")
+            {
+                C_Pelanggan.Search(SearchBar.Text);
+            }
         }
     }
 }

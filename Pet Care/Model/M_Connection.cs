@@ -34,7 +34,8 @@ namespace Pet_Care.Model
                 "Nama_Pelayanan VARCHAR(20) NOT NULL," +
                 "Harga_Pelayanan INTEGER NOT NULL," +
                 "Deskripsi_Pelayanan TEXT," +
-                "Foto Bytea)");
+                "Foto Bytea," +
+                "Status_Pelayanan Bool Not NUll Default true)");
 
             Execute_No_Return("CREATE TABLE IF NOT EXISTS Transaksi (" +
                 "Transaksi_id serial NOT NULL UNIQUE PRIMARY KEY," +

@@ -27,6 +27,24 @@ namespace Pet_Care.Model
             conn.Close();
             return daftar_mahasiswa;
         }
+        public List<object> Get(string keyword)
+        {
+            NpgsqlDataReader data = Execute_With_Return($"Select * from Pelanggan where Status_Pelanggan = true AND (nama ilike '%{keyword}%' OR nomor_hp ilike '%{keyword}%' OR alamat ilike '%{keyword}%')");
+            List<object> daftar_mahasiswa = new List<object>();
+            while (data.Read())
+            {
+                Data_Pelanngan pelanggan = new Data_Pelanngan
+                {
+                    ID = (int)data["pelanggan_id"],
+                    Name = data["nama"].ToString(),
+                    Nomor_HP = data["nomor_hp"].ToString(),
+                    Alamat = data["alamat"].ToString()
+                };
+                daftar_mahasiswa.Add(pelanggan);
+            }
+            conn.Close();
+            return daftar_mahasiswa;
+        }
 
         public bool Insert(object obj)
         {
