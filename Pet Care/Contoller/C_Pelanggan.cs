@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Pet_Care.View;
 using Pet_Care.Model;
 using NpgsqlTypes;
+using System.Numerics;
 
 namespace Pet_Care.Contoller
 {
@@ -20,14 +21,33 @@ namespace Pet_Care.Contoller
             view_pelanggan = new V_Pelanggan(this);
             C_MainMenu.move_view(view_pelanggan);
         }
-        public void tambah_pelanggan()
+        public void Form_tambah_pelanggan()
         {
-            V_Ubah_Tambah_Pelanggan v_Ubah_Tambah_Pelanggan = new V_Ubah_Tambah_Pelanggan();
+            V_Ubah_Tambah_Pelanggan v_Ubah_Tambah_Pelanggan = new V_Ubah_Tambah_Pelanggan(this);
             v_Ubah_Tambah_Pelanggan.StartPosition = FormStartPosition.Manual;
             v_Ubah_Tambah_Pelanggan.Location = new Point(800, 245);
-            v_Ubah_Tambah_Pelanggan.ShowDialog(view_pelanggan);
+            v_Ubah_Tambah_Pelanggan.ShowDialog();
         }
-
+        public dynamic[] save_data(bool edit_state, Data_Pelanngan data)
+        {
+            if(string.IsNullOrEmpty(data.Name) || string.IsNullOrEmpty(data.Nomor_HP) || string.IsNullOrEmpty(data.Alamat)) return [false,"Harap Mengisi Seluruh Data !"];
+            try
+            {
+                BigInteger.Parse(data.Nomor_HP);
+                if (edit_state)
+                {
+                    return [M_Pelanggan.Update(data, data.ID)];
+                }
+                else
+                {
+                    return [M_Pelanggan.Insert(data)];
+                }
+            } catch 
+            {
+                return [false,"Harap Mengisi Data Dengan Benar"];
+            };
+            
+        }
         public void load_data()
         {
             view_pelanggan.flowLayoutPanel1.Controls.Clear();
@@ -46,9 +66,12 @@ namespace Pet_Care.Contoller
             }
         }
 
-        public void ubah_data(Data_Pelanngan data)
+        public void Form_ubah_data(Data_Pelanngan data)
         {
-            
+            V_Ubah_Tambah_Pelanggan v_Ubah = new V_Ubah_Tambah_Pelanggan(this,data);
+            v_Ubah.StartPosition = FormStartPosition.Manual;
+            v_Ubah.Location = new Point(800, 245);
+            v_Ubah.ShowDialog();
         }
 
         public void create_card(Data_Pelanngan data)
@@ -120,7 +143,7 @@ namespace Pet_Care.Contoller
             Delete.FlatAppearance.MouseDownBackColor= Color.Transparent;
             Delete.FlatAppearance.MouseOverBackColor= Color.Transparent;
             Delete.MouseHover += (object sender, EventArgs e) => { Delete.Cursor = Cursors.Hand; };
-            Delete.Click += (object sender, EventArgs e) => { delete_pelanggan(data.ID); };
+            Delete.Click += (object sender, EventArgs e) => { delete_pelanggan(data.ID); load_data(); };
 
             Button Edit = new Button
             {
@@ -135,7 +158,7 @@ namespace Pet_Care.Contoller
             Edit.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Edit.FlatAppearance.MouseOverBackColor = Color.Transparent;
             Edit.MouseHover += (object sender, EventArgs e) => { Edit.Cursor = Cursors.Hand; };
-            Edit.Click += (object sender, EventArgs e) => { ubah_data(data); };
+            Edit.Click += (object sender, EventArgs e) => { Form_ubah_data(data); };
             panel.Controls.Add(Edit);
             panel.Controls.Add(ID);
             panel.Controls.Add(Alamat);

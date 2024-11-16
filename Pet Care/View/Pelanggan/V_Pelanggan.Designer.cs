@@ -152,14 +152,15 @@
             // Tambah_Pelanggan
             // 
             Tambah_Pelanggan.BackColor = Color.Transparent;
-            Tambah_Pelanggan.BackgroundImage = Properties.Resources.Tambah_Pelanggan;
+            Tambah_Pelanggan.BackgroundImage = Properties.Resources.Tambah_Pelanggan_Hover1;
+            Tambah_Pelanggan.FlatAppearance.BorderColor = Color.Black;
             Tambah_Pelanggan.FlatAppearance.BorderSize = 0;
             Tambah_Pelanggan.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Tambah_Pelanggan.FlatAppearance.MouseOverBackColor = Color.Transparent;
             Tambah_Pelanggan.FlatStyle = FlatStyle.Flat;
-            Tambah_Pelanggan.Location = new Point(40, 129);
+            Tambah_Pelanggan.Location = new Point(40, 116);
             Tambah_Pelanggan.Name = "Tambah_Pelanggan";
-            Tambah_Pelanggan.Size = new Size(166, 35);
+            Tambah_Pelanggan.Size = new Size(169, 39);
             Tambah_Pelanggan.TabIndex = 2;
             Tambah_Pelanggan.UseVisualStyleBackColor = false;
             Tambah_Pelanggan.Click += Tambah_Pelanggan_Click;

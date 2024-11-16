@@ -15,14 +15,14 @@ namespace Pet_Care.Model
             List<object> daftar_mahasiswa = new List<object>();
             while (data.Read()) 
             {
-                Data_Pelanngan dara = new Data_Pelanngan
+                Data_Pelanngan pelanggan = new Data_Pelanngan
                 {
                     ID = (int)data["pelanggan_id"],
                     Name = data["nama"].ToString(),
                     Nomor_HP = data["nomor_hp"].ToString(),
                     Alamat = data["alamat"].ToString()
                 };
-                daftar_mahasiswa.Add(dara);
+                daftar_mahasiswa.Add(pelanggan);
             }
             conn.Close();
             return daftar_mahasiswa;
@@ -36,7 +36,7 @@ namespace Pet_Care.Model
 
         public void Delete(int id)
         {
-            Execute_No_Return($"UPDATE FROM Pelanggan where pelanggan_id = {id} Set Status_Pelanggan = false");
+            Execute_No_Return($"UPDATE Pelanggan Set Status_Pelanggan = false where pelanggan_id = {id}");
         }
 
         public bool Update(object obj,int id)

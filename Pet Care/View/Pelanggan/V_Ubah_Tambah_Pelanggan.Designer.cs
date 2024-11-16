@@ -31,13 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_Ubah_Tambah_Pelanggan));
             Batal = new Button();
             Simpan = new Button();
-            textBox1 = new TextBox();
+            Alamat = new TextBox();
+            Nomor_Telepon = new TextBox();
+            Nama = new TextBox();
+            Header = new Label();
             SuspendLayout();
             // 
             // Batal
             // 
             Batal.BackColor = Color.Transparent;
-            Batal.BackgroundImage = Properties.Resources.Batal;
+            Batal.BackgroundImage = Properties.Resources.Batal_Hover;
             Batal.FlatAppearance.BorderSize = 0;
             Batal.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Batal.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -55,7 +58,7 @@
             // Simpan
             // 
             Simpan.BackColor = Color.Transparent;
-            Simpan.BackgroundImage = Properties.Resources.Simpan;
+            Simpan.BackgroundImage = Properties.Resources.Simpan_Hover;
             Simpan.FlatAppearance.BorderSize = 0;
             Simpan.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Simpan.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -70,14 +73,46 @@
             Simpan.MouseLeave += Simpan_MouseLeave;
             Simpan.MouseHover += Simpan_MouseHover;
             // 
-            // textBox1
+            // Alamat
             // 
-            textBox1.BackColor = Color.Black;
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Location = new Point(116, 367);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(406, 16);
-            textBox1.TabIndex = 2;
+            Alamat.BackColor = Color.FromArgb(253, 233, 218);
+            Alamat.BorderStyle = BorderStyle.None;
+            Alamat.Font = new Font("Montserrat SemiBold", 18F, FontStyle.Bold);
+            Alamat.Location = new Point(115, 362);
+            Alamat.Name = "Alamat";
+            Alamat.Size = new Size(406, 30);
+            Alamat.TabIndex = 2;
+            // 
+            // Nomor_Telepon
+            // 
+            Nomor_Telepon.BackColor = Color.FromArgb(253, 233, 218);
+            Nomor_Telepon.BorderStyle = BorderStyle.None;
+            Nomor_Telepon.Font = new Font("Montserrat SemiBold", 18F, FontStyle.Bold);
+            Nomor_Telepon.Location = new Point(115, 263);
+            Nomor_Telepon.Name = "Nomor_Telepon";
+            Nomor_Telepon.Size = new Size(406, 30);
+            Nomor_Telepon.TabIndex = 3;
+            // 
+            // Nama
+            // 
+            Nama.BackColor = Color.FromArgb(253, 233, 218);
+            Nama.BorderStyle = BorderStyle.None;
+            Nama.Font = new Font("Montserrat SemiBold", 18F, FontStyle.Bold);
+            Nama.Location = new Point(115, 166);
+            Nama.Name = "Nama";
+            Nama.Size = new Size(406, 30);
+            Nama.TabIndex = 5;
+            // 
+            // Header
+            // 
+            Header.BackColor = Color.Transparent;
+            Header.Font = new Font("Montserrat", 24F, FontStyle.Bold);
+            Header.Location = new Point(101, 50);
+            Header.Name = "Header";
+            Header.Size = new Size(432, 48);
+            Header.TabIndex = 6;
+            Header.Text = "Tambah Pelanggan Baru";
+            Header.TextAlign = ContentAlignment.TopCenter;
             // 
             // V_Ubah_Tambah_Pelanggan
             // 
@@ -85,7 +120,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Tambah_Ubah_Pelanggan;
             ClientSize = new Size(623, 590);
-            Controls.Add(textBox1);
+            Controls.Add(Header);
+            Controls.Add(Nama);
+            Controls.Add(Nomor_Telepon);
+            Controls.Add(Alamat);
             Controls.Add(Simpan);
             Controls.Add(Batal);
             FormBorderStyle = FormBorderStyle.None;
@@ -100,6 +138,9 @@
 
         private Button Batal;
         private Button Simpan;
-        private TextBox textBox1;
+        private TextBox Alamat;
+        private TextBox Nomor_Telepon;
+        private TextBox Nama;
+        private Label Header;
     }
 }
