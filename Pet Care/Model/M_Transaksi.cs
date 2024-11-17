@@ -54,7 +54,7 @@ namespace Pet_Care.Model
             conn.Close();
             return list;
         }
-        public  Data_Transaksi Get_detail(int id)
+        public Data_Transaksi Get_detail(int id)
         {
             NpgsqlDataReader data = Execute_With_Return("Select t.transaksi_id, TO_CHAR(tanggal_transaksi,'DD.MM.YYYY HH24:MI:SS') as tanggal,nama,nama_hewan,foto_hewan,Durasi_Penitipan,nomor_hp,alamat,nominal_transaksi,nama_pelayanan" +
                 "from transaksi t " +
@@ -81,10 +81,9 @@ namespace Pet_Care.Model
             return data_transaksi;
         }
 
-        public bool Insert(object obj)
+        public void Insert(object obj)
         {
             Data_Transaksi data = obj as Data_Transaksi;
-            return true;
         }
 
         public void Delete(int id)
@@ -92,18 +91,17 @@ namespace Pet_Care.Model
             Execute_No_Return($"Delete from transaksi where id = {id}");
             Execute_No_Return($"Delete from detail_transaksi where transaksi_id = {id}");
         }
-        public bool Update(object obj, int id)
+        public void Update(object obj, int id)
         {
-            return true;
         }
 
         public double Get_Pendapatan()
         {
-            dynamic[] data = Execute_Single_Return("select sum(nominal_transaksi) as total_transaksi from transaksi ");
+            object data = Execute_Single_Return("select sum(nominal_transaksi) as total_transaksi from transaksi ");
             double nominal = 0;
-            if (data[0] && data[1] != DBNull.Value)
+            if (data != DBNull.Value)
             {
-                nominal = (double)data[1];
+                nominal = (double)data;
             }
             conn.Close();
             return nominal;

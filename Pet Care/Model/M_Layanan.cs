@@ -33,7 +33,7 @@ namespace Pet_Care.Model
             return list;
         }
 
-        public bool Insert(object data)
+        public void Insert(object data)
         {
             Data_Layanan data_layanan = data as Data_Layanan;
             if (string.IsNullOrEmpty(data_layanan.deskripsi) && data_layanan.foto == Array.Empty<byte>()) 
@@ -50,7 +50,6 @@ namespace Pet_Care.Model
             {
                 Execute_No_Return($"INSERT INTO Pelayanan(nama_pelayanan,harga_pelayanan,Deskripsi_Pelayanan) Values ('{data_layanan.name}',{data_layanan.harga},'{data_layanan.deskripsi}')");
             }
-            return true;
         }
 
         public void Delete(int ID)
@@ -58,14 +57,13 @@ namespace Pet_Care.Model
             Execute_No_Return($"DELETE FROM Pelayanan where pelayanan_id = {ID}");
         }
 
-        public bool Update(object obj, int id)
+        public void Update(object obj, int id)
         {
             Data_Layanan data_Layanan = obj as Data_Layanan;
             NpgsqlCommand cmd = new NpgsqlCommand();
             cmd.CommandText = $"UPDATE Pelayanan set nama_pelayanan = '{data_Layanan.name}', harga_pelayanan = {data_Layanan.harga}, deskripsi_pelayanan = '{data_Layanan.deskripsi}',foto = @foto where pelayanan_id = {data_Layanan.id}";
             cmd.Parameters.AddWithValue("@foto",NpgsqlTypes.NpgsqlDbType.Bytea, data_Layanan.foto);
             Execute_No_Return(cmd);
-            return true;
         }
     }
 

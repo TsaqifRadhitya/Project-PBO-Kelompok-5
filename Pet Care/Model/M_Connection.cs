@@ -57,7 +57,7 @@ namespace Pet_Care.Model
                 "CONSTRAINT transaksi_fk FOREIGN KEY ( transaksi_id ) REFERENCES transaksi ( transaksi_id ))");
         }
 
-        public bool Execute_No_Return(string Querry)
+        public void Execute_No_Return(string Querry)
         {
             conn = new NpgsqlConnection(addres);
             conn.Open();
@@ -68,16 +68,14 @@ namespace Pet_Care.Model
             {
                 cmd.ExecuteNonQuery();
                 conn.Close();
-                return true;
             }
             catch
             {
                 conn.Close();
-                return false;
             } 
         }
 
-        public bool Execute_No_Return(NpgsqlCommand command)
+        public void Execute_No_Return(NpgsqlCommand command)
         {
             conn = new NpgsqlConnection(addres);
             conn.Open();
@@ -86,12 +84,10 @@ namespace Pet_Care.Model
             {
                 command.ExecuteNonQuery();
                 conn.Close();
-                return true;
             }
             catch
             {
                 conn.Close();
-                return false;
             }
         }
 
@@ -105,7 +101,7 @@ namespace Pet_Care.Model
             return Data;
         }
 
-        public dynamic[] Execute_Single_Return(string querry)
+        public object Execute_Single_Return(string querry)
         {
             conn = new NpgsqlConnection(addres);
             conn.Open();
@@ -116,12 +112,12 @@ namespace Pet_Care.Model
             {
                 object Data = cmd.ExecuteScalar();
                 conn.Close();
-                return [true, Data];
+                return Data;
             }
             catch
             {
                 conn.Close();
-                return [false, null];
+                return null;
             } 
         }
     }

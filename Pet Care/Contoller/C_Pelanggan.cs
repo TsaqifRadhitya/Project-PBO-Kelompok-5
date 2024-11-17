@@ -36,11 +36,27 @@ namespace Pet_Care.Contoller
                 BigInteger.Parse(data.Nomor_HP);
                 if (edit_state)
                 {
-                    return [M_Pelanggan.Update(data, data.ID)];
+                    try
+                    {
+                        M_Pelanggan.Update(data, data.ID);
+                        return [true];
+                    }
+                    catch
+                    {
+                        return [false,"Nomor Hp Sudah Terdaftar !"];
+                    }
                 }
                 else
                 {
-                    return [M_Pelanggan.Insert(data)];
+                    try
+                    {
+                        M_Pelanggan.Insert(data);
+                        return [true];
+                    }
+                    catch
+                    {
+                        return [false, "Nomor Hp Sudah Terdaftar !"];
+                    }
                 }
             } catch 
             {

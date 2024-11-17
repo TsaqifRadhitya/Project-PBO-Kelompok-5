@@ -46,10 +46,10 @@ namespace Pet_Care.Model
             return daftar_mahasiswa;
         }
 
-        public bool Insert(object obj)
+        public void Insert(object obj)
         {
             Data_Pelanngan data = obj as Data_Pelanngan;
-            return Execute_No_Return($"Insert Into Pelanggan(nama,nomor_hp,alamat) Values ('{data.Name}','{data.Nomor_HP}','{data.Alamat}')");
+            Execute_No_Return($"Insert Into Pelanggan(nama,nomor_hp,alamat) Values ('{data.Name}','{data.Nomor_HP}','{data.Alamat}')");
         }
 
         public void Delete(int id)
@@ -57,10 +57,10 @@ namespace Pet_Care.Model
             Execute_No_Return($"UPDATE Pelanggan Set Status_Pelanggan = false where pelanggan_id = {id}");
         }
 
-        public bool Update(object obj,int id)
+        public void Update(object obj,int id)
         {
             Data_Pelanngan data = obj as Data_Pelanngan ;
-            return Execute_No_Return($"UPDATE Pelanggan set nama = '{data.Name}',nomor_hp = '{data.Nomor_HP}',alamat = '{data.Alamat}' where pelanggan_id = {id}");
+            Execute_No_Return($"UPDATE Pelanggan set nama = '{data.Name}',nomor_hp = '{data.Nomor_HP}',alamat = '{data.Alamat}' where pelanggan_id = {id}");
         }
     }
 

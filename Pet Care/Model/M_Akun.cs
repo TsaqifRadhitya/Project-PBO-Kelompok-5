@@ -32,10 +32,10 @@ namespace Pet_Care.Model
             conn.Close();
         }
 
-        public bool Insert(object item)
+        public void Insert(object item)
         {
             Akun akun = item as Akun;
-            return Execute_No_Return($"INSERT INTO Akun(nama_lengkap,username,password,email,nomor_hp) Values ('{akun.Name}','{akun.Username}','{akun.Password}','{akun.Email}','{akun.Nomor_Hp}')");
+            Execute_No_Return($"INSERT INTO Akun(nama_lengkap,username,password,email,nomor_hp) Values ('{akun.Name}','{akun.Username}','{akun.Password}','{akun.Email}','{akun.Nomor_Hp}')");
         }
 
         public void Delete(int ID) 
@@ -43,9 +43,8 @@ namespace Pet_Care.Model
 
         }
 
-        public bool Update(object data,int id) 
+        public void Update(object data,int id) 
         { 
-            return true;
         }
 
     }

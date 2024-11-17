@@ -11,10 +11,10 @@ namespace Pet_Care.Model
     {
         public List<Object> Get();
 
-        public bool Insert(object obj);
+        public void Insert(object obj);
 
         public void Delete (int id);
 
-        public bool Update(object obj,int id);
+        public void Update(object obj,int id);
     }
 }
