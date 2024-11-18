@@ -29,7 +29,6 @@ namespace Pet_Care.Model
                 }
                 list.Add(data_Layanan);
             }
-            conn.Close();
             return list;
         }
 

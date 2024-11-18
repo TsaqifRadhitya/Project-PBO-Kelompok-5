@@ -68,7 +68,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.Frame;
+            BackgroundImage = Properties.Resources.Frame_Message_Box_Button1;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(500, 250);
             Controls.Add(Message);

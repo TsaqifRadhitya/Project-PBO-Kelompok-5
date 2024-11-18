@@ -24,7 +24,6 @@ namespace Pet_Care.Model
                 };
                 daftar_mahasiswa.Add(pelanggan);
             }
-            conn.Close();
             return daftar_mahasiswa;
         }
         public List<object> Get(string keyword)
@@ -42,7 +41,6 @@ namespace Pet_Care.Model
                 };
                 daftar_mahasiswa.Add(pelanggan);
             }
-            conn.Close();
             return daftar_mahasiswa;
         }
 

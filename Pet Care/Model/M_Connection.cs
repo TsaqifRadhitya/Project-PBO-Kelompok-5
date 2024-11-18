@@ -11,7 +11,21 @@ namespace Pet_Care.Model
     public abstract class M_Connection
     {
         protected string addres = "Host=localhost;Username=postgres;Password=;Database=MeowInn";
-        protected NpgsqlConnection conn;
+        private NpgsqlConnection Conn;
+        protected NpgsqlConnection conn
+        { 
+            get {
+                return this.Conn;
+            } 
+            set{
+                if (Conn != null)
+                {
+                    Conn.Close();
+                }
+                Conn = value ; 
+                Conn.Open();
+            } 
+        }
         public void Setup()
         {
             Execute_No_Return("CREATE TABLE IF NOT EXISTS akun (" +
@@ -60,40 +74,21 @@ namespace Pet_Care.Model
         public void Execute_No_Return(string Querry)
         {
             conn = new NpgsqlConnection(addres);
-            conn.Open();
             NpgsqlCommand cmd = new NpgsqlCommand();
             cmd.Connection = conn;
             cmd.CommandText = Querry;
-            try
-            {
-                cmd.ExecuteNonQuery();
-                conn.Close();
-            }
-            catch
-            {
-                conn.Close();
-            } 
+            cmd.ExecuteNonQuery();
         }
 
         public void Execute_No_Return(NpgsqlCommand command)
         {
             conn = new NpgsqlConnection(addres);
-            conn.Open();
             command.Connection = conn;
-            try
-            {
-                command.ExecuteNonQuery();
-                conn.Close();
-            }
-            catch
-            {
-                conn.Close();
-            }
+            command.ExecuteNonQuery();
         }
 
         public NpgsqlDataReader Execute_With_Return(string Querry) {
             conn = new NpgsqlConnection(addres);
-            conn.Open();
             NpgsqlCommand cmd = new NpgsqlCommand();
             cmd.Connection = conn;
             cmd.CommandText = Querry;
@@ -104,21 +99,11 @@ namespace Pet_Care.Model
         public object Execute_Single_Return(string querry)
         {
             conn = new NpgsqlConnection(addres);
-            conn.Open();
             NpgsqlCommand cmd = new NpgsqlCommand();
             cmd.Connection = conn;
             cmd.CommandText = querry;
-            try
-            {
-                object Data = cmd.ExecuteScalar();
-                conn.Close();
-                return Data;
-            }
-            catch
-            {
-                conn.Close();
-                return null;
-            } 
+            object Data = cmd.ExecuteScalar();
+            return Data;
         }
     }
 }

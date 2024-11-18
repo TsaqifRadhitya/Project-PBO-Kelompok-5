@@ -29,7 +29,6 @@ namespace Pet_Care.Model
                 };
                 list.Add(data_Transaksi);
             }
-            conn.Close();
             return list;
         }
         public List<object> Get(string time)
@@ -95,16 +94,9 @@ namespace Pet_Care.Model
         {
         }
 
-        public double Get_Pendapatan()
+        public object Get_Pendapatan()
         {
-            object data = Execute_Single_Return("select sum(nominal_transaksi) as total_transaksi from transaksi ");
-            double nominal = 0;
-            if (data != DBNull.Value)
-            {
-                nominal = (double)data;
-            }
-            conn.Close();
-            return nominal;
+            return Execute_Single_Return("select sum(nominal_transaksi) as total_transaksi from transaksi ");
         }
     }
 

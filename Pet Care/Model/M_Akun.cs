@@ -29,7 +29,6 @@ namespace Pet_Care.Model
                 M_Session.id_session = data.GetInt32(0);
                 M_Session.session_status = true;
             }
-            conn.Close();
         }
 
         public void Insert(object item)
