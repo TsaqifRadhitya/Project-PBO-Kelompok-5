@@ -35,6 +35,7 @@
             Nomor_Telepon = new TextBox();
             Nama = new TextBox();
             Header = new Label();
+            Email = new TextBox();
             SuspendLayout();
             // 
             // Batal
@@ -45,7 +46,7 @@
             Batal.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Batal.FlatAppearance.MouseOverBackColor = Color.Transparent;
             Batal.FlatStyle = FlatStyle.Flat;
-            Batal.Location = new Point(101, 466);
+            Batal.Location = new Point(101, 497);
             Batal.Name = "Batal";
             Batal.Size = new Size(153, 54);
             Batal.TabIndex = 0;
@@ -63,7 +64,7 @@
             Simpan.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Simpan.FlatAppearance.MouseOverBackColor = Color.Transparent;
             Simpan.FlatStyle = FlatStyle.Flat;
-            Simpan.Location = new Point(380, 466);
+            Simpan.Location = new Point(380, 497);
             Simpan.Name = "Simpan";
             Simpan.Size = new Size(153, 54);
             Simpan.TabIndex = 1;
@@ -78,7 +79,7 @@
             Alamat.BackColor = Color.FromArgb(253, 233, 218);
             Alamat.BorderStyle = BorderStyle.None;
             Alamat.Font = new Font("Montserrat SemiBold", 18F, FontStyle.Bold);
-            Alamat.Location = new Point(115, 362);
+            Alamat.Location = new Point(115, 425);
             Alamat.Name = "Alamat";
             Alamat.Size = new Size(406, 30);
             Alamat.TabIndex = 2;
@@ -88,7 +89,7 @@
             Nomor_Telepon.BackColor = Color.FromArgb(253, 233, 218);
             Nomor_Telepon.BorderStyle = BorderStyle.None;
             Nomor_Telepon.Font = new Font("Montserrat SemiBold", 18F, FontStyle.Bold);
-            Nomor_Telepon.Location = new Point(115, 263);
+            Nomor_Telepon.Location = new Point(115, 240);
             Nomor_Telepon.Name = "Nomor_Telepon";
             Nomor_Telepon.Size = new Size(406, 30);
             Nomor_Telepon.TabIndex = 3;
@@ -98,7 +99,7 @@
             Nama.BackColor = Color.FromArgb(253, 233, 218);
             Nama.BorderStyle = BorderStyle.None;
             Nama.Font = new Font("Montserrat SemiBold", 18F, FontStyle.Bold);
-            Nama.Location = new Point(115, 166);
+            Nama.Location = new Point(115, 151);
             Nama.Name = "Nama";
             Nama.Size = new Size(406, 30);
             Nama.TabIndex = 5;
@@ -114,12 +115,23 @@
             Header.Text = "Tambah Pelanggan Baru";
             Header.TextAlign = ContentAlignment.TopCenter;
             // 
+            // Email
+            // 
+            Email.BackColor = Color.FromArgb(253, 233, 218);
+            Email.BorderStyle = BorderStyle.None;
+            Email.Font = new Font("Montserrat SemiBold", 18F, FontStyle.Bold);
+            Email.Location = new Point(115, 333);
+            Email.Name = "Email";
+            Email.Size = new Size(406, 30);
+            Email.TabIndex = 7;
+            // 
             // V_Ubah_Tambah_Pelanggan
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.Tambah_Ubah_Pelanggan;
+            BackgroundImage = Properties.Resources.Tambah_Ubah_Pelanggan1;
             ClientSize = new Size(623, 590);
+            Controls.Add(Email);
             Controls.Add(Header);
             Controls.Add(Nama);
             Controls.Add(Nomor_Telepon);
@@ -142,5 +154,6 @@
         private TextBox Nomor_Telepon;
         private TextBox Nama;
         private Label Header;
+        private TextBox Email;
     }
 }

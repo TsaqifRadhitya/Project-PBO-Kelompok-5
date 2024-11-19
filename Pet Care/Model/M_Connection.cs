@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Pet_Care.Model
 {
@@ -21,6 +20,7 @@ namespace Pet_Care.Model
                 if (Conn != null)
                 {
                     Conn.Close();
+                    Conn = null;
                 }
                 Conn = value ; 
                 Conn.Open();
@@ -41,6 +41,7 @@ namespace Pet_Care.Model
                 "Nama VARCHAR(20) NOT NULL," +
                 "Nomor_hp VARCHAR(13) NOT NULL UNIQUE," +
                 "Alamat VARCHAR(30) NOT NULL," +
+                "Email VARCHAR(50) UNIQUE NOT NULL," +
                 "Status_Pelanggan Bool Not Null Default true)");
 
             Execute_No_Return("CREATE TABLE IF NOT EXISTS Pelayanan (" +

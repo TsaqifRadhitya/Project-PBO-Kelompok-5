@@ -39,6 +39,7 @@
             Nama = new Label();
             Tambah_Pelanggan = new Button();
             Search = new Button();
+            label2 = new Label();
             flowLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -71,6 +72,7 @@
             // panel1
             // 
             panel1.BackgroundImage = Properties.Resources.Red_card;
+            panel1.Controls.Add(label2);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(id);
             panel1.Controls.Add(button1);
@@ -121,7 +123,7 @@
             // label1
             // 
             label1.Font = new Font("Montserrat", 11F);
-            label1.Location = new Point(14, 211);
+            label1.Location = new Point(14, 223);
             label1.Margin = new Padding(0);
             label1.Name = "label1";
             label1.Size = new Size(158, 22);
@@ -131,7 +133,7 @@
             // Nomor_Hp
             // 
             Nomor_Hp.Font = new Font("Montserrat", 11F);
-            Nomor_Hp.Location = new Point(14, 186);
+            Nomor_Hp.Location = new Point(14, 183);
             Nomor_Hp.Margin = new Padding(0);
             Nomor_Hp.Name = "Nomor_Hp";
             Nomor_Hp.Size = new Size(158, 22);
@@ -183,6 +185,17 @@
             Search.Click += Search_Click;
             Search.MouseHover += Search_MouseHover;
             // 
+            // label2
+            // 
+            label2.Font = new Font("Montserrat", 8F);
+            label2.Location = new Point(-1, 206);
+            label2.Margin = new Padding(0);
+            label2.Name = "label2";
+            label2.Size = new Size(189, 20);
+            label2.TabIndex = 5;
+            label2.Text = "tsaqifradhitya@gmail.com";
+            label2.TextAlign = ContentAlignment.TopCenter;
+            // 
             // V_Pelanggan
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -214,5 +227,6 @@
         private Button button2;
         private Button Tambah_Pelanggan;
         private Button Search;
+        private Label label2;
     }
 }

@@ -30,7 +30,7 @@ namespace Pet_Care.Contoller
         }
         public dynamic[] save_data(bool edit_state, Data_Pelanngan data)
         {
-            if(string.IsNullOrEmpty(data.Name) || string.IsNullOrEmpty(data.Nomor_HP) || string.IsNullOrEmpty(data.Alamat)) return [false,"Harap Mengisi Seluruh Data !"];
+            if(string.IsNullOrEmpty(data.Name) || string.IsNullOrEmpty(data.Nomor_HP) || string.IsNullOrEmpty(data.Alamat) || string.IsNullOrEmpty(data.Email)) return [false,"Harap Mengisi Seluruh Data !"];
             try
             {
                 BigInteger.Parse(data.Nomor_HP);
@@ -124,7 +124,7 @@ namespace Pet_Care.Contoller
             Label Nomor_Hp = new Label
             {
                 Font = new Font("Montserrat", 11F),
-                Location = new Point(14, 186),
+                Location = new Point(14, 183),
                 Margin = new Padding(0),
                 Name = "Nomor_Hp",
                 Size = new Size(158, 22),
@@ -145,12 +145,23 @@ namespace Pet_Care.Contoller
             Label Alamat = new Label
             {
                 Font = new Font("Montserrat", 11F),
-                Location = new Point(14, 211),
+                Location = new Point(14, 223),
                 Margin = new Padding(0),
                 Name = "label1",
                 Size = new Size(158, 22),
                 TabIndex = 2,
                 Text = data.Alamat
+            };
+            Label Email = new Label
+            {
+                Font = new Font("Montserrat", 8F),
+                Location = new Point(-1, 206),
+                Margin = new Padding(0),
+                Name = "Email",
+                Size = new Size(189, 20),
+                TabIndex = 5,
+                Text = data.Email,
+                TextAlign = ContentAlignment.TopCenter,
             };
             Button Delete = new Button
             {
@@ -187,6 +198,7 @@ namespace Pet_Care.Contoller
             panel.Controls.Add(Nomor_Hp);
             panel.Controls.Add(Nama);
             panel.Controls.Add(Delete);
+            panel.Controls.Add(Email);
             view_pelanggan.flowLayoutPanel1.Controls.Add(panel);
         }
     }

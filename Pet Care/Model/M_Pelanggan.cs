@@ -20,7 +20,8 @@ namespace Pet_Care.Model
                     ID = (int)data["pelanggan_id"],
                     Name = data["nama"].ToString(),
                     Nomor_HP = data["nomor_hp"].ToString(),
-                    Alamat = data["alamat"].ToString()
+                    Alamat = data["alamat"].ToString(),
+                    Email = data["Email"].ToString()
                 };
                 daftar_mahasiswa.Add(pelanggan);
             }
@@ -37,7 +38,8 @@ namespace Pet_Care.Model
                     ID = (int)data["pelanggan_id"],
                     Name = data["nama"].ToString(),
                     Nomor_HP = data["nomor_hp"].ToString(),
-                    Alamat = data["alamat"].ToString()
+                    Alamat = data["alamat"].ToString(),
+                    Email = data["Email"].ToString()
                 };
                 daftar_mahasiswa.Add(pelanggan);
             }
@@ -47,7 +49,7 @@ namespace Pet_Care.Model
         public void Insert(object obj)
         {
             Data_Pelanngan data = obj as Data_Pelanngan;
-            Execute_No_Return($"Insert Into Pelanggan(nama,nomor_hp,alamat) Values ('{data.Name}','{data.Nomor_HP}','{data.Alamat}')");
+            Execute_No_Return($"Insert Into Pelanggan(nama,nomor_hp,alamat,Email) Values ('{data.Name}','{data.Nomor_HP}','{data.Alamat}','{data.Email}')");
         }
 
         public void Delete(int id)
@@ -58,7 +60,7 @@ namespace Pet_Care.Model
         public void Update(object obj,int id)
         {
             Data_Pelanngan data = obj as Data_Pelanngan ;
-            Execute_No_Return($"UPDATE Pelanggan set nama = '{data.Name}',nomor_hp = '{data.Nomor_HP}',alamat = '{data.Alamat}' where pelanggan_id = {id}");
+            Execute_No_Return($"UPDATE Pelanggan set nama = '{data.Name}',nomor_hp = '{data.Nomor_HP}',alamat = '{data.Alamat}',Email = '{data.Email}' where pelanggan_id = {id}");
         }
     }
 
@@ -68,5 +70,6 @@ namespace Pet_Care.Model
         public string Name { get; set; }
         public string Nomor_HP { get; set; }
         public string Alamat {  get; set; }
+        public string Email {  get; set; }
     }
 }

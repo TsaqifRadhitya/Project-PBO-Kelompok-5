@@ -20,6 +20,7 @@ namespace Pet_Care.View
         {
             InitializeComponent();
             Controller = controller;
+            Edit_Mode = false;
         }
         public V_Ubah_Tambah_Pelanggan(C_Pelanggan controller, Data_Pelanngan data)
         {
@@ -31,6 +32,7 @@ namespace Pet_Care.View
             Alamat.Text = data.Alamat;
             id_pelanggan = data.ID;
             Controller = controller;
+            Email.Text = data.Email;
         }
 
         private void Batal_Click(object sender, EventArgs e)
@@ -58,6 +60,7 @@ namespace Pet_Care.View
                 Nomor_HP = Nomor_Telepon.Text,
                 Alamat = Alamat.Text,
                 ID = id_pelanggan,
+                Email = Email.Text,
             });
             if (respons[0]){
                 Controller.load_data();
