@@ -30,7 +30,7 @@ namespace Pet_Care.Contoller
             Dashboard.TabelTransaksi.Columns["id"].Visible = false;
             Dashboard.TabelTransaksi.Columns["Foto_Kucing"].Visible = false ;
             Dashboard.TabelTransaksi.DefaultCellStyle.BackColor = Color.FromArgb(253, 233, 218);
-            Dashboard.kucing.Text = $"{M_Transaksi.Get("Now").Count} Kucing";
+            Dashboard.kucing.Text = $"{M_Transaksi.Get().Count} Kucing";
             Dashboard.Layanan.Text = $"{M_Layanan.Get().Count} Layanan";
             int pendapatan = (M_Transaksi.Get_Pendapatan() != DBNull.Value)? (int)M_Transaksi.Get_Pendapatan() : 0;
             Dashboard.Pendapatan.Text = $"Rp{pendapatan.ToString("n", CultureInfo.GetCultureInfo("id-ID"))}";

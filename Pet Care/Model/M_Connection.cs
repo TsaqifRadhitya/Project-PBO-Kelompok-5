@@ -50,6 +50,7 @@ namespace Pet_Care.Model
                 "Harga_Pelayanan INTEGER NOT NULL," +
                 "Deskripsi_Pelayanan TEXT," +
                 "Foto Bytea," +
+                "Quantity_Berdasarkan_hari Bool Not Null," +
                 "Status_Pelayanan Bool Not NUll Default true)");
 
             Execute_No_Return("CREATE TABLE IF NOT EXISTS Transaksi (" +
@@ -59,7 +60,7 @@ namespace Pet_Care.Model
                 "Foto_hewan Bytea NOT NULL," +
                 "Durasi_Penitipan Integer Not Null," +
                 "Nominal_transaksi INTEGER NOT NULL," +
-                "Status_Penitiapan Bool Not NUll," +
+                "Status_Penitipan Bool Not NUll default true," +
                 "Pelanggan_id integer NOT NULL," +
                 "Akun_id integer NOT NULL," +
                 "CONSTRAINT Akun_fk FOREIGN KEY ( Akun_id ) REFERENCES Akun ( Akun_id )," +
@@ -104,6 +105,13 @@ namespace Pet_Care.Model
             cmd.Connection = conn;
             cmd.CommandText = querry;
             object Data = cmd.ExecuteScalar();
+            return Data;
+        }
+        public object Execute_Single_Return(NpgsqlCommand command)
+        {
+            conn = new NpgsqlConnection(addres);
+            command.Connection = conn;
+            object Data = command.ExecuteScalar();
             return Data;
         }
     }
