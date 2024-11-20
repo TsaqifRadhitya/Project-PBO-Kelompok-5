@@ -50,6 +50,7 @@ namespace Pet_Care.View
             nama.TabIndex = 0;
             nama.Text = "label1";
             nama.TextAlign = ContentAlignment.TopRight;
+            nama.Click += nama_Click;
             // 
             // kucing
             // 

@@ -79,6 +79,7 @@ namespace Pet_Care.Contoller
             if (show_confirm_message_box("Apakah Yakin Mau Menghapus Pelanggan ?"))
             {
                 M_Pelanggan.Delete(id);
+                load_data();
             }
         }
 
@@ -176,7 +177,7 @@ namespace Pet_Care.Contoller
             Delete.FlatAppearance.MouseDownBackColor= Color.Transparent;
             Delete.FlatAppearance.MouseOverBackColor= Color.Transparent;
             Delete.MouseHover += (object sender, EventArgs e) => { Delete.Cursor = Cursors.Hand; };
-            Delete.Click += (object sender, EventArgs e) => { delete_pelanggan(data.ID); load_data(); };
+            Delete.Click += (object sender, EventArgs e) => { delete_pelanggan(data.ID); };
 
             Button Edit = new Button
             {

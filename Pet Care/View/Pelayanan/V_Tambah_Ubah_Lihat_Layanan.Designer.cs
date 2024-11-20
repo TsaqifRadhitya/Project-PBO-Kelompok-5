@@ -1,6 +1,6 @@
 ﻿namespace Pet_Care.View
 {
-    partial class V_Tambah_Layanan
+    partial class V_Tambah_Ubah_Lihat_Layanan
     {
         /// <summary> 
         /// Required designer variable.

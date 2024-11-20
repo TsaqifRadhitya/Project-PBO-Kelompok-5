@@ -48,8 +48,6 @@ namespace Pet_Care.Model
                 "Pelayanan_id serial NOT NULL UNIQUE PRIMARY KEY," +
                 "Nama_Pelayanan VARCHAR(20) NOT NULL," +
                 "Harga_Pelayanan INTEGER NOT NULL," +
-                "Deskripsi_Pelayanan TEXT," +
-                "Foto Bytea," +
                 "Quantity_Berdasarkan_hari Bool Not Null," +
                 "Status_Pelayanan Bool Not NUll Default true)");
 

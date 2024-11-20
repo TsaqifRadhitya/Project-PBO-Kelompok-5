@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -69,7 +70,8 @@ namespace Pet_Care.Model
                     Foto_Kucing = (byte[])data["foto_hewan"],
                     durasi_penitipan = data["Durasi_Penitipan"].ToString(),
                     Nomor_hp = data["nomor_hp"].ToString(),
-                    Alamat = data["alamat"].ToString()
+                    Alamat = data["alamat"].ToString(),
+                    display_price = $"Rp{((int)data["nominal_transaksi"]).ToString("n", CultureInfo.GetCultureInfo("id-ID"))}"
                 };
                 list.Add(data_Transaksi);
             }
@@ -145,6 +147,7 @@ namespace Pet_Care.Model
         public string Nomor_hp { get; set; }
         public string Alamat {  get; set; }
         public int nominal {  get; set; }
+        public string display_price {  get; set; }
         public List<dynamic[]> Layanan { get; set; }
     }
 }

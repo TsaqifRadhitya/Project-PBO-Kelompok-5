@@ -30,5 +30,10 @@ namespace Pet_Care.View
         {
 
         }
+
+        private void nama_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
