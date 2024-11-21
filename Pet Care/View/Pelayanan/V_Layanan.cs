@@ -35,6 +35,13 @@ namespace Pet_Care.View
 
         private void V_Layanan_Load(object sender, EventArgs e)
         {
+
+            DataGridViewImageColumn dataGridViewImageColumn = new DataGridViewImageColumn
+            {
+                Image = Properties.Resources.Batal,
+                ImageLayout = DataGridViewImageCellLayout.Zoom,
+                Name = "Test",
+            };
             DataGridViewButtonColumn button = new DataGridViewButtonColumn
             {
                 Name = "Delete",
@@ -45,7 +52,7 @@ namespace Pet_Care.View
             {
                 Name = "Edit",
                 UseColumnTextForButtonValue = true,
-                Text = "Edit"
+                Text = "Edit",
             };
             List<Data_Layanan> data = new List<Data_Layanan>();
             Data_Layanan layanan = new Data_Layanan
@@ -56,14 +63,15 @@ namespace Pet_Care.View
                 quantity_berdasarkan_hari = true
             };
             layanan.display_price = $"Rp{layanan.harga.ToString("n", CultureInfo.GetCultureInfo("id-ID"))}";
-            for(int i = 0; i < 100; i++)
+            for (int i = 0; i < 100; i++)
             {
                 data.Add(layanan);
             }
             Tabel_Layanan.DataSource = data;
             Tabel_Layanan.Columns.Add(button);
             Tabel_Layanan.Columns.Add(button_1);
-            Tabel_Layanan.Columns["quantity_berdasarkan_hari"].HeaderText = "Penghitungan Berdasarkan Hari";
+            //Tabel_Layanan.Columns.Add(dataGridViewImageColumn);
+            Tabel_Layanan.Columns["quantity_berdasarkan_hari"].HeaderText = "Berdasarkan Hari";
             Tabel_Layanan.Columns["name"].HeaderText = "Nama Layanan";
             Tabel_Layanan.Columns["display_price"].HeaderText = "Harga";
             Tabel_Layanan.Columns["Edit"].HeaderText = "";
@@ -73,7 +81,6 @@ namespace Pet_Care.View
             Tabel_Layanan.DefaultCellStyle.BackColor = Color.FromArgb(253, 233, 218);
             //Tabel_Layanan.EnableHeadersVisualStyles = false;
             Tabel_Layanan.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(253, 233, 218);
-            Tabel_Layanan.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
     }
 }

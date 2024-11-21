@@ -24,6 +24,17 @@ namespace Pet_Care.Contoller
         public void load_photo()
         {
             List<Data_Transaksi> data_Transaksis = m_transaksi.Get().OfType<Data_Transaksi>().ToList();
+            ImageConverter img = new ImageConverter();
+            byte[] foto = (byte[])img.ConvertTo(Properties.Resources.Test_Picture, typeof(byte[]));
+
+            for (int i = 0; i < 50; i++)
+            {
+                data_Transaksis.Add(new Data_Transaksi
+                {
+                    Nama_Kucing = "Dori",
+                    Foto_Kucing = foto
+                });
+            }
             foreach (Data_Transaksi data in data_Transaksis)
             {
                 create_card(data.Nama_Kucing, data.Foto_Kucing);
