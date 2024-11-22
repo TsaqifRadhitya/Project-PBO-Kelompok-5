@@ -163,14 +163,17 @@
   <data name="Dash Board" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dash Board.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Batal Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Batal Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Register" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Register.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Tambah_Ubah_Pelanggan" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Tambah_Ubah_Pelanggan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Layanan Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Layanan Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Frame" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Frame.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Tambah_Ubah_Pelanggan1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Tambah_Ubah_Pelanggan1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,8 +205,8 @@
   <data name="Test Picture" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Test Picture.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Frame Message Box Button1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Frame Message Box Button1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Tambah_Ubah_Pelanggan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tambah_Ubah_Pelanggan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Button Login Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Button Login Hover1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,17 +214,20 @@
   <data name="Pelanggan1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pelanggan1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Log Out Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Log Out Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Frame Message Box Button1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Frame Message Box Button1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Batal Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Batal Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Tambah Ubah Layanan1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tambah Ubah Layanan1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Confirm" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Confirm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Register Button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Register Button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tambah" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tambah.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Red_card" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Red_card.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -259,11 +265,11 @@
   <data name="Log Out" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Log Out.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Frame" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Frame.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Login1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Pelanggan2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pelanggan2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Log Out Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Log Out Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Layanan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Layanan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -274,8 +280,8 @@
   <data name="Tambah Pelanggan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Tambah Pelanggan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Login1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Login1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Pelanggan2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pelanggan2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Orange_Card" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Orange_Card.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -283,7 +289,7 @@
   <data name="Background Card Gallery" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Background Card Gallery.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Tambah Ubah Layanan1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Tambah Ubah Layanan1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Tambah_Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tambah_Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

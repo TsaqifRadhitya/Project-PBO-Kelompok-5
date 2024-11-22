@@ -25,9 +25,21 @@ namespace Pet_Care.View
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (e.ColumnIndex == Tabel_Layanan.Columns["Edit"].Index)
+            {
+                C_Layanan.show_form_edit(new Data_Layanan
+                {
+                    harga = (int)Tabel_Layanan.Rows[e.RowIndex].Cells["Harga"].Value,
+                    name = Tabel_Layanan.Rows[e.RowIndex].Cells["name"].Value.ToString(),
+                    quantity_berdasarkan_hari = (bool)Tabel_Layanan.Rows[e.RowIndex].Cells["quantity_berdasarkan_hari"].Value
+                });
+                return;
+            }
+            if(e.ColumnIndex == Tabel_Layanan.Columns["Delete"].Index)
+            {
+                C_Layanan.delete_layanan(Tabel_Layanan.Rows[e.RowIndex].Cells["name"].Value.ToString(), (int)Tabel_Layanan.Rows[e.RowIndex].Cells["id"].Value);
+            }
         }
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -81,6 +93,26 @@ namespace Pet_Care.View
             Tabel_Layanan.DefaultCellStyle.BackColor = Color.FromArgb(253, 233, 218);
             //Tabel_Layanan.EnableHeadersVisualStyles = false;
             Tabel_Layanan.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(253, 233, 218);
+        }
+
+        private void Tambah_Click(object sender, EventArgs e)
+        {
+            C_Layanan.show_form_tambah();
+        }
+
+        private void Tambah_MouseEnter(object sender, EventArgs e)
+        {
+            Tambah.BackgroundImage = Properties.Resources.Tambah_Hover;
+        }
+
+        private void Tambah_MouseHover(object sender, EventArgs e)
+        {
+            Tambah.Cursor = Cursors.Hand;
+        }
+
+        private void Tambah_MouseLeave(object sender, EventArgs e)
+        {
+            Tambah.BackgroundImage = Properties.Resources.Tambah;
         }
     }
 }
