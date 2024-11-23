@@ -42,7 +42,7 @@ namespace Pet_Care.View
 
         private void Batal_MouseEnter(object sender, EventArgs e)
         {
-            Batal.BackgroundImage = Properties.Resources.Batal; 
+            Batal.BackgroundImage = Properties.Resources.Batal;
         }
         private void Batal_MouseLeave(object sender, EventArgs e)
         {
@@ -62,7 +62,8 @@ namespace Pet_Care.View
                 ID = id_pelanggan,
                 Email = Email.Text,
             });
-            if (respons[0]){
+            if (respons[0])
+            {
                 Controller.load_data();
                 this.Close();
             }
@@ -84,6 +85,11 @@ namespace Pet_Care.View
         private void Simpan_MouseLeave(object sender, EventArgs e)
         {
             Simpan.BackgroundImage = Properties.Resources.Simpan_Hover;
+        }
+
+        private void Nomor_Telepon_TextChanged(object sender, EventArgs e)
+        {
+            if (!(int.TryParse(Nomor_Telepon.Text, out _))) Nomor_Telepon.Text = "";
         }
     }
 }

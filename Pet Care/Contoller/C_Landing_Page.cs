@@ -52,7 +52,6 @@ namespace Pet_Care.Contoller
 
         public void register_validation()
         {
-            int nomor_hp;
             if (V_Register.Username.Text == "Username" || V_Register.Password.Text == "Password" || V_Register.Nama_Lengkap.Text == "Nama Lengkap"|| V_Register.Nomor_HP.Text == "Nomor Hp"|| V_Register.Email.Text == "Email"|| V_Register.Konfirmasi_Password.Text != V_Register.Password.Text)
             {
                 show_message_box("Invalid Register");

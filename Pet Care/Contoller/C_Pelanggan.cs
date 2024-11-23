@@ -31,38 +31,30 @@ namespace Pet_Care.Contoller
         public dynamic[] save_data(bool edit_state, Data_Pelanngan data)
         {
             if(string.IsNullOrEmpty(data.Name) || string.IsNullOrEmpty(data.Nomor_HP) || string.IsNullOrEmpty(data.Alamat) || string.IsNullOrEmpty(data.Email)) return [false,"Harap Mengisi Seluruh Data !"];
-            try
+            if (edit_state)
             {
-                BigInteger.Parse(data.Nomor_HP);
-                if (edit_state)
+                try
                 {
-                    try
-                    {
-                        M_Pelanggan.Update(data, data.ID);
-                        return [true];
-                    }
-                    catch
-                    {
-                        return [false,"Nomor Hp Sudah Terdaftar !"];
-                    }
+                    M_Pelanggan.Update(data, data.ID);
+                    return [true];
                 }
-                else
+                catch
                 {
-                    try
-                    {
-                        M_Pelanggan.Insert(data);
-                        return [true];
-                    }
-                    catch
-                    {
-                        return [false, "Nomor Hp Sudah Terdaftar !"];
-                    }
+                    return [false,"Nomor Hp Sudah Terdaftar !"];
                 }
-            } catch 
+            }
+            else
             {
-                return [false,"Harap Mengisi Data Dengan Benar"];
-            };
-            
+                try
+                {
+                    M_Pelanggan.Insert(data);
+                    return [true];
+                }
+                catch
+                {
+                    return [false, "Nomor Hp Sudah Terdaftar !"];
+                }
+            }     
         }
         public void load_data()
         {

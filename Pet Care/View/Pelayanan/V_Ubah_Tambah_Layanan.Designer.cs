@@ -138,6 +138,7 @@
             Harga.Name = "Harga";
             Harga.Size = new Size(406, 30);
             Harga.TabIndex = 8;
+            Harga.TextChanged += Harga_TextChanged;
             // 
             // V_Ubah_Tambah_Layanan
             // 
@@ -157,6 +158,7 @@
             Name = "V_Ubah_Tambah_Layanan";
             StartPosition = FormStartPosition.Manual;
             Text = "MeowInn";
+            Load += V_Ubah_Tambah_Layanan_Load;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -120,6 +120,7 @@
             Nomor_HP.Size = new Size(323, 27);
             Nomor_HP.TabIndex = 9;
             Nomor_HP.Text = "Nomor Hp";
+            Nomor_HP.TextChanged += Nomor_HP_TextChanged;
             Nomor_HP.Enter += Nomor_HP_Enter;
             Nomor_HP.Leave += Nomor_HP_Leave;
             // 

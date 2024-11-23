@@ -14,7 +14,7 @@ namespace Pet_Care.Model
     {
         public List<object> Get()
         {
-            NpgsqlDataReader data = Execute_With_Return($"SELECT * From Pelayanan");
+            NpgsqlDataReader data = Execute_With_Return($"SELECT * From Pelayanan where status_pelayanan = true order by Pelayanan_id asc");
             List<object> list = new List<object>();
             while (data.Read())
             {
@@ -23,7 +23,7 @@ namespace Pet_Care.Model
                     id = (int)data["Pelayanan_id"],
                     name = data["Nama_Pelayanan"].ToString(),
                     harga = (int)data["Harga_Pelayanan"],
-                    quantity_berdasarkan_hari = (bool)data[" quantity_berdasarkan_hari"],
+                    quantity_berdasarkan_hari = (bool)data["quantity_berdasarkan_hari"],
                 };
                 data_Layanan.display_price = $"Rp{data_Layanan.harga.ToString("n", CultureInfo.GetCultureInfo("id-ID"))}";
                 list.Add(data_Layanan);
@@ -45,9 +45,8 @@ namespace Pet_Care.Model
         public void Update(object obj, int id)
         {
             Data_Layanan data_Layanan = obj as Data_Layanan;
-            NpgsqlCommand cmd = new NpgsqlCommand();
-            cmd.CommandText = $"UPDATE Pelayanan set nama_pelayanan = '{data_Layanan.name}', harga_pelayanan = {data_Layanan.harga},  quantity_berdasarkan_hari = {data_Layanan.quantity_berdasarkan_hari} where pelayanan_id = {data_Layanan.id}";
-            Execute_No_Return(cmd);
+            string querry = $"UPDATE Pelayanan set nama_pelayanan = '{data_Layanan.name}', harga_pelayanan = {data_Layanan.harga},  quantity_berdasarkan_hari = {data_Layanan.quantity_berdasarkan_hari} where pelayanan_id = {data_Layanan.id}";
+            Execute_No_Return(querry);
         }
     }
 

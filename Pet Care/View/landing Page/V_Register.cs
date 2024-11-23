@@ -159,5 +159,10 @@ namespace Pet_Care.View
                 Konfirmasi_Password.ForeColor = Color.White;
             }
         }
+
+        private void Nomor_HP_TextChanged(object sender, EventArgs e)
+        {
+            if (!(int.TryParse(Nomor_HP.Text, out _))) Nomor_HP.Text = "";
+        }
     }
 }

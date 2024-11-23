@@ -93,6 +93,7 @@
             Nomor_Telepon.Name = "Nomor_Telepon";
             Nomor_Telepon.Size = new Size(406, 30);
             Nomor_Telepon.TabIndex = 3;
+            Nomor_Telepon.TextChanged += Nomor_Telepon_TextChanged;
             // 
             // Nama
             // 

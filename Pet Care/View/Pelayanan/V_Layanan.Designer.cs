@@ -106,7 +106,7 @@
         #endregion
 
         private Panel panel1;
-        private DataGridView Tabel_Layanan;
         private Button Tambah;
+        public DataGridView Tabel_Layanan;
     }
 }
