@@ -14,6 +14,7 @@ namespace Pet_Care.View
     public partial class V_Register : UserControl
     {
         C_Landing_Page controller;
+        bool password_state, confirm_password_state;
         public V_Register(C_Landing_Page controller)
         {
             InitializeComponent();
@@ -130,6 +131,7 @@ namespace Pet_Care.View
             {
                 Password.Text = "";
                 Password.ForeColor = Color.White;
+                Password.PasswordChar = '●';
             }
         }
 
@@ -139,6 +141,7 @@ namespace Pet_Care.View
             {
                 Password.Text = "Password";
                 Password.ForeColor = Color.FromArgb(176, 142, 128);
+                Password.PasswordChar = '\0';
             }
         }
 
@@ -148,6 +151,7 @@ namespace Pet_Care.View
             {
                 Konfirmasi_Password.Text = "Konfirmasi Password";
                 Konfirmasi_Password.ForeColor = Color.FromArgb(176, 142, 128);
+                Konfirmasi_Password.PasswordChar = '\0';
             }
         }
 
@@ -157,12 +161,57 @@ namespace Pet_Care.View
             {
                 Konfirmasi_Password.Text = "";
                 Konfirmasi_Password.ForeColor = Color.White;
+                Konfirmasi_Password.PasswordChar = '●';
             }
         }
 
         private void Nomor_HP_TextChanged(object sender, EventArgs e)
         {
             if (!(int.TryParse(Nomor_HP.Text, out _))) Nomor_HP.Text = "";
+        }
+
+        private void show_hide_password_Click(object sender, EventArgs e)
+        {
+            if (Password.Text == "Password") return;
+            if (password_state)
+            {
+                password_state = false;
+                show_hide_password_1.BackgroundImage = Properties.Resources.Hide_Password_;
+                Password.PasswordChar = '●';
+            }
+            else
+            {
+                password_state = true;
+                show_hide_password_1.BackgroundImage = Properties.Resources.Show_Password;
+                Password.PasswordChar = '\0';
+            }
+        }
+
+        private void show_hide_password_1_MouseHover(object sender, EventArgs e)
+        {
+            show_hide_password_1.Cursor = Cursors.Hand;
+        }
+
+        private void show_hide_password_2_MouseHover(object sender, EventArgs e)
+        {
+            show_hide_password_2.Cursor = Cursors.Hand;
+        }
+
+        private void show_hide_password_2_Click(object sender, EventArgs e)
+        {
+            if (Konfirmasi_Password.Text == "Konfirmasi Password") return;
+            if (confirm_password_state)
+            {
+                confirm_password_state = false;
+                show_hide_password_2.BackgroundImage = Properties.Resources.Hide_Password_;
+                Konfirmasi_Password.PasswordChar = '●';
+            }
+            else
+            {
+                confirm_password_state = true;
+                show_hide_password_2.BackgroundImage = Properties.Resources.Show_Password;
+                Konfirmasi_Password.PasswordChar = '\0';
+            }
         }
     }
 }

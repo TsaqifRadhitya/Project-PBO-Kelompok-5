@@ -37,6 +37,8 @@
             Email = new TextBox();
             Password = new TextBox();
             Konfirmasi_Password = new TextBox();
+            show_hide_password_1 = new Button();
+            show_hide_password_2 = new Button();
             SuspendLayout();
             // 
             // Button_Register
@@ -146,7 +148,7 @@
             Password.ForeColor = Color.FromArgb(176, 142, 128);
             Password.Location = new Point(66, 376);
             Password.Name = "Password";
-            Password.Size = new Size(323, 27);
+            Password.Size = new Size(276, 27);
             Password.TabIndex = 11;
             Password.Text = "Password";
             Password.Enter += Password_Enter;
@@ -160,11 +162,41 @@
             Konfirmasi_Password.ForeColor = Color.FromArgb(176, 142, 128);
             Konfirmasi_Password.Location = new Point(66, 446);
             Konfirmasi_Password.Name = "Konfirmasi_Password";
-            Konfirmasi_Password.Size = new Size(323, 27);
+            Konfirmasi_Password.Size = new Size(282, 27);
             Konfirmasi_Password.TabIndex = 12;
             Konfirmasi_Password.Text = "Konfirmasi Password";
             Konfirmasi_Password.Enter += Konfirmasi_Password_Enter;
             Konfirmasi_Password.Leave += Konfirmasi_Password_Leave;
+            // 
+            // show_hide_password_1
+            // 
+            show_hide_password_1.BackgroundImage = Properties.Resources.Hide_Password_;
+            show_hide_password_1.FlatAppearance.BorderSize = 0;
+            show_hide_password_1.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            show_hide_password_1.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            show_hide_password_1.FlatStyle = FlatStyle.Flat;
+            show_hide_password_1.Location = new Point(354, 374);
+            show_hide_password_1.Name = "show_hide_password_1";
+            show_hide_password_1.Size = new Size(35, 35);
+            show_hide_password_1.TabIndex = 13;
+            show_hide_password_1.UseVisualStyleBackColor = true;
+            show_hide_password_1.Click += show_hide_password_Click;
+            show_hide_password_1.MouseHover += show_hide_password_1_MouseHover;
+            // 
+            // show_hide_password_2
+            // 
+            show_hide_password_2.BackgroundImage = Properties.Resources.Hide_Password_;
+            show_hide_password_2.FlatAppearance.BorderSize = 0;
+            show_hide_password_2.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            show_hide_password_2.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            show_hide_password_2.FlatStyle = FlatStyle.Flat;
+            show_hide_password_2.Location = new Point(354, 445);
+            show_hide_password_2.Name = "show_hide_password_2";
+            show_hide_password_2.Size = new Size(35, 35);
+            show_hide_password_2.TabIndex = 14;
+            show_hide_password_2.UseVisualStyleBackColor = true;
+            show_hide_password_2.Click += show_hide_password_2_Click;
+            show_hide_password_2.MouseHover += show_hide_password_2_MouseHover;
             // 
             // V_Register
             // 
@@ -173,6 +205,8 @@
             BackColor = Color.Transparent;
             BackgroundImage = Properties.Resources.Register;
             BackgroundImageLayout = ImageLayout.Stretch;
+            Controls.Add(show_hide_password_2);
+            Controls.Add(show_hide_password_1);
             Controls.Add(Konfirmasi_Password);
             Controls.Add(Password);
             Controls.Add(Email);
@@ -200,5 +234,7 @@
         public TextBox Email;
         public TextBox Password;
         public TextBox Konfirmasi_Password;
+        private Button show_hide_password_1;
+        private Button show_hide_password_2;
     }
 }

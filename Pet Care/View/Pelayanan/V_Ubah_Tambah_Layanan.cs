@@ -27,6 +27,7 @@ namespace Pet_Care.View
             InitializeComponent();
             this.controller = controller;
             this.data = data;
+            EditMode = true;
         }
 
         private void Batal_Click(object sender, EventArgs e)
@@ -49,7 +50,7 @@ namespace Pet_Care.View
                     quantity_berdasarkan_hari = quantity_tipe,
                     name = Nama_Layanan.Text,
                     harga = int.Parse(Harga.Text),
-                    id =data.id,
+                    id = (data != null) ? data.id : 0,
                 },
                 EditMode);
                 this.Close();
@@ -93,16 +94,18 @@ namespace Pet_Care.View
 
         private void V_Ubah_Tambah_Layanan_Load(object sender, EventArgs e)
         {
-            EditMode = true;
-            Nama_Layanan.Text = data.name;
-            Harga.Text = data.harga.ToString();
-            if (data.quantity_berdasarkan_hari)
+            if (EditMode)
             {
-                radioButton2.Checked = true;
-            }
-            else
-            {
-                radioButton1.Checked = true;
+                Nama_Layanan.Text = data.name;
+                Harga.Text = data.harga.ToString();
+                if (data.quantity_berdasarkan_hari)
+                {
+                    radioButton2.Checked = true;
+                }
+                else
+                {
+                    radioButton1.Checked = true;
+                }
             }
         }
     }

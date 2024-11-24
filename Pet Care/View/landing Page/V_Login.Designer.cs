@@ -33,6 +33,7 @@
             Password = new TextBox();
             label1 = new Label();
             Register = new Label();
+            show_hide_password = new Button();
             SuspendLayout();
             // 
             // LoginButton
@@ -78,7 +79,7 @@
             Password.ForeColor = Color.FromArgb(176, 142, 128);
             Password.Location = new Point(71, 245);
             Password.Name = "Password";
-            Password.Size = new Size(319, 27);
+            Password.Size = new Size(276, 27);
             Password.TabIndex = 2;
             Password.Text = "Password";
             Password.Enter += Password_Enter;
@@ -108,6 +109,21 @@
             Register.Click += Register_Click;
             Register.MouseHover += Register_MouseHover;
             // 
+            // show_hide_password
+            // 
+            show_hide_password.BackgroundImage = Properties.Resources.Hide_Password_;
+            show_hide_password.FlatAppearance.BorderSize = 0;
+            show_hide_password.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            show_hide_password.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            show_hide_password.FlatStyle = FlatStyle.Flat;
+            show_hide_password.Location = new Point(353, 242);
+            show_hide_password.Name = "show_hide_password";
+            show_hide_password.Size = new Size(35, 35);
+            show_hide_password.TabIndex = 5;
+            show_hide_password.UseVisualStyleBackColor = true;
+            show_hide_password.Click += show_hide_password_Click;
+            show_hide_password.MouseHover += show_hide_password_MouseHover;
+            // 
             // V_Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -115,6 +131,7 @@
             BackColor = Color.Transparent;
             BackgroundImage = Properties.Resources.Login1;
             BackgroundImageLayout = ImageLayout.Stretch;
+            Controls.Add(show_hide_password);
             Controls.Add(Register);
             Controls.Add(label1);
             Controls.Add(Password);
@@ -136,5 +153,6 @@
         private Label Register;
         public TextBox Username_Email;
         public TextBox Password;
+        private Button show_hide_password;
     }
 }

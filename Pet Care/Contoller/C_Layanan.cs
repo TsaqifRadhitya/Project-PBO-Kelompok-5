@@ -70,12 +70,12 @@ namespace Pet_Care.Contoller
                 V_Layanan.Tabel_Layanan.Columns["quantity_berdasarkan_hari"].HeaderText = "Berdasarkan Hari";
                 V_Layanan.Tabel_Layanan.Columns["name"].HeaderText = "Nama Layanan";
                 V_Layanan.Tabel_Layanan.Columns["display_price"].HeaderText = "Harga";
+                V_Layanan.Tabel_Layanan.Columns["display_price"].HeaderText = "Harga";
                 V_Layanan.Tabel_Layanan.Columns["Edit"].HeaderText = "";
                 V_Layanan.Tabel_Layanan.Columns["Delete"].HeaderText = "";
                 V_Layanan.Tabel_Layanan.Columns["id"].Visible = false;
                 V_Layanan.Tabel_Layanan.Columns["Harga"].Visible = false;
                 V_Layanan.Tabel_Layanan.DefaultCellStyle.BackColor = Color.FromArgb(253, 233, 218);
-                //Tabel_Layanan.EnableHeadersVisualStyles = false;
                 V_Layanan.Tabel_Layanan.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(253, 233, 218);
             }
         }

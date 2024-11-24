@@ -273,6 +273,16 @@ namespace Pet_Care.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Hide_Password_ {
+            get {
+                object obj = ResourceManager.GetObject("Hide Password ", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Landing_Page {
             get {
                 object obj = ResourceManager.GetObject("Landing Page", resourceCulture);
@@ -486,6 +496,16 @@ namespace Pet_Care.Properties {
         internal static System.Drawing.Bitmap Register_Button_Hover {
             get {
                 object obj = ResourceManager.GetObject("Register Button Hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Show_Password {
+            get {
+                object obj = ResourceManager.GetObject("Show Password", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

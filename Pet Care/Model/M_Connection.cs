@@ -46,10 +46,16 @@ namespace Pet_Care.Model
 
             Execute_No_Return("CREATE TABLE IF NOT EXISTS Pelayanan (" +
                 "Pelayanan_id serial NOT NULL UNIQUE PRIMARY KEY," +
-                "Nama_Pelayanan VARCHAR(20) NOT NULL," +
+                "Nama_Pelayanan VARCHAR(30) NOT NULL," +
                 "Harga_Pelayanan INTEGER NOT NULL," +
                 "Quantity_Berdasarkan_hari Bool Not Null," +
                 "Status_Pelayanan Bool Not NUll Default true)");
+
+            Execute_No_Return("Create Table if not exists Metode_pembayaran(" +
+               "id serial not null unique primary key," +
+               "Nama_layanan varchar not null unique," +
+               "jenis_metode varchar(15) not null," +
+               "foto_metode bytea not null)");
 
             Execute_No_Return("CREATE TABLE IF NOT EXISTS Transaksi (" +
                 "Transaksi_id serial NOT NULL UNIQUE PRIMARY KEY," +
@@ -58,11 +64,14 @@ namespace Pet_Care.Model
                 "Foto_hewan Bytea NOT NULL," +
                 "Durasi_Penitipan Integer Not Null," +
                 "Nominal_transaksi INTEGER NOT NULL," +
+                "Catatan_Tambahan Text," +
                 "Status_Penitipan Bool Not NUll default true," +
                 "Pelanggan_id integer NOT NULL," +
                 "Akun_id integer NOT NULL," +
+                "Metode_id integer Not NUll," +
                 "CONSTRAINT Akun_fk FOREIGN KEY ( Akun_id ) REFERENCES Akun ( Akun_id )," +
-                "CONSTRAINT Pelanggan_fk FOREIGN KEY ( Pelanggan_id ) REFERENCES pelanggan ( Pelanggan_id ))");
+                "CONSTRAINT Pelanggan_fk FOREIGN KEY ( Pelanggan_id ) REFERENCES pelanggan ( Pelanggan_id )," +
+                "CONSTRAINT Metode_fk FOREIGN KEY(Metode_id) REFERENCES Metode_pembayaran(id))");
 
             Execute_No_Return("CREATE TABLE IF NOT EXISTS Detail_Transaksi (Quantity INTEGER NOT NULL," +
                 "Pelayanan_id integer NOT NULL," +

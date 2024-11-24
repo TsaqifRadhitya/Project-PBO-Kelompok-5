@@ -24,6 +24,10 @@ namespace Pet_Care.View
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (0 == e.RowIndex && e.ColumnIndex == Tabel_Layanan.Columns["Delete"].Index)
+            {
+                return;
+            }
             if (e.ColumnIndex == Tabel_Layanan.Columns["Edit"].Index)
             {
                 Controller.show_form_edit(new Data_Layanan

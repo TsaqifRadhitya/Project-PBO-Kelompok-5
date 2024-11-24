@@ -14,6 +14,7 @@ namespace Pet_Care.View
     public partial class V_Login : UserControl
     {
         C_Landing_Page Controller;
+        bool password_state;
         public V_Login(C_Landing_Page c_Landing_Page)
         {
             InitializeComponent();
@@ -78,6 +79,7 @@ namespace Pet_Care.View
         {
             if (String.IsNullOrEmpty(Password.Text))
             {
+                Password.PasswordChar = '\0';
                 Password.Text = "Password";
                 Password.ForeColor = Color.FromArgb(176, 142, 128);
             }
@@ -88,6 +90,7 @@ namespace Pet_Care.View
             if (Password.Text == "Password")
             {
                 Password.Text = "";
+                Password.PasswordChar = '●';
                 Password.ForeColor = Color.White;
             }
         }
@@ -95,6 +98,28 @@ namespace Pet_Care.View
         private void Username_Email_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void show_hide_password_Click(object sender, EventArgs e)
+        {
+            if (Password.Text == "Password") return;
+            if (password_state)
+            {
+                password_state = false;
+                show_hide_password.BackgroundImage = Properties.Resources.Hide_Password_;
+                Password.PasswordChar = '●';
+            }
+            else
+            {
+                password_state = true;
+                show_hide_password.BackgroundImage = Properties.Resources.Show_Password;
+                Password.PasswordChar = '\0';
+            }
+        }
+
+        private void show_hide_password_MouseHover(object sender, EventArgs e)
+        {
+            show_hide_password.Cursor = Cursors.Hand;
         }
     }
 }
