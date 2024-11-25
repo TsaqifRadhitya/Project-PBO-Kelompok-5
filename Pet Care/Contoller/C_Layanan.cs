@@ -27,17 +27,33 @@ namespace Pet_Care.Contoller
             tambah.ShowDialog();
         }
 
-        public void save(Data_Layanan data, bool edit_state)
+        public dynamic[] save(Data_Layanan data, bool edit_state)
         {
             if (edit_state)
-            { 
-                model.Update(data,data.id);
+            {
+                try
+                {
+                    model.Update(data, data.id);
+                    return [true,data.name,edit_state];
+                }
+                catch
+                {
+                    return [false,data.name,edit_state];
+                }
+                
             }
             else 
             {
-                model.Insert(data);
+                try
+                {
+                    model.Insert(data);
+                    return [true,data.name,edit_state];
+                }
+                catch
+                {
+                    return [false,data.name,edit_state];
+                }    
             }
-            load();
         }
         public void show_form_edit(Data_Layanan data)
         {

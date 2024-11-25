@@ -80,11 +80,12 @@ namespace Pet_Care.Model
         }
         public Data_Transaksi Get_detail(int id)
         {
-            NpgsqlDataReader data = Execute_With_Return("Select t.transaksi_id, TO_CHAR(tanggal_transaksi,'DD.MM.YYYY HH24:MI:SS') as tanggal,nama,nama_hewan,foto_hewan,Durasi_Penitipan,nomor_hp,alamat,nominal_transaksi,nama_pelayanan,quantity" +
+            NpgsqlDataReader data = Execute_With_Return("Select t.transaksi_id, TO_CHAR(tanggal_transaksi,'DD.MM.YYYY HH24:MI:SS') as tanggal,nama,nama_hewan,foto_hewan,Durasi_Penitipan,nomor_hp,alamat,nominal_transaksi,nama_pelayanan,quantity,nama_metode" +
                 "from transaksi t " +
                 "join Pelanggan p on t.pelanggan_id = p.pelanggan_id " +
                 "join detail_transaksi dt on dt.transaksi_id = t.transaksi_id " +
                 "join Pelayanan pl on pl.pelayanan_id = dt.pelayanan_id " +
+                "join Metode_pembayaran mp on t.metode_id = mp.id" +
                 $"where t.transaksi_id = {id}");
             Data_Transaksi data_transaksi = new Data_Transaksi();
             data_transaksi.Layanan = new List<dynamic[]>();
@@ -98,6 +99,7 @@ namespace Pet_Care.Model
                 data_transaksi.durasi_penitipan = data["Durasi_Penitipan"].ToString();
                 data_transaksi.Nomor_hp = data["nomor_hp"].ToString();
                 data_transaksi.Alamat = data["alamat"].ToString();
+                data_transaksi.Metode_Pembayaran =  data["alamat"].ToString();
                 data_transaksi.Layanan.Add([data["nama_pelayanan"].ToString(), (int)data["quantity"]]);
             }
             conn.Close();
@@ -108,12 +110,12 @@ namespace Pet_Care.Model
         {
             Data_Transaksi data = obj as Data_Transaksi;
             NpgsqlCommand cmd = new NpgsqlCommand();
-            cmd.CommandText = $"INSERT INTO TRANSAKSI(nama_hewan,foto_hewan,durasi_penitipan,nominal_transaksi,pelanggan_id,akun_id) values ('{data.Nama_Kucing}',@foto,{data.durasi_penitipan},{data.nominal},{data.Id_pelanggan},{data.id_akun})";
+            cmd.CommandText = $"INSERT INTO TRANSAKSI(nama_hewan,foto_hewan,durasi_penitipan,nominal_transaksi,pelanggan_id,akun_id) values ('{data.Nama_Kucing}',@foto,{data.durasi_penitipan},{data.nominal},{data.Id_pelanggan},{data.id_akun}) RETURNING Transaksi_id";
             cmd.Parameters.AddWithValue("@foto",NpgsqlTypes.NpgsqlDbType.Bytea, data.Foto_Kucing);
             int id_transaksi = (int)Execute_Single_Return(cmd);
             foreach(dynamic[] transaksi in data.Layanan)
             {
-                Execute_No_Return($"INSERT INTO detail_transaksi(quantity,pelayanan_id,transaksi_id) Values ({transaksi[1]},{(int)transaksi[0]},{id_transaksi})");
+                Execute_No_Return($"INSERT INTO detail_transaksi(quantity,pelayanan_id,transaksi_id) Values ({(int)transaksi[1]},{(int)transaksi[0]},{id_transaksi})");
             }
         }
 
@@ -147,6 +149,7 @@ namespace Pet_Care.Model
         public string Nomor_hp { get; set; }
         public string Alamat {  get; set; }
         public int nominal {  get; set; }
+        public string Metode_Pembayaran {  get; set; }
         public string display_price {  get; set; }
         public List<dynamic[]> Layanan { get; set; }
     }

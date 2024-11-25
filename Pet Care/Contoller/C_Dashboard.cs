@@ -34,7 +34,8 @@ namespace Pet_Care.Contoller
                     durasi_penitipan = "5 hari",
                     Nomor_hp = "085156360779",
                     Alamat = "Jl.Manggar No.127",
-                    display_price = $"Rp{1000000.ToString("n", CultureInfo.GetCultureInfo("id-ID"))}"
+                    display_price = $"Rp{1000000.ToString("n", CultureInfo.GetCultureInfo("id-ID"))}",
+                    Metode_Pembayaran = "BRI"
                 });
             }
             Dashboard.TabelTransaksi.DataSource = transaksiList;

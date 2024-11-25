@@ -223,6 +223,16 @@ namespace Pet_Care.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Foto {
+            get {
+                object obj = ResourceManager.GetObject("Foto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Frame {
             get {
                 object obj = ResourceManager.GetObject("Frame", resourceCulture);
@@ -513,6 +523,26 @@ namespace Pet_Care.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Shutter {
+            get {
+                object obj = ResourceManager.GetObject("Shutter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Shutter_Hover {
+            get {
+                object obj = ResourceManager.GetObject("Shutter Hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Simpan {
             get {
                 object obj = ResourceManager.GetObject("Simpan", resourceCulture);
@@ -656,6 +686,16 @@ namespace Pet_Care.Properties {
         internal static System.Drawing.Bitmap Transaksi_Hover {
             get {
                 object obj = ResourceManager.GetObject("Transaksi Hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Transaksi1 {
+            get {
+                object obj = ResourceManager.GetObject("Transaksi1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

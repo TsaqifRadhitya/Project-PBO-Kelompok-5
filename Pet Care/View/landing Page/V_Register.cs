@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -167,7 +168,7 @@ namespace Pet_Care.View
 
         private void Nomor_HP_TextChanged(object sender, EventArgs e)
         {
-            if (!(int.TryParse(Nomor_HP.Text, out _))) Nomor_HP.Text = "";
+            if (!(BigInteger.TryParse(Nomor_HP.Text, out _))) Nomor_HP.Text = "";
         }
 
         private void show_hide_password_Click(object sender, EventArgs e)

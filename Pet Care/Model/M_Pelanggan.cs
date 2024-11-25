@@ -45,11 +45,11 @@ namespace Pet_Care.Model
             }
             return daftar_mahasiswa;
         }
-
-        public void Insert(object obj)
+        public void Insert(object obj) { }
+        public int insert(object obj)
         {
             Data_Pelanngan data = obj as Data_Pelanngan;
-            Execute_No_Return($"Insert Into Pelanggan(nama,nomor_hp,alamat,Email) Values ('{data.Name}','{data.Nomor_HP}','{data.Alamat}','{data.Email}')");
+            return (int)Execute_Single_Return($"Insert Into Pelanggan(nama,nomor_hp,alamat,Email) Values ('{data.Name}','{data.Nomor_HP}','{data.Alamat}','{data.Email}') Returning pelanggan_id");
         }
 
         public void Delete(int id)

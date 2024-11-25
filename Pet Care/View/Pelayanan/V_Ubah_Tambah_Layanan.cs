@@ -45,7 +45,7 @@ namespace Pet_Care.View
             if (int.TryParse(Harga.Text, out _))
             {
                 bool quantity_tipe = (radioButton2.Checked) ? true : false;
-                controller.save(new Data_Layanan
+                dynamic[] result = controller.save(new Data_Layanan
                 {
                     quantity_berdasarkan_hari = quantity_tipe,
                     name = Nama_Layanan.Text,
@@ -53,7 +53,20 @@ namespace Pet_Care.View
                     id = (data != null) ? data.id : 0,
                 },
                 EditMode);
-                this.Close();
+                if (result[0] && result[2]){
+                    controller.show_message_box($"Berhasil Memperbarui Layanan {result[1]}");
+                    controller.load();
+                    this.Close();
+                }else if (result[0])
+                {
+                    controller.show_message_box($"Berhasil Menambahkan Layanan {result[1]}");
+                    controller.load();
+                    this.Close();
+                }
+                else
+                {
+                    controller.show_message_box($"Layanan {result[1]} Sudah Tersedia !");
+                }
             }
         }
 

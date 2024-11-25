@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Pet_Care.Model;
 using Pet_Care.Contoller;
+using System.Numerics;
 namespace Pet_Care.View
 {
     public partial class V_Ubah_Tambah_Pelanggan : Form
@@ -89,7 +90,7 @@ namespace Pet_Care.View
 
         private void Nomor_Telepon_TextChanged(object sender, EventArgs e)
         {
-            if (!(int.TryParse(Nomor_Telepon.Text, out _))) Nomor_Telepon.Text = "";
+            if (!BigInteger.TryParse(Nomor_Telepon.Text, out _)) Nomor_Telepon.Text = "";
         }
     }
 }

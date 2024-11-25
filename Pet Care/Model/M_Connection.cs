@@ -46,7 +46,7 @@ namespace Pet_Care.Model
 
             Execute_No_Return("CREATE TABLE IF NOT EXISTS Pelayanan (" +
                 "Pelayanan_id serial NOT NULL UNIQUE PRIMARY KEY," +
-                "Nama_Pelayanan VARCHAR(30) NOT NULL," +
+                "Nama_Pelayanan VARCHAR(30) NOT NULL UNIQUE," +
                 "Harga_Pelayanan INTEGER NOT NULL," +
                 "Quantity_Berdasarkan_hari Bool Not Null," +
                 "Status_Pelayanan Bool Not NUll Default true)");
@@ -78,6 +78,14 @@ namespace Pet_Care.Model
                 "Transaksi_id integer NOT NULL," +
                 "CONSTRAINT pelayanan_fk FOREIGN KEY ( pelayanan_id ) REFERENCES pelayanan ( pelayanan_id )," +
                 "CONSTRAINT transaksi_fk FOREIGN KEY ( transaksi_id ) REFERENCES transaksi ( transaksi_id ))");
+            try
+            {
+                Execute_No_Return("INSERT INTO PELAYANAN(Nama_Pelayanan,Harga_Pelayanan,Quantity_Berdasarkan_hari) Values ('Penitipan',50000,true)");
+            }
+            catch
+            {
+
+            }
         }
 
         public void Execute_No_Return(string Querry)

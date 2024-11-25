@@ -47,7 +47,7 @@ namespace Pet_Care.Contoller
             {
                 try
                 {
-                    M_Pelanggan.Insert(data);
+                    show_message_box($"Berhasil Menambahkan Pelangann dengan ID #{M_Pelanggan.insert(data)}");
                     return [true];
                 }
                 catch
