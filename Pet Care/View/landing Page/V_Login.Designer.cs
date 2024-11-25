@@ -112,6 +112,7 @@
             // show_hide_password
             // 
             show_hide_password.BackgroundImage = Properties.Resources.Hide_Password_;
+            show_hide_password.BackgroundImageLayout = ImageLayout.Stretch;
             show_hide_password.FlatAppearance.BorderSize = 0;
             show_hide_password.FlatAppearance.MouseDownBackColor = Color.Transparent;
             show_hide_password.FlatAppearance.MouseOverBackColor = Color.Transparent;

@@ -49,6 +49,7 @@
             // 
             Cancel.BackColor = Color.White;
             Cancel.BackgroundImage = Properties.Resources.Cancel;
+            Cancel.BackgroundImageLayout = ImageLayout.Stretch;
             Cancel.FlatAppearance.BorderSize = 0;
             Cancel.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Cancel.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -67,6 +68,7 @@
             // 
             Confirm.BackColor = Color.White;
             Confirm.BackgroundImage = Properties.Resources.Confirm;
+            Confirm.BackgroundImageLayout = ImageLayout.Stretch;
             Confirm.FlatAppearance.BorderSize = 0;
             Confirm.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Confirm.FlatAppearance.MouseOverBackColor = Color.Transparent;

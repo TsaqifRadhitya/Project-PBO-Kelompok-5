@@ -41,6 +41,7 @@
             // 
             Logout.BackColor = Color.Transparent;
             Logout.BackgroundImage = Properties.Resources.Log_Out;
+            Logout.BackgroundImageLayout = ImageLayout.Stretch;
             Logout.FlatAppearance.BorderSize = 0;
             Logout.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Logout.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -66,6 +67,7 @@
             // 
             Dashboard.BackColor = Color.Transparent;
             Dashboard.BackgroundImage = Properties.Resources.Dasboard_Focus;
+            Dashboard.BackgroundImageLayout = ImageLayout.Stretch;
             Dashboard.FlatAppearance.BorderSize = 0;
             Dashboard.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Dashboard.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -84,6 +86,7 @@
             // 
             Transaksi.BackColor = Color.Transparent;
             Transaksi.BackgroundImage = Properties.Resources.Transaksi;
+            Transaksi.BackgroundImageLayout = ImageLayout.Stretch;
             Transaksi.FlatAppearance.BorderSize = 0;
             Transaksi.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Transaksi.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -102,6 +105,7 @@
             // 
             Pelanggan.BackColor = Color.Transparent;
             Pelanggan.BackgroundImage = Properties.Resources.Pelanggan;
+            Pelanggan.BackgroundImageLayout = ImageLayout.Stretch;
             Pelanggan.FlatAppearance.BorderSize = 0;
             Pelanggan.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Pelanggan.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -120,6 +124,7 @@
             // 
             Layanan.BackColor = Color.Transparent;
             Layanan.BackgroundImage = Properties.Resources.Layanan;
+            Layanan.BackgroundImageLayout = ImageLayout.Stretch;
             Layanan.FlatAppearance.BorderSize = 0;
             Layanan.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Layanan.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -154,6 +159,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Dash_Board;
+            BackgroundImageLayout = ImageLayout.Stretch;
             Controls.Add(Secret);
             Controls.Add(Layanan);
             Controls.Add(Pelanggan);
@@ -161,6 +167,7 @@
             Controls.Add(Dashboard);
             Controls.Add(panel1);
             Controls.Add(Logout);
+            DoubleBuffered = true;
             Name = "V_Main_Menu";
             Size = new Size(1280, 720);
             ResumeLayout(false);

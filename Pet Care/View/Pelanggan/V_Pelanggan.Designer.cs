@@ -31,6 +31,7 @@
             SearchBar = new TextBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel1 = new Panel();
+            label2 = new Label();
             button2 = new Button();
             id = new Label();
             button1 = new Button();
@@ -39,7 +40,6 @@
             Nama = new Label();
             Tambah_Pelanggan = new Button();
             Search = new Button();
-            label2 = new Label();
             flowLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -72,6 +72,7 @@
             // panel1
             // 
             panel1.BackgroundImage = Properties.Resources.Red_card;
+            panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.Controls.Add(label2);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(id);
@@ -84,6 +85,16 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(188, 260);
             panel1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            label2.Font = new Font("Montserrat", 8F);
+            label2.Location = new Point(15, 206);
+            label2.Margin = new Padding(0);
+            label2.Name = "label2";
+            label2.Size = new Size(157, 20);
+            label2.TabIndex = 5;
+            label2.Text = "tsaqifradhitya@gmail.com";
             // 
             // button2
             // 
@@ -155,6 +166,7 @@
             // 
             Tambah_Pelanggan.BackColor = Color.Transparent;
             Tambah_Pelanggan.BackgroundImage = Properties.Resources.Tambah_Pelanggan_Hover1;
+            Tambah_Pelanggan.BackgroundImageLayout = ImageLayout.Stretch;
             Tambah_Pelanggan.FlatAppearance.BorderColor = Color.Black;
             Tambah_Pelanggan.FlatAppearance.BorderSize = 0;
             Tambah_Pelanggan.FlatAppearance.MouseDownBackColor = Color.Transparent;
@@ -185,26 +197,17 @@
             Search.Click += Search_Click;
             Search.MouseHover += Search_MouseHover;
             // 
-            // label2
-            // 
-            label2.Font = new Font("Montserrat", 8F);
-            label2.Location = new Point(-1, 206);
-            label2.Margin = new Padding(0);
-            label2.Name = "label2";
-            label2.Size = new Size(189, 20);
-            label2.TabIndex = 5;
-            label2.Text = "tsaqifradhitya@gmail.com";
-            label2.TextAlign = ContentAlignment.TopCenter;
-            // 
             // V_Pelanggan
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Pelanggan2;
+            BackgroundImageLayout = ImageLayout.Stretch;
             Controls.Add(Search);
             Controls.Add(Tambah_Pelanggan);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(SearchBar);
+            DoubleBuffered = true;
             Name = "V_Pelanggan";
             Size = new Size(1000, 720);
             Load += V_Pelanggan_Load;

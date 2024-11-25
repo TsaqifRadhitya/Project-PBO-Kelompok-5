@@ -11,10 +11,10 @@ using Pet_Care.Contoller;
 
 namespace Pet_Care.View
 {
-    public partial class V_Riwayat_Transaksi : UserControl
+    public partial class V_Transaksi_Berlangsung : UserControl
     {
         C_Transaksi Controller;
-        public V_Riwayat_Transaksi(C_Transaksi controller)
+        public V_Transaksi_Berlangsung(C_Transaksi controller)
         {
             InitializeComponent();
             Controller = controller;

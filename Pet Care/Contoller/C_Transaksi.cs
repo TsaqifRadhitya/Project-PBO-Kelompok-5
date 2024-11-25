@@ -16,6 +16,13 @@ namespace Pet_Care.Contoller
             this.controller = controller;
             V_Transaksi = new V_Transaksi(this);
             controller.move_view(V_Transaksi);
+            switch_view(new V_Transaksi_Berlangsung(this));
+        }
+
+        public void switch_view(UserControl view)
+        {
+            V_Transaksi.Panel_Transaksi.Controls.Clear();
+            V_Transaksi.Panel_Transaksi.Controls.Add(view);
         }
     }
 }

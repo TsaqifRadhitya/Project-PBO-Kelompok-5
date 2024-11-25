@@ -39,7 +39,7 @@
             // 
             panel1.BackColor = Color.Transparent;
             panel1.BackgroundImage = Properties.Resources.BG_Tabel;
-            panel1.BackgroundImageLayout = ImageLayout.Zoom;
+            panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.Controls.Add(Tambah);
             panel1.Controls.Add(Tabel_Layanan);
             panel1.Location = new Point(75, 145);
@@ -51,6 +51,7 @@
             // Tambah
             // 
             Tambah.BackgroundImage = Properties.Resources.Tambah;
+            Tambah.BackgroundImageLayout = ImageLayout.Stretch;
             Tambah.FlatAppearance.BorderSize = 0;
             Tambah.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Tambah.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -94,7 +95,9 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Layanan1;
+            BackgroundImageLayout = ImageLayout.Stretch;
             Controls.Add(panel1);
+            DoubleBuffered = true;
             Name = "V_Layanan";
             Size = new Size(1000, 720);
             Load += V_Layanan_Load;

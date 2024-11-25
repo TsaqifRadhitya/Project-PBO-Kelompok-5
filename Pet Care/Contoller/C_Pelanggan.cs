@@ -148,13 +148,13 @@ namespace Pet_Care.Contoller
             Label Email = new Label
             {
                 Font = new Font("Montserrat", 8F),
-                Location = new Point(-1, 206),
+                Location = new Point(15, 206),
                 Margin = new Padding(0),
                 Name = "Email",
-                Size = new Size(189, 20),
+                Size = new Size(157, 20),
                 TabIndex = 5,
                 Text = data.Email,
-                TextAlign = ContentAlignment.TopCenter,
+                TextAlign = ContentAlignment.TopLeft,
             };
             Button Delete = new Button
             {

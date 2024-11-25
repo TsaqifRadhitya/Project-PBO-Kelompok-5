@@ -1,6 +1,6 @@
 ﻿namespace Pet_Care.View
 {
-    partial class Kamera
+    partial class V_Kamera
     {
         /// <summary>
         /// Required designer variable.
@@ -28,24 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Kamera));
-            pictureBox1 = new PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_Kamera));
+            frame_foto = new PictureBox();
             Shutter = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            Exit = new Button();
+            ((System.ComponentModel.ISupportInitialize)frame_foto).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
+            // frame_foto
             // 
-            pictureBox1.Location = new Point(0, 45);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1000, 562);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            frame_foto.Location = new Point(5, 50);
+            frame_foto.Name = "frame_foto";
+            frame_foto.Size = new Size(990, 557);
+            frame_foto.SizeMode = PictureBoxSizeMode.StretchImage;
+            frame_foto.TabIndex = 0;
+            frame_foto.TabStop = false;
             // 
             // Shutter
             // 
             Shutter.BackColor = Color.Transparent;
             Shutter.BackgroundImage = Properties.Resources.Shutter;
+            Shutter.BackgroundImageLayout = ImageLayout.Zoom;
             Shutter.FlatAppearance.BorderSize = 0;
             Shutter.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Shutter.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -60,26 +63,49 @@
             Shutter.MouseLeave += Shutter_MouseLeave;
             Shutter.MouseHover += Shutter_MouseHover;
             // 
-            // Kamera
+            // Exit
+            // 
+            Exit.BackColor = Color.Transparent;
+            Exit.BackgroundImage = Properties.Resources.Close_camera;
+            Exit.BackgroundImageLayout = ImageLayout.Stretch;
+            Exit.FlatAppearance.BorderSize = 0;
+            Exit.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            Exit.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            Exit.FlatStyle = FlatStyle.Flat;
+            Exit.Location = new Point(880, 12);
+            Exit.Name = "Exit";
+            Exit.Size = new Size(108, 32);
+            Exit.TabIndex = 2;
+            Exit.UseVisualStyleBackColor = false;
+            Exit.Click += Exit_Click;
+            Exit.MouseEnter += Exit_MouseEnter;
+            Exit.MouseLeave += Exit_MouseLeave;
+            Exit.MouseHover += Exit_MouseHover;
+            // 
+            // V_Kamera
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.Foto;
+            BackgroundImage = Properties.Resources.Foto2;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1000, 700);
+            Controls.Add(Exit);
             Controls.Add(Shutter);
-            Controls.Add(pictureBox1);
+            Controls.Add(frame_foto);
+            DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "Kamera";
+            Name = "V_Kamera";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Kamera";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            Load += Kamera_Load;
+            ((System.ComponentModel.ISupportInitialize)frame_foto).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private PictureBox pictureBox1;
         private Button Shutter;
+        public PictureBox frame_foto;
+        private Button Exit;
     }
 }

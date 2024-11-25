@@ -28,6 +28,8 @@ namespace Pet_Care.Model
                 M_Session.session_name = data.GetString(1);
                 M_Session.id_session = data.GetInt32(0);
                 M_Session.session_status = true;
+                M_Session.username = username;
+                M_Session.password = password;
             }
         }
 

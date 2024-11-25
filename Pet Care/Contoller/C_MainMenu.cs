@@ -19,6 +19,7 @@ namespace Pet_Care.Contoller
             main_Menu = new V_Main_Menu(this);
             controller_main_frame.move_view(main_Menu);
             C_Dashboard c_Dashboard = new C_Dashboard(this);
+            C_Kamera c_Kamera = new C_Kamera(new Data_Transaksi { Nama_Kucing = "Dori"});
         }
 
         public void move_view(UserControl view)

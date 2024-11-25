@@ -7,17 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Pet_Care.Contoller;
 
 namespace Pet_Care.View
 {
-    public partial class V_Riwayat_Transaksi : UserControl
+    public partial class V_Form_Report_Kucing : Form
     {
-        C_Transaksi Controller;
-        public V_Riwayat_Transaksi(C_Transaksi controller)
+        public V_Form_Report_Kucing()
         {
             InitializeComponent();
-            Controller = controller;
         }
     }
 }

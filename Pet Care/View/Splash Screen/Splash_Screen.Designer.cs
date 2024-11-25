@@ -37,10 +37,12 @@
             // panel1
             // 
             panel1.BackgroundImage = Properties.Resources.Frame_1;
+            panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(620, 300);
+            panel1.Size = new Size(709, 400);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
@@ -50,13 +52,15 @@
             // 
             // Splash_Screen
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(620, 300);
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(709, 400);
             ControlBox = false;
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Splash_Screen";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MeowInn";

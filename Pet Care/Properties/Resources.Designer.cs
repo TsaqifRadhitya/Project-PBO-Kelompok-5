@@ -93,6 +93,46 @@ namespace Pet_Care.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Berlangsung {
+            get {
+                object obj = ResourceManager.GetObject("Berlangsung", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Berlangsung_Focus {
+            get {
+                object obj = ResourceManager.GetObject("Berlangsung_Focus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BG_Berlangsung {
+            get {
+                object obj = ResourceManager.GetObject("BG_Berlangsung", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BG_Selesai {
+            get {
+                object obj = ResourceManager.GetObject("BG_Selesai", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BG_Tabel {
             get {
                 object obj = ResourceManager.GetObject("BG Tabel", resourceCulture);
@@ -146,6 +186,26 @@ namespace Pet_Care.Properties {
         internal static System.Drawing.Bitmap Cancel_Hover {
             get {
                 object obj = ResourceManager.GetObject("Cancel Hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Close_camera {
+            get {
+                object obj = ResourceManager.GetObject("Close_camera", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Close_Camera_Hover {
+            get {
+                object obj = ResourceManager.GetObject("Close_Camera_Hover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -226,6 +286,26 @@ namespace Pet_Care.Properties {
         internal static System.Drawing.Bitmap Foto {
             get {
                 object obj = ResourceManager.GetObject("Foto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Foto1 {
+            get {
+                object obj = ResourceManager.GetObject("Foto1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Foto2 {
+            get {
+                object obj = ResourceManager.GetObject("Foto2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -513,6 +593,26 @@ namespace Pet_Care.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Selesai {
+            get {
+                object obj = ResourceManager.GetObject("Selesai", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Selesai_Focus {
+            get {
+                object obj = ResourceManager.GetObject("Selesai_Focus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Show_Password {
             get {
                 object obj = ResourceManager.GetObject("Show Password", resourceCulture);
@@ -606,6 +706,26 @@ namespace Pet_Care.Properties {
         internal static System.Drawing.Bitmap Tambah_Pelanggan_Hover1 {
             get {
                 object obj = ResourceManager.GetObject("Tambah Pelanggan Hover1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tambah_Transaksi {
+            get {
+                object obj = ResourceManager.GetObject("Tambah_Transaksi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tambah_Transaksi_Hover {
+            get {
+                object obj = ResourceManager.GetObject("Tambah_Transaksi_Hover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

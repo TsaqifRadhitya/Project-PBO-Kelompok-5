@@ -76,6 +76,7 @@
             // 
             Simpan.BackColor = Color.Transparent;
             Simpan.BackgroundImage = Properties.Resources.Simpan_Hover;
+            Simpan.BackgroundImageLayout = ImageLayout.Stretch;
             Simpan.FlatAppearance.BorderSize = 0;
             Simpan.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Simpan.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -94,6 +95,7 @@
             // 
             Batal.BackColor = Color.Transparent;
             Batal.BackgroundImage = Properties.Resources.Batal_Hover;
+            Batal.BackgroundImageLayout = ImageLayout.Stretch;
             Batal.FlatAppearance.BorderSize = 0;
             Batal.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Batal.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -145,6 +147,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Tambah_Ubah_Layanan1;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(623, 453);
             Controls.Add(Nama_Layanan);
             Controls.Add(Harga);
@@ -153,6 +156,7 @@
             Controls.Add(Batal);
             Controls.Add(radioButton2);
             Controls.Add(radioButton1);
+            DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "V_Ubah_Tambah_Layanan";

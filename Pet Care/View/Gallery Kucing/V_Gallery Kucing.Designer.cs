@@ -45,7 +45,9 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Gallery_Kucing;
+            BackgroundImageLayout = ImageLayout.Stretch;
             Controls.Add(flowLayoutPanel1);
+            DoubleBuffered = true;
             Name = "V_Gallery_Kucing";
             Size = new Size(1000, 720);
             Load += V_Gallery_Kucing_Load;

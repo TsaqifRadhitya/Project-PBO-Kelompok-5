@@ -121,11 +121,13 @@ namespace Pet_Care.View
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Dashboard1;
+            BackgroundImageLayout = ImageLayout.Stretch;
             Controls.Add(TabelTransaksi);
             Controls.Add(Pendapatan);
             Controls.Add(Layanan);
             Controls.Add(kucing);
             Controls.Add(nama);
+            DoubleBuffered = true;
             Name = "V_Dashboard";
             Size = new Size(1000, 720);
             Load += V_Dashboard_Load;

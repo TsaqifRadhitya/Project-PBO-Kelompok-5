@@ -42,6 +42,7 @@
             // 
             Batal.BackColor = Color.Transparent;
             Batal.BackgroundImage = Properties.Resources.Batal_Hover;
+            Batal.BackgroundImageLayout = ImageLayout.Stretch;
             Batal.FlatAppearance.BorderSize = 0;
             Batal.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Batal.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -60,6 +61,7 @@
             // 
             Simpan.BackColor = Color.Transparent;
             Simpan.BackgroundImage = Properties.Resources.Simpan_Hover;
+            Simpan.BackgroundImageLayout = ImageLayout.Stretch;
             Simpan.FlatAppearance.BorderSize = 0;
             Simpan.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Simpan.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -131,6 +133,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Tambah_Ubah_Pelanggan1;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(623, 590);
             Controls.Add(Email);
             Controls.Add(Header);
@@ -139,6 +142,7 @@
             Controls.Add(Alamat);
             Controls.Add(Simpan);
             Controls.Add(Batal);
+            DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "V_Ubah_Tambah_Pelanggan";
