@@ -118,6 +118,7 @@
             Nomor_HP.Font = new Font("Montserrat SemiBold", 16F, FontStyle.Bold);
             Nomor_HP.ForeColor = Color.FromArgb(176, 142, 128);
             Nomor_HP.Location = new Point(66, 236);
+            Nomor_HP.MaxLength = 13;
             Nomor_HP.Name = "Nomor_HP";
             Nomor_HP.Size = new Size(323, 27);
             Nomor_HP.TabIndex = 9;

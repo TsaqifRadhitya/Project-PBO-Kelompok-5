@@ -92,6 +92,7 @@
             Nomor_Telepon.BorderStyle = BorderStyle.None;
             Nomor_Telepon.Font = new Font("Montserrat SemiBold", 18F, FontStyle.Bold);
             Nomor_Telepon.Location = new Point(115, 240);
+            Nomor_Telepon.MaxLength = 13;
             Nomor_Telepon.Name = "Nomor_Telepon";
             Nomor_Telepon.Size = new Size(406, 30);
             Nomor_Telepon.TabIndex = 3;

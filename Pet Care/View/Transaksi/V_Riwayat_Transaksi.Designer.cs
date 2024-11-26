@@ -28,7 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Tabel_Riwayat = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)Tabel_Riwayat).BeginInit();
             SuspendLayout();
+            // 
+            // Tabel_Riwayat
+            // 
+            Tabel_Riwayat.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            Tabel_Riwayat.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            Tabel_Riwayat.BackgroundColor = Color.FromArgb(131, 94, 146);
+            Tabel_Riwayat.BorderStyle = BorderStyle.None;
+            Tabel_Riwayat.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            Tabel_Riwayat.GridColor = Color.White;
+            Tabel_Riwayat.Location = new Point(10, 3);
+            Tabel_Riwayat.Name = "Tabel_Riwayat";
+            Tabel_Riwayat.ReadOnly = true;
+            Tabel_Riwayat.RowHeadersVisible = false;
+            Tabel_Riwayat.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            Tabel_Riwayat.ScrollBars = ScrollBars.Vertical;
+            Tabel_Riwayat.Size = new Size(830, 516);
+            Tabel_Riwayat.TabIndex = 0;
+            Tabel_Riwayat.CellContentClick += dataGridView1_CellContentClick;
             // 
             // V_Riwayat_Transaksi
             // 
@@ -37,11 +57,17 @@
             BackColor = Color.Transparent;
             BackgroundImage = Properties.Resources.BG_Selesai;
             BackgroundImageLayout = ImageLayout.Stretch;
+            Controls.Add(Tabel_Riwayat);
+            DoubleBuffered = true;
             Name = "V_Riwayat_Transaksi";
             Size = new Size(850, 521);
+            Load += V_Riwayat_Transaksi_Load;
+            ((System.ComponentModel.ISupportInitialize)Tabel_Riwayat).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
+
+        private DataGridView Tabel_Riwayat;
     }
 }

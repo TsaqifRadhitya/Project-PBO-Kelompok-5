@@ -28,7 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            flowLayoutPanel1 = new FlowLayoutPanel();
             SuspendLayout();
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Dock = DockStyle.Fill;
+            flowLayoutPanel1.Location = new Point(0, 0);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(850, 521);
+            flowLayoutPanel1.TabIndex = 0;
             // 
             // V_Transaksi_Berlangsung
             // 
@@ -37,11 +46,15 @@
             BackColor = Color.Transparent;
             BackgroundImage = Properties.Resources.BG_Berlangsung;
             BackgroundImageLayout = ImageLayout.Stretch;
+            Controls.Add(flowLayoutPanel1);
+            DoubleBuffered = true;
             Name = "V_Transaksi_Berlangsung";
             Size = new Size(850, 521);
             ResumeLayout(false);
         }
 
         #endregion
+
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }
