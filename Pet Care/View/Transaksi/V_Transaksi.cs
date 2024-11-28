@@ -24,7 +24,8 @@ namespace Pet_Care.View
         {
             Selesai.BackgroundImage = Properties.Resources.Selesai;
             Berlangsung.BackgroundImage = Properties.Resources.Berlangsung_Focus;
-            C_Transaksi.switch_view(new V_Transaksi_Berlangsung(C_Transaksi));
+            C_Transaksi.V_Transaksi_Berlangsung = new V_Transaksi_Berlangsung(C_Transaksi);
+            C_Transaksi.switch_view(C_Transaksi.V_Transaksi_Berlangsung);
         }
 
         private void Selesai_Click(object sender, EventArgs e)
@@ -46,7 +47,7 @@ namespace Pet_Care.View
 
         private void Tambah_Transaksi_Click(object sender, EventArgs e)
         {
-
+            C_Transaksi.Buat_Transaksi();
         }
 
         private void Tambah_Transaksi_MouseEnter(object sender, EventArgs e)
@@ -62,6 +63,11 @@ namespace Pet_Care.View
         private void Tambah_Transaksi_MouseLeave(object sender, EventArgs e)
         {
             Tambah_Transaksi.BackgroundImage = Properties.Resources.Tambah_Transaksi;
+        }
+
+        private void V_Transaksi_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Pet_Care.Contoller
         public void show_form_tambah()
         {
             V_Ubah_Tambah_Layanan tambah = new V_Ubah_Tambah_Layanan(this);
-            tambah.Location = new Point(800, 310);
+            tambah.Location = new Point(Screen.FromControl(V_Layanan).Bounds.Location.X + 800, Screen.FromControl(V_Layanan).Bounds.Location.Y + 310);
             tambah.ShowDialog();
         }
 
@@ -58,7 +58,7 @@ namespace Pet_Care.Contoller
         public void show_form_edit(Data_Layanan data)
         {
             V_Ubah_Tambah_Layanan edit = new V_Ubah_Tambah_Layanan(data,this);
-            edit.Location = new Point(800, 310);
+            edit.Location = new Point(Screen.FromControl(V_Layanan).Bounds.Location.X + 800, Screen.FromControl(V_Layanan).Bounds.Location.Y + 310); ;
             edit.ShowDialog();
         }
         public void load()

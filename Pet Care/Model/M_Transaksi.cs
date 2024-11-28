@@ -122,11 +122,11 @@ namespace Pet_Care.Model
         public void Delete(int id)
         {
             Execute_No_Return($"Delete from detail_transaksi where transaksi_id = {id}");
-            Execute_No_Return($"Delete from transaksi where id = {id}");
+            Execute_No_Return($"Delete from transaksi where Transaksi_id = {id}");
         }
         public void Update(object obj, int id)
         {
-            Data_Transaksi data = obj as Data_Transaksi ;
+            Data_Transaksi data = obj as Data_Transaksi;
             Execute_No_Return($"UPDATE TRANSAKSI SET STATUS_PENITIPAN = false where transaksi_id = {data.id}");
         }
 

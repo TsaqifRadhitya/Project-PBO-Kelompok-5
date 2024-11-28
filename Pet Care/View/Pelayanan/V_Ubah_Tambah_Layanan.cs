@@ -119,6 +119,12 @@ namespace Pet_Care.View
                 {
                     radioButton1.Checked = true;
                 }
+                if(data.name == "Penitipan")
+                {
+                    radioButton1.Enabled = false;
+                    radioButton2.Enabled = false;
+                    Nama_Layanan.Enabled = false;
+                }
             }
         }
     }

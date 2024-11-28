@@ -121,5 +121,10 @@ namespace Pet_Care.View
         {
             show_hide_password.Cursor = Cursors.Hand;
         }
+
+        private void Password_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

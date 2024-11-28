@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Pet_Care.Contoller;
 
 namespace Pet_Care.View
 {
-    public partial class V_Form_Report_Kucing : Form
+    public partial class V_Frame_Transaksi : Form
     {
-        public V_Form_Report_Kucing()
+        C_Transaksi controller;
+        public V_Frame_Transaksi(C_Transaksi contoller,UserControl view)
         {
             InitializeComponent();
+            this.controller = contoller;
+            this.Controls.Add(view);
         }
     }
 }

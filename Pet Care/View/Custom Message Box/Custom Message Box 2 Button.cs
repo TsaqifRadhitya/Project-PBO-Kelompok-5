@@ -35,7 +35,7 @@ namespace Pet_Care.View
 
         private void Cancel_MouseEnter(object sender, EventArgs e)
         {
-            Cancel.BackgroundImage = Properties.Resources.Cancel_Hover;
+            Cancel.BackgroundImage = Properties.Resources.Cancel_Hover1;
         }
 
         private void Cancel_MouseHover(object sender, EventArgs e)

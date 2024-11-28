@@ -19,16 +19,16 @@ namespace Pet_Care.Contoller
         public byte[]? foto;
         Data_Transaksi data;
 
-        public C_Kamera(Data_Transaksi data)
+        public C_Kamera()
         {
             view = new V_Kamera(this);
-            this.data = data;
+            //this.data = data;
             view.ShowDialog();
-            if(foto != null)
-            {
-                send(foto, "Ngeset Ajah :)");
-                foto = null;
-            }
+            //if(foto != null)
+            //{
+            //    send(foto, "Ngeset Ajah :)");
+            //    foto = null;
+            //}
         }
 
         private void VideoSource_NewFrame(object sender, NewFrameEventArgs eventArgs)
@@ -51,7 +51,7 @@ namespace Pet_Care.Contoller
             videoSource.SignalToStop();
             videoSource.WaitForStop();
         }
-        public void  send(byte[]foto,string kegiatan)
+        public void send(byte[]foto,string kegiatan)
         {
             string username = "@meowInnNews";
             string message = $"[BROADCAST HARIAN KUCING MEOWINN]\nNama Kucing : {data.Nama_Kucing}\nKegiatan : {kegiatan}";

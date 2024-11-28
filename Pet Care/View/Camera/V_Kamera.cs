@@ -18,6 +18,7 @@ namespace Pet_Care.View
         {
             InitializeComponent();
             this.controller = controller;
+            this.controller.start();
         }
 
         private void Shutter_Click(object sender, EventArgs e)
@@ -46,7 +47,7 @@ namespace Pet_Care.View
 
         private void Kamera_Load(object sender, EventArgs e)
         {
-            controller.start();
+            
         }
 
         private void Exit_Click(object sender, EventArgs e)

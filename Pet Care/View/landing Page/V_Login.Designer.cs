@@ -82,6 +82,7 @@
             Password.Size = new Size(276, 27);
             Password.TabIndex = 2;
             Password.Text = "Password";
+            Password.TextChanged += Password_TextChanged;
             Password.Enter += Password_Enter;
             Password.Leave += Password_Leave;
             // 

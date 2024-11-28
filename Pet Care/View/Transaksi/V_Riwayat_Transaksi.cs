@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Pet_Care.Contoller;
 using Pet_Care.Model;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Pet_Care.View
 {
@@ -23,7 +24,7 @@ namespace Pet_Care.View
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (e.ColumnIndex == Tabel_Riwayat.Columns["Detail"].Index) Controller.detail((int)Tabel_Riwayat.Rows[e.RowIndex].Cells["id"].Value);
         }
 
         private void V_Riwayat_Transaksi_Load(object sender, EventArgs e)

@@ -105,6 +105,7 @@
             DoubleBuffered = true;
             Name = "V_Transaksi";
             Size = new Size(1000, 720);
+            Load += V_Transaksi_Load;
             ResumeLayout(false);
         }
 

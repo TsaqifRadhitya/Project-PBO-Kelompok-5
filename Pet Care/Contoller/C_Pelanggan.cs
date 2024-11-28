@@ -25,7 +25,7 @@ namespace Pet_Care.Contoller
         {
             V_Ubah_Tambah_Pelanggan v_Ubah_Tambah_Pelanggan = new V_Ubah_Tambah_Pelanggan(this);
             v_Ubah_Tambah_Pelanggan.StartPosition = FormStartPosition.Manual;
-            v_Ubah_Tambah_Pelanggan.Location = new Point(800, 245);
+            v_Ubah_Tambah_Pelanggan.Location = new Point(Screen.FromControl(view_pelanggan).Bounds.Location.X + 800, Screen.FromControl(view_pelanggan).Bounds.Location.Y + 245);
             v_Ubah_Tambah_Pelanggan.ShowDialog();
         }
         public dynamic[] save_data(bool edit_state, Data_Pelanngan data)
@@ -79,7 +79,7 @@ namespace Pet_Care.Contoller
         {
             V_Ubah_Tambah_Pelanggan v_Ubah = new V_Ubah_Tambah_Pelanggan(this,data);
             v_Ubah.StartPosition = FormStartPosition.Manual;
-            v_Ubah.Location = new Point(800, 245);
+            v_Ubah.Location = new Point(Screen.FromControl(view_pelanggan).Bounds.Location.X + 800, Screen.FromControl(view_pelanggan).Bounds.Location.Y + 245);
             v_Ubah.ShowDialog();
         }
         public bool Search(string key_word)
