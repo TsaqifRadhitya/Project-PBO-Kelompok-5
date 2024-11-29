@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,7 @@ namespace Pet_Care.Model
 {
     public abstract class M_Connection
     {
-        protected string addres = "Host=localhost;Username=postgres;Password=;Database=MeowInn";
+        protected string addres = "Host=ep-wild-sun-a1cnl6br.ap-southeast-1.aws.neon.tech;Database=MeowInn;Username=MeowInn_owner;Password=pzdg1jc0WwrX;SSL Mode=Require;Trust Server Certificate=true;Pooling=false;Command Timeout=0;";
         private NpgsqlConnection Conn;
         protected NpgsqlConnection conn
         { 
@@ -20,6 +21,7 @@ namespace Pet_Care.Model
                 if (Conn != null)
                 {
                     Conn.Close();
+                    Conn.Dispose();
                     Conn = null;
                 }
                 Conn = value ; 
@@ -82,43 +84,69 @@ namespace Pet_Care.Model
 
         public void Execute_No_Return(string Querry)
         {
-            conn = new NpgsqlConnection(addres);
-            NpgsqlCommand cmd = new NpgsqlCommand();
-            cmd.Connection = conn;
-            cmd.CommandText = Querry;
-            cmd.ExecuteNonQuery();
+            using(conn = new NpgsqlConnection(addres))
+            {
+                NpgsqlCommand cmd = new NpgsqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = Querry;
+                cmd.ExecuteNonQuery();
+            }
         }
 
         public void Execute_No_Return(NpgsqlCommand command)
         {
-            conn = new NpgsqlConnection(addres);
-            command.Connection = conn;
-            command.ExecuteNonQuery();
+            using (conn = new NpgsqlConnection(addres))
+            {
+                command.Connection = conn;
+                command.ExecuteNonQuery();
+            }
+
         }
 
-        public NpgsqlDataReader Execute_With_Return(string Querry) {
-            conn = new NpgsqlConnection(addres);
-            NpgsqlCommand cmd = new NpgsqlCommand();
-            cmd.Connection = conn;
-            cmd.CommandText = Querry;
-            NpgsqlDataReader Data = cmd.ExecuteReader();
-            return Data;
+        public DataTable Execute_With_Return(string Querry) {
+           using (conn = new NpgsqlConnection(addres))
+            {
+                NpgsqlCommand cmd = new NpgsqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = Querry;
+                DataTable Data = new DataTable();
+                Data.Load(cmd.ExecuteReader());
+                return Data;
+            }  
+        }
+
+        public DataTable Execute_With_Return(NpgsqlCommand Querry)
+        {
+            using (conn = new NpgsqlConnection(addres))
+            {
+                Querry.Connection = conn;
+                DataTable Data = new DataTable();
+                Data.Load(Querry.ExecuteReader());
+                return Data;
+            }
         }
 
         public object Execute_Single_Return(string querry)
         {
-            conn = new NpgsqlConnection(addres);
-            NpgsqlCommand cmd = new NpgsqlCommand();
-            cmd.Connection = conn;
-            cmd.CommandText = querry;
-            object Data = cmd.ExecuteScalar();
+            object Data;
+            using ( conn = new NpgsqlConnection(addres))
+            {
+                conn = new NpgsqlConnection(addres);
+                NpgsqlCommand cmd = new NpgsqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = querry;
+                Data = cmd.ExecuteScalar();
+            }
             return Data;
         }
         public object Execute_Single_Return(NpgsqlCommand command)
         {
-            conn = new NpgsqlConnection(addres);
-            command.Connection = conn;
-            object Data = command.ExecuteScalar();
+            object Data;
+            using (conn = new NpgsqlConnection(addres))
+            {
+                command.Connection = conn;
+                Data = command.ExecuteScalar();
+            }
             return Data;
         }
     }

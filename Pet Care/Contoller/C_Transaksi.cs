@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -40,18 +41,18 @@ namespace Pet_Care.Contoller
 
         public void Refresh_Total_Harga(V_Form_Transaksi view)
         {
-            int harga = 0;
+            int harga = Daftar_Harga["Penitipan"].harga * ((!string.IsNullOrEmpty(view.Durasi.Text)) ? int.Parse(view.Durasi.Text) : 0);
             foreach(CheckBox checkBox in view.flowLayoutPanel1.Controls)
             {
                 if (checkBox.Checked)
                 {
                     if (Daftar_Harga[checkBox.Text].quantity_berdasarkan_hari)
                     {
-                        harga += Daftar_Harga[checkBox.Text].harga * ((!string.IsNullOrEmpty(view.Durasi.Text)) ? int.Parse(view.Durasi.Text) : 1);
+                        harga += Daftar_Harga[checkBox.Text].harga * ((!string.IsNullOrEmpty(view.Durasi.Text)) ? int.Parse(view.Durasi.Text) : 0);
                     }
                     else
                     {
-                        harga += Daftar_Harga[checkBox.Text].harga;
+                        if(!string.IsNullOrEmpty(view.Durasi.Text)) harga += Daftar_Harga[checkBox.Text].harga;
                     }
                 }
             }

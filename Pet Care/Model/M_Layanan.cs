@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Globalization;
 using System.Linq;
 using System.Numerics;
@@ -14,20 +15,21 @@ namespace Pet_Care.Model
     {
         public List<object> Get()
         {
-            NpgsqlDataReader data = Execute_With_Return($"SELECT * From Pelayanan where status_pelayanan = true order by Pelayanan_id asc");
+            DataTable data = Execute_With_Return($"SELECT * From Pelayanan where status_pelayanan = true order by Pelayanan_id asc");
             List<object> list = new List<object>();
-            while (data.Read())
+            for (int i=0;i < data.Rows.Count;i++)
             {
                 Data_Layanan data_Layanan = new Data_Layanan
                 {
-                    id = (int)data["Pelayanan_id"],
-                    name = data["Nama_Pelayanan"].ToString(),
-                    harga = (int)data["Harga_Pelayanan"],
-                    quantity_berdasarkan_hari = (bool)data["quantity_berdasarkan_hari"],
+                    id = (int)data.Rows[i]["Pelayanan_id"],
+                    name = data.Rows[i]["Nama_Pelayanan"].ToString(),
+                    harga = (int)data.Rows[i]["Harga_Pelayanan"],
+                    quantity_berdasarkan_hari = (bool)data.Rows[i]["quantity_berdasarkan_hari"],
                 };
                 data_Layanan.display_price = $"Rp{data_Layanan.harga.ToString("n", CultureInfo.GetCultureInfo("id-ID"))}";
                 list.Add(data_Layanan);
             }
+            //Conn.Close();
             return list;
         }
 
