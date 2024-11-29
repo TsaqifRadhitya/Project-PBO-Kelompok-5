@@ -60,8 +60,41 @@ namespace Pet_Care.View
 
         private void ID_Pelanggan_TextChanged(object sender, EventArgs e)
         {
-            if(!(int.TryParse(ID_Pelanggan.Text,out _))){ ID_Pelanggan.Text = ""; };
-            //Bitmap bitmap = new Bitmap();
+            if (!(int.TryParse(Durasi.Text, out _)))
+            { 
+                Durasi.Text = ""; 
+            }else 
+            { 
+                controller.Refresh_Total_Harga(this); 
+            }
+        }
+
+        private void V_Form_Transaksi_Load(object sender, EventArgs e)
+        {
+            controller.load_data_Layanan().ForEach(x =>
+            {
+                if (x.name != "Penitipan")
+                {
+                    CheckBox radioButton = new CheckBox
+                    {
+                        BackColor = Color.Transparent,
+                        Font = new Font("Montserrat", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0),
+                        Name = "radioButton",
+                        Size = new Size(119, 20),
+                        TabIndex = 13,
+                        Text = x.name,
+                        UseVisualStyleBackColor = false
+                    };
+                    radioButton.FlatAppearance.BorderColor = Color.FromArgb(217, 217, 217);
+                    radioButton.FlatAppearance.BorderSize = 5;
+                    radioButton.FlatAppearance.CheckedBackColor = Color.FromArgb(131, 94, 146);
+                    radioButton.FlatAppearance.MouseDownBackColor = Color.Transparent;
+                    radioButton.FlatAppearance.MouseOverBackColor = Color.Transparent;
+                    radioButton.Click += (object sender, EventArgs e) => { controller.Refresh_Total_Harga(this); };
+                    flowLayoutPanel1.Controls.Add(radioButton);
+                }
+            }
+            );
         }
     }
 }

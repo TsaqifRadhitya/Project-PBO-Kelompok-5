@@ -30,10 +30,11 @@ namespace Pet_Care.View
         private void V_Riwayat_Transaksi_Load(object sender, EventArgs e)
         {
             List<Data_Transaksi> data = new List<Data_Transaksi> ();
-            for (int i = 0; i < 100; i++) 
+            for (int i = 0; i < 10; i++) 
             {
                 data.Add(new Data_Transaksi
                 {
+                    id = i + 1,
                     Nama_Kucing = "Dori",
                     Waktu = "26 - 06 - 2024 16:08",
                     Nama_Pelanggan = "Tsaqif",

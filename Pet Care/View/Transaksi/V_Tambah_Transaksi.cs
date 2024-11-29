@@ -73,7 +73,7 @@ namespace Pet_Care.View
 
         private void Lanjut_MouseEnter(object sender, EventArgs e)
         {
-            Lanjut.BackgroundImage = Properties.Resources.Simpan_Hover;
+            Lanjut.BackgroundImage = Properties.Resources.Lanjut_Hover;
         }
 
         private void Lanjut_MouseHover(object sender, EventArgs e)
@@ -83,7 +83,7 @@ namespace Pet_Care.View
 
         private void Lanjut_MouseLeave(object sender, EventArgs e)
         {
-            Lanjut.BackgroundImage = Properties.Resources.Simpan;
+            Lanjut.BackgroundImage = Properties.Resources.Lanjut;
         }
 
         private void V_Tambah_Transaksi_Load(object sender, EventArgs e)

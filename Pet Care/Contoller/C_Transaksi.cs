@@ -14,6 +14,7 @@ namespace Pet_Care.Contoller
 {
     public class C_Transaksi : C_Message_Box
     {
+        Dictionary<string,Data_Layanan> Daftar_Harga = new Dictionary<string, Data_Layanan>();
         C_MainMenu controller;
         V_Transaksi V_Transaksi;
         public V_Frame_Transaksi? Frame_Transaksi;
@@ -35,6 +36,26 @@ namespace Pet_Care.Contoller
         {
             V_Transaksi.Panel_Transaksi.Controls.Clear();
             V_Transaksi.Panel_Transaksi.Controls.Add(view);
+        }
+
+        public void Refresh_Total_Harga(V_Form_Transaksi view)
+        {
+            int harga = 0;
+            foreach(CheckBox checkBox in view.flowLayoutPanel1.Controls)
+            {
+                if (checkBox.Checked)
+                {
+                    if (Daftar_Harga[checkBox.Text].quantity_berdasarkan_hari)
+                    {
+                        harga += Daftar_Harga[checkBox.Text].harga * ((!string.IsNullOrEmpty(view.Durasi.Text)) ? int.Parse(view.Durasi.Text) : 1);
+                    }
+                    else
+                    {
+                        harga += Daftar_Harga[checkBox.Text].harga;
+                    }
+                }
+            }
+            view.Total_Pembayaran.Text = $"Total Pembayaran : Rp{harga.ToString("n", CultureInfo.GetCultureInfo("id-ID"))}";
         }
 
         public void load_card()
@@ -66,6 +87,13 @@ namespace Pet_Care.Contoller
                 model_transaksi.Update(data, data.id);
                 load_card();
             }
+        }
+
+        public List<Data_Layanan> load_data_Layanan()
+        {
+            List<Data_Layanan> data = model_layanan.Get().OfType<Data_Layanan>().ToList();
+            data.ForEach(x => { Daftar_Harga[x.name] = x; });
+            return data;
         }
         public void load_detail(int id,V_Detail_Transaksi view)
         {

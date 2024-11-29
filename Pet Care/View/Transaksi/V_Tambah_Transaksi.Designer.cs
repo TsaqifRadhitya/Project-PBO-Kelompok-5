@@ -89,7 +89,7 @@
             // Lanjut
             // 
             Lanjut.BackColor = Color.Transparent;
-            Lanjut.BackgroundImage = Properties.Resources.Simpan_Hover;
+            Lanjut.BackgroundImage = Properties.Resources.Lanjut;
             Lanjut.BackgroundImageLayout = ImageLayout.Stretch;
             Lanjut.FlatAppearance.BorderSize = 0;
             Lanjut.FlatAppearance.MouseDownBackColor = Color.Transparent;

@@ -28,11 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ID_Pelanggan = new TextBox();
+            Durasi = new TextBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            radioButton2 = new RadioButton();
-            radioButton4 = new RadioButton();
-            radioButton3 = new RadioButton();
             Total_Pembayaran = new Label();
             Lanjut = new Button();
             Kembali = new Button();
@@ -40,82 +37,28 @@
             Tunai = new RadioButton();
             radioButton1 = new RadioButton();
             Metode_Pembayaran = new Panel();
-            flowLayoutPanel1.SuspendLayout();
             Metode_Pembayaran.SuspendLayout();
             SuspendLayout();
             // 
-            // ID_Pelanggan
+            // Durasi
             // 
-            ID_Pelanggan.BackColor = Color.FromArgb(253, 233, 218);
-            ID_Pelanggan.BorderStyle = BorderStyle.None;
-            ID_Pelanggan.Font = new Font("Montserrat SemiBold", 18F, FontStyle.Bold);
-            ID_Pelanggan.Location = new Point(115, 126);
-            ID_Pelanggan.Name = "ID_Pelanggan";
-            ID_Pelanggan.Size = new Size(406, 30);
-            ID_Pelanggan.TabIndex = 10;
-            ID_Pelanggan.TextChanged += ID_Pelanggan_TextChanged;
+            Durasi.BackColor = Color.FromArgb(253, 233, 218);
+            Durasi.BorderStyle = BorderStyle.None;
+            Durasi.Font = new Font("Montserrat SemiBold", 18F, FontStyle.Bold);
+            Durasi.Location = new Point(115, 126);
+            Durasi.Name = "Durasi";
+            Durasi.Size = new Size(406, 30);
+            Durasi.TabIndex = 10;
+            Durasi.TextChanged += ID_Pelanggan_TextChanged;
             // 
             // flowLayoutPanel1
             // 
+            flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.BackColor = Color.Transparent;
-            flowLayoutPanel1.Controls.Add(radioButton2);
-            flowLayoutPanel1.Controls.Add(radioButton4);
-            flowLayoutPanel1.Controls.Add(radioButton3);
             flowLayoutPanel1.Location = new Point(92, 219);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(451, 100);
             flowLayoutPanel1.TabIndex = 14;
-            // 
-            // radioButton2
-            // 
-            radioButton2.AutoSize = true;
-            radioButton2.BackColor = Color.Transparent;
-            radioButton2.FlatAppearance.BorderColor = Color.FromArgb(217, 217, 217);
-            radioButton2.FlatAppearance.BorderSize = 5;
-            radioButton2.FlatAppearance.CheckedBackColor = Color.FromArgb(131, 94, 146);
-            radioButton2.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            radioButton2.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            radioButton2.Font = new Font("Montserrat", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            radioButton2.Location = new Point(3, 3);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(119, 20);
-            radioButton2.TabIndex = 16;
-            radioButton2.Text = "   Transfer Bank";
-            radioButton2.UseVisualStyleBackColor = false;
-            // 
-            // radioButton4
-            // 
-            radioButton4.AutoSize = true;
-            radioButton4.BackColor = Color.Transparent;
-            radioButton4.FlatAppearance.BorderColor = Color.FromArgb(217, 217, 217);
-            radioButton4.FlatAppearance.BorderSize = 5;
-            radioButton4.FlatAppearance.CheckedBackColor = Color.FromArgb(131, 94, 146);
-            radioButton4.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            radioButton4.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            radioButton4.Font = new Font("Montserrat", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            radioButton4.Location = new Point(128, 3);
-            radioButton4.Name = "radioButton4";
-            radioButton4.Size = new Size(68, 20);
-            radioButton4.TabIndex = 14;
-            radioButton4.Text = "   Tunai";
-            radioButton4.UseVisualStyleBackColor = false;
-            // 
-            // radioButton3
-            // 
-            radioButton3.AutoSize = true;
-            radioButton3.BackColor = Color.Transparent;
-            radioButton3.FlatAppearance.BorderColor = Color.FromArgb(217, 217, 217);
-            radioButton3.FlatAppearance.BorderSize = 5;
-            radioButton3.FlatAppearance.CheckedBackColor = Color.FromArgb(131, 94, 146);
-            radioButton3.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            radioButton3.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            radioButton3.Font = new Font("Montserrat", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            radioButton3.Location = new Point(202, 3);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(89, 20);
-            radioButton3.TabIndex = 15;
-            radioButton3.Text = "   E_Wallet";
-            radioButton3.UseVisualStyleBackColor = false;
             // 
             // Total_Pembayaran
             // 
@@ -125,7 +68,7 @@
             Total_Pembayaran.Name = "Total_Pembayaran";
             Total_Pembayaran.Size = new Size(451, 31);
             Total_Pembayaran.TabIndex = 0;
-            Total_Pembayaran.Text = "Total Pembayaran : Rp.100.000,00";
+            Total_Pembayaran.Text = "Total Pembayaran : ";
             Total_Pembayaran.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // Lanjut
@@ -238,11 +181,10 @@
             Controls.Add(Total_Pembayaran);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(Metode_Pembayaran);
-            Controls.Add(ID_Pelanggan);
+            Controls.Add(Durasi);
             Name = "V_Form_Transaksi";
             Size = new Size(623, 590);
-            flowLayoutPanel1.ResumeLayout(false);
-            flowLayoutPanel1.PerformLayout();
+            Load += V_Form_Transaksi_Load;
             Metode_Pembayaran.ResumeLayout(false);
             Metode_Pembayaran.PerformLayout();
             ResumeLayout(false);
@@ -250,18 +192,14 @@
         }
 
         #endregion
-
-        private TextBox ID_Pelanggan;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private Label Total_Pembayaran;
         private Button Lanjut;
         private Button Kembali;
         private RadioButton E_Wallet;
         private RadioButton Tunai;
         private RadioButton radioButton1;
         private Panel Metode_Pembayaran;
-        private RadioButton radioButton2;
-        private RadioButton radioButton3;
-        private RadioButton radioButton4;
+        public Label Total_Pembayaran;
+        public FlowLayoutPanel flowLayoutPanel1;
+        public TextBox Durasi;
     }
 }
