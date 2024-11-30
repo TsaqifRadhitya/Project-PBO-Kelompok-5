@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Reflection.Metadata;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +10,16 @@ using Pet_Care.Model;
 using Pet_Care.View;
 using Pet_Care.View.Transaksi;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using iText.Kernel.Pdf;
+using iText.Layout.Element;
+using static iText.Layout.Document;
+using iText.Layout;
+//using iText.Html2PDF
+using MailKit.Net.Smtp;
+using MailKit;
+using MimeKit;
+using iText.Layout.Properties;
+
 
 namespace Pet_Care.Contoller
 {
@@ -27,7 +36,7 @@ namespace Pet_Care.Contoller
         public Data_Transaksi Transaksi_baru;
         Data_Pelanngan data_Pelanngan = new Data_Pelanngan{ ID = 0 };
         public V_Transaksi_Berlangsung V_Transaksi_Berlangsung;
-        bool status_transaksi;
+        public bool status_transaksi;
         public C_Transaksi(C_MainMenu controller) 
         {
             this.controller = controller;
@@ -62,7 +71,6 @@ namespace Pet_Care.Contoller
             }
             model_transaksi.Insert(Transaksi_baru);
             show_message_box("Berhasil Membuat Transaksi");
-            status_transaksi = true;
             return true;
         }
 
@@ -71,7 +79,7 @@ namespace Pet_Care.Contoller
             int harga = Daftar_Harga["Penitipan"].harga * ((!string.IsNullOrEmpty(view.Durasi.Text)) ? int.Parse(view.Durasi.Text) : 0);
             Transaksi_baru.durasi_penitipan = (harga / Daftar_Harga["Penitipan"].harga).ToString();
             Transaksi_baru.Layanan = new List<dynamic[]>();
-            Transaksi_baru.Layanan.Add([harga / Daftar_Harga["Penitipan"].harga,Daftar_Harga["Penitipan"].id]);
+            Transaksi_baru.Layanan.Add([(!string.IsNullOrEmpty(view.Durasi.Text)) ? int.Parse(view.Durasi.Text) : 0,Daftar_Harga["Penitipan"].id,"Penitipan", Daftar_Harga["Penitipan"].harga, harga]);
             foreach (CheckBox checkBox in view.flowLayoutPanel1.Controls)
             {
                 if (checkBox.Checked)
@@ -79,12 +87,12 @@ namespace Pet_Care.Contoller
                     if (Daftar_Harga[checkBox.Text].quantity_berdasarkan_hari)
                     {
                         harga += Daftar_Harga[checkBox.Text].harga * ((!string.IsNullOrEmpty(view.Durasi.Text)) ? int.Parse(view.Durasi.Text) : 0);
-                        Transaksi_baru.Layanan.Add([(!string.IsNullOrEmpty(view.Durasi.Text)) ? int.Parse(view.Durasi.Text) : 0, Daftar_Harga[checkBox.Text].id,]);
+                        Transaksi_baru.Layanan.Add([(!string.IsNullOrEmpty(view.Durasi.Text)) ? int.Parse(view.Durasi.Text) : 0, Daftar_Harga[checkBox.Text].id,checkBox.Text, Daftar_Harga[checkBox.Text].harga, Daftar_Harga[checkBox.Text].harga * ((!string.IsNullOrEmpty(view.Durasi.Text)) ? int.Parse(view.Durasi.Text) : 0)]);
                     }
                     else
                     {
                         if(!string.IsNullOrEmpty(view.Durasi.Text)) harga += Daftar_Harga[checkBox.Text].harga;
-                        Transaksi_baru.Layanan.Add([1, Daftar_Harga[checkBox.Text].id]);
+                        Transaksi_baru.Layanan.Add([1, Daftar_Harga[checkBox.Text].id,checkBox.Text, Daftar_Harga[checkBox.Text].harga, Daftar_Harga[checkBox.Text].harga]);
                     }
                 }
             }
@@ -181,18 +189,53 @@ namespace Pet_Care.Contoller
 
         }
 
-        public void send_nota()
+        public async Task send_nota()
         {
-            //MemoryStream memoryStream = new MemoryStream();
-            //PdfWriter writer = new PdfWriter(memoryStream);
-            //PdfDocument pdf = new PdfDocument(writer);
-            //Document document = new Document(pdf);
-            //document.Add(new Paragraph("Hello, World!"));
-            //document.Close();
-            //byte[] pdfBytes = memoryStream.ToArray();
-            //SendEmailWithAttachment(pdfBytes);
+            MemoryStream memoryStream = new MemoryStream();
+            PdfWriter writer = new PdfWriter(memoryStream);
+            PdfDocument pdf = new PdfDocument(writer);
+            Document document = new Document(pdf);
 
-            status_transaksi = false;
+            Table tabel = new Table(5).UseAllAvailableWidth();
+            byte[] foto = (byte[])new ImageConverter().ConvertTo(Properties.Resources.Logo, typeof(byte[]));
+            //document.Add(new iText.Layout.Element.Image(iText.IO.Image.ImageDataFactory.Create(foto)));
+            document.Add(new Paragraph("Invoice").SetTextAlignment(TextAlignment.CENTER));
+            tabel.AddHeaderCell("NO");
+            tabel.AddHeaderCell("Layanan");
+            tabel.AddHeaderCell("Quantity");
+            tabel.AddHeaderCell("Harga");
+            tabel.AddHeaderCell("Jumlah");
+            for(int i = 0; i < Transaksi_baru.Layanan.Count; i++)
+            {
+                tabel.AddCell((i+1).ToString());
+                tabel.AddCell((Transaksi_baru.Layanan[i][2]).ToString());
+                tabel.AddCell((Transaksi_baru.Layanan[i][0]).ToString());
+                tabel.AddCell((Transaksi_baru.Layanan[i][3]).ToString());
+                tabel.AddCell((Transaksi_baru.Layanan[i][4]).ToString());
+            }
+            tabel.AddFooterCell(new Cell(1,4).Add(new Paragraph("Total Harga").SetTextAlignment(TextAlignment.CENTER)));
+            tabel.AddFooterCell($"{Transaksi_baru.nominal}");
+            document.Add(tabel);
+            document.Close();
+            byte[] pdfBytes = memoryStream.ToArray();
+            MimeMessage email = new MimeMessage();
+            
+            email.From.Add(new MailboxAddress("Tsaqif Radhitya", "mtsaqirr@gmail.com"));
+            email.To.Add(new MailboxAddress(data_Pelanngan.Name, data_Pelanngan.Email));
+            email.Subject = "[INVOICE PEMBAYARAN]";
+            BodyBuilder message = new BodyBuilder
+            {
+                TextBody = "Terima Kasih Telah Menitipkan Kucing Kesayangan Anda di MeowInn\nUntuk Mendapat Update Kondisi Terkini dari Kucing Anda Silahkan Join Group Telegram Berikut\nLINK TELEGRAM : https://t.me/meowInnNews"
+            };
+
+            ContentType contentType = new ContentType("application", "pdf");
+            message.Attachments.Add("Invoice.pdf", pdfBytes, contentType);
+            email.Body = message.ToMessageBody();
+            SmtpClient smtpClient = new SmtpClient();
+            await smtpClient.ConnectAsync("smtp.gmail.com", 465, MailKit.Security.SecureSocketOptions.SslOnConnect);
+            await smtpClient.AuthenticateAsync("mtsaqifrr@gmail.com", "wsaslihdcosxpebs");
+            await smtpClient.SendAsync(email);
+            smtpClient.Disconnect(true);
         }
         public void validate_pelanggan(V_Tambah_Transaksi view) 
         {
@@ -228,16 +271,21 @@ namespace Pet_Care.Contoller
             Frame_Transaksi.Location = new Point(Screen.FromControl(V_Transaksi).Bounds.Location.X + 800, Screen.FromControl(V_Transaksi).Bounds.Location.Y + 245);
             Frame_Transaksi.ShowDialog();
         }
-        public void Buat_Transaksi()
+        public async void Buat_Transaksi()
         {
             Frame_Transaksi = new V_Frame_Transaksi(this,new V_Tambah_Transaksi(this));
             Frame_Transaksi.StartPosition = FormStartPosition.Manual;
             Frame_Transaksi.Location = new Point(Screen.FromControl(V_Transaksi).Bounds.Location.X + 800, Screen.FromControl(V_Transaksi).Bounds.Location.Y + 245);
             Frame_Transaksi.ShowDialog();
-            if (status_transaksi) send_nota();
+            if (status_transaksi)
+            {
+                Task.Run(() => send_nota());
+                status_transaksi = false;
+                load_card();
+            }
         }
 
-        public void send_message(Data_Transaksi data)
+        public async void send_message(Data_Transaksi data)
         {
             V_Send_Message send_message = new V_Send_Message(this);
             Frame_Transaksi = new V_Frame_Transaksi(this, send_message);
@@ -255,7 +303,7 @@ namespace Pet_Care.Contoller
                 formData.Add(fileContent, "photo", "foto");
                 formData.Add(new StringContent($"{username}"), "chat_id");
                 formData.Add(new StringContent(message), "caption");
-                client.PostAsync($"https://api.telegram.org/bot{token}/sendPhoto", formData);
+                Task.Run(()=> client.PostAsync($"https://api.telegram.org/bot{token}/sendPhoto", formData));
                 data_pesan = null;
             }
         }
@@ -364,7 +412,7 @@ namespace Pet_Care.Contoller
             Pesan.MouseEnter += (object sender, EventArgs e) => { Pesan.BackgroundImage = Properties.Resources.Message_Hover; };
             Pesan.MouseLeave += (object sender, EventArgs e) => { Pesan.BackgroundImage = Properties.Resources.Message; };
             Pesan.MouseHover += (object sender, EventArgs e) => { Pesan.Cursor = Cursors.Hand; };
-            Pesan.Click += (object sender, EventArgs e) => { send_message(data); };
+            Pesan.Click += async(object sender, EventArgs e) => { send_message(data); };
 
             Card.Controls.Add(detail);
             Card.Controls.Add(Selesai);

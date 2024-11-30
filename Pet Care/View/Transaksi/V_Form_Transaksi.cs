@@ -40,7 +40,11 @@ namespace Pet_Care.View
 
         private void Lanjut_Click(object sender, EventArgs e)
         {
-            if (controller.buat_transaksi(this)) controller.Frame_Transaksi.Close();controller.load_card() ;
+            if (controller.buat_transaksi(this))
+            {
+                controller.status_transaksi = true;
+                controller.Frame_Transaksi.Close();
+            };
         }
 
         private void Lanjut_MouseEnter(object sender, EventArgs e)

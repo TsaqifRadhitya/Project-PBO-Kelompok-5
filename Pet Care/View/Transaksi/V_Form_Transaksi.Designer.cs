@@ -121,7 +121,7 @@
             E_Wallet.Font = new Font("Montserrat", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             E_Wallet.Location = new Point(157, 17);
             E_Wallet.Name = "E_Wallet";
-            E_Wallet.Size = new Size(89, 20);
+            E_Wallet.Size = new Size(88, 20);
             E_Wallet.TabIndex = 12;
             E_Wallet.Text = "   E-Wallet";
             E_Wallet.UseVisualStyleBackColor = false;
