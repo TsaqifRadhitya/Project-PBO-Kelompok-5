@@ -60,15 +60,7 @@ namespace Pet_Care.View
 
         private void Lanjut_Click(object sender, EventArgs e)
         {
-            controller.Transaksi_baru = null;
-            controller.Transaksi_baru = new Data_Transaksi 
-            {
-                Foto_Kucing = (byte[])new ImageConverter().ConvertTo(pictureBox1.Image, typeof(byte[])),
-                Id_pelanggan = int.Parse(ID_Pelanggan.Text.Substring(1, (ID_Pelanggan.Text.Length) - 1)),
-                Nama_Kucing = Nama_Kucing.Text
-            };
-            controller.Frame_Transaksi.Controls.Clear();
-            controller.Frame_Transaksi.Controls.Add(new V_Form_Transaksi(controller));
+            controller.validate_pelanggan(this);
         }
 
         private void Lanjut_MouseEnter(object sender, EventArgs e)
@@ -88,11 +80,22 @@ namespace Pet_Care.View
 
         private void V_Tambah_Transaksi_Load(object sender, EventArgs e)
         {
-            if(controller.Transaksi_baru != null)
+            if (controller.Transaksi_baru != null)
             {
                 pictureBox1.Image = new Bitmap(new MemoryStream(controller.Transaksi_baru.Foto_Kucing));
                 Nama_Kucing.Text = controller.Transaksi_baru.Nama_Kucing;
                 ID_Pelanggan.Text = "#" + controller.Transaksi_baru.Id_pelanggan.ToString();
+            }
+        }
+
+        private void ID_Pelanggan_TextChanged(object sender, EventArgs e)
+        {
+            if(ID_Pelanggan.Text.Length > 1)
+            {
+                if(!(int.TryParse(ID_Pelanggan.Text.Substring(1, (ID_Pelanggan.Text.Length) - 1),out _)))
+                {
+                    ID_Pelanggan.Text = "";
+                }
             }
         }
     }

@@ -45,6 +45,7 @@
             ID_Pelanggan.Name = "ID_Pelanggan";
             ID_Pelanggan.Size = new Size(406, 30);
             ID_Pelanggan.TabIndex = 9;
+            ID_Pelanggan.TextChanged += ID_Pelanggan_TextChanged;
             // 
             // Nama_Kucing
             // 
@@ -125,11 +126,10 @@
         }
 
         #endregion
-
-        private TextBox ID_Pelanggan;
-        private TextBox Nama_Kucing;
-        private PictureBox pictureBox1;
         private Button Batal;
         private Button Lanjut;
+        public TextBox ID_Pelanggan;
+        public TextBox Nama_Kucing;
+        public PictureBox pictureBox1;
     }
 }

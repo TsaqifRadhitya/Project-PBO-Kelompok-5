@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,9 +22,12 @@ namespace Pet_Care.Contoller
         public V_Frame_Transaksi? Frame_Transaksi;
         M_Layanan model_layanan = new M_Layanan();
         M_Transaksi model_transaksi = new M_Transaksi();
+        M_Pelanggan mode_pelanggan = new M_Pelanggan();
         public dynamic[]? data_pesan;
         public Data_Transaksi Transaksi_baru;
+        Data_Pelanngan data_Pelanngan = new Data_Pelanngan{ ID = 0 };
         public V_Transaksi_Berlangsung V_Transaksi_Berlangsung;
+        bool status_transaksi;
         public C_Transaksi(C_MainMenu controller) 
         {
             this.controller = controller;
@@ -39,38 +43,63 @@ namespace Pet_Care.Contoller
             V_Transaksi.Panel_Transaksi.Controls.Add(view);
         }
 
-        public void Refresh_Total_Harga(V_Form_Transaksi view)
+        public bool buat_transaksi(V_Form_Transaksi view)
+        {
+            if (string.IsNullOrEmpty(view.Durasi.Text))
+            {
+                show_message_box("Harap Mengisi Seluruh Isi Form");
+                return false;
+            }
+            foreach(RadioButton radioButton in view.Metode_Pembayaran.Controls)
+            {
+                if (radioButton.Checked) Transaksi_baru.Metode_Pembayaran = radioButton.Text;
+            }
+
+            if (string.IsNullOrEmpty(Transaksi_baru.Metode_Pembayaran))
+            {
+                show_message_box("Harap Mengisi Seluruh Isi Form");
+                return false;
+            }
+            model_transaksi.Insert(Transaksi_baru);
+            show_message_box("Berhasil Membuat Transaksi");
+            status_transaksi = true;
+            return true;
+        }
+
+        public int Refresh_Total_Harga(V_Form_Transaksi view)
         {
             int harga = Daftar_Harga["Penitipan"].harga * ((!string.IsNullOrEmpty(view.Durasi.Text)) ? int.Parse(view.Durasi.Text) : 0);
-            foreach(CheckBox checkBox in view.flowLayoutPanel1.Controls)
+            Transaksi_baru.durasi_penitipan = (harga / Daftar_Harga["Penitipan"].harga).ToString();
+            Transaksi_baru.Layanan = new List<dynamic[]>();
+            Transaksi_baru.Layanan.Add([harga / Daftar_Harga["Penitipan"].harga,Daftar_Harga["Penitipan"].id]);
+            foreach (CheckBox checkBox in view.flowLayoutPanel1.Controls)
             {
                 if (checkBox.Checked)
                 {
                     if (Daftar_Harga[checkBox.Text].quantity_berdasarkan_hari)
                     {
                         harga += Daftar_Harga[checkBox.Text].harga * ((!string.IsNullOrEmpty(view.Durasi.Text)) ? int.Parse(view.Durasi.Text) : 0);
+                        Transaksi_baru.Layanan.Add([(!string.IsNullOrEmpty(view.Durasi.Text)) ? int.Parse(view.Durasi.Text) : 0, Daftar_Harga[checkBox.Text].id,]);
                     }
                     else
                     {
                         if(!string.IsNullOrEmpty(view.Durasi.Text)) harga += Daftar_Harga[checkBox.Text].harga;
+                        Transaksi_baru.Layanan.Add([1, Daftar_Harga[checkBox.Text].id]);
                     }
                 }
             }
             view.Total_Pembayaran.Text = $"Total Pembayaran : Rp{harga.ToString("n", CultureInfo.GetCultureInfo("id-ID"))}";
+            Transaksi_baru.nominal = harga;
+            return harga;
         }
-
+    
         public void load_card()
         {
+            List<Data_Transaksi> datas = model_transaksi.Get().OfType<Data_Transaksi>().ToList();
             V_Transaksi_Berlangsung.flowLayoutPanel1.Controls.Clear();
-            for (int i = 0; i < 2; i++) 
+            foreach(Data_Transaksi data in datas)
             {
-                create_card(new Data_Transaksi
-                {
-                    Foto_Kucing = (byte[])new ImageConverter().ConvertTo(Properties.Resources.Test_Picture, typeof(byte[])),
-                    nominal = 50000,
-                    Nama_Kucing = $"Richie {i}",
-                    id = i
-                });
+                create_card(data);
             }
         }
         public void Delete(int id)
@@ -90,15 +119,107 @@ namespace Pet_Care.Contoller
             }
         }
 
-        public List<Data_Layanan> load_data_Layanan()
+        public void load_data_Layanan(V_Form_Transaksi view)
         {
             List<Data_Layanan> data = model_layanan.Get().OfType<Data_Layanan>().ToList();
             data.ForEach(x => { Daftar_Harga[x.name] = x; });
-            return data;
+            data.ForEach(x =>
+            {
+                if (x.name != "Penitipan")
+                {
+                    CheckBox radioButton = new CheckBox
+                    {
+                        BackColor = Color.Transparent,
+                        Font = new Font("Montserrat", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0),
+                        Name = "radioButton",
+                        Size = new Size(119, 20),
+                        TabIndex = 13,
+                        Text = x.name,
+                        UseVisualStyleBackColor = false
+                    };
+                    radioButton.FlatAppearance.BorderColor = Color.FromArgb(217, 217, 217);
+                    radioButton.FlatAppearance.BorderSize = 5;
+                    radioButton.FlatAppearance.CheckedBackColor = Color.FromArgb(131, 94, 146);
+                    radioButton.FlatAppearance.MouseDownBackColor = Color.Transparent;
+                    radioButton.FlatAppearance.MouseOverBackColor = Color.Transparent;
+                    radioButton.Click += (object sender, EventArgs e) => { Refresh_Total_Harga(view); };
+                    view.flowLayoutPanel1.Controls.Add(radioButton);
+                }
+            });
+        }
+        public void load_riwayat(V_Riwayat_Transaksi view)
+        {
+            List<Data_Transaksi> data = model_transaksi.Get_riwayat().OfType<Data_Transaksi>().ToList();
+                view.Tabel_Riwayat.DataSource = data;
+                view.Tabel_Riwayat.Columns["id"].Visible = false;
+                view.Tabel_Riwayat.Columns["Id_Pelanggan"].Visible = false;
+                view.Tabel_Riwayat.Columns["id_akun"].Visible = false;
+                view.Tabel_Riwayat.Columns["Foto_Kucing"].Visible = false;
+                view.Tabel_Riwayat.Columns["Waktu"].Visible = false;
+                view.Tabel_Riwayat.Columns["display_price"].HeaderText = "Nominal Transaksi";
+                view.Tabel_Riwayat.Columns["Nama_Pelanggan"].HeaderText = "Nama Pelanggan";
+                view.Tabel_Riwayat.Columns["Nama_Kucing"].HeaderText = "Nama Kucing";
+                view.Tabel_Riwayat.Columns["durasi_penitipan"].HeaderText = "Durasi";
+                view.Tabel_Riwayat.Columns["Nomor_hp"].HeaderText = "Nomor Hp";
+                view.Tabel_Riwayat.Columns["nominal"].Visible = false;
+                view.Tabel_Riwayat.Columns["Metode_Pembayaran"].HeaderText = "Metode Pembayaran";
+                view.Tabel_Riwayat.Columns.Add(new DataGridViewButtonColumn
+                {
+                    Name = "Detail",
+                    HeaderText = "",
+                    Text = "Detail",
+                    UseColumnTextForButtonValue = true,
+                });
+                view.Tabel_Riwayat.DefaultCellStyle.BackColor = Color.FromArgb(131, 94, 146);
+                view.Tabel_Riwayat.DefaultCellStyle.ForeColor = Color.White;
+                view.Tabel_Riwayat.DefaultCellStyle.Font = new Font("Montserrat Bold", 8F);
+                view.Tabel_Riwayat.ColumnHeadersDefaultCellStyle.Font = new Font("Montserrat Bold", 8F);
+                view.Tabel_Riwayat.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
         public void load_detail(int id,V_Detail_Transaksi view)
         {
 
+        }
+
+        public void send_nota()
+        {
+            //MemoryStream memoryStream = new MemoryStream();
+            //PdfWriter writer = new PdfWriter(memoryStream);
+            //PdfDocument pdf = new PdfDocument(writer);
+            //Document document = new Document(pdf);
+            //document.Add(new Paragraph("Hello, World!"));
+            //document.Close();
+            //byte[] pdfBytes = memoryStream.ToArray();
+            //SendEmailWithAttachment(pdfBytes);
+
+            status_transaksi = false;
+        }
+        public void validate_pelanggan(V_Tambah_Transaksi view) 
+        {
+            if(view.pictureBox1.Image == null || string.IsNullOrEmpty(view.ID_Pelanggan.Text) || string.IsNullOrEmpty(view.Nama_Kucing.Text))
+            {
+                show_message_box("Harap Isi Seluruh Isi Form");
+                return;
+            }
+            if (this.data_Pelanngan.ID != int.Parse(view.ID_Pelanggan.Text.Substring(1, (view.ID_Pelanggan.Text.Length) - 1)))
+            {
+                List<Data_Pelanngan> data_Pelanngan = mode_pelanggan.Get(int.Parse(view.ID_Pelanggan.Text.Substring(1, (view.ID_Pelanggan.Text.Length) - 1))).OfType<Data_Pelanngan>().ToList();
+                if (data_Pelanngan.Count != 1)
+                {
+                    show_message_box("ID Pelanggan Belum Terdaftar");
+                    return;
+                }
+                this.data_Pelanngan = data_Pelanngan[0];
+            }
+            Transaksi_baru = new Data_Transaksi
+            {
+                Foto_Kucing = (byte[])new ImageConverter().ConvertTo(view.pictureBox1.Image, typeof(byte[])),
+                Id_pelanggan = int.Parse(view.ID_Pelanggan.Text.Substring(1, (view.ID_Pelanggan.Text.Length) - 1)),
+                Nama_Kucing = view.Nama_Kucing.Text,
+                id_akun = M_Session.id_session
+            };
+            Frame_Transaksi.Controls.Clear();
+            Frame_Transaksi.Controls.Add(new V_Form_Transaksi(this));
         }
         public void detail(int id)
         {
@@ -111,9 +232,9 @@ namespace Pet_Care.Contoller
         {
             Frame_Transaksi = new V_Frame_Transaksi(this,new V_Tambah_Transaksi(this));
             Frame_Transaksi.StartPosition = FormStartPosition.Manual;
-            //Frame_Transaksi.Location = 
             Frame_Transaksi.Location = new Point(Screen.FromControl(V_Transaksi).Bounds.Location.X + 800, Screen.FromControl(V_Transaksi).Bounds.Location.Y + 245);
             Frame_Transaksi.ShowDialog();
+            if (status_transaksi) send_nota();
         }
 
         public void send_message(Data_Transaksi data)
@@ -126,7 +247,7 @@ namespace Pet_Care.Contoller
             if (send_message.status)
             {
                 string username = "@meowInnNews";
-                string message = $"[BROADCAST HARIAN KUCING MEOWINN]\nNama Kucing : {data.Nama_Kucing}\nKegiatan : {data_pesan[1]}";
+                string message = $"[BROADCAST HARIAN KUCING MEOWINN]\nOwner : @hakarra\nNama Kucing : {data.Nama_Kucing}\nKegiatan : {data_pesan[1]}";
                 string token = "7601026397:AAFZD3wLc28O527pAiOqdQiJKs6lL4xO83A";
                 HttpClient client = new HttpClient();
                 MultipartFormDataContent formData = new MultipartFormDataContent();
@@ -214,7 +335,7 @@ namespace Pet_Care.Contoller
                 Size = new Size(195, 23),
                 TabIndex = 1,
                 TextAlign = ContentAlignment.MiddleLeft,
-                Text =  $"Rp{data.nominal.ToString("n", CultureInfo.GetCultureInfo("id-ID"))}"
+                Text =  $"Rp{data.nominal.ToString("n2", CultureInfo.GetCultureInfo("id-ID"))}"
             };
             PictureBox foto = new PictureBox
             {

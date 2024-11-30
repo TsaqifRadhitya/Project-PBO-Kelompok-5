@@ -68,6 +68,6 @@
 
         #endregion
 
-        private DataGridView Tabel_Riwayat;
+        public DataGridView Tabel_Riwayat;
     }
 }

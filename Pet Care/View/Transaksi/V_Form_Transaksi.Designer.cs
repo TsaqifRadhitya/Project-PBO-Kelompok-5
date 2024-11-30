@@ -123,7 +123,7 @@
             E_Wallet.Name = "E_Wallet";
             E_Wallet.Size = new Size(89, 20);
             E_Wallet.TabIndex = 12;
-            E_Wallet.Text = "   E_Wallet";
+            E_Wallet.Text = "   E-Wallet";
             E_Wallet.UseVisualStyleBackColor = false;
             // 
             // Tunai
@@ -197,9 +197,9 @@
         private RadioButton E_Wallet;
         private RadioButton Tunai;
         private RadioButton radioButton1;
-        private Panel Metode_Pembayaran;
         public Label Total_Pembayaran;
         public FlowLayoutPanel flowLayoutPanel1;
         public TextBox Durasi;
+        public Panel Metode_Pembayaran;
     }
 }

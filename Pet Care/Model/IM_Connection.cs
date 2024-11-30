@@ -18,3 +18,4 @@ namespace Pet_Care.Model
         public void Update(object obj,int id);
     }
 }
+ 

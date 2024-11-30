@@ -22,20 +22,9 @@ namespace Pet_Care.Contoller
         public C_Kamera()
         {
             view = new V_Kamera(this);
-            //this.data = data;
-            view.ShowDialog();
-            //if(foto != null)
-            //{
-            //    send(foto, "Ngeset Ajah :)");
-            //    foto = null;
-            //}
-        }
 
-        private void VideoSource_NewFrame(object sender, NewFrameEventArgs eventArgs)
-        {
-            Bitmap foto = (Bitmap)eventArgs.Frame.Clone();
-            foto.RotateFlip(RotateFlipType.RotateNoneFlipX);
-            view.frame_foto.Image = foto;
+            view.ShowDialog();
+
         }
 
         public void start()
@@ -43,7 +32,7 @@ namespace Pet_Care.Contoller
             captureDevice = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             videoSource = new VideoCaptureDevice();
             videoSource = new VideoCaptureDevice(captureDevice[0].MonikerString);
-            videoSource.NewFrame += new NewFrameEventHandler(VideoSource_NewFrame);
+            videoSource.NewFrame += new NewFrameEventHandler(view.VideoSource_NewFrame);
             videoSource.Start();
         }
         public void stop()

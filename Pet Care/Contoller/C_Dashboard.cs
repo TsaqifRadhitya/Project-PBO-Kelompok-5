@@ -25,27 +25,17 @@ namespace Pet_Care.Contoller
         public void load()
         {
             List<Data_Transaksi> transaksiList = M_Transaksi.Get("Now").OfType<Data_Transaksi>().ToList();
-            for(int i = 0; i < 100; i++)
-            {
-                transaksiList.Add(new Data_Transaksi
-                {
-                    Nama_Pelanggan = "Tsaqif",
-                    Nama_Kucing = "Dori",
-                    durasi_penitipan = "5 hari",
-                    Nomor_hp = "085156360779",
-                    Alamat = "Jl.Manggar No.127",
-                    display_price = $"Rp{1000000.ToString("n", CultureInfo.GetCultureInfo("id-ID"))}",
-                    Metode_Pembayaran = "BRI"
-                });
-            }
+
             Dashboard.TabelTransaksi.DataSource = transaksiList;
             Dashboard.TabelTransaksi.ColumnHeadersVisible = true;
             Dashboard.TabelTransaksi.Columns["Waktu"].Visible = false;
+            Dashboard.TabelTransaksi.Columns["Tanggal"].Visible = false;
             Dashboard.TabelTransaksi.Columns["id_pelanggan"].Visible = false;
             Dashboard.TabelTransaksi.Columns["id_akun"].Visible = false;
             Dashboard.TabelTransaksi.Columns["nominal"].Visible = false;
             Dashboard.TabelTransaksi.Columns["id"].Visible = false;
             Dashboard.TabelTransaksi.Columns["Foto_Kucing"].Visible = false ;
+            Dashboard.TabelTransaksi.Columns["Metode_Pembayaran"].HeaderText = "Metode Pembayaran";
             Dashboard.TabelTransaksi.Columns["Nama_Pelanggan"].HeaderText = "Nama Pelanggan";
             Dashboard.TabelTransaksi.Columns["Nama_Kucing"].HeaderText = "Nama Kucing";
             Dashboard.TabelTransaksi.Columns["durasi_penitipan"].HeaderText = "Durasi";
@@ -55,8 +45,8 @@ namespace Pet_Care.Contoller
             Dashboard.TabelTransaksi.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             Dashboard.kucing.Text = $"{M_Transaksi.Get().Count} Kucing";
             Dashboard.Layanan.Text = $"{M_Layanan.Get().Count} Layanan";
-            int pendapatan = (M_Transaksi.Get_Pendapatan() != DBNull.Value)? (int)M_Transaksi.Get_Pendapatan() : 0;
-            Dashboard.Pendapatan.Text = $"Rp{pendapatan.ToString("n", CultureInfo.GetCultureInfo("id-ID"))}";
+            int pendapatan = (M_Transaksi.Get_Pendapatan() != DBNull.Value) ? Convert.ToInt32(M_Transaksi.Get_Pendapatan()) : 0;
+            Dashboard.Pendapatan.Text = $"Rp{pendapatan.ToString("n2", CultureInfo.GetCultureInfo("id-ID"))}";
         }
     }
 }

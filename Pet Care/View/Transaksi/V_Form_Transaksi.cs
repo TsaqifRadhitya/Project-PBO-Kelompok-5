@@ -40,7 +40,7 @@ namespace Pet_Care.View
 
         private void Lanjut_Click(object sender, EventArgs e)
         {
-
+            if (controller.buat_transaksi(this)) controller.Frame_Transaksi.Close();controller.load_card() ;
         }
 
         private void Lanjut_MouseEnter(object sender, EventArgs e)
@@ -71,30 +71,7 @@ namespace Pet_Care.View
 
         private void V_Form_Transaksi_Load(object sender, EventArgs e)
         {
-            controller.load_data_Layanan().ForEach(x =>
-            {
-                if (x.name != "Penitipan")
-                {
-                    CheckBox radioButton = new CheckBox
-                    {
-                        BackColor = Color.Transparent,
-                        Font = new Font("Montserrat", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0),
-                        Name = "radioButton",
-                        Size = new Size(119, 20),
-                        TabIndex = 13,
-                        Text = x.name,
-                        UseVisualStyleBackColor = false
-                    };
-                    radioButton.FlatAppearance.BorderColor = Color.FromArgb(217, 217, 217);
-                    radioButton.FlatAppearance.BorderSize = 5;
-                    radioButton.FlatAppearance.CheckedBackColor = Color.FromArgb(131, 94, 146);
-                    radioButton.FlatAppearance.MouseDownBackColor = Color.Transparent;
-                    radioButton.FlatAppearance.MouseOverBackColor = Color.Transparent;
-                    radioButton.Click += (object sender, EventArgs e) => { controller.Refresh_Total_Harga(this); };
-                    flowLayoutPanel1.Controls.Add(radioButton);
-                }
-            }
-            );
+            controller.load_data_Layanan(this);
         }
     }
 }

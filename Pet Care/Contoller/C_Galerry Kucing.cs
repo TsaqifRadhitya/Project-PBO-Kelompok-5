@@ -59,6 +59,7 @@ namespace Pet_Care.Contoller
                 TabIndex = 0,
                 TabStop = false,
                 Image = new Bitmap(new MemoryStream(foto)),
+                SizeMode = PictureBoxSizeMode.StretchImage
             };
             Label header = new Label
             {

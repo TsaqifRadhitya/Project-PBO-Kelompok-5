@@ -10,7 +10,7 @@ namespace Pet_Care.Model
 {
     public abstract class M_Connection
     {
-        protected string addres = "Host=ep-wild-sun-a1cnl6br.ap-southeast-1.aws.neon.tech;Database=MeowInn;Username=MeowInn_owner;Password=pzdg1jc0WwrX;SSL Mode=Require;Trust Server Certificate=true;Pooling=false;Command Timeout=0;";
+        protected string addres = "Host=localhost;Username=postgres;Password=;Database=MeowInn";
         private NpgsqlConnection Conn;
         protected NpgsqlConnection conn
         { 

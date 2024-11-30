@@ -43,12 +43,14 @@
             frame_foto.SizeMode = PictureBoxSizeMode.StretchImage;
             frame_foto.TabIndex = 0;
             frame_foto.TabStop = false;
+            frame_foto.Paint += frame_foto_Paint;
             // 
             // Shutter
             // 
             Shutter.BackColor = Color.Transparent;
             Shutter.BackgroundImage = Properties.Resources.Shutter;
             Shutter.BackgroundImageLayout = ImageLayout.Zoom;
+            Shutter.Enabled = false;
             Shutter.FlatAppearance.BorderSize = 0;
             Shutter.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Shutter.FlatAppearance.MouseOverBackColor = Color.Transparent;

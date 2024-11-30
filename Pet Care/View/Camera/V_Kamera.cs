@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AForge.Video;
 using Pet_Care.Contoller;
 
 namespace Pet_Care.View
@@ -18,7 +19,6 @@ namespace Pet_Care.View
         {
             InitializeComponent();
             this.controller = controller;
-            this.controller.start();
         }
 
         private void Shutter_Click(object sender, EventArgs e)
@@ -47,7 +47,7 @@ namespace Pet_Care.View
 
         private void Kamera_Load(object sender, EventArgs e)
         {
-            
+            this.controller.start();
         }
 
         private void Exit_Click(object sender, EventArgs e)
@@ -69,6 +69,18 @@ namespace Pet_Care.View
         private void Exit_MouseEnter(object sender, EventArgs e)
         {
             Exit.BackgroundImage = Properties.Resources.Close_Camera_Hover;
+        }
+
+        public void VideoSource_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        {
+            Bitmap foto = (Bitmap)eventArgs.Frame.Clone();
+            foto.RotateFlip(RotateFlipType.RotateNoneFlipX);
+            frame_foto.Image = foto;
+        }
+
+        private void frame_foto_Paint(object sender, PaintEventArgs e)
+        {
+            if (!(Shutter.Enabled) && frame_foto.Image != null) Shutter.Enabled = true;
         }
     }
 }
