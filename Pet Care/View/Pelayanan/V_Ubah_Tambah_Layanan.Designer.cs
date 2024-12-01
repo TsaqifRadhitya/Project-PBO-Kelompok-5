@@ -160,6 +160,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "V_Ubah_Tambah_Layanan";
+            ShowInTaskbar = false;
             StartPosition = FormStartPosition.Manual;
             Text = "MeowInn";
             Load += V_Ubah_Tambah_Layanan_Load;

@@ -96,6 +96,7 @@
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Name = "Custom_Message_Box_2_Button";
+            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Custom_Message_Box_2_Button";
             Load += Custom_Message_Box_2_Button_Load;

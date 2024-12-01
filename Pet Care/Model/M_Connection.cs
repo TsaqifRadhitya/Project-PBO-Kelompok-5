@@ -10,7 +10,7 @@ namespace Pet_Care.Model
 {
     public abstract class M_Connection
     {
-        protected string addres = "Host=localhost;Username=postgres;Password=;Database=MeowInn";
+        protected string addres = EnvLoader.connection;
         private NpgsqlConnection Conn;
         protected NpgsqlConnection conn
         { 

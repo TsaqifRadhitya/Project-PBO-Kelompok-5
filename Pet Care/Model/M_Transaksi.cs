@@ -13,9 +13,32 @@ namespace Pet_Care.Model
     {
         public List<object> Get()
         {
-            DataTable data = Execute_With_Return("Select transaksi_id, TO_CHAR(tanggal_transaksi,'DD-MM-YYYY') as tanggal,nama,nama_hewan,foto_hewan,Durasi_Penitipan,nomor_hp,alamat,nominal_transaksi,metode_pembayaran from transaksi t join Pelanggan p on t.pelanggan_id = p.pelanggan_id where status_penitipan = true");
+            DataTable data = Execute_With_Return("Select transaksi_id, TO_CHAR(tanggal_transaksi,'DD-MM-YYYY') as tanggal,nama,nama_hewan,Durasi_Penitipan,nomor_hp,alamat,nominal_transaksi,metode_pembayaran from transaksi t join Pelanggan p on t.pelanggan_id = p.pelanggan_id where status_penitipan = true");
 
             List<object> list = new List<object>();
+            for (int i = 0; i < data.Rows.Count; i++)
+            {
+                Data_Transaksi data_Transaksi = new Data_Transaksi
+                {
+                    id = (int)data.Rows[i]["transaksi_id"],
+                    Tanggal = data.Rows[i]["tanggal"].ToString(),
+                    Nama_Pelanggan = data.Rows[i]["nama"].ToString(),
+                    Nama_Kucing = data.Rows[i]["nama_hewan"].ToString(),
+                    durasi_penitipan = $"{data.Rows[i]["Durasi_Penitipan"].ToString()} Hari",
+                    Nomor_hp = data.Rows[i]["nomor_hp"].ToString(),
+                    Alamat = data.Rows[i]["alamat"].ToString(),
+                    Metode_Pembayaran = data.Rows[i]["metode_pembayaran"].ToString(),
+                    nominal = (int)data.Rows[i]["nominal_transaksi"],
+                };
+                list.Add(data_Transaksi);
+            }
+            return list;
+        }
+        public List<Data_Transaksi> Get_with_photo()
+        {
+            DataTable data = Execute_With_Return("Select transaksi_id, TO_CHAR(tanggal_transaksi,'DD-MM-YYYY') as tanggal,nama,nama_hewan,foto_hewan,Durasi_Penitipan,nomor_hp,alamat,nominal_transaksi,metode_pembayaran from transaksi t join Pelanggan p on t.pelanggan_id = p.pelanggan_id where status_penitipan = true");
+
+            List<Data_Transaksi> list = new List<Data_Transaksi>();
             for (int i = 0; i < data.Rows.Count; i++)
             {
                 Data_Transaksi data_Transaksi = new Data_Transaksi
@@ -37,7 +60,7 @@ namespace Pet_Care.Model
         }
         public List<object> Get_riwayat()
         {
-            DataTable data = Execute_With_Return("Select transaksi_id, TO_CHAR(tanggal_transaksi,'DD-MM-YYYY') as tanggal,nama,nama_hewan,foto_hewan,Durasi_Penitipan,nomor_hp,alamat,nominal_transaksi,metode_pembayaran from transaksi t join Pelanggan p on t.pelanggan_id = p.pelanggan_id where status_penitipan = false");
+            DataTable data = Execute_With_Return("Select transaksi_id, TO_CHAR(tanggal_transaksi,'DD-MM-YYYY') as tanggal,nama,nama_hewan,Durasi_Penitipan,nomor_hp,alamat,nominal_transaksi,metode_pembayaran from transaksi t join Pelanggan p on t.pelanggan_id = p.pelanggan_id where status_penitipan = false");
 
             List<object> list = new List<object>();
             for (int i = 0; i < data.Rows.Count; i++)
@@ -48,7 +71,6 @@ namespace Pet_Care.Model
                     Tanggal = data.Rows[i]["tanggal"].ToString(),
                     Nama_Pelanggan = data.Rows[i]["nama"].ToString(),
                     Nama_Kucing = data.Rows[i]["nama_hewan"].ToString(),
-                    Foto_Kucing = (byte[])data.Rows[i]["foto_hewan"],
                     durasi_penitipan = $"{data.Rows[i]["Durasi_Penitipan"].ToString()} Hari",
                     Nomor_hp = data.Rows[i]["nomor_hp"].ToString(),
                     Alamat = data.Rows[i]["alamat"].ToString(),
@@ -60,32 +82,32 @@ namespace Pet_Care.Model
             return list;
         }
 
-        public List<object> Get(string time)
-        {
-            DataTable data = Execute_With_Return("Select transaksi_id, TO_CHAR(tanggal_transaksi,'DD-MM-YYYY') as tanggal,nama,nama_hewan,foto_hewan,Durasi_Penitipan,nomor_hp,alamat,nominal_transaksi,metode_pembayaran from transaksi t join Pelanggan p on t.pelanggan_id = p.pelanggan_id where TO_CHAR(tanggal_transaksi,'DD-MM-YYYY') = TO_CHAR(now(),'DD-MM-YYYY') AND status_penitipan = true");
-            List<object> list = new List<object>();
-            for (int i = 0; i < data.Rows.Count; i++)
-            {
-                Data_Transaksi data_Transaksi = new Data_Transaksi
-                {
-                    id = (int)data.Rows[i]["transaksi_id"],
-                    Tanggal = data.Rows[i]["tanggal"].ToString(),
-                    Nama_Pelanggan = data.Rows[i]["nama"].ToString(),
-                    Nama_Kucing = data.Rows[i]["nama_hewan"].ToString(),
-                    Foto_Kucing = (byte[])data.Rows[i]["foto_hewan"],
-                    durasi_penitipan = $"{data.Rows[i]["Durasi_Penitipan"].ToString()} Hari",
-                    Nomor_hp = data.Rows[i]["nomor_hp"].ToString(),
-                    Alamat = data.Rows[i]["alamat"].ToString(),
-                    display_price = $"Rp{((int)data.Rows[i]["nominal_transaksi"]).ToString("n", CultureInfo.GetCultureInfo("id-ID"))}",
-                    Metode_Pembayaran = data.Rows[i]["metode_pembayaran"].ToString(),
-                };
-                list.Add(data_Transaksi);
-            }
-            return list;
-        }
+        //public List<object> Get(string time)
+        //{
+        //    DataTable data = Execute_With_Return("Select transaksi_id, TO_CHAR(tanggal_transaksi,'DD-MM-YYYY') as tanggal,nama,nama_hewan,foto_hewan,Durasi_Penitipan,nomor_hp,alamat,nominal_transaksi,metode_pembayaran from transaksi t join Pelanggan p on t.pelanggan_id = p.pelanggan_id where TO_CHAR(tanggal_transaksi,'DD-MM-YYYY') = TO_CHAR(now(),'DD-MM-YYYY') AND status_penitipan = true");
+        //    List<object> list = new List<object>();
+        //    for (int i = 0; i < data.Rows.Count; i++)
+        //    {
+        //        Data_Transaksi data_Transaksi = new Data_Transaksi
+        //        {
+        //            id = (int)data.Rows[i]["transaksi_id"],
+        //            Tanggal = data.Rows[i]["tanggal"].ToString(),
+        //            Nama_Pelanggan = data.Rows[i]["nama"].ToString(),
+        //            Nama_Kucing = data.Rows[i]["nama_hewan"].ToString(),
+        //            Foto_Kucing = (byte[])data.Rows[i]["foto_hewan"],
+        //            durasi_penitipan = $"{data.Rows[i]["Durasi_Penitipan"].ToString()} Hari",
+        //            Nomor_hp = data.Rows[i]["nomor_hp"].ToString(),
+        //            Alamat = data.Rows[i]["alamat"].ToString(),
+        //            display_price = $"Rp{((int)data.Rows[i]["nominal_transaksi"]).ToString("n", CultureInfo.GetCultureInfo("id-ID"))}",
+        //            Metode_Pembayaran = data.Rows[i]["metode_pembayaran"].ToString(),
+        //        };
+        //        list.Add(data_Transaksi);
+        //    }
+        //    return list;
+        //}
         public Data_Transaksi Get_detail(int id)
         {
-            DataTable data = Execute_With_Return("Select t.transaksi_id, TO_CHAR(tanggal_transaksi,'DD-MM-YYYY') as tanggal,nama,nama_hewan,foto_hewan,Durasi_Penitipan,nomor_hp,alamat,nominal_transaksi,nama_pelayanan,quantity,nama_metode" +
+            DataTable data = Execute_With_Return("Select t.transaksi_id, TO_CHAR(tanggal_transaksi,'DD-MM-YYYY') as tanggal,nama,nama_hewan,Durasi_Penitipan,nomor_hp,alamat,nominal_transaksi,nama_pelayanan,quantity,nama_metode" +
                 "from transaksi t " +
                 "join Pelanggan p on t.pelanggan_id = p.pelanggan_id " +
                 "join detail_transaksi dt on dt.transaksi_id = t.transaksi_id " +
@@ -100,7 +122,6 @@ namespace Pet_Care.Model
                 data_transaksi.Tanggal = data.Rows[i]["tanggal"].ToString();
                 data_transaksi.Nama_Pelanggan = data.Rows[i]["tanggal"].ToString();
                 data_transaksi.Nama_Kucing = data.Rows[i]["nama_hewan"].ToString();
-                data_transaksi.Foto_Kucing = (byte[])data.Rows[i]["foto_hewan"];
                 data_transaksi.durasi_penitipan = $"{data.Rows[i]["Durasi_Penitipan"].ToString()} Hari";
                 data_transaksi.Nomor_hp = data.Rows[i]["nomor_hp"].ToString();
                 data_transaksi.Alamat = data.Rows[i]["alamat"].ToString();
@@ -124,7 +145,6 @@ namespace Pet_Care.Model
             {
                 querry_detail += $"({(int)data.Layanan[i][0]},{(int)data.Layanan[i][1]},{id_transaksi})";
                 if (data.Layanan.Count > 0 && data.Layanan.Count - 1 != i) querry_detail += ',';
-                //Execute_No_Return($"INSERT INTO detail_transaksi(quantity,pelayanan_id,transaksi_id) Values ({(int)transaksi[1]},{(int)transaksi[0]},{id_transaksi})");
             }
             Execute_No_Return(querry_detail);
         }
@@ -142,7 +162,7 @@ namespace Pet_Care.Model
 
         public object Get_Pendapatan()
         {
-            return Execute_With_Return("select sum(nominal_transaksi) as total_transaksi from transaksi ").Rows[0]["total_transaksi"];
+            return Execute_With_Return("select sum(nominal_transaksi) as total_transaksi from transaksi where TO_CHAR(tanggal_transaksi,'DD-MM-YYYY') = TO_CHAR(now(),'DD-MM-YYYY')").Rows[0]["total_transaksi"];
         }
     }
 

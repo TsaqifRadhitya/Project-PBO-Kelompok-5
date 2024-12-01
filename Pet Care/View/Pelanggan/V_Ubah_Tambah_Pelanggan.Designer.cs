@@ -147,6 +147,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "V_Ubah_Tambah_Pelanggan";
+            ShowInTaskbar = false;
             Text = "MeowInn";
             ResumeLayout(false);
             PerformLayout();

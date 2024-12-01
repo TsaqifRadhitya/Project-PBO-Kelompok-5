@@ -77,6 +77,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "V_Custom_Message_Box";
+            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MeowInn";
             ResumeLayout(false);

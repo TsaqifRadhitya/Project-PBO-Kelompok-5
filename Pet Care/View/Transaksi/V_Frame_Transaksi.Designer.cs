@@ -37,6 +37,7 @@
             ClientSize = new Size(623, 590);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_Frame_Transaksi";
+            ShowInTaskbar = false;
             Text = "V_detail_transaksi";
             ResumeLayout(false);
         }

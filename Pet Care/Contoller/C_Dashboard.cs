@@ -24,8 +24,7 @@ namespace Pet_Care.Contoller
         }
         public void load()
         {
-            List<Data_Transaksi> transaksiList = M_Transaksi.Get("Now").OfType<Data_Transaksi>().ToList();
-
+            List<Data_Transaksi> transaksiList = M_Transaksi.Get().OfType<Data_Transaksi>().ToList();
             Dashboard.TabelTransaksi.DataSource = transaksiList;
             Dashboard.TabelTransaksi.ColumnHeadersVisible = true;
             Dashboard.TabelTransaksi.Columns["Waktu"].Visible = false;

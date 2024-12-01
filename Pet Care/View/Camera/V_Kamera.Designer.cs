@@ -98,6 +98,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "V_Kamera";
+            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Kamera";
             Load += Kamera_Load;

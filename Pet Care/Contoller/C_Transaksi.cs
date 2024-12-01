@@ -14,18 +14,21 @@ using iText.Kernel.Pdf;
 using iText.Layout.Element;
 using static iText.Layout.Document;
 using iText.Layout;
-//using iText.Html2PDF
 using MailKit.Net.Smtp;
 using MailKit;
 using MimeKit;
 using iText.Layout.Properties;
+using iText.Commons.Utils;
+using System.Security.Policy;
+using iText.Kernel.Font;
+using iText.IO.Font.Constants;
 
 
 namespace Pet_Care.Contoller
 {
     public class C_Transaksi : C_Message_Box
     {
-        Dictionary<string,Data_Layanan> Daftar_Harga = new Dictionary<string, Data_Layanan>();
+        Dictionary<string, Data_Layanan> Daftar_Harga = new Dictionary<string, Data_Layanan>();
         C_MainMenu controller;
         V_Transaksi V_Transaksi;
         public V_Frame_Transaksi? Frame_Transaksi;
@@ -34,10 +37,10 @@ namespace Pet_Care.Contoller
         M_Pelanggan mode_pelanggan = new M_Pelanggan();
         public dynamic[]? data_pesan;
         public Data_Transaksi Transaksi_baru;
-        Data_Pelanngan data_Pelanngan = new Data_Pelanngan{ ID = 0 };
+        Data_Pelanngan data_Pelanngan = new Data_Pelanngan { ID = 0 };
         public V_Transaksi_Berlangsung V_Transaksi_Berlangsung;
         public bool status_transaksi;
-        public C_Transaksi(C_MainMenu controller) 
+        public C_Transaksi(C_MainMenu controller)
         {
             this.controller = controller;
             V_Transaksi = new V_Transaksi(this);
@@ -59,7 +62,7 @@ namespace Pet_Care.Contoller
                 show_message_box("Harap Mengisi Seluruh Isi Form");
                 return false;
             }
-            foreach(RadioButton radioButton in view.Metode_Pembayaran.Controls)
+            foreach (RadioButton radioButton in view.Metode_Pembayaran.Controls)
             {
                 if (radioButton.Checked) Transaksi_baru.Metode_Pembayaran = radioButton.Text;
             }
@@ -79,7 +82,7 @@ namespace Pet_Care.Contoller
             int harga = Daftar_Harga["Penitipan"].harga * ((!string.IsNullOrEmpty(view.Durasi.Text)) ? int.Parse(view.Durasi.Text) : 0);
             Transaksi_baru.durasi_penitipan = (harga / Daftar_Harga["Penitipan"].harga).ToString();
             Transaksi_baru.Layanan = new List<dynamic[]>();
-            Transaksi_baru.Layanan.Add([(!string.IsNullOrEmpty(view.Durasi.Text)) ? int.Parse(view.Durasi.Text) : 0,Daftar_Harga["Penitipan"].id,"Penitipan", Daftar_Harga["Penitipan"].harga, harga]);
+            Transaksi_baru.Layanan.Add([(!string.IsNullOrEmpty(view.Durasi.Text)) ? int.Parse(view.Durasi.Text) : 0, Daftar_Harga["Penitipan"].id, "Penitipan", Daftar_Harga["Penitipan"].harga, harga]);
             foreach (CheckBox checkBox in view.flowLayoutPanel1.Controls)
             {
                 if (checkBox.Checked)
@@ -87,12 +90,12 @@ namespace Pet_Care.Contoller
                     if (Daftar_Harga[checkBox.Text].quantity_berdasarkan_hari)
                     {
                         harga += Daftar_Harga[checkBox.Text].harga * ((!string.IsNullOrEmpty(view.Durasi.Text)) ? int.Parse(view.Durasi.Text) : 0);
-                        Transaksi_baru.Layanan.Add([(!string.IsNullOrEmpty(view.Durasi.Text)) ? int.Parse(view.Durasi.Text) : 0, Daftar_Harga[checkBox.Text].id,checkBox.Text, Daftar_Harga[checkBox.Text].harga, Daftar_Harga[checkBox.Text].harga * ((!string.IsNullOrEmpty(view.Durasi.Text)) ? int.Parse(view.Durasi.Text) : 0)]);
+                        Transaksi_baru.Layanan.Add([(!string.IsNullOrEmpty(view.Durasi.Text)) ? int.Parse(view.Durasi.Text) : 0, Daftar_Harga[checkBox.Text].id, checkBox.Text, Daftar_Harga[checkBox.Text].harga, Daftar_Harga[checkBox.Text].harga * ((!string.IsNullOrEmpty(view.Durasi.Text)) ? int.Parse(view.Durasi.Text) : 0)]);
                     }
                     else
                     {
-                        if(!string.IsNullOrEmpty(view.Durasi.Text)) harga += Daftar_Harga[checkBox.Text].harga;
-                        Transaksi_baru.Layanan.Add([1, Daftar_Harga[checkBox.Text].id,checkBox.Text, Daftar_Harga[checkBox.Text].harga, Daftar_Harga[checkBox.Text].harga]);
+                        if (!string.IsNullOrEmpty(view.Durasi.Text)) harga += Daftar_Harga[checkBox.Text].harga;
+                        Transaksi_baru.Layanan.Add([1, Daftar_Harga[checkBox.Text].id, checkBox.Text, Daftar_Harga[checkBox.Text].harga, Daftar_Harga[checkBox.Text].harga]);
                     }
                 }
             }
@@ -100,16 +103,18 @@ namespace Pet_Care.Contoller
             Transaksi_baru.nominal = harga;
             return harga;
         }
-    
+
         public void load_card()
         {
-            List<Data_Transaksi> datas = model_transaksi.Get().OfType<Data_Transaksi>().ToList();
+            V_Transaksi_Berlangsung.BackgroundImage = null;
             V_Transaksi_Berlangsung.flowLayoutPanel1.Controls.Clear();
-            foreach(Data_Transaksi data in datas)
+            foreach (Data_Transaksi data in model_transaksi.Get_with_photo())
             {
                 create_card(data);
             }
+            V_Transaksi_Berlangsung.BackgroundImage = Properties.Resources.BG_Berlangsung;
         }
+       
         public void Delete(int id)
         {
             if (show_confirm_message_box("Batalkan Transaksi ?"))
@@ -197,30 +202,41 @@ namespace Pet_Care.Contoller
             Document document = new Document(pdf);
 
             Table tabel = new Table(5).UseAllAvailableWidth();
-            byte[] foto = (byte[])new ImageConverter().ConvertTo(Properties.Resources.Logo, typeof(byte[]));
+            //byte[] foto = (byte[])new ImageConverter().ConvertTo(Properties.Resources.Logo, typeof(byte[]));
             //document.Add(new iText.Layout.Element.Image(iText.IO.Image.ImageDataFactory.Create(foto)));
-            document.Add(new Paragraph("Invoice").SetTextAlignment(TextAlignment.CENTER));
-            tabel.AddHeaderCell("NO");
-            tabel.AddHeaderCell("Layanan");
-            tabel.AddHeaderCell("Quantity");
-            tabel.AddHeaderCell("Harga");
-            tabel.AddHeaderCell("Jumlah");
+            //document.Add(new Paragraph("Invoice").SetTextAlignment(TextAlignment.CENTER));
+            PdfFont font_all = PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN);
+            document.Add(new Paragraph($"Nama Pelanggan      : {data_Pelanngan.Name}"));
+            document.Add(new Paragraph($"ID Pelanggan        : #{data_Pelanngan.ID}"));
+            document.Add(new Paragraph($"Nama Kucing         : {Transaksi_baru.Nama_Kucing}"));
+            document.Add(new Paragraph($"Durasi Penitipan    : {Transaksi_baru.durasi_penitipan} Hari"));
+            document.Add(new Paragraph($"Kasir               : {M_Session.session_name}"));
+            document.Add(new Paragraph($"Waktu Transaksi     : {DateTime.UtcNow}"));
+            document.Add(new Paragraph($"Metode Pembayaran   : {Transaksi_baru.Metode_Pembayaran}"));
+
+            tabel.AddHeaderCell(new Cell().Add(new Paragraph("NO").SetTextAlignment(TextAlignment.CENTER)));
+            tabel.AddHeaderCell(new Cell().Add(new Paragraph("LAYANAN").SetTextAlignment(TextAlignment.CENTER)));
+            tabel.AddHeaderCell(new Cell().Add(new Paragraph("QTY").SetTextAlignment(TextAlignment.CENTER)));
+            tabel.AddHeaderCell("HARGA").SetTextAlignment(TextAlignment.CENTER);
+            tabel.AddHeaderCell("TOTAL").SetTextAlignment(TextAlignment.CENTER);
             for(int i = 0; i < Transaksi_baru.Layanan.Count; i++)
             {
-                tabel.AddCell((i+1).ToString());
-                tabel.AddCell((Transaksi_baru.Layanan[i][2]).ToString());
-                tabel.AddCell((Transaksi_baru.Layanan[i][0]).ToString());
-                tabel.AddCell((Transaksi_baru.Layanan[i][3]).ToString());
-                tabel.AddCell((Transaksi_baru.Layanan[i][4]).ToString());
+                tabel.AddCell(new Paragraph((i+1).ToString()).SetTextAlignment(TextAlignment.CENTER));
+                tabel.AddCell(new Paragraph((Transaksi_baru.Layanan[i][2]).ToString()).SetTextAlignment(TextAlignment.CENTER));
+                tabel.AddCell(new Paragraph((Transaksi_baru.Layanan[i][0]).ToString()).SetTextAlignment(TextAlignment.CENTER));
+                tabel.AddCell(new Paragraph((Transaksi_baru.Layanan[i][3]).ToString()).SetTextAlignment(TextAlignment.CENTER));
+                tabel.AddCell(new Paragraph((Transaksi_baru.Layanan[i][4]).ToString()).SetTextAlignment(TextAlignment.CENTER));
             }
-            tabel.AddFooterCell(new Cell(1,4).Add(new Paragraph("Total Harga").SetTextAlignment(TextAlignment.CENTER)));
-            tabel.AddFooterCell($"{Transaksi_baru.nominal}");
-            document.Add(tabel);
+            tabel.AddFooterCell(new Cell(1,4).Add(new Paragraph("TOTAL").SetTextAlignment(TextAlignment.CENTER)));
+            tabel.AddFooterCell(new Paragraph(Transaksi_baru.nominal.ToString()).SetTextAlignment(TextAlignment.CENTER));
+            document.Add(tabel); 
+            document.SetFont(font_all);
+            document.Relayout();
             document.Close();
             byte[] pdfBytes = memoryStream.ToArray();
             MimeMessage email = new MimeMessage();
             
-            email.From.Add(new MailboxAddress("Tsaqif Radhitya", "mtsaqirr@gmail.com"));
+            email.From.Add(new MailboxAddress(EnvLoader.Nama_Email, EnvLoader.Email));
             email.To.Add(new MailboxAddress(data_Pelanngan.Name, data_Pelanngan.Email));
             email.Subject = "[INVOICE PEMBAYARAN]";
             BodyBuilder message = new BodyBuilder
@@ -233,7 +249,7 @@ namespace Pet_Care.Contoller
             email.Body = message.ToMessageBody();
             SmtpClient smtpClient = new SmtpClient();
             await smtpClient.ConnectAsync("smtp.gmail.com", 465, MailKit.Security.SecureSocketOptions.SslOnConnect);
-            await smtpClient.AuthenticateAsync("mtsaqifrr@gmail.com", "wsaslihdcosxpebs");
+            await smtpClient.AuthenticateAsync( EnvLoader.Email, EnvLoader.Token_Email);
             await smtpClient.SendAsync(email);
             smtpClient.Disconnect(true);
         }
@@ -296,14 +312,13 @@ namespace Pet_Care.Contoller
             {
                 string username = "@meowInnNews";
                 string message = $"[BROADCAST HARIAN KUCING MEOWINN]\nOwner : @hakarra\nNama Kucing : {data.Nama_Kucing}\nKegiatan : {data_pesan[1]}";
-                string token = "7601026397:AAFZD3wLc28O527pAiOqdQiJKs6lL4xO83A";
                 HttpClient client = new HttpClient();
                 MultipartFormDataContent formData = new MultipartFormDataContent();
                 ByteArrayContent fileContent = new ByteArrayContent(data_pesan[0]);
                 formData.Add(fileContent, "photo", "foto");
                 formData.Add(new StringContent($"{username}"), "chat_id");
                 formData.Add(new StringContent(message), "caption");
-                Task.Run(()=> client.PostAsync($"https://api.telegram.org/bot{token}/sendPhoto", formData));
+                Task.Run(()=> client.PostAsync($"https://api.telegram.org/bot{EnvLoader.Token_Tele}/sendPhoto", formData));
                 data_pesan = null;
             }
         }
@@ -412,7 +427,7 @@ namespace Pet_Care.Contoller
             Pesan.MouseEnter += (object sender, EventArgs e) => { Pesan.BackgroundImage = Properties.Resources.Message_Hover; };
             Pesan.MouseLeave += (object sender, EventArgs e) => { Pesan.BackgroundImage = Properties.Resources.Message; };
             Pesan.MouseHover += (object sender, EventArgs e) => { Pesan.Cursor = Cursors.Hand; };
-            Pesan.Click += async(object sender, EventArgs e) => { send_message(data); };
+            Pesan.Click += (object sender, EventArgs e) => { send_message(data); };
 
             Card.Controls.Add(detail);
             Card.Controls.Add(Selesai);
