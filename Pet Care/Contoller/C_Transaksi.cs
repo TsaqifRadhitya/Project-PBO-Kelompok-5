@@ -145,10 +145,10 @@ namespace Pet_Care.Contoller
                         BackColor = Color.Transparent,
                         Font = new Font("Montserrat", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0),
                         Name = "radioButton",
-                        Size = new Size(119, 20),
                         TabIndex = 13,
                         Text = x.name,
-                        UseVisualStyleBackColor = false
+                        UseVisualStyleBackColor = false,
+                        AutoSize = true 
                     };
                     radioButton.FlatAppearance.BorderColor = Color.FromArgb(217, 217, 217);
                     radioButton.FlatAppearance.BorderSize = 5;
@@ -201,41 +201,38 @@ namespace Pet_Care.Contoller
             PdfDocument pdf = new PdfDocument(writer);
             Document document = new Document(pdf);
 
-            Table tabel = new Table(5).UseAllAvailableWidth();
-            //byte[] foto = (byte[])new ImageConverter().ConvertTo(Properties.Resources.Logo, typeof(byte[]));
-            //document.Add(new iText.Layout.Element.Image(iText.IO.Image.ImageDataFactory.Create(foto)));
-            //document.Add(new Paragraph("Invoice").SetTextAlignment(TextAlignment.CENTER));
-            PdfFont font_all = PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN);
-            document.Add(new Paragraph($"Nama Pelanggan      : {data_Pelanngan.Name}"));
-            document.Add(new Paragraph($"ID Pelanggan        : #{data_Pelanngan.ID}"));
-            document.Add(new Paragraph($"Nama Kucing         : {Transaksi_baru.Nama_Kucing}"));
-            document.Add(new Paragraph($"Durasi Penitipan    : {Transaksi_baru.durasi_penitipan} Hari"));
-            document.Add(new Paragraph($"Kasir               : {M_Session.session_name}"));
-            document.Add(new Paragraph($"Waktu Transaksi     : {DateTime.UtcNow}"));
-            document.Add(new Paragraph($"Metode Pembayaran   : {Transaksi_baru.Metode_Pembayaran}"));
+            document.Add(new Paragraph($"Nama Pelanggan      : {data_Pelanngan.Name}").SetMultipliedLeading(0.5f).SetFontSize(12));
+            document.Add(new Paragraph($"ID Pelanggan        : #{data_Pelanngan.ID}").SetMultipliedLeading(0.5f).SetFontSize(12));
+            document.Add(new Paragraph($"Nama Kucing         : {Transaksi_baru.Nama_Kucing}").SetMultipliedLeading(0.5f).SetFontSize(12));
+            document.Add(new Paragraph($"Waktu Transaksi     : {DateTime.UtcNow}").SetMultipliedLeading(0.5f).SetFontSize(12));
+            document.Add(new Paragraph($"Kasir               : {M_Session.session_name}").SetMultipliedLeading(0.5f).SetFontSize(12));
 
-            tabel.AddHeaderCell(new Cell().Add(new Paragraph("NO").SetTextAlignment(TextAlignment.CENTER)));
-            tabel.AddHeaderCell(new Cell().Add(new Paragraph("LAYANAN").SetTextAlignment(TextAlignment.CENTER)));
-            tabel.AddHeaderCell(new Cell().Add(new Paragraph("QTY").SetTextAlignment(TextAlignment.CENTER)));
-            tabel.AddHeaderCell("HARGA").SetTextAlignment(TextAlignment.CENTER);
-            tabel.AddHeaderCell("TOTAL").SetTextAlignment(TextAlignment.CENTER);
-            for(int i = 0; i < Transaksi_baru.Layanan.Count; i++)
+
+            Table tabel = new Table(5).UseAllAvailableWidth();
+            tabel.SetAutoLayout();
+            tabel.AddHeaderCell(new Paragraph("NO").SetTextAlignment(TextAlignment.CENTER));
+            tabel.AddHeaderCell(new Paragraph("LAYANAN").SetTextAlignment(TextAlignment.CENTER));
+            tabel.AddHeaderCell(new Paragraph("QTY").SetTextAlignment(TextAlignment.CENTER));
+            tabel.AddHeaderCell(new Paragraph("HARGA").SetTextAlignment(TextAlignment.CENTER));
+            tabel.AddHeaderCell(new Paragraph("TOTAL").SetTextAlignment(TextAlignment.CENTER));
+
+            for (int i = 0; i < Transaksi_baru.Layanan.Count; i++)
             {
-                tabel.AddCell(new Paragraph((i+1).ToString()).SetTextAlignment(TextAlignment.CENTER));
+                tabel.AddCell(new Paragraph((i + 1).ToString()).SetTextAlignment(TextAlignment.CENTER));
                 tabel.AddCell(new Paragraph((Transaksi_baru.Layanan[i][2]).ToString()).SetTextAlignment(TextAlignment.CENTER));
                 tabel.AddCell(new Paragraph((Transaksi_baru.Layanan[i][0]).ToString()).SetTextAlignment(TextAlignment.CENTER));
                 tabel.AddCell(new Paragraph((Transaksi_baru.Layanan[i][3]).ToString()).SetTextAlignment(TextAlignment.CENTER));
                 tabel.AddCell(new Paragraph((Transaksi_baru.Layanan[i][4]).ToString()).SetTextAlignment(TextAlignment.CENTER));
             }
-            tabel.AddFooterCell(new Cell(1,4).Add(new Paragraph("TOTAL").SetTextAlignment(TextAlignment.CENTER)));
+            tabel.AddFooterCell(new Cell(1, 4).Add(new Paragraph("TOTAL").SetTextAlignment(TextAlignment.CENTER)));
             tabel.AddFooterCell(new Paragraph(Transaksi_baru.nominal.ToString()).SetTextAlignment(TextAlignment.CENTER));
-            document.Add(tabel); 
-            document.SetFont(font_all);
-            document.Relayout();
+            document.Add(tabel);
+            document.Add(new Paragraph($"\nMetode Pembayaran   : {Transaksi_baru.Metode_Pembayaran}").SetMultipliedLeading(0.5f).SetFontSize(12));
+
             document.Close();
             byte[] pdfBytes = memoryStream.ToArray();
             MimeMessage email = new MimeMessage();
-            
+
             email.From.Add(new MailboxAddress(EnvLoader.Nama_Email, EnvLoader.Email));
             email.To.Add(new MailboxAddress(data_Pelanngan.Name, data_Pelanngan.Email));
             email.Subject = "[INVOICE PEMBAYARAN]";
@@ -249,7 +246,7 @@ namespace Pet_Care.Contoller
             email.Body = message.ToMessageBody();
             SmtpClient smtpClient = new SmtpClient();
             await smtpClient.ConnectAsync("smtp.gmail.com", 465, MailKit.Security.SecureSocketOptions.SslOnConnect);
-            await smtpClient.AuthenticateAsync( EnvLoader.Email, EnvLoader.Token_Email);
+            await smtpClient.AuthenticateAsync(EnvLoader.Nama_Email, EnvLoader.Token_Email);
             await smtpClient.SendAsync(email);
             smtpClient.Disconnect(true);
         }
@@ -287,7 +284,7 @@ namespace Pet_Care.Contoller
             Frame_Transaksi.Location = new Point(Screen.FromControl(V_Transaksi).Bounds.Location.X + 800, Screen.FromControl(V_Transaksi).Bounds.Location.Y + 245);
             Frame_Transaksi.ShowDialog();
         }
-        public async void Buat_Transaksi()
+        public void Buat_Transaksi()
         {
             Frame_Transaksi = new V_Frame_Transaksi(this,new V_Tambah_Transaksi(this));
             Frame_Transaksi.StartPosition = FormStartPosition.Manual;
@@ -295,7 +292,7 @@ namespace Pet_Care.Contoller
             Frame_Transaksi.ShowDialog();
             if (status_transaksi)
             {
-                Task.Run(() => send_nota());
+                send_nota();
                 status_transaksi = false;
                 load_card();
             }
@@ -318,7 +315,7 @@ namespace Pet_Care.Contoller
                 formData.Add(fileContent, "photo", "foto");
                 formData.Add(new StringContent($"{username}"), "chat_id");
                 formData.Add(new StringContent(message), "caption");
-                Task.Run(()=> client.PostAsync($"https://api.telegram.org/bot{EnvLoader.Token_Tele}/sendPhoto", formData));
+                await client.PostAsync($"https://api.telegram.org/bot{EnvLoader.Token_Tele}/sendPhoto", formData);
                 data_pesan = null;
             }
         }
