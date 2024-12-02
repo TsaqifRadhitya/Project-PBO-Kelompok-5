@@ -70,6 +70,7 @@ namespace Pet_Care.Model
 
             Execute_No_Return("CREATE TABLE IF NOT EXISTS Detail_Transaksi (Quantity INTEGER NOT NULL," +
                 "Pelayanan_id integer NOT NULL," +
+                "harga integer not null," +
                 "Transaksi_id integer NOT NULL," +
                 "CONSTRAINT pelayanan_fk FOREIGN KEY ( pelayanan_id ) REFERENCES pelayanan ( pelayanan_id )," +
                 "CONSTRAINT transaksi_fk FOREIGN KEY ( transaksi_id ) REFERENCES transaksi ( transaksi_id ))");

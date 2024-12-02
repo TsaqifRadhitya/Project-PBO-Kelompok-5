@@ -32,7 +32,10 @@
             frame_foto = new PictureBox();
             Shutter = new Button();
             Exit = new Button();
+            panel1 = new Panel();
+            comboBox1 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)frame_foto).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // frame_foto
@@ -84,6 +87,29 @@
             Exit.MouseLeave += Exit_MouseLeave;
             Exit.MouseHover += Exit_MouseHover;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Transparent;
+            panel1.BackgroundImage = Properties.Resources.drop_down;
+            panel1.Controls.Add(comboBox1);
+            panel1.Location = new Point(10, 10);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(200, 35);
+            panel1.TabIndex = 3;
+            // 
+            // comboBox1
+            // 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.FlatStyle = FlatStyle.Flat;
+            comboBox1.Font = new Font("Montserrat", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox1.ForeColor = Color.Black;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(3, 3);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(194, 29);
+            comboBox1.TabIndex = 4;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            // 
             // V_Kamera
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -91,6 +117,7 @@
             BackgroundImage = Properties.Resources.Foto2;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1000, 700);
+            Controls.Add(panel1);
             Controls.Add(Exit);
             Controls.Add(Shutter);
             Controls.Add(frame_foto);
@@ -103,6 +130,7 @@
             Text = "Kamera";
             Load += Kamera_Load;
             ((System.ComponentModel.ISupportInitialize)frame_foto).EndInit();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -110,5 +138,7 @@
         private Button Shutter;
         public PictureBox frame_foto;
         private Button Exit;
+        private Panel panel1;
+        private ComboBox comboBox1;
     }
 }

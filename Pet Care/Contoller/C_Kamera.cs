@@ -11,27 +11,38 @@ using Pet_Care.Model;
 
 namespace Pet_Care.Contoller
 {
-    public class C_Kamera
+    public class C_Kamera : C_Message_Box
     {
         V_Kamera view;
-        FilterInfoCollection captureDevice;
+        FilterInfoCollection captureDevice = new FilterInfoCollection(FilterCategory.VideoInputDevice);
         VideoCaptureDevice videoSource;
         public byte[]? foto;
         Data_Transaksi data;
 
         public C_Kamera()
         {
-            view = new V_Kamera(this);
-
+            List<string> data_kamera = new List<string>();
+            if (captureDevice.Count<0)
+            {
+                show_message_box("Camera Tidak Terdeteksi");
+                return;
+            }
+            foreach (FilterInfo category in captureDevice) 
+            {
+                data_kamera.Add(category.Name);
+            }
+            view = new V_Kamera(this,data_kamera);
             view.ShowDialog();
 
         }
-
-        public void start()
+        public void swicth_camera(int index)
         {
-            captureDevice = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-            videoSource = new VideoCaptureDevice();
-            videoSource = new VideoCaptureDevice(captureDevice[0].MonikerString);
+            stop();
+            start(index);
+        }
+        public void start(int index)
+        {
+            videoSource = new VideoCaptureDevice(captureDevice[index].MonikerString);
             videoSource.NewFrame += new NewFrameEventHandler(view.VideoSource_NewFrame);
             videoSource.Start();
         }
@@ -39,19 +50,6 @@ namespace Pet_Care.Contoller
         { 
             videoSource.SignalToStop();
             videoSource.WaitForStop();
-        }
-        public void send(byte[]foto,string kegiatan)
-        {
-            string username = "@meowInnNews";
-            string message = $"[BROADCAST HARIAN KUCING MEOWINN]\nNama Kucing : {data.Nama_Kucing}\nKegiatan : {kegiatan}";
-            string token = "7601026397:AAFZD3wLc28O527pAiOqdQiJKs6lL4xO83A";
-            HttpClient client = new HttpClient();
-            MultipartFormDataContent formData = new MultipartFormDataContent();
-            ByteArrayContent fileContent = new ByteArrayContent(foto);
-            formData.Add(fileContent, "photo", "foto");
-            formData.Add(new StringContent($"{username}"), "chat_id");
-            formData.Add(new StringContent(message), "caption");
-            client.PostAsync($"https://api.telegram.org/bot{token}/sendPhoto",formData);
         }
     }
 }

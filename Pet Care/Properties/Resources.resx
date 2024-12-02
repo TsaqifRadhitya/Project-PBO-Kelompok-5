@@ -145,8 +145,8 @@
   <data name="Pelanggan2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pelanggan2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Selesai_Card" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Selesai_Card.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Button Login Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button Login Hover1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Frame Message Box Button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Frame Message Box Button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -156,9 +156,6 @@
   </data>
   <data name="Purple_Card" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Purple_Card.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Tambah Pelanggan Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Tambah Pelanggan Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Background Card Gallery" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Background Card Gallery.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,6 +187,9 @@
   <data name="Kembali_Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Kembali_Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="drop down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\drop down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -201,6 +201,9 @@
   </data>
   <data name="Foto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Foto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tambah_Ubah_Pelanggan2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tambah_Ubah_Pelanggan2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BG Tabel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BG Tabel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,14 +217,20 @@
   <data name="Cancel Hover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cancel Hover1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Tambah_Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Tambah_Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Selesai_Focus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Selesai_Focus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Hide Password " type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Hide Password .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Gallery Kucing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gallery Kucing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Simpan Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Simpan Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Landing Page" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Landing Page.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dasboard Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dasboard Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Layanan1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Layanan1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Tab Layanan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Tab Layanan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,6 +247,9 @@
   <data name="Tambah Ubah Layanan1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Tambah Ubah Layanan1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Detail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Detail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -247,32 +259,23 @@
   <data name="Tambah_Ubah_Pelanggan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Tambah_Ubah_Pelanggan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Transaksi_Baru" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Transaksi_Baru.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Kembali" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Kembali.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Confirm Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Confirm Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LightPurple_Card" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LightPurple_Card.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Dashboard1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dashboard1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Dashboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dashboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Riwayat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Riwayat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Dash Board" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Dash Board.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Kirim" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Kirim.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Berlangsung_Focus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Berlangsung_Focus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Status_Selesai" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Status_Selesai.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Tambah_Ubah_Pelanggan1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Tambah_Ubah_Pelanggan1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -292,29 +295,26 @@
   <data name="Red_card" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Red_card.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Shutter Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Shutter Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Frame 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Frame 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Tambah" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Tambah.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BG_Berlangsung" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BG_Berlangsung.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Status_Selesai" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Status_Selesai.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Kirim_Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Kirim_Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Foto2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Foto2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Berlangsung" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Berlangsung.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Pelanggan1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pelanggan1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Batal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Batal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Button Login Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Button Login Hover1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Tambah Pelanggan Hover1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Tambah Pelanggan Hover1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -328,8 +328,8 @@
   <data name="Transaksi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Transaksi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Selesai_Focus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Selesai_Focus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Riwayat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Riwayat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Lanjut" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Lanjut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -349,11 +349,14 @@
   <data name="Transaksi1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Transaksi1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Message" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Message.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Register" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Register.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Message" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Message.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Selesai_Card" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Selesai_Card.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Transaksi Focus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Transaksi Focus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -379,14 +382,17 @@
   <data name="Layanan Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Layanan Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Gallery Kucing" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Gallery Kucing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Transaksi_Baru" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Transaksi_Baru.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Tab Informasi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Tab Informasi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Landing Page" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Landing Page.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Dash Board" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dash Board.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BG_Berlangsung" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BG_Berlangsung.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Pelanggan Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pelanggan Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -394,23 +400,23 @@
   <data name="Transaksi Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Transaksi Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Kirim" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Kirim.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Kirim_Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Kirim_Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Cancel_Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cancel_Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Simpan Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Simpan Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Dasboard Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Dasboard Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Hide Password " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hide Password .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Pelanggan1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pelanggan1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Kembali" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Kembali.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Dashboard1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Dashboard1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Tambah Pelanggan Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tambah Pelanggan Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Layanan Focus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Layanan Focus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -421,8 +427,8 @@
   <data name="BG_Selesai" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BG_Selesai.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Layanan1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Layanan1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Tambah_Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tambah_Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Cancel_Card_Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cancel_Card_Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -433,13 +439,16 @@
   <data name="Frame Message Box Button1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Frame Message Box Button1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Foto2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Foto2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Layer Layanan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Layer Layanan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Shutter Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Shutter Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Transaksi_Baru1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Transaksi_Baru1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Tambah_Ubah_Pelanggan2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Tambah_Ubah_Pelanggan2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Layer Layanan1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Layer Layanan1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

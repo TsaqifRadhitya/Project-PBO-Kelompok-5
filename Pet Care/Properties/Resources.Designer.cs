@@ -343,6 +343,16 @@ namespace Pet_Care.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap drop_down {
+            get {
+                object obj = ResourceManager.GetObject("drop down", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Foto {
             get {
                 object obj = ResourceManager.GetObject("Foto", resourceCulture);
@@ -556,6 +566,26 @@ namespace Pet_Care.Properties {
         internal static System.Drawing.Bitmap Layer_Informasi {
             get {
                 object obj = ResourceManager.GetObject("Layer Informasi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Layer_Layanan {
+            get {
+                object obj = ResourceManager.GetObject("Layer Layanan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Layer_Layanan1 {
+            get {
+                object obj = ResourceManager.GetObject("Layer Layanan1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

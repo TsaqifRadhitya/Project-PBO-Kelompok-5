@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             exit = new Button();
             Metode_Pemabayaran = new Label();
             Tanggal = new Label();
@@ -44,10 +46,14 @@
             jumlah_layanan = new Label();
             Durasi = new Label();
             Nama_Kucing = new Label();
+            panel_layanan = new Panel();
+            Tabel_Layanan = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)status).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Layanan_Tab).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Informasi_Tab).BeginInit();
             panel_informasi.SuspendLayout();
+            panel_layanan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)Tabel_Layanan).BeginInit();
             SuspendLayout();
             // 
             // exit
@@ -219,12 +225,63 @@
             Nama_Kucing.TabIndex = 0;
             Nama_Kucing.Text = "Dori";
             // 
+            // panel_layanan
+            // 
+            panel_layanan.BackgroundImage = Properties.Resources.Layer_Layanan1;
+            panel_layanan.Controls.Add(Tabel_Layanan);
+            panel_layanan.Location = new Point(26, 303);
+            panel_layanan.Name = "panel_layanan";
+            panel_layanan.Size = new Size(570, 259);
+            panel_layanan.TabIndex = 11;
+            // 
+            // Tabel_Layanan
+            // 
+            Tabel_Layanan.AllowUserToAddRows = false;
+            Tabel_Layanan.AllowUserToDeleteRows = false;
+            Tabel_Layanan.AllowUserToResizeColumns = false;
+            Tabel_Layanan.AllowUserToResizeRows = false;
+            Tabel_Layanan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            Tabel_Layanan.BackgroundColor = Color.White;
+            Tabel_Layanan.BorderStyle = BorderStyle.None;
+            Tabel_Layanan.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            Tabel_Layanan.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(240, 245, 243);
+            dataGridViewCellStyle1.Font = new Font("Montserrat SemiBold", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.Gray;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(240, 245, 243);
+            dataGridViewCellStyle1.SelectionForeColor = Color.Gray;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            Tabel_Layanan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            Tabel_Layanan.ColumnHeadersHeight = 50;
+            Tabel_Layanan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Montserrat", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(91, 83, 78);
+            dataGridViewCellStyle2.SelectionBackColor = Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(91, 83, 78);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            Tabel_Layanan.DefaultCellStyle = dataGridViewCellStyle2;
+            Tabel_Layanan.EnableHeadersVisualStyles = false;
+            Tabel_Layanan.GridColor = Color.FromArgb(202, 185, 174);
+            Tabel_Layanan.Location = new Point(5, 52);
+            Tabel_Layanan.Name = "Tabel_Layanan";
+            Tabel_Layanan.ReadOnly = true;
+            Tabel_Layanan.RowHeadersVisible = false;
+            Tabel_Layanan.RowTemplate.Height = 50;
+            Tabel_Layanan.ScrollBars = ScrollBars.Vertical;
+            Tabel_Layanan.SelectionMode = DataGridViewSelectionMode.CellSelect;
+            Tabel_Layanan.Size = new Size(559, 189);
+            Tabel_Layanan.TabIndex = 0;
+            // 
             // V_Detail_Transaksi
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Transparent;
             BackgroundImage = Properties.Resources.Detail_Transaksi;
+            Controls.Add(panel_layanan);
             Controls.Add(panel_informasi);
             Controls.Add(Informasi_Tab);
             Controls.Add(Layanan_Tab);
@@ -242,6 +299,8 @@
             ((System.ComponentModel.ISupportInitialize)Layanan_Tab).EndInit();
             ((System.ComponentModel.ISupportInitialize)Informasi_Tab).EndInit();
             panel_informasi.ResumeLayout(false);
+            panel_layanan.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)Tabel_Layanan).EndInit();
             ResumeLayout(false);
         }
 
@@ -263,5 +322,7 @@
         private Label Nomor_Hp;
         private Label Alamat;
         private Label jumlah_layanan;
+        private Panel panel_layanan;
+        private DataGridView Tabel_Layanan;
     }
 }

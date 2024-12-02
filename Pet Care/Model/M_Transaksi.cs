@@ -109,7 +109,7 @@ namespace Pet_Care.Model
         //}
         public Data_Transaksi Get_detail(int id)
         {
-            DataTable data = Execute_With_Return("Select t.transaksi_id, TO_CHAR(tanggal_transaksi,'DD/MM/YYYY, HH24:MI') as tanggal,nama,nama_hewan,Durasi_Penitipan,nomor_hp,alamat,nominal_transaksi,nama_pelayanan,quantity,metode_pembayaran " +
+            DataTable data = Execute_With_Return("Select t.transaksi_id,harga ,TO_CHAR(tanggal_transaksi,'DD/MM/YYYY, HH24:MI') as tanggal,nama,nama_hewan,Durasi_Penitipan,nomor_hp,alamat,nominal_transaksi,nama_pelayanan,quantity,metode_pembayaran " +
                 "from transaksi t " +
                 "join Pelanggan p on t.pelanggan_id = p.pelanggan_id " +
                 "join detail_transaksi dt on dt.transaksi_id = t.transaksi_id " +
@@ -127,7 +127,7 @@ namespace Pet_Care.Model
                 data_transaksi.Nomor_hp = data.Rows[i]["nomor_hp"].ToString();
                 data_transaksi.Alamat = data.Rows[i]["alamat"].ToString();
                 data_transaksi.Metode_Pembayaran =  data.Rows[i]["metode_pembayaran"].ToString();
-                data_transaksi.Layanan.Add([data.Rows[i]["nama_pelayanan"].ToString(), (int)data.Rows[i]["quantity"]]);
+                data_transaksi.Layanan.Add([data.Rows[i]["nama_pelayanan"].ToString(), (int)data.Rows[i]["quantity"],"Rp"+((int)data.Rows[i]["harga"]* (int)data.Rows[i]["quantity"]).ToString("n2", CultureInfo.GetCultureInfo("id-ID"))]);
                 data_transaksi.nominal = (int)data.Rows[i]["nominal_transaksi"];
             }
             //conn.Close();
@@ -155,10 +155,10 @@ namespace Pet_Care.Model
             cmd.CommandText = $"INSERT INTO TRANSAKSI(nama_hewan,foto_hewan,durasi_penitipan,nominal_transaksi,pelanggan_id,akun_id,metode_pembayaran) values ('{data.Nama_Kucing}',@foto,{data.durasi_penitipan},{data.nominal},{data.Id_pelanggan},{data.id_akun},'{data.Metode_Pembayaran}') RETURNING Transaksi_id";
             cmd.Parameters.AddWithValue("@foto",NpgsqlTypes.NpgsqlDbType.Bytea, data.Foto_Kucing);
             int id_transaksi = (int) Execute_With_Return(cmd).Rows[0]["Transaksi_id"];
-            string querry_detail  = "INSERT INTO detail_transaksi(quantity,pelayanan_id,transaksi_id) Values";
+            string querry_detail  = "INSERT INTO detail_transaksi(quantity,pelayanan_id,harga,transaksi_id) Values";
             for (int i = 0;i < data.Layanan.Count;i++)
             {
-                querry_detail += $"({(int)data.Layanan[i][0]},{(int)data.Layanan[i][1]},{id_transaksi})";
+                querry_detail += $"({(int)data.Layanan[i][0]},{(int)data.Layanan[i][1]},{data.Layanan[i][4]},{id_transaksi})";
                 if (data.Layanan.Count > 0 && data.Layanan.Count - 1 != i) querry_detail += ',';
             }
             Execute_No_Return(querry_detail);

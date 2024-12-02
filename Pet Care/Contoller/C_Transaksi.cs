@@ -165,31 +165,32 @@ namespace Pet_Care.Contoller
         public void load_riwayat(V_Riwayat_Transaksi view)
         {
             List<Data_Transaksi> data = model_transaksi.Get_riwayat().OfType<Data_Transaksi>().ToList();
-                view.Tabel_Riwayat.DataSource = data;
-                view.Tabel_Riwayat.Columns["id"].Visible = false;
-                view.Tabel_Riwayat.Columns["Id_Pelanggan"].Visible = false;
-                view.Tabel_Riwayat.Columns["id_akun"].Visible = false;
-                view.Tabel_Riwayat.Columns["Foto_Kucing"].Visible = false;
-                view.Tabel_Riwayat.Columns["Waktu"].Visible = false;
-                view.Tabel_Riwayat.Columns["display_price"].HeaderText = "Nominal Transaksi";
-                view.Tabel_Riwayat.Columns["Nama_Pelanggan"].HeaderText = "Nama Pelanggan";
-                view.Tabel_Riwayat.Columns["Nama_Kucing"].HeaderText = "Nama Kucing";
-                view.Tabel_Riwayat.Columns["durasi_penitipan"].HeaderText = "Durasi";
-                view.Tabel_Riwayat.Columns["Nomor_hp"].HeaderText = "Nomor Hp";
-                view.Tabel_Riwayat.Columns["nominal"].Visible = false;
-                view.Tabel_Riwayat.Columns["Metode_Pembayaran"].HeaderText = "Metode Pembayaran";
-                view.Tabel_Riwayat.Columns.Add(new DataGridViewButtonColumn
-                {
-                    Name = "Detail",
-                    HeaderText = "",
-                    Text = "Detail",
-                    UseColumnTextForButtonValue = true,
-                });
-                view.Tabel_Riwayat.DefaultCellStyle.BackColor = Color.FromArgb(131, 94, 146);
-                view.Tabel_Riwayat.DefaultCellStyle.ForeColor = Color.White;
-                view.Tabel_Riwayat.DefaultCellStyle.Font = new Font("Montserrat Bold", 8F);
-                view.Tabel_Riwayat.ColumnHeadersDefaultCellStyle.Font = new Font("Montserrat Bold", 8F);
-                view.Tabel_Riwayat.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            view.Tabel_Riwayat.DataSource = data;
+            view.Tabel_Riwayat.Columns["Tele"].Visible = false;
+            view.Tabel_Riwayat.Columns["id"].Visible = false;
+            view.Tabel_Riwayat.Columns["Id_Pelanggan"].Visible = false;
+            view.Tabel_Riwayat.Columns["id_akun"].Visible = false;
+            view.Tabel_Riwayat.Columns["Foto_Kucing"].Visible = false;
+            view.Tabel_Riwayat.Columns["Waktu"].Visible = false;
+            view.Tabel_Riwayat.Columns["display_price"].HeaderText = "Nominal Transaksi";
+            view.Tabel_Riwayat.Columns["Nama_Pelanggan"].HeaderText = "Nama Pelanggan";
+            view.Tabel_Riwayat.Columns["Nama_Kucing"].HeaderText = "Nama Kucing";
+            view.Tabel_Riwayat.Columns["durasi_penitipan"].HeaderText = "Durasi";
+            view.Tabel_Riwayat.Columns["Nomor_hp"].HeaderText = "Nomor Hp";
+            view.Tabel_Riwayat.Columns["nominal"].Visible = false;
+            view.Tabel_Riwayat.Columns["Metode_Pembayaran"].HeaderText = "Metode Pembayaran";
+            view.Tabel_Riwayat.Columns.Add(new DataGridViewButtonColumn
+            {
+                Name = "Detail",
+                HeaderText = "",
+                Text = "Detail",
+                UseColumnTextForButtonValue = true,
+            });
+            view.Tabel_Riwayat.DefaultCellStyle.BackColor = Color.FromArgb(131, 94, 146);
+            view.Tabel_Riwayat.DefaultCellStyle.ForeColor = Color.White;
+            view.Tabel_Riwayat.DefaultCellStyle.Font = new Font("Montserrat Bold", 8F);
+            view.Tabel_Riwayat.ColumnHeadersDefaultCellStyle.Font = new Font("Montserrat Bold", 8F);
+            view.Tabel_Riwayat.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
         public void load_detail(int id,bool status)
         {

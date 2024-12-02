@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AForge.Video;
+using AForge.Video.DirectShow;
 using Pet_Care.Contoller;
 
 namespace Pet_Care.View
@@ -15,10 +16,12 @@ namespace Pet_Care.View
     public partial class V_Kamera : Form
     {
         C_Kamera controller;
-        public V_Kamera(C_Kamera controller)
+        List<string> source;
+        public V_Kamera(C_Kamera controller, List<string> source)
         {
             InitializeComponent();
             this.controller = controller;
+            this.source = source;
         }
 
         private void Shutter_Click(object sender, EventArgs e)
@@ -47,7 +50,8 @@ namespace Pet_Care.View
 
         private void Kamera_Load(object sender, EventArgs e)
         {
-            this.controller.start();
+            this.controller.start(0);
+            comboBox1.DataSource = source;
         }
 
         private void Exit_Click(object sender, EventArgs e)
@@ -74,13 +78,20 @@ namespace Pet_Care.View
         public void VideoSource_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
             Bitmap foto = (Bitmap)eventArgs.Frame.Clone();
-            foto.RotateFlip(RotateFlipType.RotateNoneFlipX);
+            //foto.RotateFlip(RotateFlipType.RotateNoneFlipX);
             frame_foto.Image = foto;
         }
 
         private void frame_foto_Paint(object sender, PaintEventArgs e)
         {
             if (!(Shutter.Enabled) && frame_foto.Image != null) Shutter.Enabled = true;
+            if (Shutter.Enabled && frame_foto.Image == null) Shutter.Enabled = false;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            frame_foto.Image = null;
+            controller.swicth_camera(comboBox1.SelectedIndex);
         }
     }
 }
