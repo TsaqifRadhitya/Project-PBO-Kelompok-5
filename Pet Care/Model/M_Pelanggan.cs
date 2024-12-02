@@ -22,7 +22,8 @@ namespace Pet_Care.Model
                     Name = data.Rows[i]["nama"].ToString(),
                     Nomor_HP = data.Rows[i]["nomor_hp"].ToString(),
                     Alamat = data.Rows[i]["alamat"].ToString(),
-                    Email = data.Rows[i]["Email"].ToString()
+                    Email = data.Rows[i]["Email"].ToString(),
+                    Username_Tele = data.Rows[i]["telegram"].ToString()
                 };
                 daftar_mahasiswa.Add(pelanggan);
             }
@@ -40,7 +41,8 @@ namespace Pet_Care.Model
                     Name = data.Rows[i]["nama"].ToString(),
                     Nomor_HP = data.Rows[i]["nomor_hp"].ToString(),
                     Alamat = data.Rows[i]["alamat"].ToString(),
-                    Email = data.Rows[i]["Email"].ToString()
+                    Email = data.Rows[i]["Email"].ToString(),
+                    Username_Tele = data.Rows[i]["telegram"].ToString()
                 };
                 daftar_mahasiswa.Add(pelanggan);
             }
@@ -59,7 +61,8 @@ namespace Pet_Care.Model
                     Name = data.Rows[i]["nama"].ToString(),
                     Nomor_HP = data.Rows[i]["nomor_hp"].ToString(),
                     Alamat = data.Rows[i]["alamat"].ToString(),
-                    Email = data.Rows[i]["Email"].ToString()
+                    Email = data.Rows[i]["Email"].ToString(),
+                    Username_Tele = data.Rows[i]["telegram"].ToString()
                 };
                 daftar_mahasiswa.Add(pelanggan);
             }
@@ -69,7 +72,7 @@ namespace Pet_Care.Model
         public int insert(object obj)
         {
             Data_Pelanngan data = obj as Data_Pelanngan;
-            return (int)Execute_With_Return($"Insert Into Pelanggan(nama,nomor_hp,alamat,Email) Values ('{data.Name}','{data.Nomor_HP}','{data.Alamat}','{data.Email}') Returning pelanggan_id").Rows[0]["pelanggan_id"];
+            return (int)Execute_With_Return($"Insert Into Pelanggan(nama,nomor_hp,alamat,Email,telegram) Values ('{data.Name}','{data.Nomor_HP}','{data.Alamat}','{data.Email}','{data.Username_Tele}') Returning pelanggan_id").Rows[0]["pelanggan_id"];
         }
 
         public void Delete(int id)
@@ -80,7 +83,7 @@ namespace Pet_Care.Model
         public void Update(object obj,int id)
         {
             Data_Pelanngan data = obj as Data_Pelanngan ;
-            Execute_No_Return($"UPDATE Pelanggan set nama = '{data.Name}',nomor_hp = '{data.Nomor_HP}',alamat = '{data.Alamat}',Email = '{data.Email}' where pelanggan_id = {id}");
+            Execute_No_Return($"UPDATE Pelanggan set nama = '{data.Name}',nomor_hp = '{data.Nomor_HP}',alamat = '{data.Alamat}',Email = '{data.Email}' ,telegram = '{data.Username_Tele}' where pelanggan_id = {id}");
         }
     }
 

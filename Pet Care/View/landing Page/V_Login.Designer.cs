@@ -42,6 +42,7 @@
             LoginButton.BackgroundImage = Properties.Resources.Login_Button;
             LoginButton.BackgroundImageLayout = ImageLayout.Stretch;
             LoginButton.CausesValidation = false;
+            LoginButton.Cursor = Cursors.Hand;
             LoginButton.FlatAppearance.BorderSize = 0;
             LoginButton.FlatAppearance.MouseDownBackColor = Color.Transparent;
             LoginButton.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -54,7 +55,6 @@
             LoginButton.Click += button1_Click;
             LoginButton.MouseEnter += LoginButton_MouseEnter;
             LoginButton.MouseLeave += LoginButton_MouseLeave;
-            LoginButton.MouseHover += LoginButton_MouseHover;
             // 
             // Username_Email
             // 
@@ -100,6 +100,7 @@
             // Register
             // 
             Register.AutoSize = true;
+            Register.Cursor = Cursors.Hand;
             Register.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
             Register.ForeColor = Color.FromArgb(131, 94, 146);
             Register.Location = new Point(272, 372);
@@ -108,12 +109,12 @@
             Register.TabIndex = 4;
             Register.Text = "Register";
             Register.Click += Register_Click;
-            Register.MouseHover += Register_MouseHover;
             // 
             // show_hide_password
             // 
             show_hide_password.BackgroundImage = Properties.Resources.Hide_Password_;
             show_hide_password.BackgroundImageLayout = ImageLayout.Stretch;
+            show_hide_password.Cursor = Cursors.Hand;
             show_hide_password.FlatAppearance.BorderSize = 0;
             show_hide_password.FlatAppearance.MouseDownBackColor = Color.Transparent;
             show_hide_password.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -124,7 +125,6 @@
             show_hide_password.TabIndex = 5;
             show_hide_password.UseVisualStyleBackColor = true;
             show_hide_password.Click += show_hide_password_Click;
-            show_hide_password.MouseHover += show_hide_password_MouseHover;
             // 
             // V_Login
             // 

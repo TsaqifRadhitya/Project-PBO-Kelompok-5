@@ -38,6 +38,7 @@
             // foto
             // 
             foto.BackColor = Color.Transparent;
+            foto.Cursor = Cursors.Hand;
             foto.Location = new Point(127, 79);
             foto.Name = "foto";
             foto.Size = new Size(362, 204);
@@ -62,6 +63,7 @@
             Kirim.BackColor = Color.Transparent;
             Kirim.BackgroundImage = Properties.Resources.Kirim;
             Kirim.BackgroundImageLayout = ImageLayout.Stretch;
+            Kirim.Cursor = Cursors.Hand;
             Kirim.FlatAppearance.BorderSize = 0;
             Kirim.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Kirim.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -74,13 +76,13 @@
             Kirim.Click += Kirim_Click;
             Kirim.MouseEnter += Kirim_MouseEnter;
             Kirim.MouseLeave += Kirim_MouseLeave;
-            Kirim.MouseHover += Kirim_MouseHover;
             // 
             // Batal
             // 
             Batal.BackColor = Color.Transparent;
             Batal.BackgroundImage = Properties.Resources.Batal_Hover;
             Batal.BackgroundImageLayout = ImageLayout.Stretch;
+            Batal.Cursor = Cursors.Hand;
             Batal.FlatAppearance.BorderSize = 0;
             Batal.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Batal.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -93,7 +95,6 @@
             Batal.Click += Kembali_Click;
             Batal.MouseEnter += Batal_MouseEnter;
             Batal.MouseLeave += Batal_MouseLeave;
-            Batal.MouseHover += Batal_MouseHover;
             // 
             // V_Send_Message
             // 

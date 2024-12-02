@@ -31,12 +31,13 @@
             SearchBar = new TextBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel1 = new Panel();
+            label4 = new Label();
+            label1 = new Label();
+            label3 = new Label();
             label2 = new Label();
             button2 = new Button();
             id = new Label();
             button1 = new Button();
-            label1 = new Label();
-            Nomor_Hp = new Label();
             Nama = new Label();
             Tambah_Pelanggan = new Button();
             Search = new Button();
@@ -73,12 +74,13 @@
             // 
             panel1.BackgroundImage = Properties.Resources.Red_card;
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(id);
             panel1.Controls.Add(button1);
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(Nomor_Hp);
             panel1.Controls.Add(Nama);
             panel1.Location = new Point(26, 26);
             panel1.Margin = new Padding(26);
@@ -86,13 +88,49 @@
             panel1.Size = new Size(188, 260);
             panel1.TabIndex = 0;
             // 
+            // label4
+            // 
+            label4.Font = new Font("Montserrat", 9F);
+            label4.ImageAlign = ContentAlignment.TopLeft;
+            label4.Location = new Point(8, 222);
+            label4.Margin = new Padding(0);
+            label4.Name = "label4";
+            label4.Size = new Size(170, 16);
+            label4.TabIndex = 8;
+            label4.Text = "Jl.Manggar No.127";
+            label4.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label1
+            // 
+            label1.Font = new Font("Montserrat", 9F);
+            label1.ImageAlign = ContentAlignment.TopLeft;
+            label1.Location = new Point(8, 206);
+            label1.Margin = new Padding(0);
+            label1.Name = "label1";
+            label1.Size = new Size(170, 16);
+            label1.TabIndex = 7;
+            label1.Text = "085156360779";
+            label1.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label3
+            // 
+            label3.Font = new Font("Montserrat", 9F);
+            label3.ImageAlign = ContentAlignment.TopLeft;
+            label3.Location = new Point(9, 190);
+            label3.Margin = new Padding(0);
+            label3.Name = "label3";
+            label3.Size = new Size(170, 16);
+            label3.TabIndex = 6;
+            label3.Text = "@tsaqif10012005";
+            label3.TextAlign = ContentAlignment.MiddleLeft;
+            // 
             // label2
             // 
-            label2.Font = new Font("Montserrat", 8F);
-            label2.Location = new Point(15, 206);
+            label2.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(9, 174);
             label2.Margin = new Padding(0);
             label2.Name = "label2";
-            label2.Size = new Size(157, 20);
+            label2.Size = new Size(170, 16);
             label2.TabIndex = 5;
             label2.Text = "tsaqifradhitya@gmail.com";
             // 
@@ -110,14 +148,15 @@
             // 
             // id
             // 
-            id.Font = new Font("Montserrat", 11F);
-            id.Location = new Point(14, 161);
+            id.Font = new Font("Montserrat SemiBold", 14F, FontStyle.Bold);
+            id.ImageAlign = ContentAlignment.TopLeft;
+            id.Location = new Point(8, 129);
             id.Margin = new Padding(0);
             id.Name = "id";
             id.Size = new Size(158, 22);
             id.TabIndex = 3;
             id.Text = "#1";
-            id.TextAlign = ContentAlignment.TopCenter;
+            id.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // button1
             // 
@@ -131,42 +170,22 @@
             button1.TabIndex = 1;
             button1.UseVisualStyleBackColor = true;
             // 
-            // label1
-            // 
-            label1.Font = new Font("Montserrat", 11F);
-            label1.Location = new Point(14, 223);
-            label1.Margin = new Padding(0);
-            label1.Name = "label1";
-            label1.Size = new Size(158, 22);
-            label1.TabIndex = 2;
-            label1.Text = "Jl.Manggar No.127";
-            // 
-            // Nomor_Hp
-            // 
-            Nomor_Hp.Font = new Font("Montserrat", 11F);
-            Nomor_Hp.Location = new Point(14, 183);
-            Nomor_Hp.Margin = new Padding(0);
-            Nomor_Hp.Name = "Nomor_Hp";
-            Nomor_Hp.Size = new Size(158, 22);
-            Nomor_Hp.TabIndex = 1;
-            Nomor_Hp.Text = "085156360779";
-            // 
             // Nama
             // 
-            Nama.Font = new Font("Montserrat SemiBold", 18F, FontStyle.Bold);
-            Nama.Location = new Point(0, 128);
+            Nama.Font = new Font("Montserrat SemiBold", 14F, FontStyle.Bold);
+            Nama.Location = new Point(8, 150);
             Nama.Margin = new Padding(0);
             Nama.Name = "Nama";
-            Nama.Size = new Size(188, 38);
+            Nama.Size = new Size(170, 25);
             Nama.TabIndex = 0;
             Nama.Text = "Tsaqif";
-            Nama.TextAlign = ContentAlignment.TopCenter;
             // 
             // Tambah_Pelanggan
             // 
             Tambah_Pelanggan.BackColor = Color.Transparent;
             Tambah_Pelanggan.BackgroundImage = Properties.Resources.Tambah_Pelanggan_Hover1;
             Tambah_Pelanggan.BackgroundImageLayout = ImageLayout.Stretch;
+            Tambah_Pelanggan.Cursor = Cursors.Hand;
             Tambah_Pelanggan.FlatAppearance.BorderColor = Color.Black;
             Tambah_Pelanggan.FlatAppearance.BorderSize = 0;
             Tambah_Pelanggan.FlatAppearance.MouseDownBackColor = Color.Transparent;
@@ -180,11 +199,11 @@
             Tambah_Pelanggan.Click += Tambah_Pelanggan_Click;
             Tambah_Pelanggan.MouseEnter += Tambah_Pelanggan_MouseEnter;
             Tambah_Pelanggan.MouseLeave += Tambah_Pelanggan_MouseLeave;
-            Tambah_Pelanggan.MouseHover += Tambah_Pelanggan_MouseHover;
             // 
             // Search
             // 
             Search.BackColor = Color.Transparent;
+            Search.Cursor = Cursors.Hand;
             Search.FlatAppearance.BorderSize = 0;
             Search.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Search.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -195,7 +214,6 @@
             Search.TabIndex = 3;
             Search.UseVisualStyleBackColor = false;
             Search.Click += Search_Click;
-            Search.MouseHover += Search_MouseHover;
             // 
             // V_Pelanggan
             // 
@@ -221,9 +239,7 @@
 
         private TextBox SearchBar;
         private Panel panel1;
-        private Label Nomor_Hp;
         private Label Nama;
-        private Label label1;
         public FlowLayoutPanel flowLayoutPanel1;
         private Label id;
         private Button button1;
@@ -231,5 +247,8 @@
         private Button Tambah_Pelanggan;
         private Button Search;
         private Label label2;
+        private Label label3;
+        private Label label4;
+        private Label label1;
     }
 }

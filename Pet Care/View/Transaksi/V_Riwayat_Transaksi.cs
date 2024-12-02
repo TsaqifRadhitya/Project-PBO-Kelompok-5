@@ -24,7 +24,7 @@ namespace Pet_Care.View
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == Tabel_Riwayat.Columns["Detail"].Index) Controller.detail((int)Tabel_Riwayat.Rows[e.RowIndex].Cells["id"].Value);
+            if (e.ColumnIndex == Tabel_Riwayat.Columns["Detail"].Index) Controller.load_detail((int)Tabel_Riwayat.Rows[e.RowIndex].Cells["id"].Value,false);
         }
 
         private void V_Riwayat_Transaksi_Load(object sender, EventArgs e)

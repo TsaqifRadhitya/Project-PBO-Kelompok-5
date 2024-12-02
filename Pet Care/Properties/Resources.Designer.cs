@@ -333,6 +333,16 @@ namespace Pet_Care.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Detail_Transaksi {
+            get {
+                object obj = ResourceManager.GetObject("Detail Transaksi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Foto {
             get {
                 object obj = ResourceManager.GetObject("Foto", resourceCulture);
@@ -406,6 +416,16 @@ namespace Pet_Care.Properties {
         internal static System.Drawing.Bitmap Gallery_Kucing {
             get {
                 object obj = ResourceManager.GetObject("Gallery Kucing", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gallery_Kucing1 {
+            get {
+                object obj = ResourceManager.GetObject("Gallery Kucing1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -526,6 +546,16 @@ namespace Pet_Care.Properties {
         internal static System.Drawing.Bitmap Layanan1 {
             get {
                 object obj = ResourceManager.GetObject("Layanan1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Layer_Informasi {
+            get {
+                object obj = ResourceManager.GetObject("Layer Informasi", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -843,6 +873,46 @@ namespace Pet_Care.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Status_Process {
+            get {
+                object obj = ResourceManager.GetObject("Status_Process", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Status_Selesai {
+            get {
+                object obj = ResourceManager.GetObject("Status_Selesai", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tab_Informasi {
+            get {
+                object obj = ResourceManager.GetObject("Tab Informasi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tab_Layanan {
+            get {
+                object obj = ResourceManager.GetObject("Tab Layanan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Tambah {
             get {
                 object obj = ResourceManager.GetObject("Tambah", resourceCulture);
@@ -946,6 +1016,16 @@ namespace Pet_Care.Properties {
         internal static System.Drawing.Bitmap Tambah_Ubah_Pelanggan1 {
             get {
                 object obj = ResourceManager.GetObject("Tambah_Ubah_Pelanggan1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tambah_Ubah_Pelanggan2 {
+            get {
+                object obj = ResourceManager.GetObject("Tambah_Ubah_Pelanggan2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

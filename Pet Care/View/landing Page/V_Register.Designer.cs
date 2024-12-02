@@ -45,6 +45,7 @@
             // 
             Button_Register.BackgroundImage = Properties.Resources.Register_Button;
             Button_Register.BackgroundImageLayout = ImageLayout.Stretch;
+            Button_Register.Cursor = Cursors.Hand;
             Button_Register.FlatAppearance.BorderSize = 0;
             Button_Register.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Button_Register.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -57,11 +58,11 @@
             Button_Register.Click += Button_Register_Click;
             Button_Register.MouseEnter += Button_Register_MouseEnter;
             Button_Register.MouseLeave += Button_Register_MouseLeave;
-            Button_Register.MouseHover += Button_Register_MouseHover;
             // 
             // Login
             // 
             Login.AutoSize = true;
+            Login.Cursor = Cursors.Hand;
             Login.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold);
             Login.ForeColor = Color.FromArgb(131, 94, 146);
             Login.Location = new Point(285, 576);
@@ -70,7 +71,6 @@
             Login.TabIndex = 6;
             Login.Text = "Login";
             Login.Click += Login_Click;
-            Login.MouseHover += Login_MouseHover;
             // 
             // label1
             // 
@@ -173,6 +173,7 @@
             // 
             show_hide_password_1.BackgroundImage = Properties.Resources.Hide_Password_;
             show_hide_password_1.BackgroundImageLayout = ImageLayout.Stretch;
+            show_hide_password_1.Cursor = Cursors.Hand;
             show_hide_password_1.FlatAppearance.BorderSize = 0;
             show_hide_password_1.FlatAppearance.MouseDownBackColor = Color.Transparent;
             show_hide_password_1.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -183,12 +184,12 @@
             show_hide_password_1.TabIndex = 13;
             show_hide_password_1.UseVisualStyleBackColor = true;
             show_hide_password_1.Click += show_hide_password_Click;
-            show_hide_password_1.MouseHover += show_hide_password_1_MouseHover;
             // 
             // show_hide_password_2
             // 
             show_hide_password_2.BackgroundImage = Properties.Resources.Hide_Password_;
             show_hide_password_2.BackgroundImageLayout = ImageLayout.Stretch;
+            show_hide_password_2.Cursor = Cursors.Hand;
             show_hide_password_2.FlatAppearance.BorderSize = 0;
             show_hide_password_2.FlatAppearance.MouseDownBackColor = Color.Transparent;
             show_hide_password_2.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -199,7 +200,6 @@
             show_hide_password_2.TabIndex = 14;
             show_hide_password_2.UseVisualStyleBackColor = true;
             show_hide_password_2.Click += show_hide_password_2_Click;
-            show_hide_password_2.MouseHover += show_hide_password_2_MouseHover;
             // 
             // V_Register
             // 

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Pet_Care.View;
 using Pet_Care.Model;
+using System.ComponentModel.DataAnnotations;
 
 namespace Pet_Care.Contoller
 {
@@ -52,7 +53,7 @@ namespace Pet_Care.Contoller
 
         public void register_validation()
         {
-            if (V_Register.Username.Text == "Username" || V_Register.Password.Text == "Password" || V_Register.Nama_Lengkap.Text == "Nama Lengkap"|| V_Register.Nomor_HP.Text == "Nomor Hp"|| V_Register.Email.Text == "Email"|| V_Register.Konfirmasi_Password.Text != V_Register.Password.Text)
+            if (V_Register.Username.Text == "Username" || V_Register.Password.Text == "Password" || V_Register.Nama_Lengkap.Text == "Nama Lengkap"|| V_Register.Nomor_HP.Text == "Nomor Hp"|| !(new EmailAddressAttribute().IsValid(V_Register.Email.Text))|| V_Register.Konfirmasi_Password.Text != V_Register.Password.Text)
             {
                 show_message_box("Invalid Register");
                 return;
@@ -70,6 +71,7 @@ namespace Pet_Care.Contoller
                 m_Akun.Insert(data_akun);
                 v_Login = new V_Login(this);
                 v_Login.Location = new Point(0, 102);
+                show_message_box("Register Berhasil");
                 switch_view(v_Login);
             }
             catch

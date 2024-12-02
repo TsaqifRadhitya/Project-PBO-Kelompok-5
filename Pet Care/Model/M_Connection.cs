@@ -44,6 +44,7 @@ namespace Pet_Care.Model
                 "Nomor_hp VARCHAR(13) NOT NULL UNIQUE," +
                 "Alamat VARCHAR(30) NOT NULL," +
                 "Email VARCHAR(50) UNIQUE NOT NULL," +
+                "Telegram VARCHAR(20) UNIQUE NOT NULL," +
                 "Status_Pelanggan Bool Not Null Default true)");
 
             Execute_No_Return("CREATE TABLE IF NOT EXISTS Pelayanan (" +

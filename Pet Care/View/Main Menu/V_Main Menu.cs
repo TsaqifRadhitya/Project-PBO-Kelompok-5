@@ -45,6 +45,7 @@ namespace Pet_Care.View
             controller.menu_focus = typeof(V_Dashboard).Name;
             controller.reset_button_focus();
             Dashboard.BackgroundImage = Properties.Resources.Dasboard_Focus;
+            Dashboard.Enabled = false;
             C_Dashboard controller_dashboard = new C_Dashboard(controller);
         }
 
@@ -53,6 +54,7 @@ namespace Pet_Care.View
             controller.menu_focus = typeof(V_Transaksi).Name;
             controller.reset_button_focus();
             Transaksi.BackgroundImage = Properties.Resources.Transaksi_Focus;
+            Transaksi.Enabled = false;
             C_Transaksi c_Transaksi = new C_Transaksi(controller);
         }
 
@@ -61,14 +63,16 @@ namespace Pet_Care.View
             controller.menu_focus = typeof(V_Pelanggan).Name;
             controller.reset_button_focus();
             Pelanggan.BackgroundImage = Properties.Resources.Pelanggan_Focus;
+            Pelanggan.Enabled = false;
             C_Pelanggan controller_Pelanggan = new C_Pelanggan(controller);
         }
 
         private void Layanan_Click(object sender, EventArgs e)
         {
             controller.menu_focus = typeof(V_Layanan).Name;
-            controller.reset_button_focus();
+            controller.reset_button_focus();  
             Layanan.BackgroundImage = Properties.Resources.Layanan_Focus;
+            Layanan.Enabled = false;
             C_Layanan c_Layanan = new C_Layanan(controller);
         }
 
@@ -165,7 +169,13 @@ namespace Pet_Care.View
         {
             controller.menu_focus = typeof(V_Gallery_Kucing).Name;
             controller.reset_button_focus();
+            Secret.Enabled = false;
             C_Galerry_Kucing controller_gallery_kucing = new C_Galerry_Kucing(controller);
+        }
+
+        private void V_Main_Menu_Load(object sender, EventArgs e)
+        {
+            Dashboard.Enabled = false;
         }
     }
 }

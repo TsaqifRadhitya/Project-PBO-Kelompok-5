@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -92,9 +93,15 @@ namespace Pet_Care.View
         {
             if(ID_Pelanggan.Text.Length > 1)
             {
-                if(!(int.TryParse(ID_Pelanggan.Text.Substring(1, (ID_Pelanggan.Text.Length) - 1),out _)))
+                string id = ID_Pelanggan.Text;
+                if (id[0] != '#')
                 {
-                    ID_Pelanggan.Text = "";
+                    ID_Pelanggan.Text = string.Empty;
+                    return;
+                }
+                if(!(int.TryParse(id.Substring(1, (id.Length) - 1),out _)))
+                {
+                    ID_Pelanggan.Text = string.Empty; ;
                 }
             }
         }

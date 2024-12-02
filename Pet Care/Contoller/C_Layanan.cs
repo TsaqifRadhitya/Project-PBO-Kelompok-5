@@ -78,22 +78,16 @@ namespace Pet_Care.Contoller
                 Text = "Edit",
             };
             V_Layanan.Tabel_Layanan.DataSource = model.Get();
-            
-            if(V_Layanan.Tabel_Layanan.Rows.Count > 0)
-            {
-                V_Layanan.Tabel_Layanan.Columns.Add(Edit);
-                V_Layanan.Tabel_Layanan.Columns.Add(Delete);
-                V_Layanan.Tabel_Layanan.Columns["quantity_berdasarkan_hari"].HeaderText = "Berdasarkan Hari";
-                V_Layanan.Tabel_Layanan.Columns["name"].HeaderText = "Nama Layanan";
-                V_Layanan.Tabel_Layanan.Columns["display_price"].HeaderText = "Harga";
-                V_Layanan.Tabel_Layanan.Columns["display_price"].HeaderText = "Harga";
-                V_Layanan.Tabel_Layanan.Columns["Edit"].HeaderText = "";
-                V_Layanan.Tabel_Layanan.Columns["Delete"].HeaderText = "";
-                V_Layanan.Tabel_Layanan.Columns["id"].Visible = false;
-                V_Layanan.Tabel_Layanan.Columns["Harga"].Visible = false;
-                V_Layanan.Tabel_Layanan.DefaultCellStyle.BackColor = Color.FromArgb(253, 233, 218);
-                V_Layanan.Tabel_Layanan.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(253, 233, 218);
-            }
+            V_Layanan.Tabel_Layanan.Columns.Add(Edit);
+            V_Layanan.Tabel_Layanan.Columns.Add(Delete);
+            V_Layanan.Tabel_Layanan.Columns["quantity_berdasarkan_hari"].HeaderText = "Berdasarkan Hari";
+            V_Layanan.Tabel_Layanan.Columns["name"].HeaderText = "Nama Layanan";
+            V_Layanan.Tabel_Layanan.Columns["display_price"].HeaderText = "Harga";
+            V_Layanan.Tabel_Layanan.Columns["display_price"].HeaderText = "Harga";
+            V_Layanan.Tabel_Layanan.Columns["Edit"].HeaderText = "";
+            V_Layanan.Tabel_Layanan.Columns["Delete"].HeaderText = "";
+            V_Layanan.Tabel_Layanan.Columns["id"].Visible = false;
+            V_Layanan.Tabel_Layanan.Columns["Harga"].Visible = false;
         }
 
         public void delete_layanan(string layanan,int id)

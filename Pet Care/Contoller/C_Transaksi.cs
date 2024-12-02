@@ -74,6 +74,7 @@ namespace Pet_Care.Contoller
             }
             model_transaksi.Insert(Transaksi_baru);
             show_message_box("Berhasil Membuat Transaksi");
+            
             return true;
         }
 
@@ -155,6 +156,7 @@ namespace Pet_Care.Contoller
                     radioButton.FlatAppearance.CheckedBackColor = Color.FromArgb(131, 94, 146);
                     radioButton.FlatAppearance.MouseDownBackColor = Color.Transparent;
                     radioButton.FlatAppearance.MouseOverBackColor = Color.Transparent;
+                    radioButton.Cursor = Cursors.Hand;
                     radioButton.Click += (object sender, EventArgs e) => { Refresh_Total_Harga(view); };
                     view.flowLayoutPanel1.Controls.Add(radioButton);
                 }
@@ -189,9 +191,13 @@ namespace Pet_Care.Contoller
                 view.Tabel_Riwayat.ColumnHeadersDefaultCellStyle.Font = new Font("Montserrat Bold", 8F);
                 view.Tabel_Riwayat.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
-        public void load_detail(int id,V_Detail_Transaksi view)
+        public void load_detail(int id,bool status)
         {
-
+            Data_Transaksi data = model_transaksi.Get_detail(id);
+            Frame_Transaksi = new V_Frame_Transaksi(this, new V_Detail_Transaksi(data,status,this));
+            Frame_Transaksi.StartPosition = FormStartPosition.Manual;
+            Frame_Transaksi.Location = new Point(Screen.FromControl(V_Transaksi).Bounds.Location.X + 800, Screen.FromControl(V_Transaksi).Bounds.Location.Y + 245);
+            Frame_Transaksi.ShowDialog();
         }
 
         public async Task send_nota()
@@ -246,7 +252,7 @@ namespace Pet_Care.Contoller
             email.Body = message.ToMessageBody();
             SmtpClient smtpClient = new SmtpClient();
             await smtpClient.ConnectAsync("smtp.gmail.com", 465, MailKit.Security.SecureSocketOptions.SslOnConnect);
-            await smtpClient.AuthenticateAsync(EnvLoader.Nama_Email, EnvLoader.Token_Email);
+            await smtpClient.AuthenticateAsync(EnvLoader.Email, EnvLoader.Token_Email);
             await smtpClient.SendAsync(email);
             smtpClient.Disconnect(true);
         }
@@ -277,13 +283,6 @@ namespace Pet_Care.Contoller
             Frame_Transaksi.Controls.Clear();
             Frame_Transaksi.Controls.Add(new V_Form_Transaksi(this));
         }
-        public void detail(int id)
-        {
-            Frame_Transaksi = new V_Frame_Transaksi(this, new V_Detail_Transaksi(this,id));
-            Frame_Transaksi.StartPosition = FormStartPosition.Manual; 
-            Frame_Transaksi.Location = new Point(Screen.FromControl(V_Transaksi).Bounds.Location.X + 800, Screen.FromControl(V_Transaksi).Bounds.Location.Y + 245);
-            Frame_Transaksi.ShowDialog();
-        }
         public void Buat_Transaksi()
         {
             Frame_Transaksi = new V_Frame_Transaksi(this,new V_Tambah_Transaksi(this));
@@ -294,7 +293,9 @@ namespace Pet_Care.Contoller
             {
                 send_nota();
                 status_transaksi = false;
-                load_card();
+                V_Transaksi_Berlangsung = new V_Transaksi_Berlangsung(this);
+                switch_view(V_Transaksi_Berlangsung);
+               
             }
         }
 
@@ -308,7 +309,7 @@ namespace Pet_Care.Contoller
             if (send_message.status)
             {
                 string username = "@meowInnNews";
-                string message = $"[BROADCAST HARIAN KUCING MEOWINN]\nOwner : @hakarra\nNama Kucing : {data.Nama_Kucing}\nKegiatan : {data_pesan[1]}";
+                string message = $"[BROADCAST HARIAN KUCING MEOWINN]\nOwner : @{data.Tele}\nNama Kucing : {data.Nama_Kucing}\nKegiatan : {data_pesan[1]}";
                 HttpClient client = new HttpClient();
                 MultipartFormDataContent formData = new MultipartFormDataContent();
                 ByteArrayContent fileContent = new ByteArrayContent(data_pesan[0]);
@@ -344,10 +345,10 @@ namespace Pet_Care.Contoller
             detail.FlatAppearance.BorderSize = 0;
             detail.FlatAppearance.MouseDownBackColor = Color.Transparent;
             detail.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            detail.Cursor = Cursors.Hand;
             detail.MouseEnter += (object sender, EventArgs e) => { detail.BackgroundImage = Properties.Resources.Detail_Hover; };
             detail.MouseLeave += (object sender, EventArgs e) => { detail.BackgroundImage = Properties.Resources.Detail; };
-            detail.MouseHover += (object sender,EventArgs e) => { detail.Cursor = Cursors.Hand;} ;
-            detail.Click += (object sender, EventArgs e) => { this.detail(data.id); };
+            detail.Click += (object sender, EventArgs e) => { this.load_detail(data.id,true); };
 
             Button Selesai = new Button
             {
@@ -362,10 +363,10 @@ namespace Pet_Care.Contoller
             Selesai.FlatAppearance.BorderSize = 0;
             Selesai.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Selesai.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            Selesai.Cursor = Cursors.Hand;
             Selesai.Click += (object sender,EventArgs e) => { selesai(data);};
             Selesai.MouseEnter += (object sender, EventArgs e) => { Selesai.BackgroundImage = Properties.Resources.Selesai_Card_Hover; };
             Selesai.MouseLeave += (object sender, EventArgs e) => { Selesai.BackgroundImage = Properties.Resources.Selesai_Card; };
-            Selesai.MouseHover += (object sender, EventArgs e) => { Selesai.Cursor = Cursors.Hand;  };
 
             Button Delete = new Button
             {
@@ -380,13 +381,11 @@ namespace Pet_Care.Contoller
             Delete.FlatAppearance.BorderSize = 0;
             Delete.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Delete.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            Delete.Cursor = Cursors.Hand;
             Delete.Click += (object sender,EventArgs e) => { this.Delete(data.id); };
             Delete.MouseEnter += (object sender,EventArgs e) => { Delete.BackgroundImage = Properties.Resources.Cancel_Card_Hover; };
             Delete.MouseLeave += (object sender, EventArgs e) => { Delete.BackgroundImage = Properties.Resources.Cancel1; };
-            Delete.MouseHover += (object sender, EventArgs e) => { Delete.Cursor = Cursors.Hand;  };
-            // 
-            // Harga
-            // 
+
             Label harga = new Label
             {
                 Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0),
@@ -421,9 +420,9 @@ namespace Pet_Care.Contoller
             Pesan.FlatAppearance.BorderSize = 0;
             Pesan.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Pesan.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            Pesan.Cursor = Cursors.Hand;
             Pesan.MouseEnter += (object sender, EventArgs e) => { Pesan.BackgroundImage = Properties.Resources.Message_Hover; };
             Pesan.MouseLeave += (object sender, EventArgs e) => { Pesan.BackgroundImage = Properties.Resources.Message; };
-            Pesan.MouseHover += (object sender, EventArgs e) => { Pesan.Cursor = Cursors.Hand; };
             Pesan.Click += (object sender, EventArgs e) => { send_message(data); };
 
             Card.Controls.Add(detail);

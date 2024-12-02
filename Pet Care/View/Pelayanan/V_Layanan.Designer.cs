@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
             Tambah = new Button();
             Tabel_Layanan = new DataGridView();
@@ -52,6 +54,7 @@
             // 
             Tambah.BackgroundImage = Properties.Resources.Tambah;
             Tambah.BackgroundImageLayout = ImageLayout.Stretch;
+            Tambah.Cursor = Cursors.Hand;
             Tambah.FlatAppearance.BorderSize = 0;
             Tambah.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Tambah.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -64,7 +67,6 @@
             Tambah.Click += Tambah_Click;
             Tambah.MouseEnter += Tambah_MouseEnter;
             Tambah.MouseLeave += Tambah_MouseLeave;
-            Tambah.MouseHover += Tambah_MouseHover;
             // 
             // Tabel_Layanan
             // 
@@ -76,16 +78,34 @@
             Tabel_Layanan.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
             Tabel_Layanan.BackgroundColor = Color.FromArgb(253, 233, 218);
             Tabel_Layanan.BorderStyle = BorderStyle.None;
-            Tabel_Layanan.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            Tabel_Layanan.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             Tabel_Layanan.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(131, 94, 146);
+            dataGridViewCellStyle1.Font = new Font("Montserrat", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(131, 94, 146);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(131, 94, 146);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            Tabel_Layanan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             Tabel_Layanan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            Tabel_Layanan.GridColor = Color.White;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(253, 233, 218);
+            dataGridViewCellStyle2.Font = new Font("Montserrat Medium", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(253, 233, 218);
+            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            Tabel_Layanan.DefaultCellStyle = dataGridViewCellStyle2;
+            Tabel_Layanan.EnableHeadersVisualStyles = false;
+            Tabel_Layanan.GridColor = Color.FromArgb(202, 185, 174);
             Tabel_Layanan.Location = new Point(6, 56);
             Tabel_Layanan.Name = "Tabel_Layanan";
             Tabel_Layanan.ReadOnly = true;
             Tabel_Layanan.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             Tabel_Layanan.RowHeadersVisible = false;
             Tabel_Layanan.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            Tabel_Layanan.ScrollBars = ScrollBars.Vertical;
             Tabel_Layanan.Size = new Size(847, 479);
             Tabel_Layanan.TabIndex = 0;
             Tabel_Layanan.CellContentClick += dataGridView1_CellContentClick;

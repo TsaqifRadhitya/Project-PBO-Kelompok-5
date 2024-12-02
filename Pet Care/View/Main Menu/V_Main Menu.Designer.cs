@@ -42,6 +42,7 @@
             Logout.BackColor = Color.Transparent;
             Logout.BackgroundImage = Properties.Resources.Log_Out;
             Logout.BackgroundImageLayout = ImageLayout.Stretch;
+            Logout.Cursor = Cursors.Hand;
             Logout.FlatAppearance.BorderSize = 0;
             Logout.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Logout.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -54,7 +55,6 @@
             Logout.Click += button1_Click;
             Logout.MouseEnter += button1_MouseEnter;
             Logout.MouseLeave += button1_MouseLeave;
-            Logout.MouseHover += button1_MouseHover;
             // 
             // panel1
             // 
@@ -68,6 +68,7 @@
             Dashboard.BackColor = Color.Transparent;
             Dashboard.BackgroundImage = Properties.Resources.Dasboard_Focus;
             Dashboard.BackgroundImageLayout = ImageLayout.Stretch;
+            Dashboard.Cursor = Cursors.Hand;
             Dashboard.FlatAppearance.BorderSize = 0;
             Dashboard.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Dashboard.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -80,13 +81,13 @@
             Dashboard.Click += Dashboard_Click;
             Dashboard.MouseEnter += Dashboard_MouseEnter;
             Dashboard.MouseLeave += Dashboard_MouseLeave;
-            Dashboard.MouseHover += Dashboard_MouseHover;
             // 
             // Transaksi
             // 
             Transaksi.BackColor = Color.Transparent;
             Transaksi.BackgroundImage = Properties.Resources.Transaksi;
             Transaksi.BackgroundImageLayout = ImageLayout.Stretch;
+            Transaksi.Cursor = Cursors.Hand;
             Transaksi.FlatAppearance.BorderSize = 0;
             Transaksi.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Transaksi.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -99,13 +100,13 @@
             Transaksi.Click += Transaksi_Click;
             Transaksi.MouseEnter += Transaksi_MouseEnter;
             Transaksi.MouseLeave += Transaksi_MouseLeave;
-            Transaksi.MouseHover += Transaksi_MouseHover;
             // 
             // Pelanggan
             // 
             Pelanggan.BackColor = Color.Transparent;
             Pelanggan.BackgroundImage = Properties.Resources.Pelanggan;
             Pelanggan.BackgroundImageLayout = ImageLayout.Stretch;
+            Pelanggan.Cursor = Cursors.Hand;
             Pelanggan.FlatAppearance.BorderSize = 0;
             Pelanggan.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Pelanggan.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -118,13 +119,13 @@
             Pelanggan.Click += Pelanggan_Click;
             Pelanggan.MouseEnter += Pelanggan_MouseEnter;
             Pelanggan.MouseLeave += Pelanggan_MouseLeave;
-            Pelanggan.MouseHover += Pelanggan_MouseHover;
             // 
             // Layanan
             // 
             Layanan.BackColor = Color.Transparent;
             Layanan.BackgroundImage = Properties.Resources.Layanan;
             Layanan.BackgroundImageLayout = ImageLayout.Stretch;
+            Layanan.Cursor = Cursors.Hand;
             Layanan.FlatAppearance.BorderSize = 0;
             Layanan.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Layanan.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -137,11 +138,11 @@
             Layanan.Click += Layanan_Click;
             Layanan.MouseEnter += Layanan_MouseEnter;
             Layanan.MouseLeave += Layanan_MouseLeave;
-            Layanan.MouseHover += Layanan_MouseHover;
             // 
             // Secret
             // 
             Secret.BackColor = Color.Transparent;
+            Secret.Cursor = Cursors.Hand;
             Secret.FlatAppearance.BorderSize = 0;
             Secret.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Secret.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -152,7 +153,6 @@
             Secret.TabIndex = 6;
             Secret.UseVisualStyleBackColor = false;
             Secret.Click += Secret_Click;
-            Secret.MouseHover += Secret_MouseHover;
             // 
             // V_Main_Menu
             // 
@@ -170,6 +170,7 @@
             DoubleBuffered = true;
             Name = "V_Main_Menu";
             Size = new Size(1280, 720);
+            Load += V_Main_Menu_Load;
             ResumeLayout(false);
         }
 
@@ -181,6 +182,6 @@
         public Button Transaksi;
         public Button Pelanggan;
         public Button Layanan;
-        private Button Secret;
+        public Button Secret;
     }
 }

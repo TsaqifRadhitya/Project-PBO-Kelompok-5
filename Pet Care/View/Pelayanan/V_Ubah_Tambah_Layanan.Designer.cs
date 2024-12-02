@@ -42,6 +42,7 @@
             // 
             radioButton1.AutoSize = true;
             radioButton1.BackColor = Color.Transparent;
+            radioButton1.Cursor = Cursors.Hand;
             radioButton1.FlatAppearance.BorderColor = Color.FromArgb(217, 217, 217);
             radioButton1.FlatAppearance.BorderSize = 5;
             radioButton1.FlatAppearance.CheckedBackColor = Color.FromArgb(131, 94, 146);
@@ -59,6 +60,7 @@
             // 
             radioButton2.AutoSize = true;
             radioButton2.BackColor = Color.Transparent;
+            radioButton2.Cursor = Cursors.Hand;
             radioButton2.FlatAppearance.BorderColor = Color.FromArgb(217, 217, 217);
             radioButton2.FlatAppearance.BorderSize = 5;
             radioButton2.FlatAppearance.CheckedBackColor = Color.FromArgb(131, 94, 146);
@@ -77,6 +79,7 @@
             Simpan.BackColor = Color.Transparent;
             Simpan.BackgroundImage = Properties.Resources.Simpan_Hover;
             Simpan.BackgroundImageLayout = ImageLayout.Stretch;
+            Simpan.Cursor = Cursors.Hand;
             Simpan.FlatAppearance.BorderSize = 0;
             Simpan.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Simpan.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -89,13 +92,13 @@
             Simpan.Click += Simpan_Click;
             Simpan.MouseEnter += Simpan_MouseEnter;
             Simpan.MouseLeave += Simpan_MouseLeave;
-            Simpan.MouseHover += Simpan_MouseHover;
             // 
             // Batal
             // 
             Batal.BackColor = Color.Transparent;
             Batal.BackgroundImage = Properties.Resources.Batal_Hover;
             Batal.BackgroundImageLayout = ImageLayout.Stretch;
+            Batal.Cursor = Cursors.Hand;
             Batal.FlatAppearance.BorderSize = 0;
             Batal.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Batal.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -108,7 +111,6 @@
             Batal.Click += Batal_Click;
             Batal.MouseEnter += Batal_MouseEnter;
             Batal.MouseLeave += Batal_MouseLeave;
-            Batal.MouseHover += Batal_MouseHover;
             // 
             // Header
             // 

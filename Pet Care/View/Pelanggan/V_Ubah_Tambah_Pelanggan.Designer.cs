@@ -36,6 +36,7 @@
             Nama = new TextBox();
             Header = new Label();
             Email = new TextBox();
+            Telegram = new TextBox();
             SuspendLayout();
             // 
             // Batal
@@ -43,11 +44,12 @@
             Batal.BackColor = Color.Transparent;
             Batal.BackgroundImage = Properties.Resources.Batal_Hover;
             Batal.BackgroundImageLayout = ImageLayout.Stretch;
+            Batal.Cursor = Cursors.Hand;
             Batal.FlatAppearance.BorderSize = 0;
             Batal.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Batal.FlatAppearance.MouseOverBackColor = Color.Transparent;
             Batal.FlatStyle = FlatStyle.Flat;
-            Batal.Location = new Point(101, 497);
+            Batal.Location = new Point(101, 562);
             Batal.Name = "Batal";
             Batal.Size = new Size(153, 54);
             Batal.TabIndex = 0;
@@ -55,18 +57,18 @@
             Batal.Click += Batal_Click;
             Batal.MouseEnter += Batal_MouseEnter;
             Batal.MouseLeave += Batal_MouseLeave;
-            Batal.MouseHover += Batal_MouseHover;
             // 
             // Simpan
             // 
             Simpan.BackColor = Color.Transparent;
             Simpan.BackgroundImage = Properties.Resources.Simpan_Hover;
             Simpan.BackgroundImageLayout = ImageLayout.Stretch;
+            Simpan.Cursor = Cursors.Hand;
             Simpan.FlatAppearance.BorderSize = 0;
             Simpan.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Simpan.FlatAppearance.MouseOverBackColor = Color.Transparent;
             Simpan.FlatStyle = FlatStyle.Flat;
-            Simpan.Location = new Point(380, 497);
+            Simpan.Location = new Point(380, 562);
             Simpan.Name = "Simpan";
             Simpan.Size = new Size(153, 54);
             Simpan.TabIndex = 1;
@@ -74,14 +76,13 @@
             Simpan.Click += Simpan_Click;
             Simpan.MouseEnter += Simpan_MouseEnter;
             Simpan.MouseLeave += Simpan_MouseLeave;
-            Simpan.MouseHover += Simpan_MouseHover;
             // 
             // Alamat
             // 
             Alamat.BackColor = Color.FromArgb(253, 233, 218);
             Alamat.BorderStyle = BorderStyle.None;
             Alamat.Font = new Font("Montserrat SemiBold", 18F, FontStyle.Bold);
-            Alamat.Location = new Point(115, 425);
+            Alamat.Location = new Point(115, 498);
             Alamat.Name = "Alamat";
             Alamat.Size = new Size(406, 30);
             Alamat.TabIndex = 2;
@@ -91,7 +92,7 @@
             Nomor_Telepon.BackColor = Color.FromArgb(253, 233, 218);
             Nomor_Telepon.BorderStyle = BorderStyle.None;
             Nomor_Telepon.Font = new Font("Montserrat SemiBold", 18F, FontStyle.Bold);
-            Nomor_Telepon.Location = new Point(115, 240);
+            Nomor_Telepon.Location = new Point(115, 226);
             Nomor_Telepon.MaxLength = 13;
             Nomor_Telepon.Name = "Nomor_Telepon";
             Nomor_Telepon.Size = new Size(406, 30);
@@ -103,7 +104,7 @@
             Nama.BackColor = Color.FromArgb(253, 233, 218);
             Nama.BorderStyle = BorderStyle.None;
             Nama.Font = new Font("Montserrat SemiBold", 18F, FontStyle.Bold);
-            Nama.Location = new Point(115, 151);
+            Nama.Location = new Point(115, 136);
             Nama.Name = "Nama";
             Nama.Size = new Size(406, 30);
             Nama.TabIndex = 5;
@@ -112,7 +113,7 @@
             // 
             Header.BackColor = Color.Transparent;
             Header.Font = new Font("Montserrat", 24F, FontStyle.Bold);
-            Header.Location = new Point(101, 50);
+            Header.Location = new Point(101, 33);
             Header.Name = "Header";
             Header.Size = new Size(432, 48);
             Header.TabIndex = 6;
@@ -124,18 +125,29 @@
             Email.BackColor = Color.FromArgb(253, 233, 218);
             Email.BorderStyle = BorderStyle.None;
             Email.Font = new Font("Montserrat SemiBold", 18F, FontStyle.Bold);
-            Email.Location = new Point(115, 333);
+            Email.Location = new Point(115, 319);
             Email.Name = "Email";
             Email.Size = new Size(406, 30);
             Email.TabIndex = 7;
+            // 
+            // Telegram
+            // 
+            Telegram.BackColor = Color.FromArgb(253, 233, 218);
+            Telegram.BorderStyle = BorderStyle.None;
+            Telegram.Font = new Font("Montserrat SemiBold", 18F, FontStyle.Bold);
+            Telegram.Location = new Point(115, 409);
+            Telegram.Name = "Telegram";
+            Telegram.Size = new Size(406, 30);
+            Telegram.TabIndex = 8;
             // 
             // V_Ubah_Tambah_Pelanggan
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.Tambah_Ubah_Pelanggan1;
+            BackgroundImage = Properties.Resources.Tambah_Ubah_Pelanggan2;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(623, 590);
+            ClientSize = new Size(623, 643);
+            Controls.Add(Telegram);
             Controls.Add(Email);
             Controls.Add(Header);
             Controls.Add(Nama);
@@ -162,5 +174,6 @@
         private TextBox Nama;
         private Label Header;
         private TextBox Email;
+        public TextBox Telegram;
     }
 }

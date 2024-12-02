@@ -57,7 +57,7 @@ namespace Pet_Care.View
 
         private void Tambah_Pelanggan_MouseEnter(object sender, EventArgs e)
         {
-            Tambah_Pelanggan.BackgroundImage = Properties.Resources.Tambah_Pelanggan; 
+            Tambah_Pelanggan.BackgroundImage = Properties.Resources.Tambah_Pelanggan;
         }
 
         private void Tambah_Pelanggan_MouseHover(object sender, EventArgs e)
@@ -82,7 +82,7 @@ namespace Pet_Care.View
 
         private void Search_Click(object sender, EventArgs e)
         {
-            if(SearchBar.Text == "Search")
+            if (SearchBar.Text == "Search")
             {
                 C_Pelanggan.load_data();
                 return;

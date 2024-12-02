@@ -34,6 +34,7 @@ namespace Pet_Care.View
             id_pelanggan = data.ID;
             Controller = controller;
             Email.Text = data.Email;
+            Telegram.Text = data.Username_Tele;
         }
 
         private void Batal_Click(object sender, EventArgs e)
@@ -62,6 +63,7 @@ namespace Pet_Care.View
                 Alamat = Alamat.Text,
                 ID = id_pelanggan,
                 Email = Email.Text,
+                Username_Tele = Telegram.Text,
             });
             if (respons[0])
             {

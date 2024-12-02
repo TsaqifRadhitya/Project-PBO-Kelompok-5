@@ -40,10 +40,16 @@ namespace Pet_Care.Contoller
 
         public void reset_button_focus()
         {
+            main_Menu.Layanan.Enabled = true;
+            main_Menu.Transaksi.Enabled = true;
+            main_Menu.Pelanggan.Enabled = true;
+            main_Menu.Dashboard.Enabled = true;
+            main_Menu.Secret.Enabled = true;
             main_Menu.Dashboard.BackgroundImage = Properties.Resources.Dashboard;
             main_Menu.Transaksi.BackgroundImage = Properties.Resources.Transaksi;
             main_Menu.Pelanggan.BackgroundImage = Properties.Resources.Pelanggan;
             main_Menu.Layanan.BackgroundImage = Properties.Resources.Layanan;
+           
         }
     }
 }

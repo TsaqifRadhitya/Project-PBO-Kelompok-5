@@ -76,6 +76,7 @@
             Lanjut.BackColor = Color.Transparent;
             Lanjut.BackgroundImage = Properties.Resources.Lanjut;
             Lanjut.BackgroundImageLayout = ImageLayout.Stretch;
+            Lanjut.Cursor = Cursors.Hand;
             Lanjut.FlatAppearance.BorderSize = 0;
             Lanjut.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Lanjut.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -88,13 +89,13 @@
             Lanjut.Click += Lanjut_Click;
             Lanjut.MouseEnter += Lanjut_MouseEnter;
             Lanjut.MouseLeave += Lanjut_MouseLeave;
-            Lanjut.MouseHover += Lanjut_MouseHover;
             // 
             // Kembali
             // 
             Kembali.BackColor = Color.Transparent;
             Kembali.BackgroundImage = Properties.Resources.Kembali;
             Kembali.BackgroundImageLayout = ImageLayout.Stretch;
+            Kembali.Cursor = Cursors.Hand;
             Kembali.FlatAppearance.BorderSize = 0;
             Kembali.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Kembali.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -107,12 +108,12 @@
             Kembali.Click += Kembali_Click;
             Kembali.MouseEnter += Kembali_MouseEnter;
             Kembali.MouseLeave += Kembali_MouseLeave;
-            Kembali.MouseHover += Kembali_MouseHover;
             // 
             // E_Wallet
             // 
             E_Wallet.AutoSize = true;
             E_Wallet.BackColor = Color.Transparent;
+            E_Wallet.Cursor = Cursors.Hand;
             E_Wallet.FlatAppearance.BorderColor = Color.FromArgb(217, 217, 217);
             E_Wallet.FlatAppearance.BorderSize = 5;
             E_Wallet.FlatAppearance.CheckedBackColor = Color.FromArgb(131, 94, 146);
@@ -130,6 +131,7 @@
             // 
             Tunai.AutoSize = true;
             Tunai.BackColor = Color.Transparent;
+            Tunai.Cursor = Cursors.Hand;
             Tunai.FlatAppearance.BorderColor = Color.FromArgb(217, 217, 217);
             Tunai.FlatAppearance.BorderSize = 5;
             Tunai.FlatAppearance.CheckedBackColor = Color.FromArgb(131, 94, 146);
@@ -147,6 +149,7 @@
             // 
             radioButton1.AutoSize = true;
             radioButton1.BackColor = Color.Transparent;
+            radioButton1.Cursor = Cursors.Hand;
             radioButton1.FlatAppearance.BorderColor = Color.FromArgb(217, 217, 217);
             radioButton1.FlatAppearance.BorderSize = 5;
             radioButton1.FlatAppearance.CheckedBackColor = Color.FromArgb(131, 94, 146);

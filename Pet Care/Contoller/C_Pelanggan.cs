@@ -7,6 +7,8 @@ using Pet_Care.View;
 using Pet_Care.Model;
 using NpgsqlTypes;
 using System.Numerics;
+using System.ComponentModel.DataAnnotations;
+using static iText.StyledXmlParser.Jsoup.Select.Evaluator;
 
 namespace Pet_Care.Contoller
 {
@@ -25,12 +27,13 @@ namespace Pet_Care.Contoller
         {
             V_Ubah_Tambah_Pelanggan v_Ubah_Tambah_Pelanggan = new V_Ubah_Tambah_Pelanggan(this);
             v_Ubah_Tambah_Pelanggan.StartPosition = FormStartPosition.Manual;
-            v_Ubah_Tambah_Pelanggan.Location = new Point(Screen.FromControl(view_pelanggan).Bounds.Location.X + 800, Screen.FromControl(view_pelanggan).Bounds.Location.Y + 245);
+            v_Ubah_Tambah_Pelanggan.Location = new Point(Screen.FromControl(view_pelanggan).Bounds.Location.X + 800, Screen.FromControl(view_pelanggan).Bounds.Location.Y + 220);
             v_Ubah_Tambah_Pelanggan.ShowDialog();
         }
         public dynamic[] save_data(bool edit_state, Data_Pelanngan data)
         {
-            if(string.IsNullOrEmpty(data.Name) || string.IsNullOrEmpty(data.Nomor_HP) || string.IsNullOrEmpty(data.Alamat) || string.IsNullOrEmpty(data.Email)) return [false,"Harap Mengisi Seluruh Data !"];
+            if(string.IsNullOrEmpty(data.Name) || string.IsNullOrEmpty(data.Nomor_HP) || string.IsNullOrEmpty(data.Alamat) || string.IsNullOrEmpty(data.Email) || string.IsNullOrEmpty(data.Username_Tele)) return [false,"Harap Mengisi Seluruh Data !"];
+            if (!(new EmailAddressAttribute().IsValid(data.Email))) return [false, "Harap Mengisi Email Dengan Benar !"];
             if (edit_state)
             {
                 try
@@ -40,7 +43,7 @@ namespace Pet_Care.Contoller
                 }
                 catch
                 {
-                    return [false,"Nomor Hp Sudah Terdaftar !"];
+                    return [false,"Nomor Hp/Username Telegram Sudah Terdaftar !"];
                 }
             }
             else
@@ -52,7 +55,7 @@ namespace Pet_Care.Contoller
                 }
                 catch
                 {
-                    return [false, "Nomor Hp Sudah Terdaftar !"];
+                    return [false, "Nomor Hp/Username Telegram Sudah Terdaftar !"];
                 }
             }     
         }
@@ -79,7 +82,7 @@ namespace Pet_Care.Contoller
         {
             V_Ubah_Tambah_Pelanggan v_Ubah = new V_Ubah_Tambah_Pelanggan(this,data);
             v_Ubah.StartPosition = FormStartPosition.Manual;
-            v_Ubah.Location = new Point(Screen.FromControl(view_pelanggan).Bounds.Location.X + 800, Screen.FromControl(view_pelanggan).Bounds.Location.Y + 245);
+            v_Ubah.Location = new Point(Screen.FromControl(view_pelanggan).Bounds.Location.X + 800, Screen.FromControl(view_pelanggan).Bounds.Location.Y + 220);
             v_Ubah.ShowDialog();
         }
         public bool Search(string key_word)
@@ -104,57 +107,72 @@ namespace Pet_Care.Contoller
             };
             Label Nama = new Label
             {
-                Font = new Font("Montserrat SemiBold", 18F, FontStyle.Bold),
-                Location = new Point(0, 128),
+                Font = new Font("Montserrat SemiBold", 14F, FontStyle.Bold),
+                Location = new Point(8, 150),
                 Margin = new Padding(0),
                 Name = "Nama",
-                Size = new Size(188, 38),
+                Size = new Size(170, 25),
                 TabIndex = 0,
-                Text = data.Name,
-                TextAlign = ContentAlignment.TopCenter
-
+                Text = data.Name
             };
+
             Label Nomor_Hp = new Label
             {
-                Font = new Font("Montserrat", 11F),
-                Location = new Point(14, 183),
+                Font = new Font("Montserrat", 9F),
+                ImageAlign = ContentAlignment.TopLeft,
+                Location = new Point(8, 206),
                 Margin = new Padding(0),
-                Name = "Nomor_Hp",
-                Size = new Size(158, 22),
-                TabIndex = 1,
-                Text = data.Nomor_HP
+                Name = "Nomor Hp",
+                Size = new Size(170, 16),
+                TabIndex = 7,
+                Text = data.Nomor_HP,
+                TextAlign = ContentAlignment.MiddleLeft
+            };
+            Label Telegram = new Label
+            {
+                Font = new Font("Montserrat", 9F),
+                ImageAlign = ContentAlignment.TopLeft,
+                Location = new Point(9, 190),
+                Margin = new Padding(0),
+                Name = "Telegram",
+                Size = new Size(170, 16),
+                TabIndex = 6,
+                Text = $"@{data.Username_Tele}",
+                TextAlign = ContentAlignment.MiddleLeft,
             };
             Label ID = new Label
             {
-                Font = new Font("Montserrat", 11F),
-                Location = new Point(14, 161),
+                Font = new Font("Montserrat SemiBold", 14F, FontStyle.Bold),
+                ImageAlign = ContentAlignment.TopLeft,
+                Location = new Point(8, 129),
                 Margin = new Padding(0),
                 Name = "id",
                 Size = new Size(158, 22),
                 TabIndex = 3,
                 Text = $"#{data.ID}",
-                TextAlign = ContentAlignment.TopCenter
+                TextAlign = ContentAlignment.MiddleLeft,
             };
             Label Alamat = new Label
             {
-                Font = new Font("Montserrat", 11F),
-                Location = new Point(14, 223),
+                Font = new Font("Montserrat", 9F),
+                ImageAlign = ContentAlignment.TopLeft,
+                Location = new Point(8, 222),
                 Margin = new Padding(0),
-                Name = "label1",
-                Size = new Size(158, 22),
-                TabIndex = 2,
-                Text = data.Alamat
+                Name = "Alamat",
+                Size = new Size(170, 16),
+                TabIndex = 8,
+                Text = data.Alamat,
+                TextAlign = ContentAlignment.MiddleLeft
             };
             Label Email = new Label
             {
-                Font = new Font("Montserrat", 8F),
-                Location = new Point(15, 206),
+                Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0),
+                Location = new Point(9, 174),
                 Margin = new Padding(0),
                 Name = "Email",
-                Size = new Size(157, 20),
+                Size = new Size(170, 16),
                 TabIndex = 5,
                 Text = data.Email,
-                TextAlign = ContentAlignment.TopLeft,
             };
             Button Delete = new Button
             {
@@ -168,7 +186,7 @@ namespace Pet_Care.Contoller
             Delete.FlatAppearance.BorderSize = 0;
             Delete.FlatAppearance.MouseDownBackColor= Color.Transparent;
             Delete.FlatAppearance.MouseOverBackColor= Color.Transparent;
-            Delete.MouseHover += (object sender, EventArgs e) => { Delete.Cursor = Cursors.Hand; };
+            Delete.Cursor = Cursors.Hand;
             Delete.Click += (object sender, EventArgs e) => { delete_pelanggan(data.ID); };
 
             Button Edit = new Button
@@ -180,10 +198,10 @@ namespace Pet_Care.Contoller
                 TabIndex = 4,
                 UseVisualStyleBackColor = true,
             };
+            Edit.Cursor = Cursors.Hand;
             Edit.FlatAppearance.BorderSize = 0;
             Edit.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Edit.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            Edit.MouseHover += (object sender, EventArgs e) => { Edit.Cursor = Cursors.Hand; };
             Edit.Click += (object sender, EventArgs e) => { Form_ubah_data(data); };
             panel.Controls.Add(Edit);
             panel.Controls.Add(ID);
@@ -192,6 +210,7 @@ namespace Pet_Care.Contoller
             panel.Controls.Add(Nama);
             panel.Controls.Add(Delete);
             panel.Controls.Add(Email);
+            panel.Controls.Add(Telegram);
             view_pelanggan.flowLayoutPanel1.Controls.Add(panel);
         }
     }

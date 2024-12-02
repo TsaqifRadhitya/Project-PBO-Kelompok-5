@@ -50,6 +50,7 @@
             Cancel.BackColor = Color.White;
             Cancel.BackgroundImage = Properties.Resources.Cancel;
             Cancel.BackgroundImageLayout = ImageLayout.Stretch;
+            Cancel.Cursor = Cursors.Hand;
             Cancel.FlatAppearance.BorderSize = 0;
             Cancel.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Cancel.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -62,13 +63,13 @@
             Cancel.Click += Cancel_Click;
             Cancel.MouseEnter += Cancel_MouseEnter;
             Cancel.MouseLeave += Cancel_MouseLeave;
-            Cancel.MouseHover += Cancel_MouseHover;
             // 
             // Confirm
             // 
             Confirm.BackColor = Color.White;
             Confirm.BackgroundImage = Properties.Resources.Confirm;
             Confirm.BackgroundImageLayout = ImageLayout.Stretch;
+            Confirm.Cursor = Cursors.Hand;
             Confirm.FlatAppearance.BorderSize = 0;
             Confirm.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Confirm.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -81,7 +82,6 @@
             Confirm.Click += Confirm_Click;
             Confirm.MouseEnter += Confirm_MouseEnter;
             Confirm.MouseLeave += Confirm_MouseLeave;
-            Confirm.MouseHover += Confirm_MouseHover;
             // 
             // Custom_Message_Box_2_Button
             // 

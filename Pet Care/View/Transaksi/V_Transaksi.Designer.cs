@@ -46,6 +46,7 @@
             // 
             Berlangsung.BackColor = Color.Transparent;
             Berlangsung.BackgroundImage = Properties.Resources.Berlangsung_Focus;
+            Berlangsung.Cursor = Cursors.Hand;
             Berlangsung.FlatAppearance.BorderSize = 0;
             Berlangsung.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Berlangsung.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -56,12 +57,12 @@
             Berlangsung.TabIndex = 1;
             Berlangsung.UseVisualStyleBackColor = false;
             Berlangsung.Click += Berlangsung_Click;
-            Berlangsung.MouseHover += Berlangsung_MouseHover;
             // 
             // Tambah_Transaksi
             // 
             Tambah_Transaksi.BackColor = Color.Transparent;
             Tambah_Transaksi.BackgroundImage = Properties.Resources.Tambah_Transaksi;
+            Tambah_Transaksi.Cursor = Cursors.Hand;
             Tambah_Transaksi.FlatAppearance.BorderSize = 0;
             Tambah_Transaksi.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Tambah_Transaksi.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -74,12 +75,12 @@
             Tambah_Transaksi.Click += Tambah_Transaksi_Click;
             Tambah_Transaksi.MouseEnter += Tambah_Transaksi_MouseEnter;
             Tambah_Transaksi.MouseLeave += Tambah_Transaksi_MouseLeave;
-            Tambah_Transaksi.MouseHover += Tambah_Transaksi_MouseHover;
             // 
             // Selesai
             // 
             Selesai.BackColor = Color.Transparent;
             Selesai.BackgroundImage = Properties.Resources.Selesai;
+            Selesai.Cursor = Cursors.Hand;
             Selesai.FlatAppearance.BorderSize = 0;
             Selesai.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Selesai.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -90,7 +91,6 @@
             Selesai.TabIndex = 4;
             Selesai.UseVisualStyleBackColor = false;
             Selesai.Click += Selesai_Click;
-            Selesai.MouseHover += Selesai_MouseHover;
             // 
             // V_Transaksi
             // 

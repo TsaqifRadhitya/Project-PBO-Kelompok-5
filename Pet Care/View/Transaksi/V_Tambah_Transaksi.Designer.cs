@@ -59,6 +59,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Cursor = Cursors.Hand;
             pictureBox1.Location = new Point(202, 106);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(219, 123);
@@ -66,13 +67,13 @@
             pictureBox1.TabIndex = 11;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
-            pictureBox1.MouseHover += pictureBox1_MouseHover;
             // 
             // Batal
             // 
             Batal.BackColor = Color.Transparent;
             Batal.BackgroundImage = Properties.Resources.Batal_Hover;
             Batal.BackgroundImageLayout = ImageLayout.Stretch;
+            Batal.Cursor = Cursors.Hand;
             Batal.FlatAppearance.BorderSize = 0;
             Batal.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Batal.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -85,13 +86,13 @@
             Batal.Click += Batal_Click;
             Batal.MouseEnter += Batal_MouseEnter;
             Batal.MouseLeave += Batal_MouseLeave;
-            Batal.MouseHover += Batal_MouseHover;
             // 
             // Lanjut
             // 
             Lanjut.BackColor = Color.Transparent;
             Lanjut.BackgroundImage = Properties.Resources.Lanjut;
             Lanjut.BackgroundImageLayout = ImageLayout.Stretch;
+            Lanjut.Cursor = Cursors.Hand;
             Lanjut.FlatAppearance.BorderSize = 0;
             Lanjut.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Lanjut.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -104,7 +105,6 @@
             Lanjut.Click += Lanjut_Click;
             Lanjut.MouseEnter += Lanjut_MouseEnter;
             Lanjut.MouseLeave += Lanjut_MouseLeave;
-            Lanjut.MouseHover += Lanjut_MouseHover;
             // 
             // V_Tambah_Transaksi
             // 

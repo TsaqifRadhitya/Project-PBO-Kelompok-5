@@ -50,6 +50,7 @@
             Okey.BackColor = Color.Transparent;
             Okey.BackgroundImage = Properties.Resources.Button;
             Okey.BackgroundImageLayout = ImageLayout.Stretch;
+            Okey.Cursor = Cursors.Hand;
             Okey.FlatAppearance.BorderSize = 0;
             Okey.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Okey.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -62,7 +63,6 @@
             Okey.Click += Okey_Click;
             Okey.MouseEnter += Okey_MouseEnter;
             Okey.MouseLeave += Okey_MouseLeave;
-            Okey.MouseHover += Okey_MouseHover;
             // 
             // V_Custom_Message_Box
             // 

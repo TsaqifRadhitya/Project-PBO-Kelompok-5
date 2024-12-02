@@ -26,7 +26,7 @@ namespace Pet_Care.Contoller
         {
             List<Data_Transaksi> transaksiList = M_Transaksi.Get().OfType<Data_Transaksi>().ToList();
             Dashboard.TabelTransaksi.DataSource = transaksiList;
-            Dashboard.TabelTransaksi.ColumnHeadersVisible = true;
+            Dashboard.TabelTransaksi.Columns["tele"].Visible = false;
             Dashboard.TabelTransaksi.Columns["Waktu"].Visible = false;
             Dashboard.TabelTransaksi.Columns["Tanggal"].Visible = false;
             Dashboard.TabelTransaksi.Columns["id_pelanggan"].Visible = false;
@@ -40,8 +40,6 @@ namespace Pet_Care.Contoller
             Dashboard.TabelTransaksi.Columns["durasi_penitipan"].HeaderText = "Durasi";
             Dashboard.TabelTransaksi.Columns["Nomor_hp"].HeaderText = "Nomor HP";
             Dashboard.TabelTransaksi.Columns["display_price"].HeaderText = "Nominal Transaksi";
-            Dashboard.TabelTransaksi.DefaultCellStyle.BackColor = Color.FromArgb(253, 233, 218);
-            Dashboard.TabelTransaksi.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             Dashboard.kucing.Text = $"{M_Transaksi.Get().Count} Kucing";
             Dashboard.Layanan.Text = $"{M_Layanan.Get().Count} Layanan";
             int pendapatan = (M_Transaksi.Get_Pendapatan() != DBNull.Value) ? Convert.ToInt32(M_Transaksi.Get_Pendapatan()) : 0;
