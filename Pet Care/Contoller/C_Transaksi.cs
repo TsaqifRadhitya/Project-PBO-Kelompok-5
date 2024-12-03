@@ -172,13 +172,13 @@ namespace Pet_Care.Contoller
             view.Tabel_Riwayat.Columns["id_akun"].Visible = false;
             view.Tabel_Riwayat.Columns["Foto_Kucing"].Visible = false;
             view.Tabel_Riwayat.Columns["Waktu"].Visible = false;
-            view.Tabel_Riwayat.Columns["display_price"].HeaderText = "Nominal Transaksi";
-            view.Tabel_Riwayat.Columns["Nama_Pelanggan"].HeaderText = "Nama Pelanggan";
-            view.Tabel_Riwayat.Columns["Nama_Kucing"].HeaderText = "Nama Kucing";
+            view.Tabel_Riwayat.Columns["display_price"].HeaderText = "Nominal";
+            view.Tabel_Riwayat.Columns["Nama_Pelanggan"].HeaderText = "Pelanggan";
+            view.Tabel_Riwayat.Columns["Nama_Kucing"].HeaderText = "Kucing";
             view.Tabel_Riwayat.Columns["durasi_penitipan"].HeaderText = "Durasi";
             view.Tabel_Riwayat.Columns["Nomor_hp"].HeaderText = "Nomor Hp";
             view.Tabel_Riwayat.Columns["nominal"].Visible = false;
-            view.Tabel_Riwayat.Columns["Metode_Pembayaran"].HeaderText = "Metode Pembayaran";
+            view.Tabel_Riwayat.Columns["Metode_Pembayaran"].HeaderText = "Metode";
             view.Tabel_Riwayat.Columns.Add(new DataGridViewButtonColumn
             {
                 Name = "Detail",
@@ -186,11 +186,6 @@ namespace Pet_Care.Contoller
                 Text = "Detail",
                 UseColumnTextForButtonValue = true,
             });
-            view.Tabel_Riwayat.DefaultCellStyle.BackColor = Color.FromArgb(131, 94, 146);
-            view.Tabel_Riwayat.DefaultCellStyle.ForeColor = Color.White;
-            view.Tabel_Riwayat.DefaultCellStyle.Font = new Font("Montserrat Bold", 8F);
-            view.Tabel_Riwayat.ColumnHeadersDefaultCellStyle.Font = new Font("Montserrat Bold", 8F);
-            view.Tabel_Riwayat.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
         public void load_detail(int id,bool status)
         {
@@ -228,11 +223,11 @@ namespace Pet_Care.Contoller
                 tabel.AddCell(new Paragraph((i + 1).ToString()).SetTextAlignment(TextAlignment.CENTER));
                 tabel.AddCell(new Paragraph((Transaksi_baru.Layanan[i][2]).ToString()).SetTextAlignment(TextAlignment.CENTER));
                 tabel.AddCell(new Paragraph((Transaksi_baru.Layanan[i][0]).ToString()).SetTextAlignment(TextAlignment.CENTER));
-                tabel.AddCell(new Paragraph((Transaksi_baru.Layanan[i][3]).ToString()).SetTextAlignment(TextAlignment.CENTER));
-                tabel.AddCell(new Paragraph((Transaksi_baru.Layanan[i][4]).ToString()).SetTextAlignment(TextAlignment.CENTER));
+                tabel.AddCell(new Paragraph("Rp" + (Transaksi_baru.Layanan[i][3]).ToString("n2", CultureInfo.GetCultureInfo("id-ID"))).SetTextAlignment(TextAlignment.CENTER));
+                tabel.AddCell(new Paragraph("Rp" + (Transaksi_baru.Layanan[i][4]).ToString("n2", CultureInfo.GetCultureInfo("id-ID"))).SetTextAlignment(TextAlignment.CENTER));
             }
             tabel.AddFooterCell(new Cell(1, 4).Add(new Paragraph("TOTAL").SetTextAlignment(TextAlignment.CENTER)));
-            tabel.AddFooterCell(new Paragraph(Transaksi_baru.nominal.ToString()).SetTextAlignment(TextAlignment.CENTER));
+            tabel.AddFooterCell(new Paragraph("Rp" + Transaksi_baru.nominal.ToString("n2", CultureInfo.GetCultureInfo("id-ID"))).SetTextAlignment(TextAlignment.CENTER));
             document.Add(tabel);
             document.Add(new Paragraph($"\nMetode Pembayaran   : {Transaksi_baru.Metode_Pembayaran}").SetMultipliedLeading(0.5f).SetFontSize(12));
 
