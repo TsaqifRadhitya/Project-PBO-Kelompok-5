@@ -1,4 +1,4 @@
-using Pet_Care.View.Splash_Screen;
+using Pet_Care.View;
 using Microsoft.Extensions.Configuration;
 
 namespace Pet_Care

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Pet_Care.Contoller;
 
-namespace Pet_Care.View.Splash_Screen
+namespace Pet_Care.View
 {
     public partial class Splash_Screen : Form
     {

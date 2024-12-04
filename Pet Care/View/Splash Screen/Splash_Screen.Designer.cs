@@ -1,4 +1,4 @@
-﻿namespace Pet_Care.View.Splash_Screen
+﻿namespace Pet_Care.View
 {
     partial class Splash_Screen
     {

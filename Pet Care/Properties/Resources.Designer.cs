@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Pet_Care.Properties {
+namespace Pet_Care.Properties{
     using System;
     
     

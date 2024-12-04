@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Pet_Care.Model;
 using Pet_Care.View;
-using Pet_Care.View.Transaksi;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using iText.Kernel.Pdf;
 using iText.Layout.Element;
@@ -78,7 +77,7 @@ namespace Pet_Care.Contoller
             return true;
         }
 
-        public int Refresh_Total_Harga(V_Form_Transaksi view)
+        public void Refresh_Total_Harga(V_Form_Transaksi view)
         {
             int harga = Daftar_Harga["Penitipan"].harga * ((!string.IsNullOrEmpty(view.Durasi.Text)) ? int.Parse(view.Durasi.Text) : 0);
             Transaksi_baru.durasi_penitipan = (harga / Daftar_Harga["Penitipan"].harga).ToString();
@@ -102,7 +101,6 @@ namespace Pet_Care.Contoller
             }
             view.Total_Pembayaran.Text = $"Total Pembayaran : Rp{harga.ToString("n", CultureInfo.GetCultureInfo("id-ID"))}";
             Transaksi_baru.nominal = harga;
-            return harga;
         }
 
         public void load_card()
@@ -403,15 +401,15 @@ namespace Pet_Care.Contoller
             Delete.MouseEnter += (object sender,EventArgs e) => { Delete.BackgroundImage = Properties.Resources.Cancel_Card_Hover; };
             Delete.MouseLeave += (object sender, EventArgs e) => { Delete.BackgroundImage = Properties.Resources.Cancel1; };
 
-            Label harga = new Label
+            Label Nama = new Label
             {
-                Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0),
+                Font = new Font("Montserrat SemiBold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0),
                 Location = new Point(12, 153),
                 Name = "Harga",
-                Size = new Size(195, 23),
+                Size = new Size(201, 23),
                 TabIndex = 1,
-                TextAlign = ContentAlignment.MiddleLeft,
-                Text =  $"Rp{data.nominal.ToString("n2", CultureInfo.GetCultureInfo("id-ID"))}"
+                TextAlign = ContentAlignment.MiddleCenter,
+                Text =  data.Nama_Kucing
             };
             PictureBox foto = new PictureBox
             {
@@ -445,7 +443,7 @@ namespace Pet_Care.Contoller
             Card.Controls.Add(detail);
             Card.Controls.Add(Selesai);
             Card.Controls.Add(Delete);
-            Card.Controls.Add(harga);
+            Card.Controls.Add(Nama);
             Card.Controls.Add(foto);
             Card.Controls.Add(Pesan);
             V_Transaksi_Berlangsung.flowLayoutPanel1.Controls.Add(Card);

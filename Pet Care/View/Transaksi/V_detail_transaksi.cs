@@ -12,7 +12,7 @@ using System.Windows.Forms;
 using Pet_Care.Contoller;
 using Pet_Care.Model;
 
-namespace Pet_Care.View.Transaksi
+namespace Pet_Care.View
 {
     public partial class V_Detail_Transaksi : UserControl
     {
