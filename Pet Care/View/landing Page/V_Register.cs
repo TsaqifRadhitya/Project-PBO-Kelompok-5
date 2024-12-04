@@ -168,6 +168,7 @@ namespace Pet_Care.View
 
         private void Nomor_HP_TextChanged(object sender, EventArgs e)
         {
+            if(Nomor_HP.Text == "" || Nomor_HP.Text == "Nomor Hp") return;
             if (!(BigInteger.TryParse(Nomor_HP.Text, out _))) Nomor_HP.Text = "";
         }
 

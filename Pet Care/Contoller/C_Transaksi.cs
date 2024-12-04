@@ -192,7 +192,14 @@ namespace Pet_Care.Contoller
             Data_Transaksi data = model_transaksi.Get_detail(id);
             Frame_Transaksi = new V_Frame_Transaksi(this, new V_Detail_Transaksi(data,status,this));
             Frame_Transaksi.StartPosition = FormStartPosition.Manual;
-            Frame_Transaksi.Location = new Point(Screen.FromControl(V_Transaksi).Bounds.Location.X + 800, Screen.FromControl(V_Transaksi).Bounds.Location.Y + 245);
+            if(Screen.FromControl(V_Transaksi).Bounds.Width == 1280)
+            {
+                Frame_Transaksi.Location = new Point(Screen.FromControl(V_Transaksi).Bounds.Location.X + 468, Screen.FromControl(V_Transaksi).Bounds.Location.Y + 65);
+            }
+            else
+            {
+                Frame_Transaksi.Location = new Point(Screen.FromControl(V_Transaksi).Bounds.Location.X + 800, Screen.FromControl(V_Transaksi).Bounds.Location.Y + 245);
+            }
             Frame_Transaksi.ShowDialog();
         }
 
@@ -283,11 +290,18 @@ namespace Pet_Care.Contoller
         {
             Frame_Transaksi = new V_Frame_Transaksi(this,new V_Tambah_Transaksi(this));
             Frame_Transaksi.StartPosition = FormStartPosition.Manual;
-            Frame_Transaksi.Location = new Point(Screen.FromControl(V_Transaksi).Bounds.Location.X + 800, Screen.FromControl(V_Transaksi).Bounds.Location.Y + 245);
+            if (Screen.FromControl(V_Transaksi).Bounds.Width == 1280)
+            {
+                Frame_Transaksi.Location = new Point(Screen.FromControl(V_Transaksi).Bounds.Location.X + 468, Screen.FromControl(V_Transaksi).Bounds.Location.Y + 65);
+            }
+            else
+            {
+                Frame_Transaksi.Location = new Point(Screen.FromControl(V_Transaksi).Bounds.Location.X + 800, Screen.FromControl(V_Transaksi).Bounds.Location.Y + 245);
+            }
             Frame_Transaksi.ShowDialog();
             if (status_transaksi)
             {
-                send_nota();
+                Task.Run(() => send_nota());
                 status_transaksi = false;
                 V_Transaksi_Berlangsung = new V_Transaksi_Berlangsung(this);
                 switch_view(V_Transaksi_Berlangsung);
@@ -300,7 +314,14 @@ namespace Pet_Care.Contoller
             V_Send_Message send_message = new V_Send_Message(this);
             Frame_Transaksi = new V_Frame_Transaksi(this, send_message);
             Frame_Transaksi.StartPosition = FormStartPosition.Manual;
-            Frame_Transaksi.Location = new Point(Screen.FromControl(V_Transaksi).Bounds.Location.X + 800, Screen.FromControl(V_Transaksi).Bounds.Location.Y + 245);
+            if (Screen.FromControl(V_Transaksi).Bounds.Width == 1280)
+            {
+                Frame_Transaksi.Location = new Point(Screen.FromControl(V_Transaksi).Bounds.Location.X + 468, Screen.FromControl(V_Transaksi).Bounds.Location.Y + 65);
+            }
+            else
+            {
+                Frame_Transaksi.Location = new Point(Screen.FromControl(V_Transaksi).Bounds.Location.X + 800, Screen.FromControl(V_Transaksi).Bounds.Location.Y + 245);
+            }
             Frame_Transaksi.ShowDialog();
             if (send_message.status)
             {

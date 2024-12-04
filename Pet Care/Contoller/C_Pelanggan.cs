@@ -27,7 +27,14 @@ namespace Pet_Care.Contoller
         {
             V_Ubah_Tambah_Pelanggan v_Ubah_Tambah_Pelanggan = new V_Ubah_Tambah_Pelanggan(this);
             v_Ubah_Tambah_Pelanggan.StartPosition = FormStartPosition.Manual;
-            v_Ubah_Tambah_Pelanggan.Location = new Point(Screen.FromControl(view_pelanggan).Bounds.Location.X + 800, Screen.FromControl(view_pelanggan).Bounds.Location.Y + 220);
+            if (Screen.FromControl(view_pelanggan).Bounds.Width == 1280)
+            {
+                 v_Ubah_Tambah_Pelanggan.Location = new Point(Screen.FromControl(view_pelanggan).Bounds.Location.X + 468, Screen.FromControl(view_pelanggan).Bounds.Location.Y + 38);
+            }
+            else
+            {
+                v_Ubah_Tambah_Pelanggan.Location = new Point(Screen.FromControl(view_pelanggan).Bounds.Location.X + 800, Screen.FromControl(view_pelanggan).Bounds.Location.Y + 220);
+            }
             v_Ubah_Tambah_Pelanggan.ShowDialog();
         }
         public dynamic[] save_data(bool edit_state, Data_Pelanngan data)
@@ -82,7 +89,14 @@ namespace Pet_Care.Contoller
         {
             V_Ubah_Tambah_Pelanggan v_Ubah = new V_Ubah_Tambah_Pelanggan(this,data);
             v_Ubah.StartPosition = FormStartPosition.Manual;
-            v_Ubah.Location = new Point(Screen.FromControl(view_pelanggan).Bounds.Location.X + 800, Screen.FromControl(view_pelanggan).Bounds.Location.Y + 220);
+            if (Screen.FromControl(view_pelanggan).Bounds.Width == 1280)
+            {
+                v_Ubah.Location = new Point(Screen.FromControl(view_pelanggan).Bounds.Location.X + 468, Screen.FromControl(view_pelanggan).Bounds.Location.Y + 38);
+            }
+            else
+            {
+                v_Ubah.Location = new Point(Screen.FromControl(view_pelanggan).Bounds.Location.X + 800, Screen.FromControl(view_pelanggan).Bounds.Location.Y + 220);
+            }
             v_Ubah.ShowDialog();
         }
         public bool Search(string key_word)
