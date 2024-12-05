@@ -83,30 +83,6 @@ namespace Pet_Care.Model
             }
             return list;
         }
-
-        //public List<object> Get(string time)
-        //{
-        //    DataTable data = Execute_With_Return("Select transaksi_id, TO_CHAR(tanggal_transaksi,'DD-MM-YYYY') as tanggal,nama,nama_hewan,foto_hewan,Durasi_Penitipan,nomor_hp,alamat,nominal_transaksi,metode_pembayaran from transaksi t join Pelanggan p on t.pelanggan_id = p.pelanggan_id where TO_CHAR(tanggal_transaksi,'DD-MM-YYYY') = TO_CHAR(now(),'DD-MM-YYYY') AND status_penitipan = true");
-        //    List<object> list = new List<object>();
-        //    for (int i = 0; i < data.Rows.Count; i++)
-        //    {
-        //        Data_Transaksi data_Transaksi = new Data_Transaksi
-        //        {
-        //            id = (int)data.Rows[i]["transaksi_id"],
-        //            Tanggal = data.Rows[i]["tanggal"].ToString(),
-        //            Nama_Pelanggan = data.Rows[i]["nama"].ToString(),
-        //            Nama_Kucing = data.Rows[i]["nama_hewan"].ToString(),
-        //            Foto_Kucing = (byte[])data.Rows[i]["foto_hewan"],
-        //            durasi_penitipan = $"{data.Rows[i]["Durasi_Penitipan"].ToString()} Hari",
-        //            Nomor_hp = data.Rows[i]["nomor_hp"].ToString(),
-        //            Alamat = data.Rows[i]["alamat"].ToString(),
-        //            display_price = $"Rp{((int)data.Rows[i]["nominal_transaksi"]).ToString("n", CultureInfo.GetCultureInfo("id-ID"))}",
-        //            Metode_Pembayaran = data.Rows[i]["metode_pembayaran"].ToString(),
-        //        };
-        //        list.Add(data_Transaksi);
-        //    }
-        //    return list;
-        //}
         public Data_Transaksi Get_detail(int id)
         {
             DataTable data = Execute_With_Return("Select t.transaksi_id,harga ,TO_CHAR(tanggal_transaksi,'DD/MM/YYYY, HH24:MI') as tanggal,nama,nama_hewan,Durasi_Penitipan,nomor_hp,alamat,nominal_transaksi,nama_pelayanan,quantity,metode_pembayaran " +
