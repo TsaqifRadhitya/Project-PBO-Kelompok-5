@@ -7,7 +7,7 @@ using Pet_Care.View;
 using Pet_Care.Model;
 using System.ComponentModel.DataAnnotations;
 
-namespace Pet_Care.Contoller
+namespace Pet_Care.Controller
 {
     public class C_Landing_Page : C_Message_Box
     {

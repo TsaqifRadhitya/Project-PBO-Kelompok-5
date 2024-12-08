@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Pet_Care.View;
 
-namespace Pet_Care.Contoller
+namespace Pet_Care.Controller
 {
     public abstract class C_Message_Box
     {

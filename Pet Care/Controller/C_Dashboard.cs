@@ -8,7 +8,7 @@ using Pet_Care.Model;
 using System.Windows.Forms;
 using static Npgsql.Replication.PgOutput.Messages.RelationMessage;
 using System.Globalization;
-namespace Pet_Care.Contoller
+namespace Pet_Care.Controller
 {
     public class C_Dashboard
     {

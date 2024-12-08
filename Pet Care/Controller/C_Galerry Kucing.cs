@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using Pet_Care.View;
 using Pet_Care.Model;
 
-namespace Pet_Care.Contoller
+namespace Pet_Care.Controller
 {
     public class C_Galerry_Kucing
     {

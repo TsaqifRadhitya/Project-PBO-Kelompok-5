@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AForge.Video;
 using AForge.Video.DirectShow;
-using Pet_Care.Contoller;
+using Pet_Care.Controller;
 
 namespace Pet_Care.View
 {

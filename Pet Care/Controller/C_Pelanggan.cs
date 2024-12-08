@@ -10,7 +10,7 @@ using System.Numerics;
 using System.ComponentModel.DataAnnotations;
 using static iText.StyledXmlParser.Jsoup.Select.Evaluator;
 
-namespace Pet_Care.Contoller
+namespace Pet_Care.Controller
 {
     public class C_Pelanggan : C_Message_Box
     {

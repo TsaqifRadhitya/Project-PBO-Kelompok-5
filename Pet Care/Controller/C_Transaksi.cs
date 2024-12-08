@@ -23,7 +23,7 @@ using iText.Kernel.Font;
 using iText.IO.Font.Constants;
 
 
-namespace Pet_Care.Contoller
+namespace Pet_Care.Controller
 {
     public class C_Transaksi : C_Message_Box
     {
@@ -252,7 +252,7 @@ namespace Pet_Care.Contoller
             message.Attachments.Add("Invoice.pdf", pdfBytes, contentType);
             email.Body = message.ToMessageBody();
             SmtpClient smtpClient = new SmtpClient();
-            await smtpClient.ConnectAsync("smtp.gmail.com", 465, MailKit.Security.SecureSocketOptions.SslOnConnect);
+            await smtpClient.ConnectAsync("smtp.gmail.com", 587, MailKit.Security.SecureSocketOptions.StartTls);
             await smtpClient.AuthenticateAsync(EnvLoader.Email, EnvLoader.Token_Email);
             await smtpClient.SendAsync(email);
             smtpClient.Disconnect(true);
@@ -307,7 +307,7 @@ namespace Pet_Care.Contoller
             }
         }
 
-        public async void send_message(Data_Transaksi data)
+        public void send_message(Data_Transaksi data)
         {
             V_Send_Message send_message = new V_Send_Message(this);
             Frame_Transaksi = new V_Frame_Transaksi(this, send_message);
@@ -331,7 +331,7 @@ namespace Pet_Care.Contoller
                 formData.Add(fileContent, "photo", "foto");
                 formData.Add(new StringContent($"{username}"), "chat_id");
                 formData.Add(new StringContent(message), "caption");
-                await client.PostAsync($"https://api.telegram.org/bot{EnvLoader.Token_Tele}/sendPhoto", formData);
+                client.PostAsync($"https://api.telegram.org/bot{EnvLoader.Token_Tele}/sendPhoto", formData);
                 data_pesan = null;
             }
         }

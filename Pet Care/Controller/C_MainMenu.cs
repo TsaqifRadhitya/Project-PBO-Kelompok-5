@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Pet_Care.Model;
 using Pet_Care.View;
 
-namespace Pet_Care.Contoller
+namespace Pet_Care.Controller
 {
     public class C_MainMenu : C_Message_Box
     {
@@ -14,7 +14,7 @@ namespace Pet_Care.Contoller
         V_Main_Menu main_Menu;
         public string menu_focus = typeof(V_Dashboard).Name;
         public C_MainMenu(C_MainFrame mainFrame)
-        { 
+        {
             controller_main_frame = mainFrame;
             main_Menu = new V_Main_Menu(this);
             controller_main_frame.move_view(main_Menu);
@@ -37,7 +37,6 @@ namespace Pet_Care.Contoller
                 controller_main_frame.controller_landing_page = new C_Landing_Page(controller_main_frame);
             }
         }
-
         public void reset_button_focus()
         {
             main_Menu.Layanan.Enabled = true;
@@ -49,7 +48,6 @@ namespace Pet_Care.Contoller
             main_Menu.Transaksi.BackgroundImage = Properties.Resources.Transaksi;
             main_Menu.Pelanggan.BackgroundImage = Properties.Resources.Pelanggan;
             main_Menu.Layanan.BackgroundImage = Properties.Resources.Layanan;
-           
         }
     }
 }

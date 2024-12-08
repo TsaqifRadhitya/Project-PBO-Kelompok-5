@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Pet_Care.Model;
-using Pet_Care.Contoller;
+using Pet_Care.Controller;
 using System.Numerics;
 namespace Pet_Care.View
 {

@@ -9,7 +9,7 @@ using AForge.Video.DirectShow;
 using Pet_Care.View;
 using Pet_Care.Model;
 
-namespace Pet_Care.Contoller
+namespace Pet_Care.Controller
 {
     public class C_Kamera : C_Message_Box
     {
