@@ -30,7 +30,7 @@ namespace Pet_Care.Model
                     Metode_Pembayaran = data.Rows[i]["metode_pembayaran"].ToString(),
                     nominal = (int)data.Rows[i]["nominal_transaksi"],
                 };
-                data_Transaksi.display_price ="Rp" + ((int)data.Rows[i]["nominal_transaksi"]).ToString("n2", CultureInfo.GetCultureInfo("id-ID"));
+                data_Transaksi.display_price = "Rp" + ((int)data.Rows[i]["nominal_transaksi"]).ToString("n2", CultureInfo.GetCultureInfo("id-ID"));
                 list.Add(data_Transaksi);
             }
             return list;
@@ -106,7 +106,6 @@ namespace Pet_Care.Model
                 data_transaksi.Layanan.Add([data.Rows[i]["nama_pelayanan"].ToString(), (int)data.Rows[i]["quantity"],"Rp"+((int)data.Rows[i]["harga"]* (int)data.Rows[i]["quantity"]).ToString("n2", CultureInfo.GetCultureInfo("id-ID"))]);
                 data_transaksi.nominal = (int)data.Rows[i]["nominal_transaksi"];
             }
-            //conn.Close();
             return data_transaksi;
         }
         public List<Data_Transaksi> Get_Foto_Kucing()

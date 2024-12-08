@@ -116,11 +116,11 @@
             // 
             Header.BackColor = Color.Transparent;
             Header.Font = new Font("Montserrat", 24F, FontStyle.Bold);
-            Header.Location = new Point(81, 43);
+            Header.Location = new Point(12, 43);
             Header.Name = "Header";
-            Header.Size = new Size(432, 48);
+            Header.Size = new Size(599, 48);
             Header.TabIndex = 7;
-            Header.Text = "Tambah Pelanggan Baru";
+            Header.Text = "Tambah Layanan Baru";
             Header.TextAlign = ContentAlignment.TopCenter;
             // 
             // Nama_Layanan

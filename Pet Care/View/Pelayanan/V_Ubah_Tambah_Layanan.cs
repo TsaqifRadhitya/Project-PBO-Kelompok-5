@@ -109,6 +109,7 @@ namespace Pet_Care.View
         {
             if (EditMode)
             {
+                Header.Text = "Ubah Layanan";
                 Nama_Layanan.Text = data.name;
                 Harga.Text = data.harga.ToString();
                 if (data.quantity_berdasarkan_hari)
