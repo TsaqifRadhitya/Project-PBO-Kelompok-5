@@ -1,5 +1,6 @@
 using Pet_Care.View;
 using Microsoft.Extensions.Configuration;
+using DotNetEnv;
 
 namespace Pet_Care
 {
@@ -13,7 +14,7 @@ namespace Pet_Care
         {
             // To customize application configuration such as set high DPI settings or default font,
 
-            EnvLoader.LoadEnvironmentVariables();
+            Env.Load();
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Splash_Screen());

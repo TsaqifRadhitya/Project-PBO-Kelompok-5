@@ -21,6 +21,7 @@ using iText.Commons.Utils;
 using System.Security.Policy;
 using iText.Kernel.Font;
 using iText.IO.Font.Constants;
+using DotNetEnv;
 
 
 namespace Pet_Care.Controller
@@ -201,7 +202,7 @@ namespace Pet_Care.Controller
             Frame_Transaksi.ShowDialog();
         }
 
-        public async Task send_nota()
+        public async void send_nota()
         {
             MemoryStream memoryStream = new MemoryStream();
             PdfWriter writer = new PdfWriter(memoryStream);
@@ -240,7 +241,7 @@ namespace Pet_Care.Controller
             byte[] pdfBytes = memoryStream.ToArray();
             MimeMessage email = new MimeMessage();
 
-            email.From.Add(new MailboxAddress(EnvLoader.Nama_Email, EnvLoader.Email));
+            email.From.Add(new MailboxAddress(Env.GetString("Nama_Email"), Env.GetString("Email")));
             email.To.Add(new MailboxAddress(data_Pelanngan.Name, data_Pelanngan.Email));
             email.Subject = "[INVOICE PEMBAYARAN]";
             BodyBuilder message = new BodyBuilder
@@ -252,8 +253,8 @@ namespace Pet_Care.Controller
             message.Attachments.Add("Invoice.pdf", pdfBytes, contentType);
             email.Body = message.ToMessageBody();
             SmtpClient smtpClient = new SmtpClient();
-            await smtpClient.ConnectAsync("smtp.gmail.com", 587, MailKit.Security.SecureSocketOptions.StartTls);
-            await smtpClient.AuthenticateAsync(EnvLoader.Email, EnvLoader.Token_Email);
+            await smtpClient.ConnectAsync("smtp.gmail.com", 465, MailKit.Security.SecureSocketOptions.SslOnConnect);
+            await smtpClient.AuthenticateAsync(Env.GetString("Email"), Env.GetString("Token_SMTP"));
             await smtpClient.SendAsync(email);
             smtpClient.Disconnect(true);
         }
@@ -284,7 +285,7 @@ namespace Pet_Care.Controller
             Frame_Transaksi.Controls.Clear();
             Frame_Transaksi.Controls.Add(new V_Form_Transaksi(this));
         }
-        public void Buat_Transaksi()
+        public async void Buat_Transaksi()
         {
             Frame_Transaksi = new V_Frame_Transaksi(this,new V_Tambah_Transaksi(this));
             Frame_Transaksi.StartPosition = FormStartPosition.Manual;
@@ -299,11 +300,10 @@ namespace Pet_Care.Controller
             Frame_Transaksi.ShowDialog();
             if (status_transaksi)
             {
-                Task.Run(() => send_nota());
+                send_nota();
                 status_transaksi = false;
                 V_Transaksi_Berlangsung = new V_Transaksi_Berlangsung(this);
                 switch_view(V_Transaksi_Berlangsung);
-               
             }
         }
 
@@ -331,7 +331,7 @@ namespace Pet_Care.Controller
                 formData.Add(fileContent, "photo", "foto");
                 formData.Add(new StringContent($"{username}"), "chat_id");
                 formData.Add(new StringContent(message), "caption");
-                client.PostAsync($"https://api.telegram.org/bot{EnvLoader.Token_Tele}/sendPhoto", formData);
+                client.PostAsync($"https://api.telegram.org/bot{Env.GetString("Token_Telegram")}/sendPhoto", formData);
                 data_pesan = null;
             }
         }

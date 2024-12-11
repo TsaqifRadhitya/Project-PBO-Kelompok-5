@@ -4,13 +4,14 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DotNetEnv;
 using Npgsql;
 
 namespace Pet_Care.Model
 {
     public abstract class M_Connection
     {
-        protected string addres = EnvLoader.connection;
+        protected string addres = Env.GetString("DATABASE");
         private NpgsqlConnection Conn;
         protected NpgsqlConnection conn
         { 
