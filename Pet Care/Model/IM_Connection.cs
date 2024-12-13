@@ -9,7 +9,7 @@ namespace Pet_Care.Model
 {
     public interface IModel
     {
-        public List<Object> Get();
+        public List<object> Get();
 
         public void Insert(object obj);
 

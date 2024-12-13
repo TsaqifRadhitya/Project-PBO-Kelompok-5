@@ -60,11 +60,6 @@ namespace Pet_Care.View
             Tambah_Pelanggan.BackgroundImage = Properties.Resources.Tambah_Pelanggan;
         }
 
-        private void Tambah_Pelanggan_MouseHover(object sender, EventArgs e)
-        {
-            Tambah_Pelanggan.Cursor = Cursors.Hand;
-        }
-
         private void Tambah_Pelanggan_MouseLeave(object sender, EventArgs e)
         {
             Tambah_Pelanggan.BackgroundImage = Properties.Resources.Tambah_Pelanggan_Hover1;
@@ -73,11 +68,6 @@ namespace Pet_Care.View
         private void Tambah_Pelanggan_Click(object sender, EventArgs e)
         {
             C_Pelanggan.Form_tambah_pelanggan();
-        }
-
-        private void Search_MouseHover(object sender, EventArgs e)
-        {
-            Search.Cursor = Cursors.Hand;
         }
 
         private void Search_Click(object sender, EventArgs e)

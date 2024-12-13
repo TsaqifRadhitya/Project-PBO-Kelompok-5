@@ -300,7 +300,7 @@ namespace Pet_Care.Controller
             Frame_Transaksi.ShowDialog();
             if (status_transaksi)
             {
-                send_nota();
+                Task.Run(() => send_nota());
                 status_transaksi = false;
                 V_Transaksi_Berlangsung = new V_Transaksi_Berlangsung(this);
                 switch_view(V_Transaksi_Berlangsung);

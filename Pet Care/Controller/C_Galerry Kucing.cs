@@ -24,7 +24,6 @@ namespace Pet_Care.Controller
         public void load_photo()
         {
             List<Data_Transaksi> data_Transaksis = m_transaksi.Get_Foto_Kucing().OfType<Data_Transaksi>().ToList();
-            ImageConverter img = new ImageConverter();
  
             foreach (Data_Transaksi data in data_Transaksis)
             {

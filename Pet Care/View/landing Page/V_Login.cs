@@ -26,10 +26,6 @@ namespace Pet_Care.View
             Controller.login_validation();
         }
 
-        private void LoginButton_MouseHover(object sender, EventArgs e)
-        {
-            LoginButton.Cursor = Cursors.Hand;
-        }
 
         private void LoginButton_MouseEnter(object sender, EventArgs e)
         {
@@ -45,11 +41,6 @@ namespace Pet_Care.View
         {
             Controller.V_Register = new V_Register(Controller);
             Controller.switch_view(Controller.V_Register);
-        }
-
-        private void Register_MouseHover(object sender, EventArgs e)
-        {
-            Register.Cursor = Cursors.Hand;
         }
 
         private void V_Login_Load(object sender, EventArgs e)
@@ -115,11 +106,6 @@ namespace Pet_Care.View
                 show_hide_password.BackgroundImage = Properties.Resources.Show_Password;
                 Password.PasswordChar = '\0';
             }
-        }
-
-        private void show_hide_password_MouseHover(object sender, EventArgs e)
-        {
-            show_hide_password.Cursor = Cursors.Hand;
         }
 
         private void Password_TextChanged(object sender, EventArgs e)

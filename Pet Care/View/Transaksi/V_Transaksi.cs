@@ -35,16 +35,6 @@ namespace Pet_Care.View
             C_Transaksi.switch_view(new V_Riwayat_Transaksi(C_Transaksi));
         }
 
-        private void Berlangsung_MouseHover(object sender, EventArgs e)
-        {
-            Berlangsung.Cursor = Cursors.Hand;
-        }
-
-        private void Selesai_MouseHover(object sender, EventArgs e)
-        {
-            Selesai.Cursor = Cursors.Hand;
-        }
-
         private void Tambah_Transaksi_Click(object sender, EventArgs e)
         {
             C_Transaksi.Buat_Transaksi();
@@ -53,11 +43,6 @@ namespace Pet_Care.View
         private void Tambah_Transaksi_MouseEnter(object sender, EventArgs e)
         {
             Tambah_Transaksi.BackgroundImage = Properties.Resources.Tambah_Transaksi_Hover;
-        }
-
-        private void Tambah_Transaksi_MouseHover(object sender, EventArgs e)
-        {
-            Tambah_Transaksi.Cursor = Cursors.Hand;
         }
 
         private void Tambah_Transaksi_MouseLeave(object sender, EventArgs e)

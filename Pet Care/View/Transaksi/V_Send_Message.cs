@@ -31,12 +31,6 @@ namespace Pet_Care.View
         {
             Batal.BackgroundImage = Properties.Resources.Batal;
         }
-
-        private void Batal_MouseHover(object sender, EventArgs e)
-        {
-            Batal.Cursor = Cursors.Hand;
-        }
-
         private void Batal_MouseLeave(object sender, EventArgs e)
         {
             Batal.BackgroundImage = Properties.Resources.Batal_Hover;
@@ -53,12 +47,6 @@ namespace Pet_Care.View
         {
             Kirim.BackgroundImage = Properties.Resources.Kirim_Hover;
         }
-
-        private void Kirim_MouseHover(object sender, EventArgs e)
-        {
-            Kirim.Cursor = Cursors.Hand;
-        }
-
         private void Kirim_MouseLeave(object sender, EventArgs e)
         {
             Kirim.BackgroundImage = Properties.Resources.Kirim;

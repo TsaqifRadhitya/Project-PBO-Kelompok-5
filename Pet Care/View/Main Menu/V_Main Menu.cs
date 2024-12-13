@@ -30,11 +30,6 @@ namespace Pet_Care.View
             Logout.BackgroundImage = Properties.Resources.Log_Out_Hover;
         }
 
-        private void button1_MouseHover(object sender, EventArgs e)
-        {
-            Logout.Cursor = Cursors.Hand;
-        }
-
         private void button1_MouseLeave(object sender, EventArgs e)
         {
             Logout.BackgroundImage = Properties.Resources.Log_Out;
@@ -74,26 +69,6 @@ namespace Pet_Care.View
             Layanan.BackgroundImage = Properties.Resources.Layanan_Focus;
             Layanan.Enabled = false;
             C_Layanan c_Layanan = new C_Layanan(controller);
-        }
-
-        private void Dashboard_MouseHover(object sender, EventArgs e)
-        {
-            Dashboard.Cursor = Cursors.Hand;
-        }
-
-        private void Transaksi_MouseHover(object sender, EventArgs e)
-        {
-            Transaksi.Cursor = Cursors.Hand;
-        }
-
-        private void Pelanggan_MouseHover(object sender, EventArgs e)
-        {
-            Pelanggan.Cursor = Cursors.Hand;
-        }
-
-        private void Layanan_MouseHover(object sender, EventArgs e)
-        {
-            Layanan.Cursor = Cursors.Hand;
         }
 
         private void Dashboard_MouseEnter(object sender, EventArgs e)
@@ -158,11 +133,6 @@ namespace Pet_Care.View
             {
                 Layanan.BackgroundImage = Properties.Resources.Layanan;
             };
-        }
-
-        private void Secret_MouseHover(object sender, EventArgs e)
-        {
-            Secret.Cursor = Cursors.Hand;
         }
 
         private void Secret_Click(object sender, EventArgs e)

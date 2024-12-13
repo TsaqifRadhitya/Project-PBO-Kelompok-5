@@ -32,23 +32,11 @@ namespace Pet_Care.View
                 pictureBox1.Image = new Bitmap(new MemoryStream(kamera.foto));
             }
         }
-
-        private void pictureBox1_MouseHover(object sender, EventArgs e)
-        {
-            pictureBox1.Cursor = Cursors.Hand;
-        }
-
         private void Batal_Click(object sender, EventArgs e)
         {
             controller.Transaksi_baru = null;
             controller.Frame_Transaksi.Close();
         }
-
-        private void Batal_MouseHover(object sender, EventArgs e)
-        {
-            Batal.Cursor = Cursors.Hand;
-        }
-
         private void Batal_MouseLeave(object sender, EventArgs e)
         {
             Batal.BackgroundImage = Properties.Resources.Batal_Hover;
@@ -68,12 +56,6 @@ namespace Pet_Care.View
         {
             Lanjut.BackgroundImage = Properties.Resources.Lanjut_Hover;
         }
-
-        private void Lanjut_MouseHover(object sender, EventArgs e)
-        {
-            Lanjut.Cursor = Cursors.Hand;
-        }
-
         private void Lanjut_MouseLeave(object sender, EventArgs e)
         {
             Lanjut.BackgroundImage = Properties.Resources.Lanjut;

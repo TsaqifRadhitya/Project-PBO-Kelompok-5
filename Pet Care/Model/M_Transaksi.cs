@@ -14,12 +14,12 @@ namespace Pet_Care.Model
         public List<object> Get()
         {
             DataTable data = Execute_With_Return("Select transaksi_id, TO_CHAR(tanggal_transaksi,'DD-MM-YYYY') as tanggal,nama,nama_hewan,Durasi_Penitipan,nomor_hp,alamat,nominal_transaksi,metode_pembayaran from transaksi t join Pelanggan p on t.pelanggan_id = p.pelanggan_id where status_penitipan = true order by tanggal_transaksi desc");
-
+            
             List<object> list = new List<object>();
             for (int i = 0; i < data.Rows.Count; i++)
             {
                 Data_Transaksi data_Transaksi = new Data_Transaksi
-                {
+                {   
                     id = (int)data.Rows[i]["transaksi_id"],
                     Tanggal = data.Rows[i]["tanggal"].ToString(),
                     Nama_Pelanggan = data.Rows[i]["nama"].ToString(),

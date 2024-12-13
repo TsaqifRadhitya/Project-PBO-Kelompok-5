@@ -24,10 +24,6 @@ namespace Pet_Care.View
             controller.Frame_Transaksi.Controls.Clear();
             controller.Frame_Transaksi.Controls.Add(new V_Tambah_Transaksi(controller));
         }
-        private void Kembali_MouseHover(object sender, EventArgs e)
-        {
-            Kembali.Cursor = Cursors.Hand;
-        }
         private void Kembali_MouseEnter(object sender, EventArgs e)
         {
             Kembali.BackgroundImage = Properties.Resources.Kembali_Hover;
@@ -50,17 +46,10 @@ namespace Pet_Care.View
         {
             Lanjut.BackgroundImage = Properties.Resources.Lanjut_Hover;
         }
-
-        private void Lanjut_MouseHover(object sender, EventArgs e)
-        {
-            Lanjut.Cursor = Cursors.Hand;
-        }
-
         private void Lanjut_MouseLeave(object sender, EventArgs e)
         {
             Lanjut.BackgroundImage = Properties.Resources.Lanjut;
         }
-
         private void ID_Pelanggan_TextChanged(object sender, EventArgs e)
         {
             if (!(int.TryParse(Durasi.Text, out _)))
@@ -71,7 +60,6 @@ namespace Pet_Care.View
                 controller.Refresh_Total_Harga(this); 
             }
         }
-
         private void V_Form_Transaksi_Load(object sender, EventArgs e)
         {
             controller.load_data_Layanan(this);

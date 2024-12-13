@@ -44,10 +44,6 @@ namespace Pet_Care.View
                 Controller.delete_layanan(Tabel_Layanan.Rows[e.RowIndex].Cells["name"].Value.ToString(), (int)Tabel_Layanan.Rows[e.RowIndex].Cells["id"].Value);
             }
         }
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void V_Layanan_Load(object sender, EventArgs e)
         {
@@ -62,11 +58,6 @@ namespace Pet_Care.View
         private void Tambah_MouseEnter(object sender, EventArgs e)
         {
             Tambah.BackgroundImage = Properties.Resources.Tambah_Hover;
-        }
-
-        private void Tambah_MouseHover(object sender, EventArgs e)
-        {
-            Tambah.Cursor = Cursors.Hand;
         }
 
         private void Tambah_MouseLeave(object sender, EventArgs e)

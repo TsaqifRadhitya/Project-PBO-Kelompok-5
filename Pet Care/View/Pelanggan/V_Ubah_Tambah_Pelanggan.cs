@@ -50,10 +50,6 @@ namespace Pet_Care.View
         {
             Batal.BackgroundImage = Properties.Resources.Batal_Hover;
         }
-        private void Batal_MouseHover(object sender, EventArgs e)
-        {
-            Batal.Cursor = Cursors.Hand;
-        }
         private void Simpan_Click(object sender, EventArgs e)
         {
             dynamic[] respons = Controller.save_data(Edit_Mode, new Data_Pelanngan
@@ -74,10 +70,6 @@ namespace Pet_Care.View
             {
                 Controller.show_message_box(respons[1]);
             }
-        }
-        private void Simpan_MouseHover(object sender, EventArgs e)
-        {
-            Simpan.Cursor = Cursors.Hand;
         }
 
         private void Simpan_MouseEnter(object sender, EventArgs e)

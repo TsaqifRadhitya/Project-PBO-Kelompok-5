@@ -51,7 +51,6 @@ namespace Pet_Care.View
             nama.TabIndex = 0;
             nama.Text = "label1";
             nama.TextAlign = ContentAlignment.TopRight;
-            nama.Click += nama_Click;
             // 
             // kucing
             // 
@@ -125,7 +124,6 @@ namespace Pet_Care.View
             TabelTransaksi.SelectionMode = DataGridViewSelectionMode.CellSelect;
             TabelTransaksi.Size = new Size(871, 174);
             TabelTransaksi.TabIndex = 4;
-            TabelTransaksi.CellContentClick += TabelTransaksi_CellContentClick;
             // 
             // V_Dashboard
             // 

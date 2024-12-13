@@ -70,11 +70,6 @@ namespace Pet_Care.View
             }
         }
 
-        private void Batal_MouseHover(object sender, EventArgs e)
-        {
-            Batal.Cursor = Cursors.Hand;
-        }
-
         private void Batal_MouseEnter(object sender, EventArgs e)
         {
             Batal.BackgroundImage = Properties.Resources.Batal;
@@ -84,15 +79,9 @@ namespace Pet_Care.View
         {
             Batal.BackgroundImage = Properties.Resources.Batal_Hover;
         }
-
         private void Simpan_MouseEnter(object sender, EventArgs e)
         {
             Simpan.BackgroundImage = Properties.Resources.Simpan;
-        }
-
-        private void Simpan_MouseHover(object sender, EventArgs e)
-        {
-            Simpan.Cursor = Cursors.Hand;
         }
 
         private void Simpan_MouseLeave(object sender, EventArgs e)

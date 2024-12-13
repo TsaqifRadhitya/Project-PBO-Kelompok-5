@@ -26,14 +26,5 @@ namespace Pet_Care.View
             Controller.load();
         }
 
-        private void TabelTransaksi_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void nama_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

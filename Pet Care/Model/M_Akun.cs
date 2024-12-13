@@ -24,13 +24,10 @@ namespace Pet_Care.Model
         public void Get(string username, string password)
         {
             DataTable data = Execute_With_Return($"SELECT akun_id,nama_lengkap from akun where username = '{username}' and password = '{password}'");
-            for (int i=0; i < data.Rows.Count;i++ )
-            {
-                M_Session.session_name = data.Rows[i]["nama_lengkap"].ToString();
-                M_Session.id_session = int.Parse(data.Rows[i]["akun_id"].ToString());
+            if (data.Rows.Count == 1) {
+                M_Session.session_name = data.Rows[0]["nama_lengkap"].ToString();
+                M_Session.id_session = (int)data.Rows[0]["akun_id"];
                 M_Session.session_status = true;
-                M_Session.username = username;
-                M_Session.password = password;
             }
         }
 
