@@ -50,15 +50,12 @@
             SearchBar.BackColor = Color.White;
             SearchBar.BorderStyle = BorderStyle.None;
             SearchBar.Font = new Font("Montserrat SemiBold", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            SearchBar.ForeColor = Color.FromArgb(210, 218, 221);
+            SearchBar.ForeColor = Color.Black;
             SearchBar.Location = new Point(549, 58);
             SearchBar.Name = "SearchBar";
+            SearchBar.PlaceholderText = "Search";
             SearchBar.Size = new Size(321, 25);
             SearchBar.TabIndex = 0;
-            SearchBar.Text = "Search";
-            SearchBar.TextChanged += SearchBar_TextChanged;
-            SearchBar.Enter += SearchBar_Enter;
-            SearchBar.Leave += SearchBar_Leave;
             // 
             // flowLayoutPanel1
             // 
@@ -226,6 +223,7 @@
             Controls.Add(flowLayoutPanel1);
             Controls.Add(SearchBar);
             DoubleBuffered = true;
+            ForeColor = Color.Black;
             Name = "V_Pelanggan";
             Size = new Size(1000, 720);
             Load += V_Pelanggan_Load;

@@ -51,13 +51,4 @@ namespace Pet_Care.Model
             Execute_No_Return(querry);
         }
     }
-
-    public class Data_Layanan
-    {
-        public int id { get; set; }
-        public string name { get; set; }
-        public int harga { get; set; }
-        public string display_price { get; set; }
-        public bool quantity_berdasarkan_hari {  get; set; }
-    }
 }

@@ -35,9 +35,9 @@ namespace Pet_Care.Controller
 
         public void login_validation()
         {
-            if (v_Login.Username_Email.Text == "Username/Email" || v_Login.Password.Text == "Password")
+            if (string.IsNullOrEmpty(v_Login.Username_Email.Text) || string.IsNullOrEmpty(v_Login.Password.Text))
             {
-                show_message_box("Invalid Login");
+                show_message_box("Login Gagal");
                 return;
             }
             m_Akun.Get(v_Login.Username_Email.Text, v_Login.Password.Text);
@@ -47,15 +47,15 @@ namespace Pet_Care.Controller
             }
             else
             {
-                show_message_box("Invalid Login");
+                show_message_box("Login Gagal");
             }
         }
 
         public void register_validation()
         {
-            if (V_Register.Username.Text == "Username" || V_Register.Password.Text == "Password" || V_Register.Nama_Lengkap.Text == "Nama Lengkap"|| V_Register.Nomor_HP.Text == "Nomor Hp"|| !(new EmailAddressAttribute().IsValid(V_Register.Email.Text))|| V_Register.Konfirmasi_Password.Text != V_Register.Password.Text)
+            if (string.IsNullOrEmpty(V_Register.Username.Text) || string.IsNullOrEmpty(V_Register.Password.Text)|| string.IsNullOrEmpty(V_Register.Nama_Lengkap.Text) || string.IsNullOrEmpty(V_Register.Nomor_HP.Text) || !(new EmailAddressAttribute().IsValid(V_Register.Email.Text))|| V_Register.Konfirmasi_Password.Text != V_Register.Password.Text)
             {
-                show_message_box("Invalid Register");
+                show_message_box("Register Gagal");
                 return;
             }
             Akun data_akun = new Akun

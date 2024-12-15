@@ -88,86 +88,76 @@
             Username.BackColor = Color.FromArgb(240, 193, 174);
             Username.BorderStyle = BorderStyle.None;
             Username.Font = new Font("Montserrat SemiBold", 16F, FontStyle.Bold);
-            Username.ForeColor = Color.FromArgb(176, 142, 128);
+            Username.ForeColor = Color.White;
             Username.Location = new Point(66, 96);
             Username.Name = "Username";
+            Username.PlaceholderText = "Username";
             Username.Size = new Size(323, 27);
             Username.TabIndex = 7;
-            Username.Text = "Username";
-            Username.Enter += Username_Enter;
-            Username.Leave += Username_Leave;
             // 
             // Nama_Lengkap
             // 
             Nama_Lengkap.BackColor = Color.FromArgb(240, 193, 174);
             Nama_Lengkap.BorderStyle = BorderStyle.None;
             Nama_Lengkap.Font = new Font("Montserrat SemiBold", 16F, FontStyle.Bold);
-            Nama_Lengkap.ForeColor = Color.FromArgb(176, 142, 128);
+            Nama_Lengkap.ForeColor = Color.White;
             Nama_Lengkap.Location = new Point(66, 166);
             Nama_Lengkap.Name = "Nama_Lengkap";
+            Nama_Lengkap.PlaceholderText = "Nama Lengkap";
             Nama_Lengkap.Size = new Size(323, 27);
             Nama_Lengkap.TabIndex = 8;
-            Nama_Lengkap.Text = "Nama Lengkap";
-            Nama_Lengkap.Enter += Nama_Lengkap_Enter;
-            Nama_Lengkap.Leave += Nama_Lengkap_Leave;
             // 
             // Nomor_HP
             // 
             Nomor_HP.BackColor = Color.FromArgb(240, 193, 174);
             Nomor_HP.BorderStyle = BorderStyle.None;
             Nomor_HP.Font = new Font("Montserrat SemiBold", 16F, FontStyle.Bold);
-            Nomor_HP.ForeColor = Color.FromArgb(176, 142, 128);
+            Nomor_HP.ForeColor = Color.White;
             Nomor_HP.Location = new Point(66, 236);
             Nomor_HP.MaxLength = 13;
             Nomor_HP.Name = "Nomor_HP";
+            Nomor_HP.PlaceholderText = "Nomor Hp";
             Nomor_HP.Size = new Size(323, 27);
             Nomor_HP.TabIndex = 9;
-            Nomor_HP.Text = "Nomor Hp";
             Nomor_HP.TextChanged += Nomor_HP_TextChanged;
-            Nomor_HP.Enter += Nomor_HP_Enter;
-            Nomor_HP.Leave += Nomor_HP_Leave;
             // 
             // Email
             // 
             Email.BackColor = Color.FromArgb(240, 193, 174);
             Email.BorderStyle = BorderStyle.None;
             Email.Font = new Font("Montserrat SemiBold", 16F, FontStyle.Bold);
-            Email.ForeColor = Color.FromArgb(176, 142, 128);
+            Email.ForeColor = Color.White;
             Email.Location = new Point(66, 306);
             Email.Name = "Email";
+            Email.PlaceholderText = "Email";
             Email.Size = new Size(323, 27);
             Email.TabIndex = 10;
-            Email.Text = "Email";
-            Email.Enter += Email_Enter;
-            Email.Leave += Email_Leave;
             // 
             // Password
             // 
             Password.BackColor = Color.FromArgb(240, 193, 174);
             Password.BorderStyle = BorderStyle.None;
             Password.Font = new Font("Montserrat SemiBold", 16F, FontStyle.Bold);
-            Password.ForeColor = Color.FromArgb(176, 142, 128);
+            Password.ForeColor = Color.White;
             Password.Location = new Point(66, 376);
             Password.Name = "Password";
+            Password.PasswordChar = '●';
+            Password.PlaceholderText = "Password";
             Password.Size = new Size(276, 27);
             Password.TabIndex = 11;
-            Password.Text = "Password";
-            Password.Enter += Password_Enter;
-            Password.Leave += Password_Leave;
             // 
             // Konfirmasi_Password
             // 
             Konfirmasi_Password.BackColor = Color.FromArgb(240, 193, 174);
             Konfirmasi_Password.BorderStyle = BorderStyle.None;
             Konfirmasi_Password.Font = new Font("Montserrat SemiBold", 16F, FontStyle.Bold);
-            Konfirmasi_Password.ForeColor = Color.FromArgb(176, 142, 128);
+            Konfirmasi_Password.ForeColor = Color.White;
             Konfirmasi_Password.Location = new Point(66, 446);
             Konfirmasi_Password.Name = "Konfirmasi_Password";
+            Konfirmasi_Password.PasswordChar = '●';
+            Konfirmasi_Password.PlaceholderText = "Konfirmasi Password";
             Konfirmasi_Password.Size = new Size(282, 27);
             Konfirmasi_Password.TabIndex = 12;
-            Konfirmasi_Password.Text = "Konfirmasi Password";
-            Konfirmasi_Password.Enter += Konfirmasi_Password_Enter;
-            Konfirmasi_Password.Leave += Konfirmasi_Password_Leave;
             // 
             // show_hide_password_1
             // 

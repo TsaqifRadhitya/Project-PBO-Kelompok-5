@@ -61,30 +61,25 @@
             Username_Email.BackColor = Color.FromArgb(240, 193, 174);
             Username_Email.BorderStyle = BorderStyle.None;
             Username_Email.Font = new Font("Montserrat SemiBold", 16F, FontStyle.Bold);
-            Username_Email.ForeColor = Color.FromArgb(176, 142, 128);
+            Username_Email.ForeColor = Color.White;
             Username_Email.Location = new Point(71, 176);
             Username_Email.Name = "Username_Email";
+            Username_Email.PlaceholderText = "Username/Email";
             Username_Email.Size = new Size(323, 27);
             Username_Email.TabIndex = 1;
-            Username_Email.Text = "Username/Email";
-            Username_Email.TextChanged += Username_Email_TextChanged;
-            Username_Email.Enter += Username_Email_Enter;
-            Username_Email.Leave += Username_Email_Leave;
             // 
             // Password
             // 
             Password.BackColor = Color.FromArgb(240, 193, 174);
             Password.BorderStyle = BorderStyle.None;
             Password.Font = new Font("Montserrat SemiBold", 16F, FontStyle.Bold);
-            Password.ForeColor = Color.FromArgb(176, 142, 128);
+            Password.ForeColor = Color.White;
             Password.Location = new Point(71, 245);
             Password.Name = "Password";
+            Password.PasswordChar = '●';
+            Password.PlaceholderText = "Password";
             Password.Size = new Size(276, 27);
             Password.TabIndex = 2;
-            Password.Text = "Password";
-            Password.TextChanged += Password_TextChanged;
-            Password.Enter += Password_Enter;
-            Password.Leave += Password_Leave;
             // 
             // label1
             // 
@@ -143,7 +138,6 @@
             Margin = new Padding(0);
             Name = "V_Login";
             Size = new Size(454, 430);
-            Load += V_Login_Load;
             ResumeLayout(false);
             PerformLayout();
         }

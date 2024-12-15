@@ -43,57 +43,8 @@ namespace Pet_Care.View
             Controller.switch_view(Controller.V_Register);
         }
 
-        private void V_Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Username_Email_Enter(object sender, EventArgs e)
-        {
-            if (Username_Email.Text == "Username/Email")
-            {
-                Username_Email.Text = "";
-                Username_Email.ForeColor = Color.White;
-            }
-        }
-
-        private void Username_Email_Leave(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(Username_Email.Text))
-            {
-                Username_Email.Text = "Username/Email";
-                Username_Email.ForeColor = Color.FromArgb(176, 142, 128);
-            }
-        }
-
-        private void Password_Leave(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(Password.Text))
-            {
-                Password.PasswordChar = '\0';
-                Password.Text = "Password";
-                Password.ForeColor = Color.FromArgb(176, 142, 128);
-            }
-        }
-
-        private void Password_Enter(object sender, EventArgs e)
-        {
-            if (Password.Text == "Password")
-            {
-                Password.Text = "";
-                Password.PasswordChar = '●';
-                Password.ForeColor = Color.White;
-            }
-        }
-
-        private void Username_Email_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void show_hide_password_Click(object sender, EventArgs e)
         {
-            if (Password.Text == "Password") return;
             if (password_state)
             {
                 password_state = false;
@@ -106,11 +57,6 @@ namespace Pet_Care.View
                 show_hide_password.BackgroundImage = Properties.Resources.Show_Password;
                 Password.PasswordChar = '\0';
             }
-        }
-
-        private void Password_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

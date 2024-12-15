@@ -38,18 +38,6 @@ namespace Pet_Care.View
             }
         }
 
-        private void SearchBar_TextChanged(object sender, EventArgs e)
-        {
-            if (SearchBar.Text != "" || SearchBar.Text == "Search")
-            {
-
-            }
-            else
-            {
-
-            }
-        }
-
         private void V_Pelanggan_Load(object sender, EventArgs e)
         {
             C_Pelanggan.load_data();
@@ -72,7 +60,7 @@ namespace Pet_Care.View
 
         private void Search_Click(object sender, EventArgs e)
         {
-            if (SearchBar.Text == "Search")
+            if (string.IsNullOrEmpty(SearchBar.Text))
             {
                 C_Pelanggan.load_data();
                 return;
