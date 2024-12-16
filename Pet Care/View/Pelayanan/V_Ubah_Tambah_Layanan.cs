@@ -22,6 +22,7 @@ namespace Pet_Care.View
             InitializeComponent();
             this.controller = controller;
         }
+
         public V_Ubah_Tambah_Layanan(Data_Layanan data,C_Layanan controller)
         {
             InitializeComponent();
@@ -79,6 +80,7 @@ namespace Pet_Care.View
         {
             Batal.BackgroundImage = Properties.Resources.Batal_Hover;
         }
+
         private void Simpan_MouseEnter(object sender, EventArgs e)
         {
             Simpan.BackgroundImage = Properties.Resources.Simpan;

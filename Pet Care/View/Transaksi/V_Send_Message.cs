@@ -38,8 +38,13 @@ namespace Pet_Care.View
 
         private void Kirim_Click(object sender, EventArgs e)
         {
+            if(kamera == null || string.IsNullOrEmpty(Pesan.Text))
+            {
+                controller.show_message_box("Form Wajib diIsi Semua !");
+                return;
+            }
             controller.Frame_Transaksi.Close();
-            controller.data_pesan = [kamera.foto, Pesan.Text];
+            controller.data_pesan = [kamera.foto , Pesan.Text];
             status = true;
         }
 
