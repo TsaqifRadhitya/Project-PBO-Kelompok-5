@@ -20,24 +20,6 @@ namespace Pet_Care.View
             C_Pelanggan = controller;
         }
 
-        private void SearchBar_Enter(object sender, EventArgs e)
-        {
-            if (SearchBar.Text == "Search")
-            {
-                SearchBar.Text = "";
-                SearchBar.ForeColor = Color.Black;
-            }
-        }
-
-        private void SearchBar_Leave(object sender, EventArgs e)
-        {
-            if (SearchBar.Text == "" || SearchBar.Text == "Search")
-            {
-                SearchBar.ForeColor = Color.FromArgb(210, 218, 221);
-                SearchBar.Text = "Search";
-            }
-        }
-
         private void V_Pelanggan_Load(object sender, EventArgs e)
         {
             C_Pelanggan.load_data();
